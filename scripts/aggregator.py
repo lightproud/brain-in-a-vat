@@ -249,37 +249,64 @@ def request_with_retry(method, url, max_retries=3, backoff_base=2, **kwargs):
 # ============================================================
 
 def fetch_reddit(subreddits=None):
-    """Fetch hot posts from Reddit using the public JSON API (no auth needed)."""
+    """Fetch posts from Reddit: hot/new/rising per subreddit + cross-subreddit keyword search."""
 
     subreddits = subreddits or ['Morimens', 'MorimensGame']
     items = []
+    seen_ids = set()
+    headers = {'User-Agent': 'MorimensAggregator/1.0'}
 
+    def _parse_post(d):
+        post_id = d.get('id', '')
+        if post_id in seen_ids:
+            return None
+        seen_ids.add(post_id)
+        created = datetime.fromtimestamp(d['created_utc'], tz=timezone.utc)
+        if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
+            return None
+        return {
+            'title': d['title'],
+            'summary': (d.get('selftext', '') or '')[:200],
+            'source': 'reddit',
+            'time': created.isoformat(),
+            'url': f"https://reddit.com{d['permalink']}",
+            'engagement': d.get('score', 0) + d.get('num_comments', 0),
+            'is_hot': d.get('score', 0) > 100,
+            'author': f"u/{d.get('author', 'unknown')}",
+            'tags': list({f.get('text', '') for f in d.get('link_flair_richtext', []) if f.get('text')}),
+        }
+
+    # Fetch hot, new, rising for each subreddit
     for sub in subreddits:
-        url = f'https://www.reddit.com/r/{sub}/hot.json?limit=25'
-        headers = {'User-Agent': 'MorimensAggregator/1.0'}
+        for feed in ['hot', 'new', 'rising']:
+            url = f'https://www.reddit.com/r/{sub}/{feed}.json?limit=25'
+            try:
+                resp = request_with_retry('GET', url, headers=headers)
+                posts = resp.json().get('data', {}).get('children', [])
+                for post in posts:
+                    item = _parse_post(post['data'])
+                    if item:
+                        items.append(item)
+            except Exception as e:
+                logger.warning(f'Reddit r/{sub}/{feed} failed: {e}')
+            time.sleep(0.3)  # Rate limiting
+
+    # Cross-subreddit keyword search
+    for keyword in ['Morimens', '忘却前夜']:
+        url = 'https://www.reddit.com/search.json'
+        params = {'q': keyword, 'sort': 'new', 'limit': 25, 't': 'day'}
         try:
-            resp = request_with_retry('GET', url, headers=headers)
+            resp = request_with_retry('GET', url, headers=headers, params=params)
             posts = resp.json().get('data', {}).get('children', [])
             for post in posts:
-                d = post['data']
-                created = datetime.fromtimestamp(d['created_utc'], tz=timezone.utc)
-                if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
-                    continue
-                items.append({
-                    'title': d['title'],
-                    'summary': (d.get('selftext', '') or '')[:200],
-                    'source': 'reddit',
-                    'time': created.isoformat(),
-                    'url': f"https://reddit.com{d['permalink']}",
-                    'engagement': d.get('score', 0) + d.get('num_comments', 0),
-                    'is_hot': d.get('score', 0) > 100,
-                    'author': f"u/{d.get('author', 'unknown')}",
-                    'tags': list({f.get('text', '') for f in d.get('link_flair_richtext', []) if f.get('text')}),
-                })
-            logger.info(f'Reddit r/{sub}: fetched {len(items)} posts')
+                item = _parse_post(post['data'])
+                if item:
+                    items.append(item)
         except Exception as e:
-            logger.warning(f'Reddit r/{sub} failed: {e}')
+            logger.warning(f'Reddit search "{keyword}" failed: {e}')
+        time.sleep(0.3)
 
+    logger.info(f'Reddit: fetched {len(items)} posts total')
     return items
 
 
@@ -361,6 +388,79 @@ def fetch_bilibili(max_pages=3):
     return items
 
 
+def fetch_bilibili_articles(max_pages=2):
+    """Fetch Bilibili article (专栏) search results for Morimens keywords."""
+
+    items = []
+    seen_ids = set()
+
+    for keyword in ['忘却前夜', '忘卻前夜']:
+        for page in range(1, max_pages + 1):
+            url = 'https://api.bilibili.com/x/web-interface/search/type'
+            params = {
+                'search_type': 'article',
+                'keyword': keyword,
+                'order': 'pubdate',
+                'page': page,
+            }
+            headers = {
+                'User-Agent': 'Mozilla/5.0',
+                'Referer': 'https://www.bilibili.com',
+            }
+            try:
+                resp = request_with_retry('GET', url, params=params, headers=headers)
+                results = resp.json().get('data', {}).get('result', []) or []
+                if not results:
+                    break
+
+                found_old = False
+                for a in results[:20]:
+                    pub_time = a.get('pub_time', '')
+                    try:
+                        created = datetime.fromisoformat(pub_time.replace('Z', '+00:00')) if pub_time else None
+                    except (ValueError, TypeError):
+                        created = None
+                    if created and datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
+                        found_old = True
+                        continue
+
+                    article_id = a.get('id', '')
+                    if article_id in seen_ids:
+                        continue
+                    seen_ids.add(article_id)
+
+                    title = strip_html_tags(a.get('title', ''))
+                    view = a.get('view', 0) if isinstance(a.get('view'), int) else 0
+                    like = a.get('like', 0) if isinstance(a.get('like'), int) else 0
+                    reply = a.get('reply', 0) if isinstance(a.get('reply'), int) else 0
+                    engagement = view + like * 3 + reply * 2
+
+                    items.append({
+                        'title': title,
+                        'summary': strip_html_tags(a.get('desc', ''))[:200],
+                        'source': 'bilibili',
+                        'time': created.isoformat() if created else datetime.now(timezone.utc).isoformat(),
+                        'url': f"https://www.bilibili.com/read/cv{article_id}" if article_id else '',
+                        'engagement': engagement,
+                        'is_hot': view > 10000,
+                        'author': a.get('author', {}).get('name', '') if isinstance(a.get('author'), dict) else str(a.get('author', '')),
+                        'tags': [c.get('name', '') for c in a.get('categories', []) if c.get('name')] if isinstance(a.get('categories'), list) else ['专栏'],
+                    })
+
+                logger.info(f'Bilibili articles "{keyword}" page {page}: {len(results)} articles')
+                if found_old:
+                    break
+                if page < max_pages:
+                    time.sleep(0.5)
+
+            except Exception as e:
+                logger.warning(f'Bilibili articles "{keyword}" page {page} failed: {e}')
+                break
+
+    logger.info(f'Bilibili articles: {len(items)} total')
+    return items
+
+
 def fetch_twitter():
     """
     Fetch tweets using Twitter/X API v2.
@@ -378,7 +478,7 @@ def fetch_twitter():
     params = {
         'query': query,
         'max_results': 50,
-        'tweet.fields': 'created_at,public_metrics,author_id',
+        'tweet.fields': 'created_at,public_metrics,author_id,entities',
         'expansions': 'author_id',
         'user.fields': 'username',
     }
@@ -391,6 +491,19 @@ def fetch_twitter():
         for tweet in data.get('data', []):
             metrics = tweet.get('public_metrics', {})
             engagement = metrics.get('like_count', 0) + metrics.get('reply_count', 0) + metrics.get('retweet_count', 0)
+
+            # Extract hashtags from entities
+            entities = tweet.get('entities', {})
+            hashtags = [f"#{h['tag']}" for h in entities.get('hashtags', [])] if entities.get('hashtags') else []
+
+            # Detect media type for tags
+            if entities.get('urls'):
+                for u in entities['urls']:
+                    if 'pic.twitter.com' in u.get('expanded_url', '') or 'pbs.twimg.com' in u.get('expanded_url', ''):
+                        if '图片' not in hashtags:
+                            hashtags.append('图片')
+                        break
+
             items.append({
                 'title': tweet['text'][:100],
                 'summary': tweet['text'][:200],
@@ -400,7 +513,7 @@ def fetch_twitter():
                 'engagement': engagement,
                 'is_hot': engagement > 500,
                 'author': f"@{users.get(tweet['author_id'], 'unknown')}",
-                'tags': [],
+                'tags': hashtags[:5],
             })
         logger.info(f'Twitter: fetched {len(items)} tweets')
     except Exception as e:
@@ -495,6 +608,122 @@ def fetch_taptap():
     return items
 
 
+def fetch_youtube():
+    """
+    Fetch YouTube videos about Morimens.
+    Uses YouTube Data API v3 if YOUTUBE_API_KEY is set,
+    otherwise falls back to RSS feed from channel.
+    """
+    import xml.etree.ElementTree as ET
+
+    api_key = os.environ.get('YOUTUBE_API_KEY', '')
+    channel_id = os.environ.get('YOUTUBE_CHANNEL_ID', '')
+    items = []
+
+    if api_key:
+        # YouTube Data API v3
+        for keyword in ['Morimens', '忘却前夜']:
+            url = 'https://www.googleapis.com/youtube/v3/search'
+            params = {
+                'part': 'snippet',
+                'q': keyword,
+                'type': 'video',
+                'order': 'date',
+                'publishedAfter': (datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)).strftime('%Y-%m-%dT%H:%M:%SZ'),
+                'maxResults': 20,
+                'key': api_key,
+            }
+            try:
+                resp = request_with_retry('GET', url, params=params)
+                data = resp.json()
+                video_ids = [item['id']['videoId'] for item in data.get('items', []) if item.get('id', {}).get('videoId')]
+
+                # Batch fetch statistics
+                if video_ids:
+                    stats_url = 'https://www.googleapis.com/youtube/v3/videos'
+                    stats_params = {
+                        'part': 'statistics',
+                        'id': ','.join(video_ids),
+                        'key': api_key,
+                    }
+                    stats_resp = request_with_retry('GET', stats_url, params=stats_params)
+                    stats_map = {v['id']: v.get('statistics', {}) for v in stats_resp.json().get('items', [])}
+                else:
+                    stats_map = {}
+
+                for item in data.get('items', []):
+                    snippet = item.get('snippet', {})
+                    vid = item.get('id', {}).get('videoId', '')
+                    if not vid:
+                        continue
+                    published = snippet.get('publishedAt', '')
+                    stats = stats_map.get(vid, {})
+                    views = int(stats.get('viewCount', 0))
+                    likes = int(stats.get('likeCount', 0))
+                    comments = int(stats.get('commentCount', 0))
+
+                    items.append({
+                        'title': snippet.get('title', ''),
+                        'summary': snippet.get('description', '')[:200],
+                        'source': 'youtube',
+                        'time': published,
+                        'url': f'https://www.youtube.com/watch?v={vid}',
+                        'engagement': views + likes * 5 + comments * 3,
+                        'is_hot': views > 50000,
+                        'author': snippet.get('channelTitle', ''),
+                        'tags': [],
+                    })
+                logger.info(f'YouTube API "{keyword}": {len(data.get("items", []))} videos')
+            except Exception as e:
+                logger.warning(f'YouTube API "{keyword}" failed: {e}')
+            time.sleep(0.2)
+
+    elif channel_id:
+        # RSS fallback - no API key needed, but limited to channel uploads
+        rss_url = f'https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}'
+        try:
+            resp = request_with_retry('GET', rss_url)
+            root = ET.fromstring(resp.content)
+            ns = {'atom': 'http://www.w3.org/2005/Atom', 'media': 'http://search.yahoo.com/mrss/'}
+
+            for entry in root.findall('atom:entry', ns):
+                title = entry.findtext('atom:title', '', ns)
+                published = entry.findtext('atom:published', '', ns)
+                link = entry.find('atom:link', ns)
+                href = link.get('href', '') if link is not None else ''
+                author = entry.findtext('atom:author/atom:name', '', ns)
+
+                try:
+                    pub_dt = datetime.fromisoformat(published.replace('Z', '+00:00'))
+                    if datetime.now(timezone.utc) - pub_dt > timedelta(hours=HOURS_LOOKBACK):
+                        continue
+                except (ValueError, TypeError):
+                    continue
+
+                media_stats = entry.find('media:group/media:community/media:statistics', ns)
+                views = int(media_stats.get('views', 0)) if media_stats is not None else 0
+
+                items.append({
+                    'title': title,
+                    'summary': '',
+                    'source': 'youtube',
+                    'time': pub_dt.isoformat(),
+                    'url': href,
+                    'engagement': views,
+                    'is_hot': views > 50000,
+                    'author': author,
+                    'tags': [],
+                })
+            logger.info(f'YouTube RSS: {len(items)} videos from channel feed')
+        except Exception as e:
+            logger.warning(f'YouTube RSS failed: {e}')
+
+    else:
+        logger.info('YouTube: no YOUTUBE_API_KEY or YOUTUBE_CHANNEL_ID set, skipping')
+
+    return items
+
+
 def generate_summary(news_items):
     """
     Generate a daily summary. Uses OpenAI-compatible API if available,
@@ -544,47 +773,93 @@ def generate_summary(news_items):
         return f"今日热门话题：{titles}。"
 
 
+def load_previous_news():
+    """Load the previous news.json for rollback protection."""
+    try:
+        if OUTPUT_PATH.exists():
+            with open(OUTPUT_PATH, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            return data.get('news', [])
+    except Exception as e:
+        logger.warning(f'Failed to load previous news.json: {e}')
+    return []
+
+
 def run():
-    """Main aggregation pipeline."""
+    """Main aggregation pipeline with concurrent fetching and rollback protection."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
     logger.info('Starting Morimens community news aggregation...')
+
+    # All fetchers including new ones
+    fetchers = [
+        ('reddit', fetch_reddit),
+        ('bilibili', fetch_bilibili),
+        ('bilibili_articles', fetch_bilibili_articles),
+        ('twitter', fetch_twitter),
+        ('nga', fetch_nga),
+        ('taptap', fetch_taptap),
+        ('youtube', fetch_youtube),
+    ]
 
     all_news = []
     source_stats = {}
 
-    # Fetch from all sources
-    fetchers = [
-        ('reddit', fetch_reddit),
-        ('bilibili', fetch_bilibili),
-        ('twitter', fetch_twitter),
-        ('nga', fetch_nga),
-        ('taptap', fetch_taptap),
-    ]
-
-    for name, fetcher in fetchers:
+    # Concurrent fetching
+    def _run_fetcher(name, fetcher):
         fetch_start = time.time()
         try:
             items = fetcher()
-            all_news.extend(items)
-            source_stats[name] = {
+            elapsed = int((time.time() - fetch_start) * 1000)
+            return name, items, {
                 'status': 'ok' if items else 'empty',
                 'count': len(items),
-                'time_ms': int((time.time() - fetch_start) * 1000),
+                'time_ms': elapsed,
             }
-            logger.info(f'{name}: {len(items)} items')
         except Exception as e:
-            source_stats[name] = {
+            elapsed = int((time.time() - fetch_start) * 1000)
+            logger.error(f'{name} fetcher crashed: {e}')
+            return name, [], {
                 'status': 'error',
                 'count': 0,
-                'time_ms': int((time.time() - fetch_start) * 1000),
+                'time_ms': elapsed,
                 'error': str(e)[:100],
             }
-            logger.error(f'{name} fetcher crashed: {e}')
+
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        futures = {
+            executor.submit(_run_fetcher, name, fn): name
+            for name, fn in fetchers
+        }
+        for future in as_completed(futures):
+            name, items, stats = future.result()
+            all_news.extend(items)
+            source_stats[name] = stats
+            logger.info(f'{name}: {stats["count"]} items ({stats["time_ms"]}ms)')
 
     # Validate and sanitize all items
     all_news = validate_all_news(all_news)
 
     # Deduplicate by normalized title similarity
     unique_news = deduplicate_news(all_news)
+
+    # Rollback protection: if new fetch got significantly fewer items than before,
+    # merge with previous data to avoid data loss
+    previous_news = load_previous_news()
+    if previous_news and len(unique_news) == 0:
+        logger.warning('Rollback: all fetchers returned empty, preserving previous data')
+        # Re-validate previous data (filter out items older than 48h)
+        cutoff = datetime.now(timezone.utc) - timedelta(hours=48)
+        preserved = []
+        for item in previous_news:
+            try:
+                item_time = datetime.fromisoformat(item['time'].replace('Z', '+00:00'))
+                if item_time > cutoff:
+                    preserved.append(item)
+            except (ValueError, KeyError):
+                pass
+        unique_news = preserved
+        logger.info(f'Rollback: preserved {len(preserved)} items from previous run')
 
     # Sort by engagement
     unique_news.sort(key=lambda x: x.get('engagement', 0), reverse=True)
