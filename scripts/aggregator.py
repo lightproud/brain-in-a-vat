@@ -283,47 +283,80 @@ def fetch_reddit(subreddits=None):
     return items
 
 
-def fetch_bilibili():
-    """Fetch Bilibili search results for Morimens keywords."""
+def fetch_bilibili(max_pages=3):
+    """Fetch Bilibili search results for Morimens keywords (multi-page)."""
 
     items = []
+    seen_bvids = set()
+
     for keyword in ['忘却前夜', '忘卻前夜']:
-        url = 'https://api.bilibili.com/x/web-interface/search/type'
-        params = {
-            'search_type': 'video',
-            'keyword': keyword,
-            'order': 'pubdate',
-            'duration': 0,
-            'page': 1,
-        }
-        headers = {
-            'User-Agent': 'Mozilla/5.0',
-            'Referer': 'https://www.bilibili.com',
-        }
-        try:
-            resp = request_with_retry('GET', url, params=params, headers=headers)
-            results = resp.json().get('data', {}).get('result', []) or []
-            for v in results[:20]:
-                pubdate = v.get('pubdate', 0)
-                created = datetime.fromtimestamp(pubdate, tz=timezone.utc) if pubdate else None
-                if created and datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
-                    continue
-                # Strip HTML tags from title
-                title = strip_html_tags(v.get('title', ''))
-                items.append({
-                    'title': title,
-                    'summary': v.get('description', '')[:200],
-                    'source': 'bilibili',
-                    'time': created.isoformat() if created else datetime.now(timezone.utc).isoformat(),
-                    'url': v.get('arcurl', ''),
-                    'engagement': v.get('play', 0) + v.get('danmaku', 0),
-                    'is_hot': v.get('play', 0) > 10000,
-                    'author': v.get('author', ''),
-                    'tags': [v.get('typename', '')] if v.get('typename') else [],
-                })
-            logger.info(f'Bilibili "{keyword}": fetched {len(results)} videos')
-        except Exception as e:
-            logger.warning(f'Bilibili "{keyword}" failed: {e}')
+        for page in range(1, max_pages + 1):
+            url = 'https://api.bilibili.com/x/web-interface/search/type'
+            params = {
+                'search_type': 'video',
+                'keyword': keyword,
+                'order': 'pubdate',
+                'duration': 0,
+                'page': page,
+            }
+            headers = {
+                'User-Agent': 'Mozilla/5.0',
+                'Referer': 'https://www.bilibili.com',
+            }
+            try:
+                resp = request_with_retry('GET', url, params=params, headers=headers)
+                results = resp.json().get('data', {}).get('result', []) or []
+                if not results:
+                    break
+
+                found_old = False
+                for v in results[:20]:
+                    pubdate = v.get('pubdate', 0)
+                    created = datetime.fromtimestamp(pubdate, tz=timezone.utc) if pubdate else None
+                    if created and datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
+                        found_old = True
+                        continue
+
+                    # Deduplicate across keywords by bvid
+                    bvid = v.get('bvid', '')
+                    if bvid and bvid in seen_bvids:
+                        continue
+                    if bvid:
+                        seen_bvids.add(bvid)
+
+                    title = strip_html_tags(v.get('title', ''))
+                    # Weighted engagement: play + danmaku*2 + favorites*3 + review*2
+                    play = v.get('play', 0) if isinstance(v.get('play'), int) else 0
+                    danmaku = v.get('danmaku', 0) if isinstance(v.get('danmaku'), int) else 0
+                    favorites = v.get('favorites', 0) if isinstance(v.get('favorites'), int) else 0
+                    review = v.get('review', 0) if isinstance(v.get('review'), int) else 0
+                    engagement = play + danmaku * 2 + favorites * 3 + review * 2
+
+                    items.append({
+                        'title': title,
+                        'summary': v.get('description', '')[:200],
+                        'source': 'bilibili',
+                        'time': created.isoformat() if created else datetime.now(timezone.utc).isoformat(),
+                        'url': v.get('arcurl', ''),
+                        'engagement': engagement,
+                        'is_hot': play > 10000,
+                        'author': v.get('author', ''),
+                        'tags': [v.get('typename', '')] if v.get('typename') else [],
+                    })
+
+                logger.info(f'Bilibili "{keyword}" page {page}: fetched {len(results)} videos')
+
+                # Stop paging if we hit old content
+                if found_old:
+                    break
+
+                # Rate limiting between pages
+                if page < max_pages:
+                    time.sleep(0.5)
+
+            except Exception as e:
+                logger.warning(f'Bilibili "{keyword}" page {page} failed: {e}')
+                break
 
     return items
 

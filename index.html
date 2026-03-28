@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>忘却前夜 Morimens - 全球社区热点聚合</title>
+    <meta name="description" content="实时聚合忘却前夜（Morimens）全球社区24小时内的热点话题，覆盖 Reddit、Twitter/X、B站、TapTap、NGA 等平台。">
+    <meta name="theme-color" content="#0a0a1a">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="忘却前夜 Morimens - 全球社区热点聚合">
+    <meta property="og:description" content="实时聚合忘却前夜全球社区24小时热点话题，覆盖 Reddit、B站、Twitter 等平台。">
+    <meta property="og:site_name" content="Morimens Community News">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="忘却前夜 Morimens - 社区热点聚合">
+    <meta name="twitter:description" content="实时聚合忘却前夜全球社区24小时热点话题。">
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="忘夜热点">
     <style>
         :root {
             --bg-primary: #0a0a1a;
@@ -137,6 +153,35 @@
             letter-spacing: 0.05em;
         }
 
+        /* Search bar */
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            padding: 0.75rem 1.5rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 480px;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-purple);
+        }
+
         /* Filter tabs */
         .filter-bar {
             display: flex;
@@ -177,6 +222,36 @@
 
         .filter-btn.hidden {
             display: none;
+        }
+
+        .sort-bar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.5rem;
+            padding: 0 1.5rem 0.5rem;
+            background: var(--bg-secondary);
+        }
+
+        .sort-btn {
+            padding: 0.25rem 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .sort-btn:hover {
+            color: var(--text-primary);
+            border-color: var(--accent-blue);
+        }
+
+        .sort-btn.active {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: white;
         }
 
         .filter-badge {
@@ -429,6 +504,10 @@
         </div>
     </div>
 
+    <div class="search-bar">
+        <input type="text" class="search-input" id="search-input" placeholder="搜索标题或摘要..." />
+    </div>
+
     <div class="filter-bar" id="filter-bar">
         <button class="filter-btn active" data-filter="all">全部</button>
         <button class="filter-btn" data-filter="official">官方公告</button>
@@ -439,6 +518,12 @@
         <button class="filter-btn" data-filter="nga">NGA</button>
         <button class="filter-btn" data-filter="discord">Discord</button>
         <button class="filter-btn" data-filter="youtube">YouTube</button>
+    </div>
+
+    <div class="sort-bar" id="sort-bar">
+        <button class="sort-btn active" data-sort="hot">热度优先</button>
+        <button class="sort-btn" data-sort="time">最新优先</button>
+        <button class="sort-btn" data-sort="engagement">互动最多</button>
     </div>
 
     <main class="main-content">
@@ -473,6 +558,8 @@
 
         let allNews = [];
         let currentFilter = 'all';
+        let currentSort = 'hot';
+        let searchQuery = '';
 
         // Source display config
         const SOURCE_CONFIG = {
@@ -535,13 +622,35 @@
             `;
         }
 
+        function sortNews() {
+            allNews.sort((a, b) => {
+                if (currentSort === 'hot') {
+                    if (a.is_hot !== b.is_hot) return b.is_hot ? 1 : -1;
+                    return new Date(b.time) - new Date(a.time);
+                } else if (currentSort === 'time') {
+                    return new Date(b.time) - new Date(a.time);
+                } else {
+                    return (b.engagement || 0) - (a.engagement || 0);
+                }
+            });
+        }
+
         function renderNews() {
             const list = document.getElementById('news-list');
             const empty = document.getElementById('empty-state');
 
-            const filtered = currentFilter === 'all'
+            let filtered = currentFilter === 'all'
                 ? allNews
                 : allNews.filter(n => n.source === currentFilter);
+
+            if (searchQuery) {
+                const q = searchQuery.toLowerCase();
+                filtered = filtered.filter(n =>
+                    (n.title || '').toLowerCase().includes(q) ||
+                    (n.summary || '').toLowerCase().includes(q) ||
+                    (n.tags || []).some(t => t.toLowerCase().includes(q))
+                );
+            }
 
             if (filtered.length === 0) {
                 list.innerHTML = '';
@@ -597,10 +706,8 @@
                 if (!res.ok) throw new Error('Fetch failed');
                 const data = await res.json();
 
-                allNews = data.news.sort((a, b) => {
-                    if (a.is_hot !== b.is_hot) return b.is_hot ? 1 : -1;
-                    return new Date(b.time) - new Date(a.time);
-                });
+                allNews = data.news;
+                sortNews();
 
                 const updatedAt = new Date(data.updated_at);
                 const ageMs = Date.now() - updatedAt.getTime();
@@ -652,13 +759,41 @@
             el.textContent = indicators.join('  ');
         }
 
-        // Filter buttons
+        // Search input
+        document.getElementById('search-input').addEventListener('input', e => {
+            searchQuery = e.target.value.trim();
+            renderNews();
+        });
+
+        // Sort buttons
+        document.getElementById('sort-bar').addEventListener('click', e => {
+            if (!e.target.classList.contains('sort-btn')) return;
+            document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            currentSort = e.target.dataset.sort;
+            sortNews();
+            renderNews();
+        });
+
+        // Filter buttons - click
         document.getElementById('filter-bar').addEventListener('click', e => {
             if (!e.target.classList.contains('filter-btn')) return;
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
             currentFilter = e.target.dataset.filter;
             renderNews();
+        });
+
+        // Filter buttons - keyboard navigation (arrow keys)
+        document.getElementById('filter-bar').addEventListener('keydown', e => {
+            if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+            const btns = [...document.querySelectorAll('.filter-btn:not(.hidden)')];
+            const idx = btns.indexOf(document.activeElement);
+            if (idx < 0) return;
+            e.preventDefault();
+            const next = e.key === 'ArrowRight' ? (idx + 1) % btns.length : (idx - 1 + btns.length) % btns.length;
+            btns[next].focus();
+            btns[next].click();
         });
 
         // Initial load & auto-refresh
