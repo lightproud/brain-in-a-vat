@@ -153,6 +153,57 @@ def validate_all_news(items):
     return valid_items
 
 
+def normalize_title(title):
+    """Normalize a title for deduplication comparison."""
+    t = title.lower().strip()
+    # Remove common brackets and their contents like【】[]「」
+    t = re.sub(r'[【\[「（(][^】\]」）)]*[】\]」）)]', '', t)
+    # Remove punctuation and whitespace
+    t = re.sub(r'[\s\-_·:：|｜,.，。!！?？…]+', '', t)
+    return t
+
+
+def title_similarity(a, b):
+    """Simple character-level similarity ratio between two strings."""
+    if not a or not b:
+        return 0.0
+    # Use length of common characters / max length
+    shorter, longer = (a, b) if len(a) <= len(b) else (b, a)
+    if len(longer) == 0:
+        return 1.0
+    # Count common characters (order-independent, bag-of-chars)
+    from collections import Counter
+    ca, cb = Counter(shorter), Counter(longer)
+    common = sum((ca & cb).values())
+    return common / len(longer)
+
+
+def deduplicate_news(items, similarity_threshold=0.75):
+    """Deduplicate news items using normalized title similarity.
+    When duplicates are found, keep the one with higher engagement."""
+    unique = []
+    norm_titles = []
+
+    for item in items:
+        norm = normalize_title(item['title'])
+        is_dup = False
+        for i, existing_norm in enumerate(norm_titles):
+            # Exact normalized match or high similarity
+            if norm == existing_norm or (len(norm) > 5 and title_similarity(norm, existing_norm) > similarity_threshold):
+                # Keep higher engagement version
+                if item.get('engagement', 0) > unique[i].get('engagement', 0):
+                    unique[i] = item
+                    norm_titles[i] = norm
+                is_dup = True
+                break
+        if not is_dup:
+            unique.append(item)
+            norm_titles.append(norm)
+
+    logger.info(f'Deduplication: {len(unique)} unique items from {len(items)} total')
+    return unique
+
+
 # ============================================================
 # HTTP Helpers
 # ============================================================
@@ -465,35 +516,42 @@ def run():
     logger.info('Starting Morimens community news aggregation...')
 
     all_news = []
+    source_stats = {}
 
     # Fetch from all sources
     fetchers = [
-        ('Reddit', fetch_reddit),
-        ('Bilibili', fetch_bilibili),
-        ('Twitter', fetch_twitter),
-        ('NGA', fetch_nga),
-        ('TapTap', fetch_taptap),
+        ('reddit', fetch_reddit),
+        ('bilibili', fetch_bilibili),
+        ('twitter', fetch_twitter),
+        ('nga', fetch_nga),
+        ('taptap', fetch_taptap),
     ]
 
     for name, fetcher in fetchers:
+        fetch_start = time.time()
         try:
             items = fetcher()
             all_news.extend(items)
+            source_stats[name] = {
+                'status': 'ok' if items else 'empty',
+                'count': len(items),
+                'time_ms': int((time.time() - fetch_start) * 1000),
+            }
             logger.info(f'{name}: {len(items)} items')
         except Exception as e:
+            source_stats[name] = {
+                'status': 'error',
+                'count': 0,
+                'time_ms': int((time.time() - fetch_start) * 1000),
+                'error': str(e)[:100],
+            }
             logger.error(f'{name} fetcher crashed: {e}')
 
     # Validate and sanitize all items
     all_news = validate_all_news(all_news)
 
-    # Deduplicate by title similarity (simple approach)
-    seen_titles = set()
-    unique_news = []
-    for item in all_news:
-        title_key = item['title'].lower().strip()[:50]
-        if title_key not in seen_titles:
-            seen_titles.add(title_key)
-            unique_news.append(item)
+    # Deduplicate by normalized title similarity
+    unique_news = deduplicate_news(all_news)
 
     # Sort by engagement
     unique_news.sort(key=lambda x: x.get('engagement', 0), reverse=True)
@@ -511,6 +569,12 @@ def run():
     output = {
         'updated_at': datetime.now(timezone.utc).isoformat(),
         'summary': summary,
+        'stats': {
+            'total_fetched': sum(s['count'] for s in source_stats.values()),
+            'total_after_validation': len(all_news),
+            'total_after_dedup': len(unique_news),
+            'sources': source_stats,
+        },
         'news': unique_news,
     }
 

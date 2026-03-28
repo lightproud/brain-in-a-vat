@@ -94,6 +94,16 @@
             animation: pulse 2s infinite;
         }
 
+        .pulse-dot.stale {
+            background: #f59e0b;
+            animation: pulse 1.5s infinite;
+        }
+
+        .pulse-dot.offline {
+            background: #ef4444;
+            animation: none;
+        }
+
         @keyframes pulse {
             0%, 100% { opacity: 1; transform: scale(1); }
             50% { opacity: 0.5; transform: scale(0.8); }
@@ -163,6 +173,29 @@
             background: var(--accent-purple);
             border-color: var(--accent-purple);
             color: white;
+        }
+
+        .filter-btn.hidden {
+            display: none;
+        }
+
+        .filter-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 1.2em;
+            height: 1.2em;
+            padding: 0 0.3em;
+            margin-left: 0.35em;
+            border-radius: 8px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.15);
+            line-height: 1;
+        }
+
+        .filter-btn.active .filter-badge {
+            background: rgba(255, 255, 255, 0.25);
         }
 
         /* Main content */
@@ -428,6 +461,7 @@
 
     <footer class="footer">
         <p>忘却前夜 Morimens 社区热点聚合 &mdash; 数据每小时自动更新</p>
+        <div id="source-health" style="margin-top:0.5rem;"></div>
         <p style="margin-top:0.5rem;">
             数据来源：Reddit · Twitter/X · Bilibili · TapTap · NGA · Discord · YouTube
         </p>
@@ -526,6 +560,37 @@
             document.getElementById('stat-engagement').textContent = formatNumber(totalEngagement);
         }
 
+        function updateFilterBadges() {
+            const counts = { all: allNews.length };
+            allNews.forEach(n => {
+                counts[n.source] = (counts[n.source] || 0) + 1;
+            });
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                const filter = btn.dataset.filter;
+                const count = counts[filter] || 0;
+                // Update or create badge
+                let badge = btn.querySelector('.filter-badge');
+                if (filter === 'all') {
+                    if (!badge) { badge = document.createElement('span'); badge.className = 'filter-badge'; btn.appendChild(badge); }
+                    badge.textContent = counts.all;
+                    return;
+                }
+                if (count > 0) {
+                    btn.classList.remove('hidden');
+                    if (!badge) { badge = document.createElement('span'); badge.className = 'filter-badge'; btn.appendChild(badge); }
+                    badge.textContent = count;
+                } else {
+                    btn.classList.add('hidden');
+                    // If this hidden filter was active, switch to "all"
+                    if (btn.classList.contains('active')) {
+                        btn.classList.remove('active');
+                        document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+                        currentFilter = 'all';
+                    }
+                }
+            });
+        }
+
         async function loadData() {
             try {
                 const res = await fetch(DATA_URL + '?t=' + Date.now());
@@ -537,21 +602,54 @@
                     return new Date(b.time) - new Date(a.time);
                 });
 
-                document.getElementById('update-time').textContent =
-                    `最后更新：${new Date(data.updated_at).toLocaleString('zh-CN')}`;
+                const updatedAt = new Date(data.updated_at);
+                const ageMs = Date.now() - updatedAt.getTime();
+                const ageHrs = ageMs / 3600000;
+                const dot = document.querySelector('.pulse-dot');
+                const summarySection = document.getElementById('daily-summary');
 
-                if (data.summary) {
+                document.getElementById('update-time').textContent =
+                    `最后更新：${updatedAt.toLocaleString('zh-CN')}`;
+
+                // Freshness indicator
+                dot.classList.remove('stale', 'offline');
+                if (ageHrs > 24) {
+                    dot.classList.add('offline');
+                    document.getElementById('update-time').textContent += ' (数据已过期)';
+                    summarySection.style.display = 'none';
+                } else if (ageHrs > 2) {
+                    dot.classList.add('stale');
+                    document.getElementById('update-time').textContent += ` (${Math.floor(ageHrs)}小时前)`;
+                    summarySection.style.display = '';
+                } else {
+                    summarySection.style.display = '';
+                }
+
+                if (data.summary && ageHrs <= 24) {
                     document.getElementById('summary-text').innerHTML = data.summary;
                 }
 
                 updateStats(data);
+                updateFilterBadges();
                 renderNews();
+                renderSourceHealth(data.stats);
                 document.getElementById('loading').style.display = 'none';
             } catch (err) {
                 console.error('Failed to load news data:', err);
                 document.getElementById('loading').innerHTML =
                     '<p>数据加载失败，请稍后刷新重试。</p>';
             }
+        }
+
+        function renderSourceHealth(stats) {
+            if (!stats || !stats.sources) return;
+            const el = document.getElementById('source-health');
+            const indicators = Object.entries(stats.sources).map(([name, s]) => {
+                const icon = s.status === 'ok' ? '🟢' : s.status === 'empty' ? '🟡' : '🔴';
+                const label = (SOURCE_CONFIG[name] || {}).label || name;
+                return `${icon} ${label}(${s.count})`;
+            });
+            el.textContent = indicators.join('  ');
         }
 
         // Filter buttons
