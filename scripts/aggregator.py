@@ -154,12 +154,51 @@ def validate_all_news(items):
 
 
 # ============================================================
+# HTTP Helpers
+# ============================================================
+
+def request_with_retry(method, url, max_retries=3, backoff_base=2, **kwargs):
+    """Make an HTTP request with exponential backoff retry on transient failures."""
+    import requests
+
+    kwargs.setdefault('timeout', 15)
+    last_exc = None
+
+    for attempt in range(max_retries + 1):
+        try:
+            resp = requests.request(method, url, **kwargs)
+            resp.raise_for_status()
+            return resp
+        except requests.exceptions.ConnectionError as e:
+            last_exc = e
+            logger.warning(f'Connection error (attempt {attempt + 1}/{max_retries + 1}): {e}')
+        except requests.exceptions.Timeout as e:
+            last_exc = e
+            logger.warning(f'Timeout (attempt {attempt + 1}/{max_retries + 1}): {e}')
+        except requests.exceptions.HTTPError as e:
+            status = e.response.status_code if e.response is not None else 0
+            if status in (429, 500, 502, 503, 504):
+                last_exc = e
+                logger.warning(f'HTTP {status} (attempt {attempt + 1}/{max_retries + 1}): {e}')
+            else:
+                raise
+        except requests.exceptions.RequestException:
+            raise
+
+        if attempt < max_retries:
+            wait = backoff_base ** attempt
+            logger.info(f'Retrying in {wait}s...')
+            time.sleep(wait)
+
+    raise last_exc
+
+
+# ============================================================
 # Source Fetchers - each returns a list of news item dicts
 # ============================================================
 
 def fetch_reddit(subreddits=None):
     """Fetch hot posts from Reddit using the public JSON API (no auth needed)."""
-    import requests
 
     subreddits = subreddits or ['Morimens', 'MorimensGame']
     items = []
@@ -168,8 +207,7 @@ def fetch_reddit(subreddits=None):
         url = f'https://www.reddit.com/r/{sub}/hot.json?limit=25'
         headers = {'User-Agent': 'MorimensAggregator/1.0'}
         try:
-            resp = requests.get(url, headers=headers, timeout=15)
-            resp.raise_for_status()
+            resp = request_with_retry('GET', url, headers=headers)
             posts = resp.json().get('data', {}).get('children', [])
             for post in posts:
                 d = post['data']
@@ -196,7 +234,6 @@ def fetch_reddit(subreddits=None):
 
 def fetch_bilibili():
     """Fetch Bilibili search results for Morimens keywords."""
-    import requests
 
     items = []
     for keyword in ['忘却前夜', '忘卻前夜']:
@@ -213,8 +250,7 @@ def fetch_bilibili():
             'Referer': 'https://www.bilibili.com',
         }
         try:
-            resp = requests.get(url, params=params, headers=headers, timeout=15)
-            resp.raise_for_status()
+            resp = request_with_retry('GET', url, params=params, headers=headers)
             results = resp.json().get('data', {}).get('result', []) or []
             for v in results[:20]:
                 pubdate = v.get('pubdate', 0)
@@ -246,7 +282,6 @@ def fetch_twitter():
     Fetch tweets using Twitter/X API v2.
     Requires TWITTER_BEARER_TOKEN environment variable.
     """
-    import requests
 
     bearer = os.environ.get('TWITTER_BEARER_TOKEN')
     if not bearer:
@@ -266,8 +301,7 @@ def fetch_twitter():
     headers = {'Authorization': f'Bearer {bearer}'}
 
     try:
-        resp = requests.get(url, params=params, headers=headers, timeout=15)
-        resp.raise_for_status()
+        resp = request_with_retry('GET', url, params=params, headers=headers)
         data = resp.json()
         users = {u['id']: u['username'] for u in data.get('includes', {}).get('users', [])}
         for tweet in data.get('data', []):
@@ -296,7 +330,6 @@ def fetch_nga():
     Fetch NGA forum posts for Morimens.
     NGA has rate limiting - be respectful.
     """
-    import requests
 
     items = []
     # NGA forum ID for 忘却前夜 - update this with the actual forum ID
@@ -311,8 +344,7 @@ def fetch_nga():
         'Accept': 'application/json',
     }
     try:
-        resp = requests.get(url, headers=headers, timeout=15)
-        resp.raise_for_status()
+        resp = request_with_retry('GET', url, headers=headers)
         data = resp.json()
         threads = data.get('data', {}).get('__T', {})
         for tid, thread in threads.items():
@@ -343,7 +375,6 @@ def fetch_nga():
 
 def fetch_taptap():
     """Fetch TapTap community posts for Morimens."""
-    import requests
 
     app_id = os.environ.get('TAPTAP_APP_ID', '')
     if not app_id:
@@ -356,8 +387,7 @@ def fetch_taptap():
     headers = {'User-Agent': 'Mozilla/5.0'}
 
     try:
-        resp = requests.get(url, params=params, headers=headers, timeout=15)
-        resp.raise_for_status()
+        resp = request_with_retry('GET', url, params=params, headers=headers)
         topics = resp.json().get('data', {}).get('list', [])
         for topic in topics:
             created = datetime.fromtimestamp(topic.get('created_time', 0), tz=timezone.utc)
