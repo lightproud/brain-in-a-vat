@@ -153,6 +153,48 @@ def validate_all_news(items):
     return valid_items
 
 
+# Tag keyword mapping: if title/summary contains key, add tag
+TAG_KEYWORDS = {
+    '攻略': ['攻略', '教程', '指南', 'guide', 'tutorial'],
+    '配队': ['配队', '阵容', '队伍', 'team comp'],
+    '深渊': ['深渊', 'abyss'],
+    '融灾': ['融灾'],
+    '相位': ['相位', 'phase'],
+    '抽卡': ['抽卡', '十连', 'gacha', 'pull', 'banner', 'wish'],
+    '新角色': ['新角色', 'new character', 'leak', '泄露', '爆料'],
+    '剧情': ['剧情', '主线', 'story', 'lore', '故事'],
+    '联动': ['联动', 'collab', 'collaboration', 'crossover'],
+    '活动': ['活动', 'event', '福利', '奖励'],
+    '版本更新': ['版本', '更新', 'update', 'patch'],
+    '同人': ['同人', '二创', 'fanart', 'cosplay', 'fan art'],
+    '数据挖掘': ['datamin', '挖掘', 'leak'],
+    'PVP': ['pvp', '竞技', 'arena'],
+    'OST': ['ost', '音乐', 'soundtrack', 'music', 'bgm'],
+    '评测': ['评测', '测评', 'review', '节奏榜', 'tier list'],
+    '直播': ['直播', 'stream', 'live'],
+    '赛事': ['赛事', '比赛', '杯', 'tournament'],
+}
+
+
+def auto_tag(item):
+    """Enrich item tags based on title/summary keyword matching."""
+    existing = set(t.lower() for t in item.get('tags', []))
+    text = (item.get('title', '') + ' ' + item.get('summary', '')).lower()
+    new_tags = list(item.get('tags', []))
+
+    for tag, keywords in TAG_KEYWORDS.items():
+        if tag.lower() in existing:
+            continue
+        for kw in keywords:
+            if kw.lower() in text:
+                new_tags.append(tag)
+                break
+
+    # Limit to 5 tags
+    item['tags'] = new_tags[:5]
+    return item
+
+
 def normalize_title(title):
     """Normalize a title for deduplication comparison."""
     t = title.lower().strip()
@@ -461,6 +503,76 @@ def fetch_bilibili_articles(max_pages=2):
     return items
 
 
+def fetch_bilibili_dynamic():
+    """Fetch Bilibili dynamic (动态) posts via search for Morimens keywords."""
+
+    items = []
+    headers = {
+        'User-Agent': 'Mozilla/5.0',
+        'Referer': 'https://www.bilibili.com',
+    }
+
+    for keyword in ['忘却前夜', '忘卻前夜']:
+        url = 'https://api.bilibili.com/x/web-interface/search/type'
+        params = {
+            'search_type': 'bili_user',  # Search users who post about it
+            'keyword': keyword,
+            'page': 1,
+        }
+        # Bilibili dynamic search via topic API
+        dynamic_url = 'https://api.bilibili.com/topic_svr/v1/topic_svr/topic_history'
+        dynamic_params = {'topic_name': keyword}
+        try:
+            resp = request_with_retry('GET', dynamic_url, params=dynamic_params, headers=headers)
+            data = resp.json()
+            cards = data.get('data', {}).get('cards', []) or []
+            for card in cards[:15]:
+                desc = card.get('desc', {})
+                card_ts = desc.get('timestamp', 0)
+                if not card_ts:
+                    continue
+                created = datetime.fromtimestamp(card_ts, tz=timezone.utc)
+                if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
+                    continue
+
+                # Parse card content
+                try:
+                    card_content = json.loads(card.get('card', '{}'))
+                except (json.JSONDecodeError, TypeError):
+                    continue
+
+                # Dynamic text posts
+                title = card_content.get('item', {}).get('content', '')[:100] or card_content.get('item', {}).get('description', '')[:100]
+                if not title:
+                    title = card_content.get('title', '')[:100] or card_content.get('dynamic', '')[:100]
+                if not title:
+                    continue
+
+                dynamic_id = desc.get('dynamic_id_str', str(desc.get('dynamic_id', '')))
+                user_info = desc.get('user_profile', {}).get('info', {})
+                likes = desc.get('like', 0)
+                repost = desc.get('repost', 0)
+
+                items.append({
+                    'title': strip_html_tags(title),
+                    'summary': '',
+                    'source': 'bilibili',
+                    'time': created.isoformat(),
+                    'url': f'https://t.bilibili.com/{dynamic_id}' if dynamic_id else '',
+                    'engagement': likes + repost * 2,
+                    'is_hot': likes > 100,
+                    'author': user_info.get('uname', ''),
+                    'tags': ['动态'],
+                })
+            logger.info(f'Bilibili dynamic "{keyword}": {len(cards)} cards')
+        except Exception as e:
+            logger.warning(f'Bilibili dynamic "{keyword}" failed: {e}')
+        time.sleep(0.5)
+
+    logger.info(f'Bilibili dynamic: {len(items)} total')
+    return items
+
+
 def fetch_twitter():
     """
     Fetch tweets using Twitter/X API v2.
@@ -525,48 +637,83 @@ def fetch_twitter():
 def fetch_nga():
     """
     Fetch NGA forum posts for Morimens.
+    Uses forum ID if set, otherwise falls back to keyword search.
     NGA has rate limiting - be respectful.
     """
 
     items = []
-    # NGA forum ID for 忘却前夜 - update this with the actual forum ID
-    nga_fid = os.environ.get('NGA_FORUM_ID', '')
-    if not nga_fid:
-        logger.info('NGA: NGA_FORUM_ID not set, skipping')
-        return []
-
-    url = f'https://bbs.nga.cn/thread.php?fid={nga_fid}&ajax=1'
     headers = {
         'User-Agent': 'Mozilla/5.0',
         'Accept': 'application/json',
     }
-    try:
-        resp = request_with_retry('GET', url, headers=headers)
-        data = resp.json()
-        threads = data.get('data', {}).get('__T', {})
-        for tid, thread in threads.items():
-            postdate = thread.get('postdate', 0)
-            if isinstance(postdate, str):
-                continue
-            created = datetime.fromtimestamp(postdate, tz=timezone.utc)
-            if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
-                continue
-            replies = thread.get('replies', 0)
-            items.append({
-                'title': thread.get('subject', ''),
-                'summary': '',
-                'source': 'nga',
-                'time': created.isoformat(),
-                'url': f"https://bbs.nga.cn/read.php?tid={tid}",
-                'engagement': replies,
-                'is_hot': replies > 50,
-                'author': thread.get('author', ''),
-                'tags': [],
-            })
-        logger.info(f'NGA: fetched {len(items)} threads')
-    except Exception as e:
-        logger.warning(f'NGA failed: {e}')
 
+    nga_fid = os.environ.get('NGA_FORUM_ID', '')
+
+    if nga_fid:
+        # Forum-based listing
+        url = f'https://bbs.nga.cn/thread.php?fid={nga_fid}&ajax=1'
+        try:
+            resp = request_with_retry('GET', url, headers=headers)
+            data = resp.json()
+            threads = data.get('data', {}).get('__T', {})
+            for tid, thread in threads.items():
+                postdate = thread.get('postdate', 0)
+                if isinstance(postdate, str):
+                    continue
+                created = datetime.fromtimestamp(postdate, tz=timezone.utc)
+                if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
+                    continue
+                replies = thread.get('replies', 0)
+                items.append({
+                    'title': thread.get('subject', ''),
+                    'summary': '',
+                    'source': 'nga',
+                    'time': created.isoformat(),
+                    'url': f"https://bbs.nga.cn/read.php?tid={tid}",
+                    'engagement': replies,
+                    'is_hot': replies > 50,
+                    'author': thread.get('author', ''),
+                    'tags': [],
+                })
+            logger.info(f'NGA forum: fetched {len(items)} threads')
+        except Exception as e:
+            logger.warning(f'NGA forum failed: {e}')
+
+    # Keyword search (always try, supplements forum listing)
+    for keyword in ['忘却前夜', '忘卻前夜']:
+        search_url = f'https://bbs.nga.cn/thread.php?key={keyword}&ajax=1'
+        try:
+            resp = request_with_retry('GET', search_url, headers=headers)
+            data = resp.json()
+            threads = data.get('data', {}).get('__T', {})
+            seen_tids = {i.get('url', '').split('tid=')[-1] for i in items}
+            for tid, thread in threads.items():
+                if str(tid) in seen_tids:
+                    continue
+                postdate = thread.get('postdate', 0)
+                if isinstance(postdate, str):
+                    continue
+                created = datetime.fromtimestamp(postdate, tz=timezone.utc)
+                if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
+                    continue
+                replies = thread.get('replies', 0)
+                items.append({
+                    'title': thread.get('subject', ''),
+                    'summary': '',
+                    'source': 'nga',
+                    'time': created.isoformat(),
+                    'url': f"https://bbs.nga.cn/read.php?tid={tid}",
+                    'engagement': replies,
+                    'is_hot': replies > 50,
+                    'author': thread.get('author', ''),
+                    'tags': [],
+                })
+            logger.info(f'NGA search "{keyword}": fetched results')
+        except Exception as e:
+            logger.warning(f'NGA search "{keyword}" failed: {e}')
+        time.sleep(0.5)
+
+    logger.info(f'NGA: {len(items)} threads total')
     return items
 
 
@@ -579,32 +726,64 @@ def fetch_taptap():
         return []
 
     items = []
-    url = f'https://api.taptap.cn/app/v2/app/{app_id}/topic/list'
-    params = {'type': 'hot', 'limit': 20}
     headers = {'User-Agent': 'Mozilla/5.0'}
 
+    # Fetch hot topics
+    for list_type in ['hot', 'new']:
+        url = f'https://api.taptap.cn/app/v2/app/{app_id}/topic/list'
+        params = {'type': list_type, 'limit': 20}
+        try:
+            resp = request_with_retry('GET', url, params=params, headers=headers)
+            topics = resp.json().get('data', {}).get('list', [])
+            for topic in topics:
+                created = datetime.fromtimestamp(topic.get('created_time', 0), tz=timezone.utc)
+                if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
+                    continue
+                items.append({
+                    'title': topic.get('title', ''),
+                    'summary': topic.get('summary', '')[:200],
+                    'source': 'taptap',
+                    'time': created.isoformat(),
+                    'url': topic.get('share_url', ''),
+                    'engagement': topic.get('comment_count', 0) + topic.get('like_count', 0),
+                    'is_hot': topic.get('like_count', 0) > 100,
+                    'author': topic.get('user', {}).get('name', ''),
+                    'tags': [],
+                })
+            logger.info(f'TapTap {list_type}: {len(topics)} topics')
+        except Exception as e:
+            logger.warning(f'TapTap {list_type} failed: {e}')
+
+    # Fetch hot reviews
+    review_url = f'https://api.taptap.cn/app/v2/app/{app_id}/review/list'
+    params = {'sort': 'hot', 'limit': 10}
     try:
-        resp = request_with_retry('GET', url, params=params, headers=headers)
-        topics = resp.json().get('data', {}).get('list', [])
-        for topic in topics:
-            created = datetime.fromtimestamp(topic.get('created_time', 0), tz=timezone.utc)
+        resp = request_with_retry('GET', review_url, params=params, headers=headers)
+        reviews = resp.json().get('data', {}).get('list', [])
+        for rev in reviews:
+            created = datetime.fromtimestamp(rev.get('created_time', 0), tz=timezone.utc)
             if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
                 continue
+            score = rev.get('score', 0)
+            title = rev.get('contents', {}).get('text', '')[:100] if isinstance(rev.get('contents'), dict) else ''
+            if not title:
+                title = f"TapTap评价 {'★' * score}"
             items.append({
-                'title': topic.get('title', ''),
-                'summary': topic.get('summary', '')[:200],
+                'title': title,
+                'summary': rev.get('contents', {}).get('text', '')[:200] if isinstance(rev.get('contents'), dict) else '',
                 'source': 'taptap',
                 'time': created.isoformat(),
-                'url': topic.get('share_url', ''),
-                'engagement': topic.get('comment_count', 0) + topic.get('like_count', 0),
-                'is_hot': topic.get('like_count', 0) > 100,
-                'author': topic.get('user', {}).get('name', ''),
-                'tags': [],
+                'url': '',
+                'engagement': rev.get('like_count', 0) + rev.get('comment_count', 0),
+                'is_hot': rev.get('like_count', 0) > 50,
+                'author': rev.get('user', {}).get('name', ''),
+                'tags': ['评测'],
             })
-        logger.info(f'TapTap: fetched {len(items)} topics')
+        logger.info(f'TapTap reviews: {len(reviews)} reviews')
     except Exception as e:
-        logger.warning(f'TapTap failed: {e}')
+        logger.warning(f'TapTap reviews failed: {e}')
 
+    logger.info(f'TapTap: {len(items)} total')
     return items
 
 
@@ -796,6 +975,7 @@ def run():
         ('reddit', fetch_reddit),
         ('bilibili', fetch_bilibili),
         ('bilibili_articles', fetch_bilibili_articles),
+        ('bilibili_dynamic', fetch_bilibili_dynamic),
         ('twitter', fetch_twitter),
         ('nga', fetch_nga),
         ('taptap', fetch_taptap),
@@ -839,6 +1019,9 @@ def run():
 
     # Validate and sanitize all items
     all_news = validate_all_news(all_news)
+
+    # Auto-tag enrichment
+    all_news = [auto_tag(item) for item in all_news]
 
     # Deduplicate by normalized title similarity
     unique_news = deduplicate_news(all_news)
@@ -890,7 +1073,59 @@ def run():
     with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
+    # Generate RSS feed
+    generate_rss_feed(unique_news)
+
     logger.info(f'Done! {len(unique_news)} items written to {OUTPUT_PATH}')
+
+
+RSS_OUTPUT_PATH = Path(__file__).parent.parent / 'data' / 'feed.xml'
+
+
+def generate_rss_feed(news_items):
+    """Generate an RSS 2.0 feed from news items."""
+    now = datetime.now(timezone.utc).strftime('%a, %d %b %Y %H:%M:%S +0000')
+    rss_items = []
+    for item in news_items[:30]:
+        pub_date = ''
+        try:
+            dt = datetime.fromisoformat(item['time'].replace('Z', '+00:00'))
+            pub_date = dt.strftime('%a, %d %b %Y %H:%M:%S +0000')
+        except (ValueError, KeyError):
+            pub_date = now
+
+        title = item.get('title', '').replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+        desc = item.get('summary', '').replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+        link = item.get('url', '').replace('&', '&amp;')
+        author = item.get('author', '').replace('&', '&amp;').replace('<', '&lt;')
+        source = item.get('source', '')
+        tags_xml = ''.join(f'        <category>{t}</category>\n' for t in item.get('tags', []))
+
+        rss_items.append(f"""    <item>
+      <title>{title}</title>
+      <description>{desc} [{source}]</description>
+      <link>{link}</link>
+      <author>{author}</author>
+      <pubDate>{pub_date}</pubDate>
+{tags_xml}    </item>""")
+
+    rss_content = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>忘却前夜 Morimens - 社区热点聚合</title>
+    <description>实时聚合忘却前夜全球社区24小时内的热点话题</description>
+    <language>zh-CN</language>
+    <lastBuildDate>{now}</lastBuildDate>
+{chr(10).join(rss_items)}
+  </channel>
+</rss>
+"""
+    try:
+        with open(RSS_OUTPUT_PATH, 'w', encoding='utf-8') as f:
+            f.write(rss_content)
+        logger.info(f'RSS feed written to {RSS_OUTPUT_PATH}')
+    except Exception as e:
+        logger.warning(f'Failed to write RSS feed: {e}')
 
 
 if __name__ == '__main__':
