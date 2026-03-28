@@ -21,10 +21,12 @@
 
 import json
 import os
+import re
 import time
 import logging
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from urllib.parse import urlparse
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
@@ -32,6 +34,123 @@ logger = logging.getLogger(__name__)
 OUTPUT_PATH = Path(__file__).parent.parent / 'data' / 'news.json'
 SEARCH_KEYWORDS = ['忘却前夜', '忘卻前夜', 'Morimens', 'morimens']
 HOURS_LOOKBACK = 24
+
+# Valid source identifiers
+VALID_SOURCES = {'reddit', 'bilibili', 'twitter', 'taptap', 'nga', 'discord', 'youtube', 'official'}
+
+# Required fields for each news item
+REQUIRED_FIELDS = {'title', 'source', 'time', 'engagement'}
+
+
+# ============================================================
+# Data Validation & Sanitization
+# ============================================================
+
+def strip_html_tags(text):
+    """Remove any HTML tags from text to prevent XSS."""
+    if not text:
+        return ''
+    return re.sub(r'<[^>]+>', '', text)
+
+
+def sanitize_url(url):
+    """Validate and normalize URL scheme."""
+    if not url:
+        return ''
+    url = url.strip()
+    # Normalize http to https for known platforms
+    if url.startswith('http://www.bilibili.com') or url.startswith('http://bilibili.com'):
+        url = url.replace('http://', 'https://', 1)
+    # Basic URL validation
+    parsed = urlparse(url)
+    if parsed.scheme not in ('http', 'https', ''):
+        return ''
+    return url
+
+
+def sanitize_summary(summary):
+    """Clean up summary text, removing placeholder values."""
+    if not summary:
+        return ''
+    summary = summary.strip()
+    # Filter out placeholder/empty summaries
+    if summary in ('-', '--', '无', 'N/A', 'null', 'none', '暂无'):
+        return ''
+    return strip_html_tags(summary)
+
+
+def validate_news_item(item):
+    """
+    Validate a single news item. Returns (is_valid, cleaned_item).
+    Checks required fields, sanitizes text, normalizes URLs.
+    """
+    if not isinstance(item, dict):
+        return False, None
+
+    # Check required fields
+    for field in REQUIRED_FIELDS:
+        if field not in item or not item[field]:
+            logger.warning(f'Validation: missing required field "{field}" in item: {item.get("title", "unknown")[:50]}')
+            return False, None
+
+    # Validate source
+    if item['source'] not in VALID_SOURCES:
+        logger.warning(f'Validation: unknown source "{item["source"]}" for: {item["title"][:50]}')
+        return False, None
+
+    # Validate engagement is a non-negative number
+    try:
+        engagement = int(item['engagement'])
+        if engagement < 0:
+            engagement = 0
+    except (ValueError, TypeError):
+        engagement = 0
+
+    # Validate time format (ISO 8601)
+    try:
+        if isinstance(item['time'], str):
+            datetime.fromisoformat(item['time'].replace('Z', '+00:00'))
+    except (ValueError, TypeError):
+        logger.warning(f'Validation: invalid time format for: {item["title"][:50]}')
+        return False, None
+
+    # Build cleaned item
+    cleaned = {
+        'title': strip_html_tags(str(item['title']).strip()),
+        'summary': sanitize_summary(item.get('summary', '')),
+        'source': item['source'],
+        'time': item['time'],
+        'url': sanitize_url(item.get('url', '')),
+        'engagement': engagement,
+        'is_hot': bool(item.get('is_hot', False)),
+        'author': strip_html_tags(str(item.get('author', '')).strip()),
+        'tags': [strip_html_tags(str(t).strip()) for t in item.get('tags', []) if t and str(t).strip()],
+    }
+
+    # Title must not be empty after sanitization
+    if not cleaned['title']:
+        return False, None
+
+    return True, cleaned
+
+
+def validate_all_news(items):
+    """Validate and clean a list of news items. Returns list of valid items."""
+    valid_items = []
+    invalid_count = 0
+
+    for item in items:
+        is_valid, cleaned = validate_news_item(item)
+        if is_valid:
+            valid_items.append(cleaned)
+        else:
+            invalid_count += 1
+
+    if invalid_count > 0:
+        logger.warning(f'Validation: {invalid_count} invalid items filtered out of {len(items)} total')
+
+    logger.info(f'Validation: {len(valid_items)} valid items out of {len(items)} total')
+    return valid_items
 
 
 # ============================================================
@@ -103,7 +222,7 @@ def fetch_bilibili():
                 if created and datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
                     continue
                 # Strip HTML tags from title
-                title = v.get('title', '').replace('<em class="keyword">', '').replace('</em>', '')
+                title = strip_html_tags(v.get('title', ''))
                 items.append({
                     'title': title,
                     'summary': v.get('description', '')[:200],
@@ -334,6 +453,9 @@ def run():
         except Exception as e:
             logger.error(f'{name} fetcher crashed: {e}')
 
+    # Validate and sanitize all items
+    all_news = validate_all_news(all_news)
+
     # Deduplicate by title similarity (simple approach)
     seen_titles = set()
     unique_news = []
@@ -346,9 +468,11 @@ def run():
     # Sort by engagement
     unique_news.sort(key=lambda x: x.get('engagement', 0), reverse=True)
 
-    # Mark top items as hot
+    # Mark top items as hot (only if engagement meets minimum threshold)
+    HOT_MIN_ENGAGEMENT = 50
     for item in unique_news[:5]:
-        item['is_hot'] = True
+        if item.get('engagement', 0) >= HOT_MIN_ENGAGEMENT:
+            item['is_hot'] = True
 
     # Generate summary
     summary = generate_summary(unique_news)
