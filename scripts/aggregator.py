@@ -1109,12 +1109,36 @@ def _fetch_discord_thread_messages(thread_id, headers):
     return items
 
 
+def _discover_guild_channels(guild_id, headers):
+    """Fetch all text/forum channels from a guild that the bot can access."""
+    url = f'https://discord.com/api/v10/guilds/{guild_id}/channels'
+    try:
+        resp = request_with_retry('GET', url, headers=headers)
+        channels = resp.json()
+        if not isinstance(channels, list):
+            return []
+        # Type 0 = text, 5 = announcement, 15 = forum
+        readable_types = {0, 5, 15}
+        result = [(ch['id'], ch.get('type', 0)) for ch in channels if ch.get('type', 0) in readable_types]
+        logger.info(f'Discord guild {guild_id}: discovered {len(result)} readable channels')
+        return result
+    except Exception as e:
+        logger.warning(f'Discord guild {guild_id} channel discovery failed: {e}')
+        return []
+
+
 def fetch_discord():
-    """Fetch Discord messages, threads/forum posts, and member activity stats."""
+    """Fetch Discord messages, threads/forum posts, and member activity stats.
+    Supports DISCORD_GUILD_ID (auto-discover all channels) or DISCORD_CHANNEL_IDS (manual list)."""
     bot_token = os.environ.get('DISCORD_BOT_TOKEN', '')
-    channel_ids = os.environ.get('DISCORD_CHANNEL_IDS', '')
-    if not bot_token or not channel_ids:
-        logger.info('Discord: DISCORD_BOT_TOKEN or DISCORD_CHANNEL_IDS not set, skipping')
+    guild_id = os.environ.get('DISCORD_GUILD_ID', '')
+    channel_ids_env = os.environ.get('DISCORD_CHANNEL_IDS', '')
+
+    if not bot_token:
+        logger.info('Discord: DISCORD_BOT_TOKEN not set, skipping')
+        return []
+    if not guild_id and not channel_ids_env:
+        logger.info('Discord: neither DISCORD_GUILD_ID nor DISCORD_CHANNEL_IDS set, skipping')
         return []
 
     items = []
@@ -1122,18 +1146,23 @@ def fetch_discord():
     headers = _discord_headers()
     cutoff_snowflake = _discord_cutoff_snowflake()
 
-    for ch_id in channel_ids.split(','):
-        ch_id = ch_id.strip()
-        if not ch_id:
-            continue
+    # Build channel list: auto-discover from guild or use manual list
+    if guild_id:
+        channel_list = _discover_guild_channels(guild_id, headers)
+    else:
+        channel_list = [(ch_id.strip(), None) for ch_id in channel_ids_env.split(',') if ch_id.strip()]
 
-        # Check if channel is a forum channel
-        try:
-            ch_resp = request_with_retry('GET', f'https://discord.com/api/v10/channels/{ch_id}', headers=headers)
-            ch_data = ch_resp.json()
-            ch_type = ch_data.get('type', 0)
-        except Exception:
-            ch_type = 0
+    for ch_id, ch_type_hint in channel_list:
+        # Check channel type if not already known
+        ch_type = ch_type_hint
+        ch_data = {}
+        if ch_type is None:
+            try:
+                ch_resp = request_with_retry('GET', f'https://discord.com/api/v10/channels/{ch_id}', headers=headers)
+                ch_data = ch_resp.json()
+                ch_type = ch_data.get('type', 0)
+            except Exception:
+                ch_type = 0
 
         # Type 15 = Forum channel: fetch active threads instead of messages
         if ch_type == 15:
@@ -1167,7 +1196,7 @@ def fetch_discord():
                         'summary': '',
                         'source': 'discord',
                         'time': created.isoformat(),
-                        'url': f"https://discord.com/channels/{ch_data.get('guild_id', '')}/{thread_id}",
+                        'url': f"https://discord.com/channels/{guild_id or ch_data.get('guild_id', '')}/{thread_id}",
                         'engagement': msg_count,
                         'engagement_detail': {'thread_replies': msg_count},
                         'is_hot': msg_count > 20,
@@ -1233,7 +1262,7 @@ def fetch_discord():
                 except (ValueError, TypeError):
                     continue
 
-                guild_id = msg.get('guild_id', '') or ch_data.get('guild_id', '')
+                guild_id = msg.get('guild_id', '') or guild_id or ch_data.get('guild_id', '')
                 items.append({
                     'title': content[:100],
                     'summary': content[:200],
