@@ -29,6 +29,8 @@ jobs:
           TAPTAP_APP_ID: ${{ secrets.TAPTAP_APP_ID }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CHANNEL_IDS: ${{ secrets.DISCORD_CHANNEL_IDS }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
         run: python scripts/aggregator.py
 
@@ -36,5 +38,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/news.json
+          git add data/news.json data/feed.xml data/archive/ data/run_log.json data/news.jsonl data/fetch_state.json
           git diff --staged --quiet || (git commit -m "chore: update community news [skip ci]" && git push)

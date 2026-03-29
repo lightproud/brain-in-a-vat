@@ -126,6 +126,9 @@ def validate_news_item(item):
         'author': strip_html_tags(str(item.get('author', '')).strip()),
         'tags': [strip_html_tags(str(t).strip()) for t in item.get('tags', []) if t and str(t).strip()],
     }
+    # Preserve engagement_detail if present
+    if isinstance(item.get('engagement_detail'), dict):
+        cleaned['engagement_detail'] = item['engagement_detail']
 
     # Title must not be empty after sanitization
     if not cleaned['title']:
@@ -306,14 +309,17 @@ def fetch_reddit(subreddits=None):
         created = datetime.fromtimestamp(d['created_utc'], tz=timezone.utc)
         if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
             return None
+        score = d.get('score', 0)
+        comments = d.get('num_comments', 0)
         return {
             'title': d['title'],
             'summary': (d.get('selftext', '') or '')[:200],
             'source': 'reddit',
             'time': created.isoformat(),
             'url': f"https://reddit.com{d['permalink']}",
-            'engagement': d.get('score', 0) + d.get('num_comments', 0),
-            'is_hot': d.get('score', 0) > 100,
+            'engagement': score + comments,
+            'engagement_detail': {'score': score, 'comments': comments},
+            'is_hot': score > 100,
             'author': f"u/{d.get('author', 'unknown')}",
             'tags': list({f.get('text', '') for f in d.get('link_flair_richtext', []) if f.get('text')}),
         }
@@ -408,6 +414,7 @@ def fetch_bilibili(max_pages=3):
                         'time': created.isoformat() if created else datetime.now(timezone.utc).isoformat(),
                         'url': v.get('arcurl', ''),
                         'engagement': engagement,
+                        'engagement_detail': {'play': play, 'danmaku': danmaku, 'favorites': favorites, 'review': review},
                         'is_hot': play > 10000,
                         'author': v.get('author', ''),
                         'tags': [v.get('typename', '')] if v.get('typename') else [],
@@ -484,6 +491,7 @@ def fetch_bilibili_articles(max_pages=2):
                         'time': created.isoformat() if created else datetime.now(timezone.utc).isoformat(),
                         'url': f"https://www.bilibili.com/read/cv{article_id}" if article_id else '',
                         'engagement': engagement,
+                        'engagement_detail': {'view': view, 'like': like, 'reply': reply},
                         'is_hot': view > 10000,
                         'author': a.get('author', {}).get('name', '') if isinstance(a.get('author'), dict) else str(a.get('author', '')),
                         'tags': [c.get('name', '') for c in a.get('categories', []) if c.get('name')] if isinstance(a.get('categories'), list) else ['专栏'],
@@ -560,6 +568,7 @@ def fetch_bilibili_dynamic():
                     'time': created.isoformat(),
                     'url': f'https://t.bilibili.com/{dynamic_id}' if dynamic_id else '',
                     'engagement': likes + repost * 2,
+                    'engagement_detail': {'likes': likes, 'repost': repost},
                     'is_hot': likes > 100,
                     'author': user_info.get('uname', ''),
                     'tags': ['动态'],
@@ -616,6 +625,9 @@ def fetch_twitter():
                             hashtags.append('图片')
                         break
 
+            likes = metrics.get('like_count', 0)
+            replies = metrics.get('reply_count', 0)
+            retweets = metrics.get('retweet_count', 0)
             items.append({
                 'title': tweet['text'][:100],
                 'summary': tweet['text'][:200],
@@ -623,6 +635,7 @@ def fetch_twitter():
                 'time': tweet['created_at'],
                 'url': f"https://twitter.com/i/status/{tweet['id']}",
                 'engagement': engagement,
+                'engagement_detail': {'likes': likes, 'replies': replies, 'retweets': retweets},
                 'is_hot': engagement > 500,
                 'author': f"@{users.get(tweet['author_id'], 'unknown')}",
                 'tags': hashtags[:5],
@@ -671,6 +684,7 @@ def fetch_nga():
                     'time': created.isoformat(),
                     'url': f"https://bbs.nga.cn/read.php?tid={tid}",
                     'engagement': replies,
+                    'engagement_detail': {'replies': replies},
                     'is_hot': replies > 50,
                     'author': thread.get('author', ''),
                     'tags': [],
@@ -704,6 +718,7 @@ def fetch_nga():
                     'time': created.isoformat(),
                     'url': f"https://bbs.nga.cn/read.php?tid={tid}",
                     'engagement': replies,
+                    'engagement_detail': {'replies': replies},
                     'is_hot': replies > 50,
                     'author': thread.get('author', ''),
                     'tags': [],
@@ -739,14 +754,17 @@ def fetch_taptap():
                 created = datetime.fromtimestamp(topic.get('created_time', 0), tz=timezone.utc)
                 if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
                     continue
+                t_likes = topic.get('like_count', 0)
+                t_comments = topic.get('comment_count', 0)
                 items.append({
                     'title': topic.get('title', ''),
                     'summary': topic.get('summary', '')[:200],
                     'source': 'taptap',
                     'time': created.isoformat(),
                     'url': topic.get('share_url', ''),
-                    'engagement': topic.get('comment_count', 0) + topic.get('like_count', 0),
-                    'is_hot': topic.get('like_count', 0) > 100,
+                    'engagement': t_comments + t_likes,
+                    'engagement_detail': {'likes': t_likes, 'comments': t_comments},
+                    'is_hot': t_likes > 100,
                     'author': topic.get('user', {}).get('name', ''),
                     'tags': [],
                 })
@@ -768,14 +786,17 @@ def fetch_taptap():
             title = rev.get('contents', {}).get('text', '')[:100] if isinstance(rev.get('contents'), dict) else ''
             if not title:
                 title = f"TapTap评价 {'★' * score}"
+            r_likes = rev.get('like_count', 0)
+            r_comments = rev.get('comment_count', 0)
             items.append({
                 'title': title,
                 'summary': rev.get('contents', {}).get('text', '')[:200] if isinstance(rev.get('contents'), dict) else '',
                 'source': 'taptap',
                 'time': created.isoformat(),
                 'url': '',
-                'engagement': rev.get('like_count', 0) + rev.get('comment_count', 0),
-                'is_hot': rev.get('like_count', 0) > 50,
+                'engagement': r_likes + r_comments,
+                'engagement_detail': {'likes': r_likes, 'comments': r_comments, 'score': score},
+                'is_hot': r_likes > 50,
                 'author': rev.get('user', {}).get('name', ''),
                 'tags': ['评测'],
             })
@@ -848,6 +869,7 @@ def fetch_youtube():
                         'time': published,
                         'url': f'https://www.youtube.com/watch?v={vid}',
                         'engagement': views + likes * 5 + comments * 3,
+                        'engagement_detail': {'views': views, 'likes': likes, 'comments': comments},
                         'is_hot': views > 50000,
                         'author': snippet.get('channelTitle', ''),
                         'tags': [],
@@ -889,6 +911,7 @@ def fetch_youtube():
                     'time': pub_dt.isoformat(),
                     'url': href,
                     'engagement': views,
+                    'engagement_detail': {'views': views},
                     'is_hot': views > 50000,
                     'author': author,
                     'tags': [],
@@ -964,13 +987,469 @@ def load_previous_news():
     return []
 
 
+# ============================================================
+# Iter 2: Historical Data Archival
+# ============================================================
+
+ARCHIVE_DIR = Path(__file__).parent.parent / 'data' / 'archive'
+
+
+def archive_news(output_data):
+    """Archive current run output to data/archive/YYYY-MM-DD_HH.json."""
+    try:
+        ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
+        ts = datetime.now(timezone.utc).strftime('%Y-%m-%d_%H')
+        archive_path = ARCHIVE_DIR / f'{ts}.json'
+        with open(archive_path, 'w', encoding='utf-8') as f:
+            json.dump(output_data, f, ensure_ascii=False, indent=2)
+        logger.info(f'Archived to {archive_path}')
+    except Exception as e:
+        logger.warning(f'Failed to archive: {e}')
+
+
+# ============================================================
+# Iter 3: Structured Run Log
+# ============================================================
+
+RUN_LOG_PATH = Path(__file__).parent.parent / 'data' / 'run_log.json'
+MAX_RUN_LOG_ENTRIES = 100
+
+
+def write_run_log(run_start, source_stats, total_fetched, total_validated, total_deduped):
+    """Append a structured run log entry to data/run_log.json."""
+    entry = {
+        'timestamp': datetime.now(timezone.utc).isoformat(),
+        'duration_ms': int((time.time() - run_start) * 1000),
+        'total_fetched': total_fetched,
+        'total_validated': total_validated,
+        'total_deduped': total_deduped,
+        'sources': source_stats,
+    }
+    try:
+        log = []
+        if RUN_LOG_PATH.exists():
+            with open(RUN_LOG_PATH, 'r', encoding='utf-8') as f:
+                log = json.load(f)
+        log.append(entry)
+        # Keep only recent entries
+        if len(log) > MAX_RUN_LOG_ENTRIES:
+            log = log[-MAX_RUN_LOG_ENTRIES:]
+        RUN_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+        with open(RUN_LOG_PATH, 'w', encoding='utf-8') as f:
+            json.dump(log, f, ensure_ascii=False, indent=2)
+        logger.info(f'Run log updated ({len(log)} entries)')
+    except Exception as e:
+        logger.warning(f'Failed to write run log: {e}')
+
+
+# ============================================================
+# Iter 4: Discord Fetcher
+# ============================================================
+
+def fetch_discord():
+    """Fetch Discord messages from specified channels using Bot API."""
+    bot_token = os.environ.get('DISCORD_BOT_TOKEN', '')
+    channel_ids = os.environ.get('DISCORD_CHANNEL_IDS', '')
+    if not bot_token or not channel_ids:
+        logger.info('Discord: DISCORD_BOT_TOKEN or DISCORD_CHANNEL_IDS not set, skipping')
+        return []
+
+    items = []
+    headers = {
+        'Authorization': f'Bot {bot_token}',
+        'Content-Type': 'application/json',
+    }
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    # Discord snowflake for cutoff time
+    cutoff_snowflake = int((cutoff.timestamp() - 1420070400) * 1000) << 22
+
+    for ch_id in channel_ids.split(','):
+        ch_id = ch_id.strip()
+        if not ch_id:
+            continue
+        url = f'https://discord.com/api/v10/channels/{ch_id}/messages'
+        params = {'limit': 100, 'after': str(cutoff_snowflake)}
+        try:
+            resp = request_with_retry('GET', url, headers=headers, params=params)
+            messages = resp.json()
+            for msg in messages:
+                content = msg.get('content', '')
+                # Filter by keywords
+                if not any(kw.lower() in content.lower() for kw in SEARCH_KEYWORDS):
+                    continue
+                ts = msg.get('timestamp', '')
+                try:
+                    created = datetime.fromisoformat(ts.replace('Z', '+00:00'))
+                except (ValueError, TypeError):
+                    continue
+
+                reactions_total = sum(r.get('count', 0) for r in msg.get('reactions', []))
+                thread_count = 0
+                if msg.get('thread'):
+                    thread_count = msg['thread'].get('message_count', 0)
+
+                items.append({
+                    'title': content[:100],
+                    'summary': content[:200],
+                    'source': 'discord',
+                    'time': created.isoformat(),
+                    'url': f"https://discord.com/channels/{msg.get('guild_id', '')}/{ch_id}/{msg['id']}",
+                    'engagement': reactions_total + thread_count,
+                    'engagement_detail': {'reactions': reactions_total, 'thread_replies': thread_count},
+                    'is_hot': reactions_total > 20,
+                    'author': msg.get('author', {}).get('username', ''),
+                    'tags': [],
+                })
+            logger.info(f'Discord channel {ch_id}: {len(messages)} messages scanned')
+        except Exception as e:
+            logger.warning(f'Discord channel {ch_id} failed: {e}')
+        time.sleep(0.5)
+
+    logger.info(f'Discord: {len(items)} relevant messages')
+    return items
+
+
+# ============================================================
+# Iter 5: Incremental Fetch State
+# ============================================================
+
+FETCH_STATE_PATH = Path(__file__).parent.parent / 'data' / 'fetch_state.json'
+
+
+def load_fetch_state():
+    """Load persisted fetch state (last seen IDs/timestamps per source)."""
+    try:
+        if FETCH_STATE_PATH.exists():
+            with open(FETCH_STATE_PATH, 'r', encoding='utf-8') as f:
+                return json.load(f)
+    except Exception as e:
+        logger.warning(f'Failed to load fetch state: {e}')
+    return {}
+
+
+def save_fetch_state(state):
+    """Save fetch state for incremental fetching."""
+    try:
+        FETCH_STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        with open(FETCH_STATE_PATH, 'w', encoding='utf-8') as f:
+            json.dump(state, f, ensure_ascii=False, indent=2)
+        logger.info('Fetch state saved')
+    except Exception as e:
+        logger.warning(f'Failed to save fetch state: {e}')
+
+
+def update_fetch_state(state, source_name, items):
+    """Update fetch state with latest item IDs from this run."""
+    if not items:
+        return
+    # Store the latest timestamp for each source
+    latest_time = max(
+        (item.get('time', '') for item in items),
+        default=''
+    )
+    urls = [item.get('url', '') for item in items[:5] if item.get('url')]
+    state[source_name] = {
+        'latest_time': latest_time,
+        'latest_urls': urls,
+        'last_run': datetime.now(timezone.utc).isoformat(),
+        'count': len(items),
+    }
+
+
+# ============================================================
+# Iter 6: JSONL Data Export
+# ============================================================
+
+JSONL_OUTPUT_PATH = Path(__file__).parent.parent / 'data' / 'news.jsonl'
+
+
+def export_jsonl(news_items):
+    """Append new items to data/news.jsonl (one JSON object per line)."""
+    fetched_at = datetime.now(timezone.utc).isoformat()
+    try:
+        JSONL_OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+        # Load existing URLs to avoid duplicate appends
+        existing_urls = set()
+        if JSONL_OUTPUT_PATH.exists():
+            with open(JSONL_OUTPUT_PATH, 'r', encoding='utf-8') as f:
+                for line in f:
+                    line = line.strip()
+                    if line:
+                        try:
+                            existing_urls.add(json.loads(line).get('url', ''))
+                        except json.JSONDecodeError:
+                            pass
+
+        new_count = 0
+        with open(JSONL_OUTPUT_PATH, 'a', encoding='utf-8') as f:
+            for item in news_items:
+                if item.get('url') and item['url'] in existing_urls:
+                    continue
+                record = dict(item)
+                record['fetched_at'] = fetched_at
+                f.write(json.dumps(record, ensure_ascii=False) + '\n')
+                new_count += 1
+
+        logger.info(f'JSONL: appended {new_count} new items to {JSONL_OUTPUT_PATH}')
+    except Exception as e:
+        logger.warning(f'Failed to write JSONL: {e}')
+
+
+# ============================================================
+# Iter 7: Enhanced URL-based Deduplication
+# ============================================================
+
+def normalize_url(url):
+    """Normalize URL for deduplication: strip tracking params and fragments."""
+    if not url:
+        return ''
+    parsed = urlparse(url)
+    # Strip common tracking params
+    from urllib.parse import parse_qs, urlencode
+    params = parse_qs(parsed.query)
+    # Remove tracking parameters
+    tracking_keys = {'utm_source', 'utm_medium', 'utm_campaign', 'utm_content',
+                     'utm_term', 'ref', 'spm_id_from', 'vd_source', 'from',
+                     'share_source', 'share_medium', 'bbid', 'ts', 'seid'}
+    cleaned_params = {k: v for k, v in params.items() if k.lower() not in tracking_keys}
+    clean_query = urlencode(cleaned_params, doseq=True)
+    return f'{parsed.scheme}://{parsed.netloc}{parsed.path}{"?" + clean_query if clean_query else ""}'
+
+
+def deduplicate_news_enhanced(items, similarity_threshold=0.75):
+    """Enhanced deduplication: title similarity + URL normalization.
+    When duplicates are found across sources, merge as cross_posted."""
+    unique = []
+    norm_titles = []
+    norm_urls = {}  # normalized_url -> index in unique
+
+    for item in items:
+        norm = normalize_title(item['title'])
+        item_url = normalize_url(item.get('url', ''))
+
+        # Check URL-based dedup first
+        if item_url and item_url in norm_urls:
+            idx = norm_urls[item_url]
+            existing = unique[idx]
+            # Cross-posting: different source, same content
+            if existing['source'] != item['source']:
+                if 'cross_posted' not in existing:
+                    existing['cross_posted'] = []
+                existing['cross_posted'].append({
+                    'source': item['source'],
+                    'url': item.get('url', ''),
+                    'engagement': item.get('engagement', 0),
+                })
+            # Keep higher engagement version
+            if item.get('engagement', 0) > existing.get('engagement', 0):
+                cross = existing.get('cross_posted', [])
+                unique[idx] = item
+                if cross:
+                    unique[idx]['cross_posted'] = cross
+                norm_titles[idx] = norm
+            continue
+
+        # Title similarity dedup
+        is_dup = False
+        for i, existing_norm in enumerate(norm_titles):
+            if norm == existing_norm or (len(norm) > 5 and title_similarity(norm, existing_norm) > similarity_threshold):
+                existing = unique[i]
+                if existing['source'] != item['source']:
+                    if 'cross_posted' not in existing:
+                        existing['cross_posted'] = []
+                    existing['cross_posted'].append({
+                        'source': item['source'],
+                        'url': item.get('url', ''),
+                        'engagement': item.get('engagement', 0),
+                    })
+                if item.get('engagement', 0) > existing.get('engagement', 0):
+                    cross = existing.get('cross_posted', [])
+                    unique[i] = item
+                    if cross:
+                        unique[i]['cross_posted'] = cross
+                    norm_titles[i] = norm
+                is_dup = True
+                break
+
+        if not is_dup:
+            unique.append(item)
+            norm_titles.append(norm)
+            if item_url:
+                norm_urls[item_url] = len(unique) - 1
+
+    logger.info(f'Deduplication: {len(unique)} unique items from {len(items)} total')
+    return unique
+
+
+# ============================================================
+# Iter 8: Language Detection
+# ============================================================
+
+def detect_language(text):
+    """Detect language based on character distribution. No external deps."""
+    if not text:
+        return 'unknown'
+    # Count character types
+    cjk = 0
+    hiragana_katakana = 0
+    latin = 0
+    for ch in text:
+        cp = ord(ch)
+        if 0x4E00 <= cp <= 0x9FFF or 0x3400 <= cp <= 0x4DBF:
+            cjk += 1
+        elif 0x3040 <= cp <= 0x309F or 0x30A0 <= cp <= 0x30FF:
+            hiragana_katakana += 1
+        elif 0x0041 <= cp <= 0x007A:
+            latin += 1
+    total = cjk + hiragana_katakana + latin
+    if total == 0:
+        return 'unknown'
+    if hiragana_katakana / total > 0.1:
+        return 'ja'
+    if cjk / total > 0.2:
+        return 'zh'
+    return 'en'
+
+
+# ============================================================
+# Iter 9: Official Announcements Fetcher
+# ============================================================
+
+def fetch_official():
+    """Fetch official announcements via TapTap developer posts or dedicated RSS."""
+    app_id = os.environ.get('TAPTAP_APP_ID', '')
+    if not app_id:
+        logger.info('Official: TAPTAP_APP_ID not set, skipping official fetch')
+        return []
+
+    items = []
+    headers = {'User-Agent': 'Mozilla/5.0'}
+
+    # TapTap official developer feed
+    url = f'https://api.taptap.cn/app/v2/app/{app_id}/topic/list'
+    params = {'type': 'official', 'limit': 20}
+    try:
+        resp = request_with_retry('GET', url, params=params, headers=headers)
+        topics = resp.json().get('data', {}).get('list', [])
+        for topic in topics:
+            created = datetime.fromtimestamp(topic.get('created_time', 0), tz=timezone.utc)
+            if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK * 3):
+                continue  # Wider window for official posts (72h)
+            o_likes = topic.get('like_count', 0)
+            o_comments = topic.get('comment_count', 0)
+            items.append({
+                'title': topic.get('title', ''),
+                'summary': topic.get('summary', '')[:200],
+                'source': 'official',
+                'time': created.isoformat(),
+                'url': topic.get('share_url', ''),
+                'engagement': o_comments + o_likes,
+                'engagement_detail': {'likes': o_likes, 'comments': o_comments},
+                'is_hot': True,  # Official posts are always highlighted
+                'author': '官方',
+                'tags': ['官方公告'],
+            })
+        logger.info(f'Official TapTap: {len(topics)} official posts')
+    except Exception as e:
+        logger.warning(f'Official TapTap fetch failed: {e}')
+
+    logger.info(f'Official: {len(items)} announcements')
+    return items
+
+
+# ============================================================
+# Iter 10: Data Statistics & Trends
+# ============================================================
+
+def compute_trends(current_news):
+    """Compute trend statistics by comparing with most recent archive."""
+    trends = {
+        'new_topics': 0,
+        'disappeared_topics': 0,
+        'rising': [],
+        'platform_activity': {},
+    }
+
+    # Find most recent archive
+    previous_data = None
+    if ARCHIVE_DIR.exists():
+        archives = sorted(ARCHIVE_DIR.glob('*.json'), reverse=True)
+        for archive_path in archives[1:]:  # Skip current (may be same run)
+            try:
+                with open(archive_path, 'r', encoding='utf-8') as f:
+                    previous_data = json.load(f)
+                break
+            except Exception:
+                continue
+
+    if not previous_data or 'news' not in previous_data:
+        trends['new_topics'] = len(current_news)
+        return trends
+
+    prev_news = previous_data['news']
+    prev_urls = {item.get('url', '') for item in prev_news if item.get('url')}
+    curr_urls = {item.get('url', '') for item in current_news if item.get('url')}
+
+    trends['new_topics'] = len(curr_urls - prev_urls)
+    trends['disappeared_topics'] = len(prev_urls - curr_urls)
+
+    # Find rising items: in both runs but engagement increased significantly
+    prev_engagement = {item.get('url', ''): item.get('engagement', 0) for item in prev_news}
+    for item in current_news:
+        url = item.get('url', '')
+        if url in prev_engagement:
+            prev_eng = prev_engagement[url]
+            curr_eng = item.get('engagement', 0)
+            if prev_eng > 0 and curr_eng > prev_eng * 1.5:
+                item['trending'] = True
+                trends['rising'].append({
+                    'title': item['title'][:50],
+                    'source': item['source'],
+                    'prev_engagement': prev_eng,
+                    'curr_engagement': curr_eng,
+                    'growth': round((curr_eng - prev_eng) / prev_eng * 100, 1),
+                })
+
+    # Platform activity comparison
+    prev_platform_counts = {}
+    for item in prev_news:
+        s = item.get('source', '')
+        prev_platform_counts[s] = prev_platform_counts.get(s, 0) + 1
+    curr_platform_counts = {}
+    for item in current_news:
+        s = item.get('source', '')
+        curr_platform_counts[s] = curr_platform_counts.get(s, 0) + 1
+
+    all_platforms = set(prev_platform_counts) | set(curr_platform_counts)
+    for p in all_platforms:
+        prev_c = prev_platform_counts.get(p, 0)
+        curr_c = curr_platform_counts.get(p, 0)
+        trends['platform_activity'][p] = {
+            'previous': prev_c,
+            'current': curr_c,
+            'change': curr_c - prev_c,
+        }
+
+    # Sort rising by growth
+    trends['rising'].sort(key=lambda x: x.get('growth', 0), reverse=True)
+    trends['rising'] = trends['rising'][:10]
+
+    logger.info(f'Trends: {trends["new_topics"]} new, {trends["disappeared_topics"]} gone, {len(trends["rising"])} rising')
+    return trends
+
+
 def run():
-    """Main aggregation pipeline with concurrent fetching and rollback protection."""
+    """Main aggregation pipeline with concurrent fetching, rollback protection,
+    archival, run logging, JSONL export, language detection, and trend analysis."""
     from concurrent.futures import ThreadPoolExecutor, as_completed
 
+    run_start = time.time()
     logger.info('Starting Morimens community news aggregation...')
 
-    # All fetchers including new ones
+    # Load incremental fetch state
+    fetch_state = load_fetch_state()
+
+    # All fetchers
     fetchers = [
         ('reddit', fetch_reddit),
         ('bilibili', fetch_bilibili),
@@ -980,6 +1459,8 @@ def run():
         ('nga', fetch_nga),
         ('taptap', fetch_taptap),
         ('youtube', fetch_youtube),
+        ('discord', fetch_discord),
+        ('official', fetch_official),
     ]
 
     all_news = []
@@ -1015,23 +1496,31 @@ def run():
             name, items, stats = future.result()
             all_news.extend(items)
             source_stats[name] = stats
+            # Update incremental fetch state
+            update_fetch_state(fetch_state, name, items)
             logger.info(f'{name}: {stats["count"]} items ({stats["time_ms"]}ms)')
+
+    # Save fetch state for next run
+    save_fetch_state(fetch_state)
 
     # Validate and sanitize all items
     all_news = validate_all_news(all_news)
+    total_validated = len(all_news)
 
     # Auto-tag enrichment
     all_news = [auto_tag(item) for item in all_news]
 
-    # Deduplicate by normalized title similarity
-    unique_news = deduplicate_news(all_news)
+    # Language detection (Iter 8)
+    for item in all_news:
+        item['lang'] = detect_language(item.get('title', '') + ' ' + item.get('summary', ''))
 
-    # Rollback protection: if new fetch got significantly fewer items than before,
-    # merge with previous data to avoid data loss
+    # Enhanced deduplication with URL fingerprinting (Iter 7)
+    unique_news = deduplicate_news_enhanced(all_news)
+
+    # Rollback protection
     previous_news = load_previous_news()
     if previous_news and len(unique_news) == 0:
         logger.warning('Rollback: all fetchers returned empty, preserving previous data')
-        # Re-validate previous data (filter out items older than 48h)
         cutoff = datetime.now(timezone.utc) - timedelta(hours=48)
         preserved = []
         for item in previous_news:
@@ -1047,24 +1536,30 @@ def run():
     # Sort by engagement
     unique_news.sort(key=lambda x: x.get('engagement', 0), reverse=True)
 
-    # Mark top items as hot (only if engagement meets minimum threshold)
+    # Mark top items as hot
     HOT_MIN_ENGAGEMENT = 50
     for item in unique_news[:5]:
         if item.get('engagement', 0) >= HOT_MIN_ENGAGEMENT:
             item['is_hot'] = True
 
+    # Compute trends (Iter 10)
+    trends = compute_trends(unique_news)
+
     # Generate summary
     summary = generate_summary(unique_news)
+
+    total_fetched = sum(s['count'] for s in source_stats.values())
 
     # Write output
     output = {
         'updated_at': datetime.now(timezone.utc).isoformat(),
         'summary': summary,
         'stats': {
-            'total_fetched': sum(s['count'] for s in source_stats.values()),
-            'total_after_validation': len(all_news),
+            'total_fetched': total_fetched,
+            'total_after_validation': total_validated,
             'total_after_dedup': len(unique_news),
             'sources': source_stats,
+            'trends': trends,
         },
         'news': unique_news,
     }
@@ -1075,6 +1570,15 @@ def run():
 
     # Generate RSS feed
     generate_rss_feed(unique_news)
+
+    # Archive (Iter 2)
+    archive_news(output)
+
+    # JSONL export (Iter 6)
+    export_jsonl(unique_news)
+
+    # Structured run log (Iter 3)
+    write_run_log(run_start, source_stats, total_fetched, total_validated, len(unique_news))
 
     logger.info(f'Done! {len(unique_news)} items written to {OUTPUT_PATH}')
 
