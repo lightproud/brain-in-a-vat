@@ -1043,11 +1043,74 @@ def write_run_log(run_start, source_stats, total_fetched, total_validated, total
 
 
 # ============================================================
-# Iter 4: Discord Fetcher
+# Iter 4: Discord Fetcher (enhanced: reactions, threads, member activity)
 # ============================================================
 
+def _discord_headers():
+    bot_token = os.environ.get('DISCORD_BOT_TOKEN', '')
+    return {
+        'Authorization': f'Bot {bot_token}',
+        'Content-Type': 'application/json',
+    }
+
+
+def _discord_cutoff_snowflake():
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    return int((cutoff.timestamp() - 1420070400) * 1000) << 22
+
+
+def _parse_discord_reaction_detail(reactions):
+    """Parse reaction list into detail dict: {emoji: count, ...}."""
+    detail = {}
+    total = 0
+    for r in (reactions or []):
+        emoji = r.get('emoji', {})
+        name = emoji.get('name', '?')
+        count = r.get('count', 0)
+        detail[name] = count
+        total += count
+    return total, detail
+
+
+def _fetch_discord_thread_messages(thread_id, headers):
+    """Fetch messages from a thread/forum post."""
+    items = []
+    url = f'https://discord.com/api/v10/channels/{thread_id}/messages'
+    params = {'limit': 100, 'after': str(_discord_cutoff_snowflake())}
+    try:
+        resp = request_with_retry('GET', url, headers=headers, params=params)
+        messages = resp.json()
+        if not isinstance(messages, list):
+            return items
+        for msg in messages:
+            content = msg.get('content', '')
+            if not content:
+                continue
+            ts = msg.get('timestamp', '')
+            try:
+                created = datetime.fromisoformat(ts.replace('Z', '+00:00'))
+            except (ValueError, TypeError):
+                continue
+            reactions_total, reactions_detail = _parse_discord_reaction_detail(msg.get('reactions', []))
+            items.append({
+                'title': content[:100],
+                'summary': content[:200],
+                'source': 'discord',
+                'time': created.isoformat(),
+                'url': f"https://discord.com/channels/{msg.get('guild_id', '')}/{thread_id}/{msg['id']}",
+                'engagement': reactions_total,
+                'engagement_detail': {'reactions': reactions_total, 'reaction_breakdown': reactions_detail},
+                'is_hot': reactions_total > 20,
+                'author': msg.get('author', {}).get('username', ''),
+                'tags': ['thread'],
+            })
+    except Exception as e:
+        logger.warning(f'Discord thread {thread_id} failed: {e}')
+    return items
+
+
 def fetch_discord():
-    """Fetch Discord messages from specified channels using Bot API."""
+    """Fetch Discord messages, threads/forum posts, and member activity stats."""
     bot_token = os.environ.get('DISCORD_BOT_TOKEN', '')
     channel_ids = os.environ.get('DISCORD_CHANNEL_IDS', '')
     if not bot_token or not channel_ids:
@@ -1055,49 +1118,136 @@ def fetch_discord():
         return []
 
     items = []
-    headers = {
-        'Authorization': f'Bot {bot_token}',
-        'Content-Type': 'application/json',
-    }
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
-    # Discord snowflake for cutoff time
-    cutoff_snowflake = int((cutoff.timestamp() - 1420070400) * 1000) << 22
+    member_activity = {}  # username -> {messages: n, reactions_received: n}
+    headers = _discord_headers()
+    cutoff_snowflake = _discord_cutoff_snowflake()
 
     for ch_id in channel_ids.split(','):
         ch_id = ch_id.strip()
         if not ch_id:
             continue
+
+        # Check if channel is a forum channel
+        try:
+            ch_resp = request_with_retry('GET', f'https://discord.com/api/v10/channels/{ch_id}', headers=headers)
+            ch_data = ch_resp.json()
+            ch_type = ch_data.get('type', 0)
+        except Exception:
+            ch_type = 0
+
+        # Type 15 = Forum channel: fetch active threads instead of messages
+        if ch_type == 15:
+            try:
+                threads_url = f'https://discord.com/api/v10/channels/{ch_id}/threads/archived/public'
+                resp = request_with_retry('GET', threads_url, headers=headers, params={'limit': 25})
+                threads_data = resp.json()
+                for thread in threads_data.get('threads', []):
+                    thread_id = thread.get('id', '')
+                    thread_name = thread.get('name', '')
+                    msg_count = thread.get('message_count', 0)
+                    created_ts = thread.get('thread_metadata', {}).get('create_timestamp', '') or thread.get('id', '')
+
+                    # Convert snowflake to timestamp if needed
+                    try:
+                        created = datetime.fromisoformat(created_ts.replace('Z', '+00:00'))
+                    except (ValueError, TypeError):
+                        try:
+                            snowflake = int(thread_id)
+                            ts_ms = (snowflake >> 22) + 1420070400000
+                            created = datetime.fromtimestamp(ts_ms / 1000, tz=timezone.utc)
+                        except (ValueError, TypeError):
+                            continue
+
+                    if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
+                        continue
+
+                    owner_id = thread.get('owner_id', '')
+                    items.append({
+                        'title': thread_name[:100] if thread_name else f'Forum post #{thread_id}',
+                        'summary': '',
+                        'source': 'discord',
+                        'time': created.isoformat(),
+                        'url': f"https://discord.com/channels/{ch_data.get('guild_id', '')}/{thread_id}",
+                        'engagement': msg_count,
+                        'engagement_detail': {'thread_replies': msg_count},
+                        'is_hot': msg_count > 20,
+                        'author': owner_id,
+                        'tags': ['forum'],
+                    })
+
+                    # Also fetch messages inside the thread for reaction data
+                    thread_items = _fetch_discord_thread_messages(thread_id, headers)
+                    items.extend(thread_items)
+                    time.sleep(0.3)
+
+                logger.info(f'Discord forum {ch_id}: {len(threads_data.get("threads", []))} threads')
+            except Exception as e:
+                logger.warning(f'Discord forum {ch_id} failed: {e}')
+            continue
+
+        # Regular text channel: fetch messages
         url = f'https://discord.com/api/v10/channels/{ch_id}/messages'
         params = {'limit': 100, 'after': str(cutoff_snowflake)}
         try:
             resp = request_with_retry('GET', url, headers=headers, params=params)
             messages = resp.json()
+            if not isinstance(messages, list):
+                logger.warning(f'Discord channel {ch_id}: unexpected response type')
+                continue
+
             for msg in messages:
                 content = msg.get('content', '')
-                # Filter by keywords
+                author_name = msg.get('author', {}).get('username', '')
+
+                # Track member activity
+                if author_name:
+                    if author_name not in member_activity:
+                        member_activity[author_name] = {'messages': 0, 'reactions_received': 0}
+                    member_activity[author_name]['messages'] += 1
+
+                # Parse reactions with breakdown
+                reactions_total, reactions_detail = _parse_discord_reaction_detail(msg.get('reactions', []))
+
+                if author_name and reactions_total > 0:
+                    member_activity[author_name]['reactions_received'] += reactions_total
+
+                # Fetch thread replies if message has a thread
+                thread_count = 0
+                if msg.get('thread'):
+                    thread_id = msg['thread'].get('id', '')
+                    thread_count = msg['thread'].get('message_count', 0)
+                    # Fetch thread messages for more content
+                    if thread_id:
+                        thread_items = _fetch_discord_thread_messages(thread_id, headers)
+                        items.extend(thread_items)
+                        time.sleep(0.3)
+
+                # Filter by keywords (skip if no keywords match)
                 if not any(kw.lower() in content.lower() for kw in SEARCH_KEYWORDS):
+                    # Still count for member activity but don't add as news item
                     continue
+
                 ts = msg.get('timestamp', '')
                 try:
                     created = datetime.fromisoformat(ts.replace('Z', '+00:00'))
                 except (ValueError, TypeError):
                     continue
 
-                reactions_total = sum(r.get('count', 0) for r in msg.get('reactions', []))
-                thread_count = 0
-                if msg.get('thread'):
-                    thread_count = msg['thread'].get('message_count', 0)
-
+                guild_id = msg.get('guild_id', '') or ch_data.get('guild_id', '')
                 items.append({
                     'title': content[:100],
                     'summary': content[:200],
                     'source': 'discord',
                     'time': created.isoformat(),
-                    'url': f"https://discord.com/channels/{msg.get('guild_id', '')}/{ch_id}/{msg['id']}",
+                    'url': f"https://discord.com/channels/{guild_id}/{ch_id}/{msg['id']}",
                     'engagement': reactions_total + thread_count,
-                    'engagement_detail': {'reactions': reactions_total, 'thread_replies': thread_count},
+                    'engagement_detail': {
+                        'reactions': reactions_total,
+                        'reaction_breakdown': reactions_detail,
+                        'thread_replies': thread_count,
+                    },
                     'is_hot': reactions_total > 20,
-                    'author': msg.get('author', {}).get('username', ''),
+                    'author': author_name,
                     'tags': [],
                 })
             logger.info(f'Discord channel {ch_id}: {len(messages)} messages scanned')
@@ -1105,8 +1255,52 @@ def fetch_discord():
             logger.warning(f'Discord channel {ch_id} failed: {e}')
         time.sleep(0.5)
 
-    logger.info(f'Discord: {len(items)} relevant messages')
+    # Write member activity stats
+    if member_activity:
+        _write_member_activity(member_activity)
+
+    logger.info(f'Discord: {len(items)} relevant items')
     return items
+
+
+MEMBER_ACTIVITY_PATH = Path(__file__).parent.parent / 'data' / 'discord_activity.json'
+
+
+def _write_member_activity(current_activity):
+    """Merge and persist member activity stats."""
+    try:
+        existing = {}
+        if MEMBER_ACTIVITY_PATH.exists():
+            with open(MEMBER_ACTIVITY_PATH, 'r', encoding='utf-8') as f:
+                existing = json.load(f)
+
+        # Merge: accumulate totals, keep last_seen
+        now = datetime.now(timezone.utc).isoformat()
+        members = existing.get('members', {})
+        for username, stats in current_activity.items():
+            if username not in members:
+                members[username] = {'total_messages': 0, 'total_reactions_received': 0, 'first_seen': now}
+            members[username]['total_messages'] += stats['messages']
+            members[username]['total_reactions_received'] += stats['reactions_received']
+            members[username]['last_seen'] = now
+            members[username]['recent_messages'] = stats['messages']
+            members[username]['recent_reactions'] = stats['reactions_received']
+
+        # Sort by total messages for readability
+        sorted_members = dict(sorted(members.items(), key=lambda x: x[1]['total_messages'], reverse=True))
+
+        output = {
+            'updated_at': now,
+            'total_tracked': len(sorted_members),
+            'members': sorted_members,
+        }
+
+        MEMBER_ACTIVITY_PATH.parent.mkdir(parents=True, exist_ok=True)
+        with open(MEMBER_ACTIVITY_PATH, 'w', encoding='utf-8') as f:
+            json.dump(output, f, ensure_ascii=False, indent=2)
+        logger.info(f'Discord member activity: {len(sorted_members)} members tracked')
+    except Exception as e:
+        logger.warning(f'Failed to write member activity: {e}')
 
 
 # ============================================================
