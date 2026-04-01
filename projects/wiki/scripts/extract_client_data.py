@@ -26,6 +26,14 @@ from multiprocessing import cpu_count
 from pathlib import Path
 from typing import Any
 
+# Raise Windows file handle limit (default 512 is too low for large games)
+if sys.platform == "win32":
+    try:
+        import ctypes
+        ctypes.cdll.msvcrt._setmaxstdio(8192)
+    except Exception:
+        pass
+
 try:
     import UnityPy
     from UnityPy.enums import ClassIDType
@@ -407,9 +415,8 @@ def scan_and_extract(
             result = _extract_single_file(
                 asset_file, game_data_dir, output_dir, extract_tex, tex_filter, verbose,
             )
-            # Periodically force GC to release file handles
-            if (i + 1) % 50 == 0:
-                gc.collect()
+            # Force GC after every file to release file handles (Windows has low limit)
+            gc.collect()
             rel = result.pop("_rel", "?")
             obj_types = result.pop("object_types", {})
             extracted = result["text_assets"] + result["mono_assets"] + result["textures"]
