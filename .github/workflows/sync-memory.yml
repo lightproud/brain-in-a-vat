@@ -1,0 +1,91 @@
+name: Weekly Memory Sync
+
+on:
+  schedule:
+    # Every Monday at 06:00 UTC
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  check-staleness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Check memory file freshness
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const { execSync } = require('child_process');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            const memoryFiles = [
+              'memory/project-status.md',
+              'memory/pending-discussions.md',
+              'memory/decisions.md',
+              'memory/lessons-learned.md',
+            ];
+
+            const stale = [];
+            const now = new Date();
+            const STALE_DAYS = 14;
+
+            for (const file of memoryFiles) {
+              try {
+                const lastCommitDate = execSync(
+                  `git log -1 --format=%cI -- "${file}"`,
+                  { encoding: 'utf-8' }
+                ).trim();
+
+                if (!lastCommitDate) {
+                  stale.push(`- **${file}**: no commit history found`);
+                  continue;
+                }
+
+                const date = new Date(lastCommitDate);
+                const daysAgo = Math.round((now - date) / 86400000);
+
+                if (daysAgo > STALE_DAYS) {
+                  stale.push(`- **${file}**: last updated ${daysAgo} days ago (${lastCommitDate.slice(0, 10)})`);
+                }
+              } catch (e) {
+                stale.push(`- **${file}**: error checking — ${e.message}`);
+              }
+            }
+
+            if (stale.length === 0) {
+              console.log('All memory files are fresh (updated within 14 days).');
+              return;
+            }
+
+            // Check for existing open sync issue
+            const { data: existing } = await github.rest.issues.listForRepo({
+              owner, repo,
+              labels: 'memory-sync',
+              state: 'open',
+              per_page: 1,
+            });
+
+            const body = `## Memory Sync Report\n\n以下文件超过 ${STALE_DAYS} 天未更新，可能已过时：\n\n${stale.join('\n')}\n\n建议在主控台会话中运行 \`/sync-memory\` 同步最新状态。\n\n_Auto-generated at ${now.toISOString()}_`;
+
+            if (existing.length > 0) {
+              await github.rest.issues.createComment({
+                owner, repo,
+                issue_number: existing[0].number,
+                body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner, repo,
+                title: '[主控台] Memory 文件过期提醒',
+                body,
+                labels: ['memory-sync'],
+              });
+            }

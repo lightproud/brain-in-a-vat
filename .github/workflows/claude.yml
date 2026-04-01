@@ -37,6 +37,26 @@ jobs:
           echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
           git fetch origin main
 
+          # Helper: delete remote branch (handles GitHub rename claude/* -> brain-in-a-vat/*)
+          delete_remote_branch() {
+            local local_name="$1"
+            # Try original name first
+            git push origin --delete "$local_name" 2>/dev/null && return 0
+            # Try GitHub-renamed version (claude/* -> brain-in-a-vat/*)
+            local renamed="${local_name/claude\//brain-in-a-vat\/}"
+            if [ "$renamed" != "$local_name" ]; then
+              git push origin --delete "$renamed" 2>/dev/null && return 0
+            fi
+            # Fallback: search remote for matching branch
+            local remote_ref
+            remote_ref=$(git ls-remote --heads origin 2>/dev/null | awk '{print $2}' | sed 's|refs/heads/||' | grep -F "${local_name##*/}" | head -1)
+            if [ -n "$remote_ref" ]; then
+              git push origin --delete "$remote_ref" 2>/dev/null && return 0
+            fi
+            echo "Warning: could not delete remote branch for $local_name"
+            return 1
+          }
+
           # Check if fast-forward is possible (no conflicts)
           if git merge-base --is-ancestor origin/main HEAD; then
             echo "Branch is ahead of main, fast-forward possible"
@@ -54,7 +74,7 @@ jobs:
               exit 1
             fi
             git push origin main
-            git push origin --delete "$BRANCH" || true
+            delete_remote_branch "$BRANCH" || true
             echo "merged=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -63,7 +83,7 @@ jobs:
           git checkout main
           git merge "$BRANCH" --no-edit
           git push origin main
-          git push origin --delete "$BRANCH" || true
+          delete_remote_branch "$BRANCH" || true
           echo "merged=true" >> "$GITHUB_OUTPUT"
         continue-on-error: true
       - name: Comment merge failure
