@@ -34,7 +34,10 @@ portrait: /portraits/lotan.png
 
 ## 推奨装備
 
-データ準備中
+### 専用命輪: 隐世的转轮（Wheel Unseen）
+
+从钥令触发和伤害次数中获得增益。
+
 
 
 <CharacterCompare />

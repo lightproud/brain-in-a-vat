@@ -35,7 +35,10 @@ portrait: /portraits/murphy.png
 
 ## 推荐装备
 
-数据待补充
+### 专属命轮: 畸体回噬
+
+深海系命轮。
+
 
 
 <CharacterCompare />

@@ -34,7 +34,10 @@ portrait: /portraits/danmo.png
 
 ## 推荐装备
 
-数据待补充
+### 专属命轮: 沉入殷红
+
+血肉系命轮。
+
 
 
 <CharacterCompare />

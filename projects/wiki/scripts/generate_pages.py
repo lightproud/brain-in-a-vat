@@ -341,7 +341,9 @@ def render_equipment(char: dict, wheel_index: dict[str, list[dict]], lang: str) 
         seen.add(wname)
 
         wname_en = w.get("name_en", "")
-        is_signature = w.get("character") is not None
+        # Check if this wheel's character field matches THIS character
+        wheel_char = w.get("character", "") or ""
+        is_signature = char_name in wheel_char or (char_name_en and char_name_en in wheel_char)
         tag = L["signature_wheel"] if is_signature else L["recommended_wheel"]
 
         display = f"{wname}" if lang == "zh" else (f"{wname_en}" if lang == "en" else f"{wname}（{wname_en}）")

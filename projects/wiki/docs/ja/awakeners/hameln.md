@@ -38,6 +38,10 @@ portrait: /portraits/hameln.png
 
 データ準備中
 
+### 専用命輪: 永恒安魂曲（Eternal Requiem）
+
+暴伤无上限；适合8+回合长期战斗。
+
 
 
 <CharacterCompare />

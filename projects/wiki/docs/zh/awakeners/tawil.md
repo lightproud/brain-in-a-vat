@@ -41,6 +41,10 @@ portrait: /portraits/tawil.png
 
 数据待补充
 
+### 专属命轮: 慈悲的哺育
+
+血肉系命轮。
+
 
 
 <CharacterCompare />

@@ -34,7 +34,10 @@ portrait: /portraits/danmo.png
 
 ## Recommended Equipment
 
-Data pending
+### Signature Wheel: Drowning in Crimson
+
+血肉系命轮。
+
 
 
 <CharacterCompare />

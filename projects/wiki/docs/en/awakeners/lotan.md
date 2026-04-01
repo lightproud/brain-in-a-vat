@@ -34,7 +34,10 @@ portrait: /portraits/lotan.png
 
 ## Recommended Equipment
 
-Data pending
+### Signature Wheel: Wheel Unseen
+
+从钥令触发和伤害次数中获得增益。
+
 
 
 <CharacterCompare />

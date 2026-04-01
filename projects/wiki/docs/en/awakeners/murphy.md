@@ -35,7 +35,10 @@ portrait: /portraits/murphy.png
 
 ## Recommended Equipment
 
-Data pending
+### Signature Wheel: Aberrant Devour
+
+深海系命轮。
+
 
 
 <CharacterCompare />

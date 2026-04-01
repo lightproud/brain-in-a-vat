@@ -34,7 +34,10 @@ portrait: /portraits/lotan.png
 
 ## 推荐装备
 
-数据待补充
+### 专属命轮: 隐世的转轮
+
+从钥令触发和伤害次数中获得增益。
+
 
 
 <CharacterCompare />

@@ -34,7 +34,10 @@ portrait: /portraits/divine-king-tulu.png
 
 ## 推奨装備
 
-データ準備中
+### 専用命輪: 隐秘的诞生（Shrouded Birth）
+
+与「神王的颂歌」「虔诚的伟力」同组。
+
 
 
 <CharacterCompare />

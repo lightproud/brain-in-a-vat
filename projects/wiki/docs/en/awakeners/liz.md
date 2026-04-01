@@ -38,7 +38,10 @@ portrait: /portraits/liz.png
 
 ## Recommended Equipment
 
-Data pending
+### Signature Wheel: Unbearable Freedom
+
+Hand Limit +2. Effects of the same type cannot stack. The wielder's Base DMG and Shield Generation are increased by 9%. Obtain 35 Aliemus upon entering the Ultra Round. Release "Annihilation" to grant all Awakeners Temporary Crit. DMG +13%. This effect has a Cooldown of 3 turns.
+
 
 
 <CharacterCompare />

@@ -41,6 +41,10 @@ portrait: /portraits/tawil.png
 
 データ準備中
 
+### 専用命輪: 慈悲的哺育（Merciful Nurturing）
+
+血肉系命轮。
+
 
 
 <CharacterCompare />

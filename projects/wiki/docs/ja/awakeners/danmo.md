@@ -34,7 +34,10 @@ portrait: /portraits/danmo.png
 
 ## 推奨装備
 
-データ準備中
+### 専用命輪: 沉入殷红（Drowning in Crimson）
+
+血肉系命轮。
+
 
 
 <CharacterCompare />

@@ -38,6 +38,10 @@ portrait: /portraits/horla.png
 
 数据待补充
 
+### 专属命轮: 诗笺的句尾
+
+发动时机调整：由打击前改为打击后。
+
 
 
 <CharacterCompare />

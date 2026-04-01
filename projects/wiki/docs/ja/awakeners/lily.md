@@ -34,7 +34,7 @@ portrait: /portraits/lily.png
 
 ## 推奨装備
 
-### 推奨命輪: 跨越疼痛（Grace Through Pain）
+### 専用命輪: 跨越疼痛（Grace Through Pain）
 
 データ準備中
 

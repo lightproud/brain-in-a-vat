@@ -34,7 +34,7 @@ portrait: /portraits/wanda.png
 
 ## 推奨装備
 
-### 推奨命輪: 女王的戒律（Queen's Edict）
+### 専用命輪: 女王的戒律（Queen's Edict）
 
 データ準備中
 

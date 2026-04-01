@@ -34,11 +34,15 @@ portrait: /portraits/sorel.png
 
 ## Recommended Equipment
 
-### Recommended Wheel: By Rose Alone
+### Signature Wheel: By Rose Alone
 
 Critical Strike Rate
 
-### Signature Wheel: Tablet of Scriptures
+### Signature Wheel: Kiss of Repose
+
+Team Unique: The wielder's Base DMG +10% During this exploration, every time the wielder kills an enemy, their Crit. Rate +2% and Exalt Base DMG +2%, up to 10 times. If the current Realm is Caro, the wielder gains an extra 15 Aliemus when they directly consume Embryo (cooldown 3 turns).
+
+### Recommended Wheel: Tablet of Scriptures
 
 Data pending
 

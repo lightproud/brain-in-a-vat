@@ -1,12 +1,12 @@
 ---
-title: 莱 | 忘却前夜 Wiki
-description: 莱（Leigh）血肉属性合唱角色详细资料
+title: 莱克 | 忘却前夜 Wiki
+description: 莱克（Leigh）血肉属性合唱角色详细资料
 portrait: /portraits/leigh.png
 ---
-# 莱 (Leigh)
+# 莱克 (Leigh)
 
 <div class="character-header">
-  <img :src="'/brain-in-a-vat/wiki/portraits/leigh.png'" alt="莱" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/leigh.png'" alt="莱克" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|
@@ -34,7 +34,10 @@ portrait: /portraits/leigh.png
 
 ## 推荐装备
 
+### 推荐命轮: 跨越疼痛
+
 数据待补充
+
 
 
 <CharacterCompare />

@@ -34,7 +34,7 @@ portrait: /portraits/lily.png
 
 ## Recommended Equipment
 
-### Recommended Wheel: Grace Through Pain
+### Signature Wheel: Grace Through Pain
 
 Data pending
 

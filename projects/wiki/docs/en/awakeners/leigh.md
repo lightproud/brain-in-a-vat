@@ -1,12 +1,12 @@
 ---
 title: Leigh | Morimens Wiki
-description: Full profile of Leigh (莱), a Caro Chorus in Morimens
+description: Full profile of Leigh (莱克), a Caro Chorus in Morimens
 portrait: /portraits/leigh.png
 ---
-# Leigh (莱)
+# Leigh (莱克)
 
 <div class="character-header">
-  <img :src="'/brain-in-a-vat/wiki/portraits/leigh.png'" alt="莱" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/leigh.png'" alt="莱克" class="portrait" />
 
   | Attribute | Value |
   |------|-----|
@@ -34,7 +34,10 @@ portrait: /portraits/leigh.png
 
 ## Recommended Equipment
 
+### Recommended Wheel: Grace Through Pain
+
 Data pending
+
 
 
 <CharacterCompare />

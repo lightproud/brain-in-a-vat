@@ -35,7 +35,10 @@ portrait: /portraits/murphy.png
 
 ## 推奨装備
 
-データ準備中
+### 専用命輪: 畸体回噬（Aberrant Devour）
+
+深海系命轮。
+
 
 
 <CharacterCompare />

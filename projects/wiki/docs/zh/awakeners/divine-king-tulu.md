@@ -34,7 +34,10 @@ portrait: /portraits/divine-king-tulu.png
 
 ## 推荐装备
 
-数据待补充
+### 专属命轮: 隐秘的诞生
+
+与「神王的颂歌」「虔诚的伟力」同组。
+
 
 
 <CharacterCompare />

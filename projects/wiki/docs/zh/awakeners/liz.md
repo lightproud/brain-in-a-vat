@@ -38,7 +38,10 @@ portrait: /portraits/liz.png
 
 ## 推荐装备
 
+### 专属命轮: 不可承受的自由
+
 数据待补充
+
 
 
 <CharacterCompare />

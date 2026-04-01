@@ -38,6 +38,10 @@ portrait: /portraits/horla.png
 
 データ準備中
 
+### 専用命輪: 诗笺的句尾（The Last Verse）
+
+发动时机调整：由打击前改为打击后。
+
 
 
 <CharacterCompare />

@@ -38,7 +38,10 @@ portrait: /portraits/liz.png
 
 ## 推奨装備
 
+### 専用命輪: 不可承受的自由（Unbearable Freedom）
+
 データ準備中
+
 
 
 <CharacterCompare />

@@ -34,7 +34,7 @@ portrait: /portraits/wanda.png
 
 ## 推荐装备
 
-### 推荐命轮: 女王的戒律
+### 专属命轮: 女王的戒律
 
 数据待补充
 

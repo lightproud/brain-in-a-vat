@@ -1,12 +1,12 @@
 ---
-title: 莱克 | 忘却前夜 Wiki
-description: 莱克（Karen）混沌属性支援型キャラクター詳細
+title: 珈伦 | 忘却前夜 Wiki
+description: 珈伦（Karen）混沌属性支援型キャラクター詳細
 portrait: /portraits/karen.png
 ---
-# 莱克 (Karen)
+# 珈伦 (Karen)
 
 <div class="character-header">
-  <img :src="'/brain-in-a-vat/wiki/portraits/karen.png'" alt="莱克" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/karen.png'" alt="珈伦" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|
@@ -34,7 +34,7 @@ portrait: /portraits/karen.png
 
 ## 推奨装備
 
-### 推奨命輪: 跨越疼痛（Grace Through Pain）
+### 専用命輪: 好运时间（Hour of Fortune）
 
 データ準備中
 

@@ -34,11 +34,15 @@ portrait: /portraits/sorel.png
 
 ## 推奨装備
 
-### 推奨命輪: 以蔷薇之名（By Rose Alone）
+### 専用命輪: 以蔷薇之名（By Rose Alone）
 
 データ準備中
 
-### 専用命輪: 神言石板（Tablet of Scriptures）
+### 専用命輪: 安息之吻（Kiss of Repose）
+
+データ準備中
+
+### 推奨命輪: 神言石板（Tablet of Scriptures）
 
 データ準備中
 

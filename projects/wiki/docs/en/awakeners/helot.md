@@ -38,7 +38,7 @@ portrait: /portraits/helot.png
 
 Critical Strike Rate
 
-### Signature Wheel: Tablet of Scriptures
+### Recommended Wheel: Tablet of Scriptures
 
 Data pending
 

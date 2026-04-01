@@ -38,6 +38,10 @@ portrait: /portraits/hameln.png
 
 数据待补充
 
+### 专属命轮: 永恒安魂曲
+
+暴伤无上限；适合8+回合长期战斗。
+
 
 
 <CharacterCompare />

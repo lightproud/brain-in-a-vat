@@ -38,7 +38,7 @@ portrait: /portraits/thais.png
 
 データ準備中
 
-### 専用命輪: 神言石板（Tablet of Scriptures）
+### 推奨命輪: 神言石板（Tablet of Scriptures）
 
 データ準備中
 
