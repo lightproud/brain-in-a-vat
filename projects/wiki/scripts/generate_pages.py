@@ -375,7 +375,12 @@ def generate_character_page(char: dict, wheel_index: dict[str, list[dict]], lang
     role_key = char.get("role", "attack")
     is_limited = char.get("is_limited", False)
     obtain = char.get("obtain", L["pending"])
-    description = char.get("description", L["pending"])
+    if lang == "en":
+        description = char.get("description_en", char.get("description", L["pending"]))
+    elif lang == "ja":
+        description = char.get("description_ja", char.get("description", L["pending"]))
+    else:
+        description = char.get("description", L["pending"])
 
     realm_display = REALM_NAMES[lang].get(realm_key, realm_key)
     role_display = ROLE_NAMES[lang].get(role_key, role_key)

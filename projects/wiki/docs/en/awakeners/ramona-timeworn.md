@@ -19,7 +19,7 @@ portrait: /portraits/ramona-timeworn.png
 
 ## Introduction
 
-混沌界域T0限定输出角色，拉蒙娜的环行变体形态。围绕负熵（Negentropy）和卡牌操控的辅助输出角色，可召回大量打击卡配合队友爆发。社区简称「环拉」。
+SSR Chaos DPS Awakener (limited).
 
 ## Skills
 

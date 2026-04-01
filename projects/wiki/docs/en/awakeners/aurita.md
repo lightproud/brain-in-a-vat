@@ -19,7 +19,7 @@ portrait: /portraits/aurita.png
 
 ## Introduction
 
-深海界域输出型唤醒体，深潜三杰成员之一。通关混沌界域裂隙I免费获取。爆发+循环卡牌打法，被称为「深海万能锤」，新手友好的免费SSR。
+SSR Aequor DPS Awakener (standard). Member of the Deep Dive Trio.
 
 ## Skills
 

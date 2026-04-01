@@ -19,7 +19,7 @@ portrait: /portraits/danmo.png
 
 ## Introduction
 
-混沌界域限定输出角色，满配后伤害极高，常作为助战首选。银钥爆发流代表角色，一轮爆发可秒杀大多数Boss。
+SSR Chaos DPS Awakener (limited).
 
 ## Skills
 

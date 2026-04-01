@@ -19,7 +19,7 @@ portrait: /portraits/doll-inferno.png
 
 ## Introduction
 
-星辰篇首个限定角色，混沌界域辅助型，朵尔的熔毁变体形态。v2.0上线，社区简称「熔朵」。战斗风格与原版朵尔截然不同，侧重火焰增益辅助。
+SSR Chaos Support Awakener (limited). Introduced in v2.0.
 
 ## Skills
 

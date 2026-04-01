@@ -19,7 +19,7 @@ portrait: /portraits/hameln.png
 
 ## Introduction
 
-混沌界域辅助型唤醒体。爆发伤害和银钥充能能力强力，常用于凯刻斯反击队。自选池中与塔薇、莉莉、莱克、24同列于混沌界域。
+SSR Chaos Support Awakener (standard). Counter-attack team specialist.
 
 ## Skills
 

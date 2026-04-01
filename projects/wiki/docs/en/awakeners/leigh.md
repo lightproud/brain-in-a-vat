@@ -19,7 +19,7 @@ portrait: /portraits/leigh.png
 
 ## Introduction
 
-血肉界域常驻合唱型唤醒体，卡文迪什家族的「嗜血患者」。作为合唱型角色与血肉主C产生联携效果，常驻池中即可获取的合唱位选择。
+SSR Caro Chorus Awakener (standard). Chorus-type character that creates synergy effects with main DPS.
 
 ## Skills
 

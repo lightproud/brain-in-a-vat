@@ -19,7 +19,7 @@ portrait: /portraits/jenkins.png
 
 ## Introduction
 
-超维界域T1副输出型唤醒体。超维体系中的灵活副C，可为主C提供额外的输出补充。常驻池可获取。
+SSR Ultra Sub-DPS Awakener (standard).
 
 ## Skills
 

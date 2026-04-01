@@ -19,7 +19,7 @@ portrait: /portraits/nymphia.png
 
 ## Introduction
 
-混沌界域T3辅助型唤醒体。提供队伍增益效果，在混沌辅助位中属于入门级选择。常驻池可获取。
+SSR Chaos Support Awakener (standard).
 
 ## Skills
 

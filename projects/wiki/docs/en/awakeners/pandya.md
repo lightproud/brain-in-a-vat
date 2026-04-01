@@ -19,7 +19,7 @@ portrait: /portraits/pandya.png
 
 ## Introduction
 
-混沌界域T2副输出型唤醒体。擅长配合混沌主C进行副输出，在混沌队阵容中作为灵活的副C填充位使用。
+SSR Chaos Sub-DPS Awakener (standard).
 
 ## Skills
 

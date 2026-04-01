@@ -19,7 +19,7 @@ portrait: /portraits/murphy-fauxborn.png
 
 ## Introduction
 
-深海界域限定合唱型角色，墨菲的诞妄变体。v2.4二周年推出，卡池「尊崇之诞」。作为v2.4新增合唱型角色，与深海主C产生联携效果。
+SSR Aequor Chorus Awakener (limited). Chorus-type character that creates synergy effects with main DPS. Introduced in v2.4.
 
 ## Skills
 

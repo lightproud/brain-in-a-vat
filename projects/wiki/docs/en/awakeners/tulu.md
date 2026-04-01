@@ -19,7 +19,7 @@ portrait: /portraits/tulu.png
 
 ## Introduction
 
-深海界域T0级输出角色，深海队核心主C。角色原型为克苏鲁，正太外形，被称为「幼主」「沉睡之主」。通过触腕和穿刺伤害造成极高输出，深海体系的绝对核心。
+SSR Aequor DPS Awakener (limited).
 
 ## Skills
 

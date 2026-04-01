@@ -19,7 +19,7 @@ portrait: /portraits/mouchette.png
 
 ## Introduction
 
-混沌界域限定输出角色，星辰篇v2.3推出。打击型DPS，以物理打击伤害为核心输出方式。名字来源于法语，含义为「小苍蝇」。
+SSR Chaos DPS Awakener (limited). Introduced in v2.3.
 
 ## Skills
 

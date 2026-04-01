@@ -19,7 +19,7 @@ portrait: /portraits/thais.png
 
 ## Introduction
 
-血肉界域SSR限定辅助角色，社区昵称「羊妈」。提供队伍增益和回复，是血肉队的顶级辅助选择之一。限定池获取。
+SSR Caro Support Awakener (limited).
 
 ## Skills
 

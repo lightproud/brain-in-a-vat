@@ -19,7 +19,7 @@ portrait: /portraits/daffodil.png
 
 ## Introduction
 
-超维界域T0限定输出角色，别称「水仙夫人」。v1.1版本进行过重做，拥有全游戏最多功能的狂气爆发之一。超维队的顶级限定主C选择。
+SSR Ultra DPS Awakener (limited). Introduced in v1.1.
 
 ## Skills
 

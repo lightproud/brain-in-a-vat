@@ -19,7 +19,7 @@ portrait: /portraits/alice.png
 
 ## Introduction
 
-血肉界域T1副输出型唤醒体。配合血肉主C进行副输出，在吞噬/胚胎体系中提供额外伤害。常驻池可获取。
+SSR Caro Sub-DPS Awakener (standard).
 
 ## Skills
 

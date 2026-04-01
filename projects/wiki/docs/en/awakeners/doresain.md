@@ -19,7 +19,7 @@ portrait: /portraits/doresain.png
 
 ## Introduction
 
-血肉界域限定输出型唤醒体，星辰篇推出。名字来源于克苏鲁神话中的食尸鬼之王。血肉队新一代输出选择，拥有独特的吞噬增伤机制。
+SSR Caro DPS Awakener (limited).
 
 ## Skills
 

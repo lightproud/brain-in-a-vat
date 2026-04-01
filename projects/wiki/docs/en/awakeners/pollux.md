@@ -19,7 +19,7 @@ portrait: /portraits/pollux.png
 
 ## Introduction
 
-超维界域限定输出角色，v2.3.4推出，卡池「神圣赦免」。名字来源于双子座β星，与卡斯托尔构成双子角色组合。超维队新一代主C选择。
+SSR Ultra DPS Awakener (limited). Introduced in v2.3.
 
 ## Skills
 

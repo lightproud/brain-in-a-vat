@@ -19,7 +19,7 @@ portrait: /portraits/rhea.png
 
 ## Introduction
 
-血肉界域T0辅助型唤醒体，血肉队核心辅助。兼具回血和上盾功能，核心玩法为「养胎流」——通过孕育胚胎积累增益后一次释放爆发。血肉队必备。
+SSR Caro Support Awakener (standard).
 
 ## Skills
 

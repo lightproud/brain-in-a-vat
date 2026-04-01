@@ -19,7 +19,7 @@ portrait: /portraits/wanda.png
 
 ## Introduction
 
-超维界域防御型唤醒体，社区昵称「SM」。盾反队成员，靠反伤和砸盾输出，生存能力拉满。与萨尔瓦多组成盾反队双核。
+SSR Ultra Defense Awakener (standard). Counter-attack team specialist.
 
 ## Skills
 

@@ -19,7 +19,7 @@ portrait: /portraits/shan.png
 
 ## Introduction
 
-深海界域T1副输出型唤醒体。深海触手体系中的副C位置，配合图鲁等主C进行触腕联动输出。常驻池可获取。
+SSR Aequor Sub-DPS Awakener (standard).
 
 ## Skills
 

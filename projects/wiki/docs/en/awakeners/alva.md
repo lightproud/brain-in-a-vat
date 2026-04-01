@@ -19,7 +19,7 @@ portrait: /portraits/alva.png
 
 ## Introduction
 
-混沌界域防御型唤醒体，御四家之一。官方定位防御型，实际为攻防一体坦C——护盾越高伤害越高。银钥共鸣体系核心坦克，死亡抵抗机制使其极难倒下。社区公认混沌队基石。
+SSR Chaos Defense Awakener (standard). Member of the Royal Four. Core of the Silver Key Resonance system.
 
 ## Skills
 

@@ -19,7 +19,7 @@ portrait: /portraits/sorel.png
 
 ## Introduction
 
-血肉界域T0限定输出角色，被誉为「红女王」。穿着红色玫瑰裙的沙龙主人，血肉主C之一。附带回血技能，攻守兼备的限定角色。
+SSR Caro DPS Awakener (limited).
 
 ## Skills
 

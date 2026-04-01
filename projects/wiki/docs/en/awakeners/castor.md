@@ -19,7 +19,7 @@ portrait: /portraits/castor.png
 
 ## Introduction
 
-超维界域限定防御角色，v2.2.2推出。名字来源于双子座α星。与波吕克斯（Pollux，双子座β星）构成双子角色组合。
+SSR Ultra Defense Awakener (limited). Introduced in v2.2.
 
 ## Skills
 

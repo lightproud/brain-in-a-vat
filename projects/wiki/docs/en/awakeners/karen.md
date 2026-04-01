@@ -19,7 +19,7 @@ portrait: /portraits/karen.png
 
 ## Introduction
 
-混沌界域辅助型唤醒体，v1.5推出。官方定位辅助但输出能力突出，专属命轮极为专用。推荐配队：塔薇+拉蒙娜+珈伦+莱克。
+SSR Chaos Support Awakener (standard). Introduced in v1.5.
 
 ## Skills
 

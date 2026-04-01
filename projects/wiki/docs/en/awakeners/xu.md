@@ -19,7 +19,7 @@ portrait: /portraits/xu.png
 
 ## Introduction
 
-血肉界域限定合唱型角色，v2.4二周年版本推出，卡池「夜幕狂喜」。作为合唱型角色与血肉主C产生特殊联携效果，二周年重磅新角色。
+SSR Caro Chorus Awakener (limited). Chorus-type character that creates synergy effects with main DPS. Introduced in v2.4.
 
 ## Skills
 

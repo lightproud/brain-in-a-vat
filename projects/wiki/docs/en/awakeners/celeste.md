@@ -19,7 +19,7 @@ portrait: /portraits/celeste.png
 
 ## Introduction
 
-深海界域T1辅助型唤醒体，适配性极强，同时在混沌队中也有T1表现。高贵的复活奶——0费卡可奶可加算力，高费卡和觉醒技可提供触手。深海队核心辅助。
+SSR Aequor Support Awakener (standard).
 
 ## Skills
 

@@ -19,7 +19,7 @@ portrait: /portraits/murphy.png
 
 ## Introduction
 
-深海界域防御型唤醒体。技能组强势补强深海界域弱点，拥有专属「献祭」被动机制。深海玩家必抽角色，大幅提升深海队生存能力。
+SSR Aequor Defense Awakener (standard).
 
 ## Skills
 

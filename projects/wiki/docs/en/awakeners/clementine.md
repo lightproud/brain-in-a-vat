@@ -19,7 +19,7 @@ portrait: /portraits/clementine.png
 
 ## Introduction
 
-超维界域限定辅助角色，v2.1推出。为超维队带来新的辅助能力，提升超维队的团队上限。星辰篇时期推出的限定辅助。
+SSR Ultra Support Awakener (limited). Introduced in v2.1.
 
 ## Skills
 

@@ -19,7 +19,7 @@ portrait: /portraits/salvador.png
 
 ## Introduction
 
-血肉界域防御型唤醒体，社区昵称「神父」。盾反队核心成员，专属命轮「神言石板」。以盾反打法为特色，靠反伤和护盾进行输出。
+SSR Caro Defense Awakener (standard). Counter-attack team specialist.
 
 ## Skills
 

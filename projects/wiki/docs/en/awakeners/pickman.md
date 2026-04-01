@@ -19,7 +19,7 @@ portrait: /portraits/pickman.png
 
 ## Introduction
 
-深海界域限定输出型唤醒体，星辰篇推出。专属命轮「写实主义悖谬」。名字来源于洛夫克拉夫特短篇《皮克曼的模特》。深海队新一代输出选择。
+SSR Aequor DPS Awakener (limited). Signature wheel: 写实主义悖谬(Paradoxical Realism)：狂气回充7.2；狂气和力量获取+6~12%；超限后提升最终伤害/护盾/治疗。.
 
 ## Skills
 

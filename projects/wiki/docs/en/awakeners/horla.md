@@ -19,7 +19,7 @@ portrait: /portraits/horla.png
 
 ## Introduction
 
-超维界域辅助型唤醒体，v1.5版本推出。超维开荒队核心辅助，大幅提升超维队的整体强度。推荐配队：利兹+奥尔拉+艾瑞卡+环娜。
+SSR Ultra Support Awakener (standard). Introduced in v1.5.
 
 ## Skills
 

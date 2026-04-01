@@ -19,7 +19,7 @@ portrait: /portraits/helot.png
 
 ## Introduction
 
-血肉界域限定输出角色，希洛的血链变体形态。v1.6推出。当前版本「血希」队伍核心，破链一击爆发伤害极高，是血肉队的顶级主C选择。
+SSR Caro DPS Awakener (limited). Introduced in v1.6.
 
 ## Skills
 

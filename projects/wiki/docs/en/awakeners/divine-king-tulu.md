@@ -19,7 +19,7 @@ portrait: /portraits/divine-king-tulu.png
 
 ## Introduction
 
-图鲁的神王变体形态，深海界域限定角色。社区简称「神王」。作为图鲁的进化形态，战斗能力进一步提升，深海队的顶级主C选择。
+SSR Aequor DPS Awakener (limited).
 
 ## Skills
 

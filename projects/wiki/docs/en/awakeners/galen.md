@@ -19,7 +19,7 @@ portrait: /portraits/galen.png
 
 ## Introduction
 
-混沌界域T3副输出型唤醒体，社区也写作「珈伦」。超限后配合塔薇+拉蒙娜阵容可发挥出色表现。常用于凯刻斯反击队体系中。
+SSR Chaos Sub-DPS Awakener (standard). Counter-attack team specialist.
 
 ## Skills
 

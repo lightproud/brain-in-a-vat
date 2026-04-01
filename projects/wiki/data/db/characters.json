@@ -101,7 +101,8 @@
             "effect": "本回合每打出1张防御卡，「心眼利刃」算力消耗-1。【输出向必要启灵】"
           }
         ]
-      }
+      },
+      "description_en": "SSR Chaos Defense Awakener (standard). Member of the Royal Four. Core of the Silver Key Resonance system."
     },
     {
       "id": "doll",
@@ -130,7 +131,8 @@
         "role_in_team": "混沌界域输出型唤醒体，T0评级。终章机制需要时间累积，前期辅助治疗，后期转换为高输出模式。",
         "_data_source": "角色描述推导，具体数值待从公开wiki补充",
         "lore_note": "玩偶与塔薇儿是最早被设计的角色。"
-      }
+      },
+      "description_en": "SSR Chaos DPS Awakener (standard). Member of the Royal Four."
     },
     {
       "id": "ramona-timeworn",
@@ -168,7 +170,8 @@
         "role_in_team": "大招召回打击卡，配合希洛破链一击爆发。环娜的大招为复制，独立于牌库之外。仅3费降费。",
         "lore_note": "创世纪角色之一。制作人Light亲自设计的技能组——「复刻上一张打出的卡」体现了「从过往经历中汲取力量」的主题。V1.1 PV结尾加入的台词：「无论失败多少次，我最终一定会拯救你。」",
         "design_note": "制作人最喜欢的角色。"
-      }
+      },
+      "description_en": "SSR Chaos DPS Awakener (limited)."
     },
     {
       "id": "ogier",
@@ -188,7 +191,8 @@
       "skills": {
         "role_in_team": "混沌界域T1辅助型唤醒体，御四家成员。提供队伍增益和敌方减益效果，是混沌队稳定的后排辅助。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Chaos Support Awakener (standard). Member of the Royal Four."
     },
     {
       "id": "lotan",
@@ -209,7 +213,8 @@
       "skills": {
         "role_in_team": "混沌界域T1防御型唤醒体，御四家成员。银钥共鸣体系防御核心，死亡抵抗机制出色。侧重团队护盾和反伤。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Chaos Defense Awakener (standard). Member of the Royal Four. Core of the Silver Key Resonance system."
     },
     {
       "id": "ramona",
@@ -259,7 +264,8 @@
           "effect": "对所有敌人造成易伤与虚弱1回合，本回合打出的下1张指令卡生效3次。"
         },
         "role_in_team": "弃牌找回、降费辅助，配合莉兹等主C使用"
-      }
+      },
+      "description_en": "SSR Chaos Support Awakener (standard). Member of the Royal Four."
     },
     {
       "id": "pandya",
@@ -279,7 +285,8 @@
       "skills": {
         "role_in_team": "混沌界域T2副输出型唤醒体。配合混沌主C进行副输出。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Chaos Sub-DPS Awakener (standard)."
     },
     {
       "id": "nodera",
@@ -301,7 +308,8 @@
       "skills": {
         "role_in_team": "混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。以循环打击为核心战斗风格。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Chaos DPS Awakener (standard)."
     },
     {
       "id": "galen",
@@ -325,7 +333,8 @@
           "name": "超限爆发",
           "effect": "将「奇妙料理」洗入抽牌堆和弃牌堆各1张。"
         }
-      }
+      },
+      "description_en": "SSR Chaos Sub-DPS Awakener (standard). Counter-attack team specialist."
     },
     {
       "id": "nymphia",
@@ -345,7 +354,8 @@
       "skills": {
         "role_in_team": "混沌界域T3辅助型唤醒体。提供基础增益效果。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Chaos Support Awakener (standard)."
     },
     {
       "id": "lily",
@@ -367,7 +377,8 @@
         "signature_wheel": "跨越疼痛(Grace Through Pain)",
         "role_in_team": "混沌界域防御型唤醒体。防御能力出色，为混沌队提供稳定护盾。v1.1版本推出，后加入常驻池。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Chaos Defense Awakener (standard). Introduced in v1.1. Signature wheel: 跨越疼痛(Grace Through Pain)."
     },
     {
       "id": "danmo",
@@ -388,7 +399,8 @@
       "skills": {
         "role_in_team": "混沌界域限定输出角色，满配后伤害极高，以银钥爆发为核心。一轮爆发可秒杀大多数Boss，常作为助战首选。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Chaos DPS Awakener (limited)."
     },
     {
       "id": "miryam",
@@ -426,7 +438,8 @@
         },
         "role_in_team": "深海界域限定辅助，强力触手辅助。深海队必备辅助位，v1.4版本大幅增强。",
         "_data_source": "角色描述和v1.4更新记录，具体数值待从公开wiki补充"
-      }
+      },
+      "description_en": "SSR Aequor Support Awakener (limited). Introduced in v1.4."
     },
     {
       "id": "tulu",
@@ -500,7 +513,8 @@
             "effect": "「打击」和「防御」使触腕伤害临时提高图鲁攻击力的3%(效果随等级提升)。"
           }
         ]
-      }
+      },
+      "description_en": "SSR Aequor DPS Awakener (limited)."
     },
     {
       "id": "divine-king-tulu",
@@ -524,7 +538,8 @@
       "skills": {
         "role_in_team": "图鲁的神王变体形态，深海界域顶级限定主C。深海队的顶级主C选择，触腕体系进化版。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Aequor DPS Awakener (limited)."
     },
     {
       "id": "celeste",
@@ -547,7 +562,8 @@
           "name_en": "Soulforge Aptitude",
           "effect": "希莱斯特造成的触腕伤害提高20%~50%。每回合打出首张指令卡后，额外触发4次天赋「远航号角」。"
         }
-      }
+      },
+      "description_en": "SSR Aequor Support Awakener (standard)."
     },
     {
       "id": "goliath",
@@ -570,7 +586,8 @@
           "name_en": "Soulforge Aptitude",
           "effect": "戈利亚造成的基础伤害提高20%~50%，「巨刃之威」使最终伤害临时提高5~10%。队伍中1/2/3名其他利莫里亚唤醒体时，所有唤醒体力量提高6/15/30%。"
         }
-      }
+      },
+      "description_en": "SSR Aequor Defense Awakener (standard)."
     },
     {
       "id": "shan",
@@ -605,7 +622,8 @@
         "signature_wheel_effect": "珊瑚女之死(Death of the Coral Maiden)：打出佩戴者卡牌后，获得防御力6%护盾，每条触腕额外+防御力1.5%，每回合1次。",
         "role_in_team": "深海界域T1副输出型唤醒体。深海触手体系中的副C，配合图鲁进行触腕联动输出。",
         "_data_source": "命轮效果描述推导，具体卡牌效果待从公开wiki补充"
-      }
+      },
+      "description_en": "SSR Aequor Sub-DPS Awakener (standard)."
     },
     {
       "id": "aurita",
@@ -627,7 +645,8 @@
       "skills": {
         "role_in_team": "深海界域免费SSR(通关混沌裂隙I获取)，「深潜三杰」成员。爆发+循环卡牌打法，「深海万能锤」，新手友好。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Aequor DPS Awakener (standard). Member of the Deep Dive Trio."
     },
     {
       "id": "caecus",
@@ -647,7 +666,8 @@
       "skills": {
         "role_in_team": "深海界域T2副输出型唤醒体。反击队体系核心成员，可配合反击机制使用。凯刻斯反击队：凯刻斯+萨尔瓦多+旺达+哈姆林。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Aequor Sub-DPS Awakener (standard). Counter-attack team specialist."
     },
     {
       "id": "faros",
@@ -667,7 +687,8 @@
       "skills": {
         "role_in_team": "深海界域T3辅助型唤醒体。提供基础辅助效果，在深海队中作为过渡辅助使用。高防御角色，适合搭配心之壁垒命轮。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Aequor Support Awakener (standard)."
     },
     {
       "id": "uvhash",
@@ -740,7 +761,8 @@
           "covenant_set": "生机榨取套装(2件+6件体质+9，4件无条件增伤10%，吞噬时+20%胚胎融合)",
           "covenant_substats": "4号位：狂气充能；5号位：暴击率；6号位：体质"
         }
-      }
+      },
+      "description_en": "SSR Caro DPS Awakener (standard)."
     },
     {
       "id": "rhea",
@@ -764,7 +786,8 @@
           "effect": "回复30%体质(每级+3%)生命值，获得15%体质(每级+1.5%)力量。当前每损失1%生命值，回复量提高2%。触发吞噬时回复量翻倍。血量最低时触发吞噬可回复180%体质生命值。"
         },
         "role_in_team": "与尤乌哈希配合，提供胚胎融合和治疗支持"
-      }
+      },
+      "description_en": "SSR Caro Support Awakener (standard)."
     },
     {
       "id": "sorel",
@@ -787,7 +810,8 @@
       "skills": {
         "role_in_team": "血肉界域T0限定输出角色，「红女王」。穿着红色玫瑰裙的沙龙主人，附带回血技能，攻守兼备。签名命轮：以蔷薇之名(By Rose Alone)。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Caro DPS Awakener (limited)."
     },
     {
       "id": "thais",
@@ -810,7 +834,8 @@
       "skills": {
         "role_in_team": "血肉界域SSR限定辅助角色，社区昵称「羊妈」。为血肉队提供增益和恢复，顶级血肉辅助。签名命轮：慈悲的哺育(Merciful Nurturing)。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Caro Support Awakener (limited)."
     },
     {
       "id": "alice",
@@ -830,7 +855,8 @@
       "skills": {
         "role_in_team": "血肉界域T1副输出型唤醒体。配合血肉主C进行副输出，在吞噬/胚胎体系中提供额外伤害。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Caro Sub-DPS Awakener (standard)."
     },
     {
       "id": "faint",
@@ -851,7 +877,8 @@
         "signature_wheel_effect": "吞噬摇篮曲(Devouring Lullaby)：触发死亡抵抗后，全队治疗和护盾增强2回合。",
         "role_in_team": "血肉界域T2副输出型唤醒体。血肉体系灵活副C，签名命轮触发死亡抵抗后为队伍提供治疗和护盾增益。",
         "_data_source": "命轮效果描述，具体技能数据待从公开wiki补充"
-      }
+      },
+      "description_en": "SSR Caro Sub-DPS Awakener (standard)."
     },
     {
       "id": "agrippa",
@@ -871,7 +898,8 @@
       "skills": {
         "role_in_team": "血肉界域T2防御型唤醒体。为血肉队提供前排防护。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Caro Defense Awakener (standard)."
     },
     {
       "id": "shilo",
@@ -891,7 +919,8 @@
       "skills": {
         "role_in_team": "血肉界域T3输出型唤醒体。血肉队初期主C选择，有限定变体「血链·希洛」。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Caro DPS Awakener (standard)."
     },
     {
       "id": "erica",
@@ -919,7 +948,8 @@
         },
         "command_cards_note": "「功能过载」(Functional Overload)可同时叠加大量护盾和伤害，但消耗全部算力。3启后更为强力。",
         "role_in_team": "在超维队伍中负责提供爆发回合的易伤和力量加成"
-      }
+      },
+      "description_en": "SSR Ultra Defense Awakener (standard). Member of the Deep Dive Trio."
     },
     {
       "id": "liz",
@@ -987,7 +1017,8 @@
           }
         ],
         "gameplay_notes": "核心思路：叠绿炎→升级绿炎→狂气爆发一次性打出。注意：觉醒后容易满手绿炎无法抽牌，需要弃牌能力队友配合。升级后绿炎为多段伤害，遇反击特性敌人时狂气爆发可能被反伤致死。"
-      }
+      },
+      "description_en": "SSR Ultra DPS Awakener (standard)."
     },
     {
       "id": "daffodil",
@@ -1014,7 +1045,8 @@
         },
         "command_cards_note": "核心技能为「断颈一击」，可配合卡茜亚的隔空取物从超维空间拉出再打一次。需要前期养成才能发挥全部实力。",
         "role_in_team": "超维主C，配合卡茜亚可实现现版本越级最强输出组合"
-      }
+      },
+      "description_en": "SSR Ultra DPS Awakener (limited). Introduced in v1.1."
     },
     {
       "id": "winkle",
@@ -1034,7 +1066,8 @@
       "skills": {
         "role_in_team": "超维界域T1辅助型唤醒体。为超维队提供稳定辅助增益。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Ultra Support Awakener (standard)."
     },
     {
       "id": "casiah",
@@ -1061,7 +1094,8 @@
         ],
         "role_in_team": "超维界域T1副输出型唤醒体。与达芙黛尔组合：用「隔空取物」从超维空间再打一次「断颈一击」，实现现版本越级最强输出组合。",
         "_data_source": "从达芙黛尔技能描述推导，具体数值待从公开wiki补充"
-      }
+      },
+      "description_en": "SSR Ultra Sub-DPS Awakener (standard)."
     },
     {
       "id": "jenkins",
@@ -1081,7 +1115,8 @@
       "skills": {
         "role_in_team": "超维界域T1副输出型唤醒体。超维体系灵活副C，为主C提供额外输出补充。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Ultra Sub-DPS Awakener (standard)."
     },
     {
       "id": "tincture",
@@ -1101,7 +1136,8 @@
       "skills": {
         "role_in_team": "超维界域T2辅助型唤醒体。提供基础辅助效果，过渡辅助位选择。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Ultra Support Awakener (standard)."
     },
     {
       "id": "horla",
@@ -1122,7 +1158,8 @@
       "skills": {
         "role_in_team": "超维界域v1.5新增辅助型唤醒体。超维开荒队核心辅助，大幅提升超维队整体强度。推荐配队：莉兹+奥尔拉+艾瑞卡+环娜。签名命轮：诗笺的句尾(The Last Verse)。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Ultra Support Awakener (standard). Introduced in v1.5."
     },
     {
       "id": "karen",
@@ -1143,7 +1180,8 @@
       "skills": {
         "role_in_team": "混沌界域v1.5新增，官方定位辅助但输出能力突出，专属命轮「好运时间」极为专用。推荐配队：塔薇+拉蒙娜+珈伦+莱克。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Chaos Support Awakener (standard). Introduced in v1.5."
     },
     {
       "id": "hameln",
@@ -1163,7 +1201,8 @@
       "skills": {
         "role_in_team": "混沌界域辅助型唤醒体。爆发伤害和银钥充能能力强力，常用于凯刻斯反击队。签名命轮：永恒安魂曲(Eternal Requiem)。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Chaos Support Awakener (standard). Counter-attack team specialist."
     },
     {
       "id": "murphy",
@@ -1188,7 +1227,8 @@
         },
         "role_in_team": "深海界域防御型唤醒体，深海玩家必抽。拥有专属「献祭」被动机制，大幅提升深海队生存能力。签名命轮：隐秘的诞生(Shrouded Birth)。",
         "_data_source": "角色描述推导，具体技能数据待从公开wiki补充"
-      }
+      },
+      "description_en": "SSR Aequor Defense Awakener (standard)."
     },
     {
       "id": "salvador",
@@ -1211,7 +1251,8 @@
       "skills": {
         "role_in_team": "血肉界域防御型唤醒体，社区昵称「神父」。盾反队核心成员，靠反伤和护盾进行输出。签名命轮：神言石板(Tablet of Scriptures)。推荐配队：萨尔瓦多+旺达+凯刻斯+哈姆林。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Caro Defense Awakener (standard). Counter-attack team specialist."
     },
     {
       "id": "tawil",
@@ -1265,7 +1306,8 @@
         ],
         "gameplay_notes": "辅助型塔薇达到2启即可满足大多数需求。主C路线需3启。高难度内容需超限机制。指令卡包含打击防御，五选三可能变为三选三。",
         "lore_note": "塔薇儿与玩偶是最早被设计的角色。"
-      }
+      },
+      "description_en": "SSR Chaos Support Awakener (standard)."
     },
     {
       "id": "wanda",
@@ -1288,7 +1330,8 @@
       "skills": {
         "role_in_team": "超维界域防御型唤醒体，社区昵称「SM」。盾反队成员，靠反伤和砸盾输出，与萨尔瓦多组成盾反队双核。签名命轮：女王的戒律(Queen's Edict)。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Ultra Defense Awakener (standard). Counter-attack team specialist."
     },
     {
       "id": "aigis",
@@ -1339,7 +1382,8 @@
         "signature_wheel": "冬夜忆(Poetic Bygone Days)：防止石化溶解无debuff卡手；加速杂兵/精英战。免费可获取命轮。",
         "role_in_team": "血肉界域辅助型唤醒体，深潜三杰成员，通关第一章免费获取。攻击面板突出，提供群体易伤、AOE输出和石化效果。常规配队：艾继丝+雷亚+拉蒙娜+血肉C。",
         "_data_source": "角色描述和命轮效果推导，具体数值待从公开wiki补充"
-      }
+      },
+      "description_en": "SSR Caro Support Awakener (standard). Member of the Deep Dive Trio. Signature wheel: 冬夜忆(Poetic Bygone Days)：防止石化溶解无debuff卡手；加速杂兵/精英战。免费可获取命轮。."
     },
     {
       "id": "doll-inferno",
@@ -1372,7 +1416,8 @@
         },
         "role_in_team": "回血回盾回狂气，提供2回合虚弱增加队伍生存能力",
         "lore_note": "创世纪角色之一。原为第三篇章核心人物，有独立个人剧情线（初稿已完成），因第一篇章压缩未能释出。"
-      }
+      },
+      "description_en": "SSR Chaos Support Awakener (limited). Introduced in v2.0."
     },
     {
       "id": "24",
@@ -1395,7 +1440,8 @@
       "skills": {
         "role_in_team": "与尤乌哈希、希洛、索蕾尔等搭配使用。在深海毒队中也可作为成员(24+弥利亚姆+拉蒙娜+珈伦)。",
         "lore_note": "真正的例外设计——将四个角色定位压缩到一个单位中。商业上不划算，但为了「人格分裂」叙事而做出的选择。战斗设计师为理想「燃烧了一次」。"
-      }
+      },
+      "description_en": "SSR Chaos DPS Awakener (limited). Introduced in v1.5."
     },
     {
       "id": "clementine",
@@ -1417,7 +1463,8 @@
       "skills": {
         "role_in_team": "超维界域限定辅助角色，v2.1推出。为超维队带来新的辅助能力，提升超维队的团队上限。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Ultra Support Awakener (limited). Introduced in v2.1."
     },
     {
       "id": "corposant",
@@ -1439,7 +1486,8 @@
       "skills": {
         "role_in_team": "深海界域限定防御型角色，v2.1推出。名字含义为「圣艾尔摩之火」。拥有独特护盾和减伤机制。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Aequor Defense Awakener (limited). Introduced in v2.1."
     },
     {
       "id": "kathigu-ra",
@@ -1461,7 +1509,8 @@
       "skills": {
         "role_in_team": "混沌界域限定输出角色，v2.2推出。星辰篇混沌主C选择，名字来源于克苏鲁神话体系。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Chaos DPS Awakener (limited). Introduced in v2.2."
     },
     {
       "id": "murphy-fauxborn",
@@ -1486,7 +1535,8 @@
         "role_in_team": "深海界域限定合唱型角色，墨菲的诞妄变体。v2.4二周年推出，卡池「尊崇之诞」。作为合唱型角色与深海主C产生联携效果。",
         "_data_source": "待从公开wiki补充具体技能数据",
         "lore_note": "创世纪角色之一。原版墨菲的故事已经完整，扩展空间有限。解决方案：描绘为隐藏纯真内心的神母假象。近期最难写的角色。"
-      }
+      },
+      "description_en": "SSR Aequor Chorus Awakener (limited). Chorus-type character that creates synergy effects with main DPS. Introduced in v2.4."
     },
     {
       "id": "mouchette",
@@ -1510,7 +1560,8 @@
       "skills": {
         "role_in_team": "混沌界域限定输出角色，v2.3推出。打击型DPS，以物理打击伤害为核心输出方式。名字来源于法语「小苍蝇」。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Chaos DPS Awakener (limited). Introduced in v2.3."
     },
     {
       "id": "xu",
@@ -1534,7 +1585,8 @@
       "skills": {
         "role_in_team": "血肉界域限定合唱型角色，v2.4二周年版本推出，卡池「夜幕狂喜」。作为合唱型角色与血肉主C产生特殊联携效果。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Caro Chorus Awakener (limited). Chorus-type character that creates synergy effects with main DPS. Introduced in v2.4."
     },
     {
       "id": "castor",
@@ -1557,7 +1609,8 @@
         "lore_connection": "与波吕克斯(Pollux)构成双子角色组合，名字来源于双子座α星。",
         "role_in_team": "超维界域限定防御角色，v2.2.2推出。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Ultra Defense Awakener (limited). Introduced in v2.2."
     },
     {
       "id": "pollux",
@@ -1580,7 +1633,8 @@
         "lore_connection": "与卡斯托尔(Castor)构成双子角色组合，名字来源于双子座β星。",
         "role_in_team": "超维界域限定输出角色，v2.3.4推出，卡池「神圣赦免」。超维队新一代主C选择。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Ultra DPS Awakener (limited). Introduced in v2.3."
     },
     {
       "id": "helot",
@@ -1612,7 +1666,8 @@
         ],
         "role_in_team": "血肉界域限定输出角色，希洛的血链变体形态。「血希」队伍核心，破链一击爆发伤害极高。推荐配队：血链·希洛+环行·拉蒙娜+辅助。",
         "_data_source": "从技能描述和队伍攻略推导，具体数值待从公开wiki补充"
-      }
+      },
+      "description_en": "SSR Caro DPS Awakener (limited). Introduced in v1.6."
     },
     {
       "id": "leigh",
@@ -1635,7 +1690,8 @@
         "character_trait": "嗜血患者(Blood Thirst Patient)，卡文迪什家族成员",
         "role_in_team": "血肉界域常驻合唱型唤醒体。作为合唱型角色与血肉主C产生联携效果，是常驻池中可获取的合唱位选择。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Caro Chorus Awakener (standard). Chorus-type character that creates synergy effects with main DPS."
     },
     {
       "id": "doresain",
@@ -1657,7 +1713,8 @@
       "skills": {
         "role_in_team": "血肉界域限定输出型唤醒体，星辰篇推出。名字来源于克苏鲁神话中的食尸鬼之王。拥有独特吞噬增伤机制，血肉队新一代输出选择。",
         "_data_source": "待从公开wiki补充具体技能数据"
-      }
+      },
+      "description_en": "SSR Caro DPS Awakener (limited)."
     },
     {
       "id": "pickman",
@@ -1680,7 +1737,8 @@
         "signature_wheel": "写实主义悖谬(Paradoxical Realism)：狂气回充7.2；狂气和力量获取+6~12%；超限后提升最终伤害/护盾/治疗。",
         "role_in_team": "深海界域限定输出型唤醒体，v2.3.2推出。名字来源于洛夫克拉夫特短篇《皮克曼的模特》。深海队新一代输出选择。",
         "_data_source": "命轮数据已知，具体卡牌技能数据待从公开wiki补充"
-      }
+      },
+      "description_en": "SSR Aequor DPS Awakener (limited). Signature wheel: 写实主义悖谬(Paradoxical Realism)：狂气回充7.2；狂气和力量获取+6~12%；超限后提升最终伤害/护盾/治疗。."
     },
     {
       "id": "arachne",
@@ -1702,7 +1760,8 @@
       "skills": {
         "role_in_team": "超维界域限定唤醒体，v2.5版本预告角色。名字来源于希腊神话中的织女阿拉克涅。超维队未来主力角色之一。",
         "_data_source": "v2.5预告角色，具体技能数据待从公开wiki补充"
-      }
+      },
+      "description_en": "SSR Ultra DPS Awakener (limited). Introduced in v2.5."
     }
   ],
   "sr_characters": [

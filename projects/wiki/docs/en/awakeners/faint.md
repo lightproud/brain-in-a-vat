@@ -19,7 +19,7 @@ portrait: /portraits/faint.png
 
 ## Introduction
 
-血肉界域T2副输出型唤醒体。血肉体系中的灵活副C位置，可配合尤乌哈希等主C使用。常驻池可获取。
+SSR Caro Sub-DPS Awakener (standard).
 
 ## Skills
 

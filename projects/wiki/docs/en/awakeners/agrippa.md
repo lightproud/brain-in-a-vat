@@ -19,7 +19,7 @@ portrait: /portraits/agrippa.png
 
 ## Introduction
 
-血肉界域T2防御型唤醒体。为血肉队提供前排防护，适合血肉队的防御需求。常驻池可获取。
+SSR Caro Defense Awakener (standard).
 
 ## Skills
 

@@ -19,7 +19,7 @@ portrait: /portraits/faros.png
 
 ## Introduction
 
-深海界域T3辅助型唤醒体。提供基础辅助效果，在深海队中作为过渡辅助使用。常驻池可获取。
+SSR Aequor Support Awakener (standard).
 
 ## Skills
 

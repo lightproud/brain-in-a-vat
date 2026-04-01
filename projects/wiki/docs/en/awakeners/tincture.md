@@ -19,7 +19,7 @@ portrait: /portraits/tincture.png
 
 ## Introduction
 
-超维界域T2辅助型唤醒体。提供基础辅助效果，在超维队中作为过渡辅助位使用。常驻池可获取。
+SSR Ultra Support Awakener (standard).
 
 ## Skills
 

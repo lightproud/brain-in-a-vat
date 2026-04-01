@@ -19,7 +19,7 @@ portrait: /portraits/caecus.png
 
 ## Introduction
 
-深海界域T2副输出型唤醒体。深海体系中的灵活副C，可配合反击队体系使用。常驻池可获取。
+SSR Aequor Sub-DPS Awakener (standard). Counter-attack team specialist.
 
 ## Skills
 

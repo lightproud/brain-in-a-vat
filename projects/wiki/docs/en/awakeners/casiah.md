@@ -19,7 +19,7 @@ portrait: /portraits/casiah.png
 
 ## Introduction
 
-超维界域T1副输出型唤醒体。在超维队中担任副C角色，配合利兹或达芙黛尔进行输出。常驻池可获取。
+SSR Ultra Sub-DPS Awakener (standard).
 
 ## Skills
 

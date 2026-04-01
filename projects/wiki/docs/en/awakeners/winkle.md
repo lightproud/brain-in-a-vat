@@ -19,7 +19,7 @@ portrait: /portraits/winkle.png
 
 ## Introduction
 
-超维界域T1辅助型唤醒体。为超维队提供稳定的辅助增益，是超维队的常驻辅助选择。常驻池可获取。
+SSR Ultra Support Awakener (standard).
 
 ## Skills
 

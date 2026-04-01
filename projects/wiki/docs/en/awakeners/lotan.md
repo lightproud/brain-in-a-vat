@@ -19,7 +19,7 @@ portrait: /portraits/lotan.png
 
 ## Introduction
 
-混沌界域T1防御型唤醒体，御四家成员之一。银钥共鸣体系防御核心，死亡抵抗机制出色。与SR版萝坦为不同角色，SSR版侧重团队护盾和反伤。
+SSR Chaos Defense Awakener (standard). Member of the Royal Four. Core of the Silver Key Resonance system.
 
 ## Skills
 

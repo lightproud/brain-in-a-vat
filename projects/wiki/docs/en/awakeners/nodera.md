@@ -19,7 +19,7 @@ portrait: /portraits/nodera.png
 
 ## Introduction
 
-混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。角色设计灵感来自鹦鹉螺，战斗风格以循环打击为主。常驻池可获取的混沌输出角色。
+SSR Chaos DPS Awakener (standard).
 
 ## Skills
 

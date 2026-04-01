@@ -19,7 +19,7 @@ portrait: /portraits/kathigu-ra.png
 
 ## Introduction
 
-混沌界域限定输出角色，v2.2推出。星辰篇新增的混沌主C选择，拥有独特的战斗机制。名字来源于克苏鲁神话体系。
+SSR Chaos DPS Awakener (limited). Introduced in v2.2.
 
 ## Skills
 
