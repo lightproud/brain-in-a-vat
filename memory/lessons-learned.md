@@ -1,6 +1,6 @@
 # 踩坑记录
 
-> 最后更新：2026-03-30 by Code-wiki
+> 最后更新：2026-04-01 by Code-主控台
 >
 > 记录协作过程中犯过的错误，避免重犯。每条包含 Context、Problem、Fix、Impact。
 
@@ -151,6 +151,13 @@
 - **Problem**：合并时两份数据格式不一致——11 个有结构化卡牌数据，48 个只有定性描述。简单覆盖会丢失已有的结构化数据，但不合并又浪费了另一个会话的工作
 - **Fix**：合并脚本需按字段级别判断：如果目标已有结构化数据（command_cards 非空），跳过；否则用源数据（即使是旧格式）填充。同时在 CONTEXT.md 中明确标注数据格式规范，避免不同会话产出不兼容的格式
 - **Impact**：数据质量、跨会话协作效率
+
+## 21. GitHub App 修改 workflow 文件需要单独授权
+
+- **Context**：Issue #87 要求 Claude Code Actions 自动更新 `discord-archive.yml`（加 concurrency、timeout、cron）
+- **Problem**：GitHub App 默认的 `contents: write` 权限不包括 `.github/workflows/` 目录。Actions 执行时推送 workflow 文件变更被拒绝，只能在 Issue 评论中标注"需手动更改"
+- **Fix**：在仓库 Settings → GitHub Apps → Claude 配置中授予 workflows 写权限。权限更新后，App 可以直接修改 workflow 文件。已补充的手动变更（concurrency group、5h timeout、3h cron）已由主控台完成
+- **Impact**：自动化任务无法修改 CI/CD 流水线，需人工介入
 
 ---
 
