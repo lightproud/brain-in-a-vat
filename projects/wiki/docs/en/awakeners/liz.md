@@ -19,7 +19,7 @@ portrait: /portraits/liz.png
 
 ## Introduction
 
-SSR Caro DPS Awakener (limited). Poison-based DPS with counter mechanics. Excels in sustained fights with her damage-over-time playstyle.
+SSR Ultra DPS Awakener (standard). T0-tier Ultra carry, known as "Green Flame Dancer". Poison + piercing burst DPS; primary damage dealer for Ultra teams. Signature green flame visual.
 
 ## Skills
 

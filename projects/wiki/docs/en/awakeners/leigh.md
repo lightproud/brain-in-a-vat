@@ -19,7 +19,7 @@ portrait: /portraits/leigh.png
 
 ## Introduction
 
-SSR Chaos Support Awakener (standard). Chaos support with defensive utility.
+SSR Caro Chorus Awakener (standard). Member of the Cavendish family, known as the "Blood Patient". Provides Chorus synergy with Caro main carries. Available from standard pool.
 
 ## Skills
 

@@ -19,7 +19,7 @@ portrait: /portraits/wanda.png
 
 ## Introduction
 
-SSR Caro DPS Awakener (limited). Powerful DPS with Caro realm synergy. Limited banner character.
+SSR Ultra Defense Awakener (standard). Shield-counter specialist; deals damage through reflected damage and shield-slam mechanics. Forms the Shield Counter duo core with Salvador.
 
 ## Skills
 

@@ -19,7 +19,7 @@ portrait: /portraits/aigis.png
 
 ## Introduction
 
-SSR Chaos Defense Awakener (standard). Anti-Petrification and Dissolution specialist; accelerates mob and elite encounters.
+SSR Caro Support Awakener (standard). Member of the Deep Dive Trio. Free from clearing Chapter 1. Provides group Vulnerability, AoE damage, and Petrification effects.
 
 ## Skills
 

@@ -19,7 +19,7 @@ portrait: /portraits/alice.png
 
 ## Introduction
 
-SSR Ultra DPS Awakener (limited). Ultra DPS with dimensional mechanics.
+SSR Caro Sub-DPS Awakener (standard). Provides supplementary damage alongside Caro main carries in Devour/Embryo compositions. Available from standard pool.
 
 ## Skills
 

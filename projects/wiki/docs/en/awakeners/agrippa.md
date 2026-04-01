@@ -19,7 +19,7 @@ portrait: /portraits/agrippa.png
 
 ## Introduction
 
-SSR Chaos DPS Awakener (limited). Chaos carry with high burst potential.
+SSR Caro Defense Awakener (standard). Provides frontline protection for Caro teams. Available from standard pool.
 
 ## Skills
 

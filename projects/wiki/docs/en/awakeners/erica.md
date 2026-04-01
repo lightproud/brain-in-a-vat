@@ -19,7 +19,7 @@ portrait: /portraits/erica.png
 
 ## Introduction
 
-SSR Chaos Sub-DPS Awakener (standard). Flexible sub-carry for Chaos teams.
+SSR Ultra Defense Awakener (standard). T0-tier Ultra defender, Deep Dive Trio member. Free from clearing Caro Swamp Rift I. Provides Power buff and Vulnerability effects; key character for Ultra burst turns. Must-build for new players.
 
 ## Skills
 

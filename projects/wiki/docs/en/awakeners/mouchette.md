@@ -19,7 +19,7 @@ portrait: /portraits/mouchette.png
 
 ## Introduction
 
-SSR Ultra Defense Awakener (limited). Ultra frontline with defensive capabilities.
+SSR Chaos Defense Awakener (limited). Chaos frontline with defensive capabilities.
 
 ## Skills
 

@@ -19,7 +19,7 @@ portrait: /portraits/daffodil.png
 
 ## Introduction
 
-SSR Caro DPS Awakener (limited). T0-tier Caro carry who permanently stacks Crit DMG after kills, up to 5 stacks. Core damage dealer for Caro teams.
+SSR Ultra DPS Awakener (limited). T0-tier Ultra carry, known as "Lady Daffodil". Reworked in v1.1 with one of the most versatile Exalt abilities in the game. Top-tier limited carry for Ultra teams.
 
 ## Skills
 

@@ -19,7 +19,7 @@ portrait: /portraits/aurita.png
 
 ## Introduction
 
-SSR Ultra Healer Awakener (limited). Primary healer option for Ultra teams.
+SSR Aequor DPS Awakener (standard). Deep Dive Trio member. Free from clearing Chaos Rift I. Burst + card cycling playstyle, known as the "Aequor Universal Hammer". Beginner-friendly free SSR.
 
 ## Skills
 

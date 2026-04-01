@@ -19,7 +19,7 @@ portrait: /portraits/pickman.png
 
 ## Introduction
 
-SSR Ultra DPS Awakener (limited). Fury and Power gain +6-12% with signature wheel. Over-Exalt enhances final damage, shield, and healing.
+SSR Aequor DPS Awakener (limited). Fury and Power gain +6-12% with signature wheel. Over-Exalt enhances final damage, shield, and healing.
 
 ## Skills
 

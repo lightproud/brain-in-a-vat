@@ -19,7 +19,7 @@ portrait: /portraits/murphy.png
 
 ## Introduction
 
-SSR Caro DPS Awakener (limited). Special Ink Blade mechanic for unique card manipulation. Caro DPS with distinctive playstyle.
+SSR Aequor Defense Awakener (limited). Strong kit that shores up Aequor's defensive weakness. Has unique "Sacrifice" passive mechanic. Must-pull for Aequor players, greatly improves Aequor team survivability.
 
 ## Skills
 

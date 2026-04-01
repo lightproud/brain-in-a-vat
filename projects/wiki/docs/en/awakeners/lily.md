@@ -19,7 +19,7 @@ portrait: /portraits/lily.png
 
 ## Introduction
 
-SSR Caro Support Awakener (limited). Caro team support with healing synergy.
+SSR Chaos Defense Awakener (limited). Released in v1.1 via the "Flower Unstained" event. Important story character with ties to the Keeper. Excellent defensive capabilities for Chaos teams.
 
 ## Skills
 
