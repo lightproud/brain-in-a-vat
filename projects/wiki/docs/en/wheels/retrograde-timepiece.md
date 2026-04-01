@@ -1,17 +1,17 @@
 ---
 title: "Retrograde Timepiece - Wheel of Destiny"
-description: "Retrograde Timepiece (溯洄时计) - Morimens Wheel of Destiny"
+description: "溯洄时计(Retrograde Timepiece) - Morimens Wiki"
 ---
 
 # Retrograde Timepiece
 **溯洄时计**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Standard |
-| Main Stat | 银钥充能 21.6 |
+| Category | SSR Standard |
 | Character | 拉蒙娜(Ramona) |
+| Main Stat | 银钥充能 21.6 |
 
 ## Effect
 

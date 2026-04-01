@@ -1,13 +1,13 @@
 ---
 title: "Punishment - Wheel of Destiny"
-description: "Punishment (惩戒) - Morimens Wheel of Destiny"
+description: "惩戒(Punishment) - Morimens Wiki"
 ---
 
 # Punishment
 **惩戒**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-r">R</span> |
 | Category | R |
 

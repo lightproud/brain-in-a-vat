@@ -1,15 +1,16 @@
 ---
 title: "Wheel Unseen - Wheel of Destiny"
-description: "Wheel Unseen (隐世的转轮) - Morimens Wheel of Destiny"
+description: "隐世的转轮(Wheel Unseen) - Morimens Wiki"
 ---
 
 # Wheel Unseen
 **隐世的转轮**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Limited (Oblivion) |
+| Category | SSR Limited (Oblivion) |
+| Character | 萝坦(Lotan) |
 
 ## Effect
 

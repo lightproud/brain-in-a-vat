@@ -1,15 +1,15 @@
 ---
 title: "Rebirth in Ashen Earth - Wheel of Destiny"
-description: "Rebirth in Ashen Earth (重生于湮土) - Morimens Wheel of Destiny"
+description: "重生于湮土(Rebirth in Ashen Earth) - Morimens Wiki"
 ---
 
 # Rebirth in Ashen Earth
 **重生于湮土**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Standard |
+| Category | SSR Standard |
 
 ## Effect
 

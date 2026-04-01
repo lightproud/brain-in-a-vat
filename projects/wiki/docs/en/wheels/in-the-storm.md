@@ -1,16 +1,16 @@
 ---
 title: "In the Storm - Wheel of Destiny"
-description: "In the Storm (于暴雨之中) - Morimens Wheel of Destiny"
+description: "于暴雨之中(In the Storm) - Morimens Wiki"
 ---
 
 # In the Storm
 **于暴雨之中**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Standard |
-| Character | 图鲁(Thulhu) |
+| Category | SSR Standard |
+| Character | 图鲁(Tulu) |
 
 ## Effect
 

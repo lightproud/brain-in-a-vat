@@ -1,17 +1,17 @@
 ---
 title: "Poetic Bygone Days - Wheel of Destiny"
-description: "Poetic Bygone Days (冬夜忆) - Morimens Wheel of Destiny"
+description: "冬夜忆(Poetic Bygone Days) - Morimens Wiki"
 ---
 
 # Poetic Bygone Days
 **冬夜忆**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Standard |
+| Category | SSR Standard |
+| Character | 艾继丝(Aigis) |
 | Main Stat | 银钥充能 |
-| Character | 艾继丝(Aegis) |
 
 ## Effect
 

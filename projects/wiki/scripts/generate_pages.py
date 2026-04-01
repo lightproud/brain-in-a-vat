@@ -447,6 +447,148 @@ def generate_character_page(char: dict, wheel_index: dict[str, list[dict]], lang
 # List page update
 # ---------------------------------------------------------------------------
 
+def slugify(text: str) -> str:
+    """Convert text to URL-safe slug."""
+    import re
+    slug = text.lower().strip()
+    slug = re.sub(r"[''']", "", slug)
+    slug = re.sub(r"[^a-z0-9]+", "-", slug)
+    return slug.strip("-")
+
+
+def generate_wheel_pages(equip_data: dict[str, Any], langs: list[str], dry_run: bool) -> int:
+    """Generate/update wheel detail pages from equipment.json data."""
+    wod = equip_data.get("wheels_of_destiny", {})
+    generated = 0
+
+    # Category display names
+    CAT_NAMES = {
+        "zh": {
+            "ssr_limited_oblivion": "SSR限定·忘却线",
+            "ssr_limited_stellar": "SSR限定·星辰线",
+            "ssr_standard": "SSR常驻",
+            "sr_wheels": "SR",
+            "r_wheels": "R",
+        },
+        "en": {
+            "ssr_limited_oblivion": "SSR Limited (Oblivion)",
+            "ssr_limited_stellar": "SSR Limited (Stellar)",
+            "ssr_standard": "SSR Standard",
+            "sr_wheels": "SR",
+            "r_wheels": "R",
+        },
+        "ja": {
+            "ssr_limited_oblivion": "SSR限定・忘却線",
+            "ssr_limited_stellar": "SSR限定・星辰線",
+            "ssr_standard": "SSR常設",
+            "sr_wheels": "SR",
+            "r_wheels": "R",
+        },
+    }
+
+    for cat_key, wheel_list in wod.items():
+        if not isinstance(wheel_list, list):
+            continue
+        for wheel in wheel_list:
+            if not isinstance(wheel, dict):
+                continue
+            name = wheel.get("name", "")
+            name_en = wheel.get("name_en", "")
+            if not name_en:
+                continue
+
+            slug = slugify(name_en)
+            rarity = "SSR" if "ssr" in cat_key else ("SR" if "sr" in cat_key else "R")
+            char_field = wheel.get("character", "")
+            recommended = wheel.get("recommended", [])
+            effect = wheel.get("effect", "")
+            effect_en = wheel.get("effect_en", "")
+            main_stat = wheel.get("main_stat", "")
+
+            for lang in langs:
+                out_dir = DOCS_DIR / lang / "wheels"
+                page_path = out_dir / f"{slug}.md"
+
+                L = LABELS[lang]
+                cat_display = CAT_NAMES.get(lang, CAT_NAMES["zh"]).get(cat_key, cat_key)
+                pending = L["pending"]
+
+                # Build page content
+                if lang == "en":
+                    title = f"{name_en} - Wheel of Destiny"
+                    heading = f"{name_en}"
+                    sub = f"**{name}**" if name else ""
+                elif lang == "ja":
+                    title = f"{name}（{name_en}）- 運命の輪"
+                    heading = f"{name}"
+                    sub = f"**{name_en}**"
+                else:
+                    title = f"{name} - 命轮"
+                    heading = f"{name}"
+                    sub = f"**{name_en}**"
+
+                lines = [
+                    "---",
+                    f'title: "{title}"',
+                    f'description: "{name}({name_en}) - {"Morimens Wiki" if lang == "en" else "忘却前夜命轮详情"}"',
+                    "---",
+                    "",
+                    f"# {heading}",
+                    sub,
+                    "",
+                ]
+
+                # Info table
+                attr_label = L.get("attr", "属性")
+                val_label = L.get("value", "信息")
+                lines.extend([
+                    f"| {attr_label} | {val_label} |",
+                    "|------|------|",
+                    f"| {L['rarity']} | <span class=\"rarity-{rarity.lower()}\">{rarity}</span> |",
+                    f"| {'分类' if lang == 'zh' else 'Category' if lang == 'en' else 'カテゴリ'} | {cat_display} |",
+                ])
+
+                if char_field:
+                    char_label = "适用角色" if lang == "zh" else "Character" if lang == "en" else "対応キャラ"
+                    lines.append(f"| {char_label} | {char_field} |")
+
+                if recommended:
+                    rec_label = "推荐角色" if lang == "zh" else "Recommended" if lang == "en" else "おすすめ"
+                    lines.append(f"| {rec_label} | {', '.join(recommended)} |")
+
+                if main_stat:
+                    stat_label = "主属性" if lang == "zh" else "Main Stat" if lang == "en" else "メインステータス"
+                    lines.append(f"| {stat_label} | {main_stat} |")
+
+                lines.append("")
+
+                # Effect section
+                eff_label = "效果" if lang == "zh" else "Effect" if lang == "en" else "効果"
+                lines.append(f"## {eff_label}")
+                lines.append("")
+
+                if lang == "en" and effect_en:
+                    lines.append(effect_en)
+                elif effect:
+                    lines.append(effect)
+                elif effect_en:
+                    lines.append(effect_en)
+                else:
+                    lines.append(f"*{pending}*")
+
+                lines.append("")
+                content = "\n".join(lines)
+
+                if dry_run:
+                    print(f"  [DRY-RUN] {page_path.relative_to(PROJECT_ROOT)}")
+                else:
+                    out_dir.mkdir(parents=True, exist_ok=True)
+                    page_path.write_text(content, encoding="utf-8")
+                generated += 1
+
+    return generated
+
+
 def update_list_page(characters: list[dict], lang: str, dry_run: bool) -> str | None:
     """Append <CharacterGrid /> component to list page if not already present."""
     list_path = DOCS_DIR / lang / "awakeners" / "list.md"
@@ -516,10 +658,13 @@ def main() -> None:
         if result:
             updated_lists.append(result)
 
+    # Generate wheel pages
+    wheel_count = generate_wheel_pages(equip_data, langs, args.dry_run)
+
     # Summary
     print()
     print("=" * 60)
-    print(f"  Generated: {generated} character pages")
+    print(f"  Generated: {generated} character pages + {wheel_count} wheel pages")
     print(f"  Languages: {', '.join(langs)}")
     print(f"  Characters: {len(characters)}")
     if updated_lists:

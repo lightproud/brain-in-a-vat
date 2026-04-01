@@ -1,17 +1,17 @@
 ---
 title: "Gluttonous Banquet - Wheel of Destiny"
-description: "Gluttonous Banquet (饕餮盛宴) - Morimens Wheel of Destiny"
+description: "饕餮盛宴(Gluttonous Banquet) - Morimens Wiki"
 ---
 
 # Gluttonous Banquet
 **饕餮盛宴**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Standard |
-| Main Stat | 界域精通 |
+| Category | SSR Standard |
 | Character | 雷娅(Rhea) |
+| Main Stat | 界域精通 |
 
 ## Effect
 
