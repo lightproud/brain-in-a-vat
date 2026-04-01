@@ -40,7 +40,25 @@ Exact affinity point thresholds vary by level. Higher tiers require significantl
 
 Raising affinity grants:
 
-- **Story Episodes** -- Personal backstory chapters that reveal each Awakener's history, motivations, and secrets
+- **Story Episodes** -- Personal backstory chapters that reveal each Awakener's history, motivations, and secrets. These tie into the game's central theme of memory and human connection
 - **Voice Lines** -- New dialogue and voice clips unlocked at various affinity milestones
 - **Stat Bonuses** -- Minor to moderate stat increases for the Awakener, aiding their combat performance
 - **Cosmetics** -- Special expressions, profile decorations, or other visual content
+
+## Connection to Lore
+
+The affinity system reflects Morimens' core theme of **memory and forgetting**. In a world where the Erosion erases people from existence -- including all memories of them -- the bonds forged through Silver Core Communication represent an act of defiance. By remembering and connecting with Awakeners, the Keeper fights against the very force that threatens to unmake the world.
+
+Each Awakener's personal story episodes, unlocked through rising affinity, reveal crucial lore about:
+
+- The Awakener's origin and how they became an Awakened One
+- Their connection to the broader factions (Mythag University, Sculptors' Association, Church of the Lightbearers, etc.)
+- Their relationship to the Erosion and the Cthulhu Mythos archetypes they embody
+- Hidden connections between characters that are not apparent from the main story alone
+
+## Tips
+
+- **Prioritize your main team** -- Focus affinity gains on Awakeners you use in combat to benefit from stat bonuses
+- **Check gift preferences** -- Pay attention to each Awakener's personality and lore background to determine their preferred gifts
+- **Daily consistency** -- Small daily interactions accumulate significantly over time
+- **Read the stories** -- Character stories provide valuable lore context and make the overall narrative richer
