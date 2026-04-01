@@ -16,6 +16,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import gc
 import json
 import os
 import re
@@ -290,6 +291,7 @@ def _extract_single_file(
         "object_types": {},  # Diagnostic: ClassIDType -> count
     }
     rel = asset_file.relative_to(game_data_dir) if asset_file.is_relative_to(game_data_dir) else asset_file.name
+    env = None
     try:
         env = UnityPy.load(str(asset_file))
 
@@ -306,6 +308,16 @@ def _extract_single_file(
     except Exception as e:
         stats["asset_files_failed"] = 1
         stats["errors"].append(f"File {rel}: {e}")
+    finally:
+        # Close file handles to avoid "Too many open files"
+        if env is not None:
+            try:
+                for f in getattr(env, "_files", {}).values():
+                    if hasattr(f, "close"):
+                        f.close()
+            except Exception:
+                pass
+            del env
     stats["_rel"] = str(rel)
     return stats
 
@@ -395,6 +407,9 @@ def scan_and_extract(
             result = _extract_single_file(
                 asset_file, game_data_dir, output_dir, extract_tex, tex_filter, verbose,
             )
+            # Periodically force GC to release file handles
+            if (i + 1) % 50 == 0:
+                gc.collect()
             rel = result.pop("_rel", "?")
             obj_types = result.pop("object_types", {})
             extracted = result["text_assets"] + result["mono_assets"] + result["textures"]
