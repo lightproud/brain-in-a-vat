@@ -14,7 +14,7 @@ portrait: /portraits/liz.png
   | Realm | Ultra |
   | Role | Attack |
   | Limited | No |
-  | Availability | 活动唤醒 |
+  | Availability | Event Summon |
 </div>
 
 ## Introduction

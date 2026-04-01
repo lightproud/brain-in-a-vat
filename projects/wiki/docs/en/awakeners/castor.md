@@ -14,7 +14,7 @@ portrait: /portraits/castor.png
   | Realm | Ultra |
   | Role | Defense |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction

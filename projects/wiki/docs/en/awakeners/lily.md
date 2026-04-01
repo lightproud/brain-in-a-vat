@@ -14,7 +14,7 @@ portrait: /portraits/lily.png
   | Realm | Chaos |
   | Role | Defense |
   | Limited | No |
-  | Availability | 活动唤醒「花不染尘」 |
+  | Availability | Event Summon (Unstained Bloom) |
 </div>
 
 ## Introduction

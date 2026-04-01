@@ -14,7 +14,7 @@ portrait: /portraits/xu.png
   | Realm | Caro |
   | Role | Chorus |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction

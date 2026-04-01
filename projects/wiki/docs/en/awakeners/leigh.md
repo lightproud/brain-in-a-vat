@@ -14,7 +14,7 @@ portrait: /portraits/leigh.png
   | Realm | Caro |
   | Role | Chorus |
   | Limited | No |
-  | Availability | 常驻唤醒 |
+  | Availability | Standard Summon |
 </div>
 
 ## Introduction

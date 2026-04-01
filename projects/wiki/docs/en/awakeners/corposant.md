@@ -14,7 +14,7 @@ portrait: /portraits/corposant.png
   | Realm | Aequor |
   | Role | Defense |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction

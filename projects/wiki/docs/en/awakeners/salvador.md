@@ -14,7 +14,7 @@ portrait: /portraits/salvador.png
   | Realm | Caro |
   | Role | Defense |
   | Limited | No |
-  | Availability | 唤醒 |
+  | Availability | Summon |
 </div>
 
 ## Introduction

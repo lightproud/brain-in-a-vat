@@ -14,7 +14,7 @@ portrait: /portraits/murphy.png
   | Realm | Aequor |
   | Role | Defense |
   | Limited | No |
-  | Availability | 唤醒 |
+  | Availability | Summon |
 </div>
 
 ## Introduction

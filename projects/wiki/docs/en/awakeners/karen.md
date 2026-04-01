@@ -14,7 +14,7 @@ portrait: /portraits/karen.png
   | Realm | Chaos |
   | Role | Support |
   | Limited | No |
-  | Availability | 活动唤醒 |
+  | Availability | Event Summon |
 </div>
 
 ## Introduction

@@ -14,7 +14,7 @@ portrait: /portraits/pickman.png
   | Realm | Aequor |
   | Role | Attack |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction

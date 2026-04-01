@@ -14,7 +14,7 @@ portrait: /portraits/wanda.png
   | Realm | Ultra |
   | Role | Defense |
   | Limited | No |
-  | Availability | 唤醒 |
+  | Availability | Summon |
 </div>
 
 ## Introduction

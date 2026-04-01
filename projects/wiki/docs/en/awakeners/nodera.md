@@ -14,7 +14,7 @@ portrait: /portraits/nodera.png
   | Realm | Chaos |
   | Role | Attack |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction

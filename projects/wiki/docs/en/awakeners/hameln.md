@@ -14,7 +14,7 @@ portrait: /portraits/hameln.png
   | Realm | Chaos |
   | Role | Support |
   | Limited | No |
-  | Availability | 唤醒 |
+  | Availability | Summon |
 </div>
 
 ## Introduction

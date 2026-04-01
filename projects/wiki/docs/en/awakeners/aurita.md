@@ -14,7 +14,7 @@ portrait: /portraits/aurita.png
   | Realm | Aequor |
   | Role | Attack |
   | Limited | No |
-  | Availability | 免费获取(通关混沌界域裂隙I) |
+  | Availability | Free (Clear Chaos Realm Rift I) |
 </div>
 
 ## Introduction

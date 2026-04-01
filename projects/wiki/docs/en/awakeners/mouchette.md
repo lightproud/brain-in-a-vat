@@ -14,7 +14,7 @@ portrait: /portraits/mouchette.png
   | Realm | Chaos |
   | Role | Attack |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction

@@ -14,7 +14,7 @@ portrait: /portraits/arachne.png
   | Realm | Ultra |
   | Role | Attack |
   | Limited | Yes |
-  | Availability | 限定活动唤醒(v2.5预告) |
+  | Availability | Limited Event Summon (v2.5 Preview) |
 </div>
 
 ## Introduction

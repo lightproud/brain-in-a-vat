@@ -14,7 +14,7 @@ portrait: /portraits/tincture.png
   | Realm | Ultra |
   | Role | Support |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction

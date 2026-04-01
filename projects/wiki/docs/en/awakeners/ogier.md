@@ -14,7 +14,7 @@ portrait: /portraits/ogier.png
   | Realm | Chaos |
   | Role | Support |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction

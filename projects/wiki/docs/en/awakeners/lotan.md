@@ -14,7 +14,7 @@ portrait: /portraits/lotan.png
   | Realm | Chaos |
   | Role | Defense |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction

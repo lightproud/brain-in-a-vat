@@ -14,7 +14,7 @@ portrait: /portraits/erica.png
   | Realm | Ultra |
   | Role | Defense |
   | Limited | No |
-  | Availability | 免费获取(通关血肉沼泽裂隙I) |
+  | Availability | Free (Clear Caro Swamp Rift I) |
 </div>
 
 ## Introduction
