@@ -19,7 +19,7 @@ portrait: /portraits/wanda.png
 
 ## Introduction
 
-SSR Ultra Defense Awakener (standard). Counter-attack team specialist.
+SSR Caro DPS Awakener (limited). Powerful DPS with Caro realm synergy. Limited banner character.
 
 ## Skills
 

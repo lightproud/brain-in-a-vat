@@ -19,7 +19,7 @@ portrait: /portraits/nodera.png
 
 ## Introduction
 
-SSR Chaos DPS Awakener (standard).
+SSR Chaos DPS Awakener (standard). Design inspired by the nautilus; combat style revolves around cyclical strikes. Standard pool DPS option for Chaos teams.
 
 ## Skills
 

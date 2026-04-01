@@ -19,7 +19,7 @@ portrait: /portraits/aurita.png
 
 ## Introduction
 
-SSR Aequor DPS Awakener (standard). Member of the Deep Dive Trio.
+SSR Ultra Healer Awakener (limited). Primary healer option for Ultra teams.
 
 ## Skills
 

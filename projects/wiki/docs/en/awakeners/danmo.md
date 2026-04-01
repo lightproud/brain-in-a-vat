@@ -19,7 +19,7 @@ portrait: /portraits/danmo.png
 
 ## Introduction
 
-SSR Chaos DPS Awakener (limited).
+SSR Chaos DPS Awakener (limited). Extremely high damage at full investment; often the first choice for friend support. Representative of the Silver Key burst playstyle — one burst rotation can one-shot most bosses.
 
 ## Skills
 

@@ -14,12 +14,12 @@ portrait: /portraits/sr_lamengna.png
   | Realm | Chaos |
   | Role | Support |
   | Limited | No |
-  | Availability | 序章教程赠送 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域辅助型，提供印卡/复制能力。SSR同名角色拉蒙娜及变体环行·拉蒙娜为独立角色。
+SR Chaos Support Awakener (standard).
 
 ## Skills
 

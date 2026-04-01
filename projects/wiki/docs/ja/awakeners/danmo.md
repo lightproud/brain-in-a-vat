@@ -19,7 +19,7 @@ portrait: /portraits/danmo.png
 
 ## 紹介
 
-SSR混沌攻撃型覚醒体（限定）。
+SSR混沌攻撃型覚醒体（限定）。銀鍵バースト型の代表キャラ。
 
 ## スキル
 

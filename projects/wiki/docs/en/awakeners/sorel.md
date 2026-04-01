@@ -19,7 +19,7 @@ portrait: /portraits/sorel.png
 
 ## Introduction
 
-SSR Caro DPS Awakener (limited).
+SSR Caro DPS Awakener (limited). Versatile Caro carry with multiple build paths. Limited banner character.
 
 ## Skills
 

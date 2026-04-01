@@ -19,7 +19,7 @@ portrait: /portraits/pickman.png
 
 ## Introduction
 
-SSR Aequor DPS Awakener (limited). Signature wheel: 写实主义悖谬(Paradoxical Realism)：狂气回充7.2；狂气和力量获取+6~12%；超限后提升最终伤害/护盾/治疗。.
+SSR Ultra DPS Awakener (limited). Fury and Power gain +6-12% with signature wheel. Over-Exalt enhances final damage, shield, and healing.
 
 ## Skills
 

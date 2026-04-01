@@ -19,7 +19,7 @@ portrait: /portraits/tincture.png
 
 ## Introduction
 
-SSR Ultra Support Awakener (standard).
+SSR Ultra Support Awakener (standard). Support for Ultra teams. Available from standard pool.
 
 ## Skills
 

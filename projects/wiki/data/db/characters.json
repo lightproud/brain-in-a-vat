@@ -177,9 +177,9 @@
         "lore_note": "创世纪角色之一。制作人Light亲自设计的技能组——「复刻上一张打出的卡」体现了「从过往经历中汲取力量」的主题。V1.1 PV结尾加入的台词：「无论失败多少次，我最终一定会拯救你。」",
         "design_note": "制作人最喜欢的角色。"
       },
-      "description_en": "SSR Chaos DPS Awakener (limited).",
+      "description_en": "SSR Chaos DPS Awakener (limited). Timeworn variant of Ramona centered on Negentropy and card manipulation. Can recall large amounts of Strike cards to synergize with team burst. Community nickname: \"Ring Ramona\".",
       "obtain_en": "Limited Event Summon",
-      "description_ja": "SSR混沌攻撃型覚醒体（限定）。環行シリーズ。",
+      "description_ja": "SSR混沌攻撃型覚醒体（限定）。環行バリアント。",
       "obtain_ja": "限定イベント召喚"
     },
     {
@@ -280,9 +280,9 @@
         },
         "role_in_team": "弃牌找回、降费辅助，配合莉兹等主C使用"
       },
-      "description_en": "SSR Chaos Support Awakener (standard). Member of the Royal Four.",
+      "description_en": "SSR Aequor Support Awakener (standard). Versatile support with card recycling and AP generation abilities. Available from standard pool.",
       "obtain_en": "Standard/Event Summon",
-      "description_ja": "SSR混沌支援型覚醒体（恒常）。ロイヤルフォーのメンバー。",
+      "description_ja": "SSR混沌支援型覚醒体（恒常）。恒常プールで入手可能。",
       "obtain_ja": "恒常/イベント召喚"
     },
     {
@@ -304,7 +304,7 @@
         "role_in_team": "混沌界域T2副输出型唤醒体。配合混沌主C进行副输出。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Chaos Sub-DPS Awakener (standard).",
+      "description_en": "SSR Chaos Sub-DPS Awakener (standard). Excels at sub-DPS alongside Chaos main carries, serving as a flexible off-carry slot in Chaos teams.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR混沌副攻撃型覚醒体（恒常）。",
       "obtain_ja": "恒常/イベント召喚"
@@ -330,9 +330,9 @@
         "role_in_team": "混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。以循环打击为核心战斗风格。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Chaos DPS Awakener (standard).",
+      "description_en": "SSR Chaos DPS Awakener (standard). Design inspired by the nautilus; combat style revolves around cyclical strikes. Standard pool DPS option for Chaos teams.",
       "obtain_en": "Standard/Event Summon",
-      "description_ja": "SSR混沌攻撃型覚醒体（恒常）。",
+      "description_ja": "SSR混沌攻撃型覚醒体（恒常）。恒常プールで入手可能。",
       "obtain_ja": "恒常/イベント召喚"
     },
     {
@@ -382,9 +382,9 @@
         "role_in_team": "混沌界域T3辅助型唤醒体。提供基础增益效果。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Chaos Support Awakener (standard).",
+      "description_en": "SSR Chaos Support Awakener (standard). Provides team buffs and serves as an entry-level Chaos support option. Available from standard pool.",
       "obtain_en": "Standard/Event Summon",
-      "description_ja": "SSR混沌支援型覚醒体（恒常）。",
+      "description_ja": "SSR混沌支援型覚醒体（恒常）。恒常プールで入手可能。",
       "obtain_ja": "恒常/イベント召喚"
     },
     {
@@ -408,7 +408,7 @@
         "role_in_team": "混沌界域防御型唤醒体。防御能力出色，为混沌队提供稳定护盾。v1.1版本推出，后加入常驻池。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Chaos Defense Awakener (standard). Introduced in v1.1. Signature wheel: 跨越疼痛(Grace Through Pain).",
+      "description_en": "SSR Caro Support Awakener (limited). Caro team support with healing synergy.",
       "obtain_en": "Event Summon (Unstained Bloom)",
       "description_ja": "SSR混沌防御型覚醒体（恒常）。",
       "obtain_ja": "活动唤醒「花不染尘」"
@@ -433,9 +433,9 @@
         "role_in_team": "混沌界域限定输出角色，满配后伤害极高，以银钥爆发为核心。一轮爆发可秒杀大多数Boss，常作为助战首选。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Chaos DPS Awakener (limited).",
+      "description_en": "SSR Chaos DPS Awakener (limited). Extremely high damage at full investment; often the first choice for friend support. Representative of the Silver Key burst playstyle — one burst rotation can one-shot most bosses.",
       "obtain_en": "Limited Event Summon",
-      "description_ja": "SSR混沌攻撃型覚醒体（限定）。",
+      "description_ja": "SSR混沌攻撃型覚醒体（限定）。銀鍵バースト型の代表キャラ。",
       "obtain_ja": "限定イベント召喚"
     },
     {
@@ -475,9 +475,9 @@
         "role_in_team": "深海界域限定辅助，强力触手辅助。深海队必备辅助位，v1.4版本大幅增强。",
         "_data_source": "角色描述和v1.4更新记录，具体数值待从公开wiki补充"
       },
-      "description_en": "SSR Aequor Support Awakener (limited). Introduced in v1.4.",
+      "description_en": "SSR Aequor Support Awakener (limited). Powerful tentacle support. v1.4 enhanced: \"Supreme Life Sacrifice\" adjusted to penetration damage; Rouse and Talent strengthened. Essential support for Aequor teams.",
       "obtain_en": "Limited Event Summon",
-      "description_ja": "SSR深海支援型覚醒体（限定）。",
+      "description_ja": "SSR深海支援型覚醒体（限定）。触腕シナジー。",
       "obtain_ja": "限定イベント召喚"
     },
     {
@@ -553,9 +553,9 @@
           }
         ]
       },
-      "description_en": "SSR Aequor DPS Awakener (limited).",
+      "description_en": "SSR Aequor DPS Awakener (limited). T0-tier Aequor carry and core of the Deep Sea system. Character prototype is Cthulhu. Deals massive damage through tentacles and piercing attacks; the absolute core of the Aequor archetype.",
       "obtain_en": "Limited Event Summon",
-      "description_ja": "SSR深海攻撃型覚醒体（限定）。",
+      "description_ja": "SSR深海攻撃型覚醒体（限定）。T0評価。触腕シナジー。クトゥルフがモチーフ。",
       "obtain_ja": "限定イベント召喚"
     },
     {
@@ -581,9 +581,9 @@
         "role_in_team": "图鲁的神王变体形态，深海界域顶级限定主C。深海队的顶级主C选择，触腕体系进化版。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Aequor DPS Awakener (limited).",
+      "description_en": "SSR Aequor DPS Awakener (limited). Divine King variant of Tulu with further enhanced combat capabilities. Top-tier Aequor main carry choice.",
       "obtain_en": "Limited Event Summon",
-      "description_ja": "SSR深海攻撃型覚醒体（限定）。",
+      "description_ja": "SSR深海攻撃型覚醒体（限定）。神王バリアント。",
       "obtain_ja": "限定イベント召喚"
     },
     {
@@ -608,9 +608,9 @@
           "effect": "希莱斯特造成的触腕伤害提高20%~50%。每回合打出首张指令卡后，额外触发4次天赋「远航号角」。"
         }
       },
-      "description_en": "SSR Aequor Support Awakener (standard).",
+      "description_en": "SSR Aequor Support Awakener (standard). Extremely versatile support with T1 performance in both Aequor and Chaos teams. Free card heals and grants AP; high-cost card and Rouse provide tentacles. Core Aequor support.",
       "obtain_en": "Standard/Event Summon",
-      "description_ja": "SSR深海支援型覚醒体（恒常）。",
+      "description_ja": "SSR深海支援型覚醒体（恒常）。T1評価。触腕シナジー。",
       "obtain_ja": "恒常/イベント召喚"
     },
     {
@@ -635,9 +635,9 @@
           "effect": "戈利亚造成的基础伤害提高20%~50%，「巨刃之威」使最终伤害临时提高5~10%。队伍中1/2/3名其他利莫里亚唤醒体时，所有唤醒体力量提高6/15/30%。"
         }
       },
-      "description_en": "SSR Aequor Defense Awakener (standard).",
+      "description_en": "SSR Aequor Defense Awakener (standard). Provides stable frontline protection and tentacle synergy for Aequor teams. Has Spirit Sculpt talent that further boosts tentacle damage.",
       "obtain_en": "Standard/Event Summon",
-      "description_ja": "SSR深海防御型覚醒体（恒常）。",
+      "description_ja": "SSR深海防御型覚醒体（恒常）。触腕シナジー。",
       "obtain_ja": "恒常/イベント召喚"
     },
     {
@@ -674,9 +674,9 @@
         "role_in_team": "深海界域T1副输出型唤醒体。深海触手体系中的副C，配合图鲁进行触腕联动输出。",
         "_data_source": "命轮效果描述推导，具体卡牌效果待从公开wiki补充"
       },
-      "description_en": "SSR Aequor Sub-DPS Awakener (standard).",
+      "description_en": "SSR Aequor Defense Awakener (standard). Primary defensive option for Aequor teams with shield-based playstyle. Available from standard pool.",
       "obtain_en": "Standard/Event Summon",
-      "description_ja": "SSR深海副攻撃型覚醒体（恒常）。",
+      "description_ja": "SSR深海副攻撃型覚醒体（恒常）。恒常プールで入手可能。",
       "obtain_ja": "恒常/イベント召喚"
     },
     {
@@ -700,7 +700,7 @@
         "role_in_team": "深海界域免费SSR(通关混沌裂隙I获取)，「深潜三杰」成员。爆发+循环卡牌打法，「深海万能锤」，新手友好。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Aequor DPS Awakener (standard). Member of the Deep Dive Trio.",
+      "description_en": "SSR Ultra Healer Awakener (limited). Primary healer option for Ultra teams.",
       "obtain_en": "Free (Clear Chaos Realm Rift I)",
       "description_ja": "SSR深海攻撃型覚醒体（恒常）。",
       "obtain_ja": "免费获取(通关混沌界域裂隙I)"
@@ -825,9 +825,9 @@
           "covenant_substats": "4号位：狂气充能；5号位：暴击率；6号位：体质"
         }
       },
-      "description_en": "SSR Caro DPS Awakener (standard).",
+      "description_en": "SSR Caro DPS Awakener (standard). Devour-based DPS who consumes Embryo cards for massive damage. Core carry for Caro compositions.",
       "obtain_en": "Standard/Event Summon",
-      "description_ja": "SSR血肉攻撃型覚醒体（恒常）。",
+      "description_ja": "SSR血肉攻撃型覚醒体（恒常）。胚胎カードメカニズム。捕食メカニズム。",
       "obtain_ja": "恒常/イベント召喚"
     },
     {
@@ -853,7 +853,7 @@
         },
         "role_in_team": "与尤乌哈希配合，提供胚胎融合和治疗支持"
       },
-      "description_en": "SSR Caro Support Awakener (standard).",
+      "description_en": "SSR Caro Healer Awakener (standard). Provides healing through Over-Exalt and gains Power and Shield when taking damage. Supports Caro team sustain.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR血肉支援型覚醒体（恒常）。",
       "obtain_ja": "恒常/イベント召喚"
@@ -880,7 +880,7 @@
         "role_in_team": "血肉界域T0限定输出角色，「红女王」。穿着红色玫瑰裙的沙龙主人，附带回血技能，攻守兼备。签名命轮：以蔷薇之名(By Rose Alone)。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Caro DPS Awakener (limited).",
+      "description_en": "SSR Caro DPS Awakener (limited). Versatile Caro carry with multiple build paths. Limited banner character.",
       "obtain_en": "Limited Event Summon",
       "description_ja": "SSR血肉攻撃型覚醒体（限定）。",
       "obtain_ja": "限定イベント召喚"
@@ -907,7 +907,7 @@
         "role_in_team": "血肉界域SSR限定辅助角色，社区昵称「羊妈」。为血肉队提供增益和恢复，顶级血肉辅助。签名命轮：慈悲的哺育(Merciful Nurturing)。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Caro Support Awakener (limited).",
+      "description_en": "SSR Caro Support Awakener (limited). Caro support focused on the Flesh system mechanics.",
       "obtain_en": "Limited Event Summon",
       "description_ja": "SSR血肉支援型覚醒体（限定）。",
       "obtain_ja": "限定イベント召喚"
@@ -931,7 +931,7 @@
         "role_in_team": "血肉界域T1副输出型唤醒体。配合血肉主C进行副输出，在吞噬/胚胎体系中提供额外伤害。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Caro Sub-DPS Awakener (standard).",
+      "description_en": "SSR Ultra DPS Awakener (limited). Ultra DPS with dimensional mechanics.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR血肉副攻撃型覚醒体（恒常）。",
       "obtain_ja": "恒常/イベント召喚"
@@ -956,7 +956,7 @@
         "role_in_team": "血肉界域T2副输出型唤醒体。血肉体系灵活副C，签名命轮触发死亡抵抗后为队伍提供治疗和护盾增益。",
         "_data_source": "命轮效果描述，具体技能数据待从公开wiki补充"
       },
-      "description_en": "SSR Caro Sub-DPS Awakener (standard).",
+      "description_en": "SSR Caro Defense Awakener (standard). Triggers team-wide healing and shield enhancement for 2 turns after activating Death Resistance. Caro frontline option.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR血肉副攻撃型覚醒体（恒常）。",
       "obtain_ja": "恒常/イベント召喚"
@@ -980,7 +980,7 @@
         "role_in_team": "血肉界域T2防御型唤醒体。为血肉队提供前排防护。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Caro Defense Awakener (standard).",
+      "description_en": "SSR Chaos DPS Awakener (limited). Chaos carry with high burst potential.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR血肉防御型覚醒体（恒常）。",
       "obtain_ja": "恒常/イベント召喚"
@@ -1036,7 +1036,7 @@
         "command_cards_note": "「功能过载」(Functional Overload)可同时叠加大量护盾和伤害，但消耗全部算力。3启后更为强力。",
         "role_in_team": "在超维队伍中负责提供爆发回合的易伤和力量加成"
       },
-      "description_en": "SSR Ultra Defense Awakener (standard). Member of the Deep Dive Trio.",
+      "description_en": "SSR Chaos Sub-DPS Awakener (standard). Flexible sub-carry for Chaos teams.",
       "obtain_en": "Free (Clear Caro Swamp Rift I)",
       "description_ja": "SSR超次元防御型覚醒体（恒常）。",
       "obtain_ja": "免费获取(通关血肉沼泽裂隙I)"
@@ -1108,9 +1108,9 @@
         ],
         "gameplay_notes": "核心思路：叠绿炎→升级绿炎→狂气爆发一次性打出。注意：觉醒后容易满手绿炎无法抽牌，需要弃牌能力队友配合。升级后绿炎为多段伤害，遇反击特性敌人时狂气爆发可能被反伤致死。"
       },
-      "description_en": "SSR Ultra DPS Awakener (standard).",
+      "description_en": "SSR Caro DPS Awakener (limited). Poison-based DPS with counter mechanics. Excels in sustained fights with her damage-over-time playstyle.",
       "obtain_en": "Event Summon",
-      "description_ja": "SSR超次元攻撃型覚醒体（恒常）。",
+      "description_ja": "SSR超次元攻撃型覚醒体（恒常）。毒系ダメージ。",
       "obtain_ja": "活动唤醒"
     },
     {
@@ -1139,9 +1139,9 @@
         "command_cards_note": "核心技能为「断颈一击」，可配合卡茜亚的隔空取物从超维空间拉出再打一次。需要前期养成才能发挥全部实力。",
         "role_in_team": "超维主C，配合卡茜亚可实现现版本越级最强输出组合"
       },
-      "description_en": "SSR Ultra DPS Awakener (limited). Introduced in v1.1.",
+      "description_en": "SSR Caro DPS Awakener (limited). T0-tier Caro carry who permanently stacks Crit DMG after kills, up to 5 stacks. Core damage dealer for Caro teams.",
       "obtain_en": "Limited Event Summon",
-      "description_ja": "SSR超次元攻撃型覚醒体（限定）。",
+      "description_ja": "SSR超次元攻撃型覚醒体（限定）。T0評価。",
       "obtain_ja": "限定イベント召喚"
     },
     {
@@ -1194,7 +1194,7 @@
         "role_in_team": "超维界域T1副输出型唤醒体。与达芙黛尔组合：用「隔空取物」从超维空间再打一次「断颈一击」，实现现版本越级最强输出组合。",
         "_data_source": "从达芙黛尔技能描述推导，具体数值待从公开wiki补充"
       },
-      "description_en": "SSR Ultra Sub-DPS Awakener (standard).",
+      "description_en": "SSR Ultra Support Awakener (limited). Ultra team support with unique utility.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR超次元副攻撃型覚醒体（恒常）。",
       "obtain_ja": "恒常/イベント召喚"
@@ -1242,9 +1242,9 @@
         "role_in_team": "超维界域T2辅助型唤醒体。提供基础辅助效果，过渡辅助位选择。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Ultra Support Awakener (standard).",
+      "description_en": "SSR Ultra Support Awakener (standard). Support for Ultra teams. Available from standard pool.",
       "obtain_en": "Standard/Event Summon",
-      "description_ja": "SSR超次元支援型覚醒体（恒常）。",
+      "description_ja": "SSR超次元支援型覚醒体（恒常）。恒常プールで入手可能。",
       "obtain_ja": "恒常/イベント召喚"
     },
     {
@@ -1267,9 +1267,9 @@
         "role_in_team": "超维界域v1.5新增辅助型唤醒体。超维开荒队核心辅助，大幅提升超维队整体强度。推荐配队：莉兹+奥尔拉+艾瑞卡+环娜。签名命轮：诗笺的句尾(The Last Verse)。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Ultra Support Awakener (standard). Introduced in v1.5.",
+      "description_en": "SSR Ultra DPS Awakener (limited). Core Ultra carry who utilizes extra turns from card plays. High burst damage potential.",
       "obtain_en": "Event Summon",
-      "description_ja": "SSR超次元支援型覚醒体（恒常）。",
+      "description_ja": "SSR超次元支援型覚醒体（恒常）。追加ターンメカニズム。",
       "obtain_ja": "活动唤醒"
     },
     {
@@ -1292,9 +1292,9 @@
         "role_in_team": "混沌界域v1.5新增，官方定位辅助但输出能力突出，专属命轮「好运时间」极为专用。推荐配队：塔薇+拉蒙娜+珈伦+莱克。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Chaos Support Awakener (standard). Introduced in v1.5.",
+      "description_en": "SSR Chaos Support Awakener (standard). Provides Fury generation and team buffs. Available from standard pool.",
       "obtain_en": "Event Summon",
-      "description_ja": "SSR混沌支援型覚醒体（恒常）。",
+      "description_ja": "SSR混沌支援型覚醒体（恒常）。恒常プールで入手可能。",
       "obtain_ja": "活动唤醒"
     },
     {
@@ -1316,9 +1316,9 @@
         "role_in_team": "混沌界域辅助型唤醒体。爆发伤害和银钥充能能力强力，常用于凯刻斯反击队。签名命轮：永恒安魂曲(Eternal Requiem)。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Chaos Support Awakener (standard). Counter-attack team specialist.",
+      "description_en": "SSR Chaos DPS Awakener (standard). Unlimited Crit DMG scaling; excels in prolonged battles of 8+ turns. Available from standard pool.",
       "obtain_en": "Summon",
-      "description_ja": "SSR混沌支援型覚醒体（恒常）。",
+      "description_ja": "SSR混沌支援型覚醒体（恒常）。恒常プールで入手可能。",
       "obtain_ja": "唤醒"
     },
     {
@@ -1345,7 +1345,7 @@
         "role_in_team": "深海界域防御型唤醒体，深海玩家必抽。拥有专属「献祭」被动机制，大幅提升深海队生存能力。签名命轮：隐秘的诞生(Shrouded Birth)。",
         "_data_source": "角色描述推导，具体技能数据待从公开wiki补充"
       },
-      "description_en": "SSR Aequor Defense Awakener (standard).",
+      "description_en": "SSR Caro DPS Awakener (limited). Special Ink Blade mechanic for unique card manipulation. Caro DPS with distinctive playstyle.",
       "obtain_en": "Summon",
       "description_ja": "SSR深海防御型覚醒体（恒常）。",
       "obtain_ja": "唤醒"
@@ -1372,9 +1372,9 @@
         "role_in_team": "血肉界域防御型唤醒体，社区昵称「神父」。盾反队核心成员，靠反伤和护盾进行输出。签名命轮：神言石板(Tablet of Scriptures)。推荐配队：萨尔瓦多+旺达+凯刻斯+哈姆林。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Caro Defense Awakener (standard). Counter-attack team specialist.",
+      "description_en": "SSR Caro Healer Awakener (standard). Primary healer for Caro teams with Embryo card healing mechanics. Available from standard pool.",
       "obtain_en": "Summon",
-      "description_ja": "SSR血肉防御型覚醒体（恒常）。",
+      "description_ja": "SSR血肉防御型覚醒体（恒常）。胚胎カードメカニズム。恒常プールで入手可能。",
       "obtain_ja": "唤醒"
     },
     {
@@ -1457,7 +1457,7 @@
         "role_in_team": "超维界域防御型唤醒体，社区昵称「SM」。盾反队成员，靠反伤和砸盾输出，与萨尔瓦多组成盾反队双核。签名命轮：女王的戒律(Queen's Edict)。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Ultra Defense Awakener (standard). Counter-attack team specialist.",
+      "description_en": "SSR Caro DPS Awakener (limited). Powerful DPS with Caro realm synergy. Limited banner character.",
       "obtain_en": "Summon",
       "description_ja": "SSR超次元防御型覚醒体（恒常）。",
       "obtain_ja": "唤醒"
@@ -1512,7 +1512,7 @@
         "role_in_team": "血肉界域辅助型唤醒体，深潜三杰成员，通关第一章免费获取。攻击面板突出，提供群体易伤、AOE输出和石化效果。常规配队：艾继丝+雷亚+拉蒙娜+血肉C。",
         "_data_source": "角色描述和命轮效果推导，具体数值待从公开wiki补充"
       },
-      "description_en": "SSR Caro Support Awakener (standard). Member of the Deep Dive Trio. Signature wheel: 冬夜忆(Poetic Bygone Days)：防止石化溶解无debuff卡手；加速杂兵/精英战。免费可获取命轮。.",
+      "description_en": "SSR Chaos Defense Awakener (standard). Anti-Petrification and Dissolution specialist; accelerates mob and elite encounters.",
       "obtain_en": "Summon",
       "description_ja": "SSR血肉支援型覚醒体（恒常）。",
       "obtain_ja": "唤醒"
@@ -1602,7 +1602,7 @@
         "role_in_team": "超维界域限定辅助角色，v2.1推出。为超维队带来新的辅助能力，提升超维队的团队上限。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Ultra Support Awakener (limited). Introduced in v2.1.",
+      "description_en": "SSR Chaos Support Awakener (limited). Chaos support with unique team synergy.",
       "obtain_en": "Limited Event Summon",
       "description_ja": "SSR超次元支援型覚醒体（限定）。",
       "obtain_ja": "限定イベント召喚"
@@ -1711,7 +1711,7 @@
         "role_in_team": "混沌界域限定输出角色，v2.3推出。打击型DPS，以物理打击伤害为核心输出方式。名字来源于法语「小苍蝇」。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Chaos DPS Awakener (limited). Introduced in v2.3.",
+      "description_en": "SSR Ultra Defense Awakener (limited). Ultra frontline with defensive capabilities.",
       "obtain_en": "Limited Event Summon",
       "description_ja": "SSR混沌攻撃型覚醒体（限定）。",
       "obtain_ja": "限定イベント召喚"
@@ -1831,7 +1831,7 @@
       },
       "description_en": "SSR Caro DPS Awakener (limited). Introduced in v1.6.",
       "obtain_en": "Limited Event Summon",
-      "description_ja": "SSR血肉攻撃型覚醒体（限定）。血の鎖シリーズ。",
+      "description_ja": "SSR血肉攻撃型覚醒体（限定）。",
       "obtain_ja": "限定イベント召喚"
     },
     {
@@ -1856,7 +1856,7 @@
         "role_in_team": "血肉界域常驻合唱型唤醒体。作为合唱型角色与血肉主C产生联携效果，是常驻池中可获取的合唱位选择。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Caro Chorus Awakener (standard). Chorus-type character that creates synergy effects with main DPS.",
+      "description_en": "SSR Chaos Support Awakener (standard). Chaos support with defensive utility.",
       "obtain_en": "Standard Summon",
       "description_ja": "SSR血肉合唱型覚醒体（恒常）。",
       "obtain_ja": "常驻唤醒"
@@ -1909,7 +1909,7 @@
         "role_in_team": "深海界域限定输出型唤醒体，v2.3.2推出。名字来源于洛夫克拉夫特短篇《皮克曼的模特》。深海队新一代输出选择。",
         "_data_source": "命轮数据已知，具体卡牌技能数据待从公开wiki补充"
       },
-      "description_en": "SSR Aequor DPS Awakener (limited). Signature wheel: 写实主义悖谬(Paradoxical Realism)：狂气回充7.2；狂气和力量获取+6~12%；超限后提升最终伤害/护盾/治疗。.",
+      "description_en": "SSR Ultra DPS Awakener (limited). Fury and Power gain +6-12% with signature wheel. Over-Exalt enhances final damage, shield, and healing.",
       "obtain_en": "Limited Event Summon",
       "description_ja": "SSR深海攻撃型覚醒体（限定）。",
       "obtain_ja": "限定イベント召喚"
@@ -1935,7 +1935,7 @@
         "role_in_team": "超维界域限定唤醒体，v2.5版本预告角色。名字来源于希腊神话中的织女阿拉克涅。超维队未来主力角色之一。",
         "_data_source": "v2.5预告角色，具体技能数据待从公开wiki补充"
       },
-      "description_en": "SSR Ultra DPS Awakener (limited). Introduced in v2.5.",
+      "description_en": "SSR Ultra Support Awakener (limited). Spider-themed support for Ultra compositions.",
       "obtain_en": "Limited Event Summon (v2.5 Preview)",
       "description_ja": "SSR超次元攻撃型覚醒体（限定）。",
       "obtain_ja": "限定活动唤醒(v2.5预告)"
@@ -1952,7 +1952,9 @@
       "obtain": "序章教程赠送",
       "description": "初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域辅助型，提供净化效果。SSR同名角色朵尔及变体熔毁·朵尔为独立角色。",
       "description_ja": "SR混沌支援型覚醒体（恒常）。",
-      "obtain_ja": "序章教程赠送"
+      "obtain_ja": "序章教程赠送",
+      "description_en": "SR Chaos Support Awakener (standard).",
+      "obtain_en": "Standard/Event Summon"
     },
     {
       "id": "sr_lamengna",
@@ -1964,7 +1966,9 @@
       "obtain": "序章教程赠送",
       "description": "初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域辅助型，提供印卡/复制能力。SSR同名角色拉蒙娜及变体环行·拉蒙娜为独立角色。",
       "description_ja": "SR混沌支援型覚醒体（恒常）。",
-      "obtain_ja": "序章教程赠送"
+      "obtain_ja": "序章教程赠送",
+      "description_en": "SR Chaos Support Awakener (standard).",
+      "obtain_en": "Standard/Event Summon"
     },
     {
       "id": "sr_luotan",
@@ -1976,7 +1980,9 @@
       "obtain": "序章教程赠送",
       "description": "初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域伤害型。SSR同名角色萝坦为独立角色。",
       "description_ja": "SR混沌攻撃型覚醒体（恒常）。",
-      "obtain_ja": "序章教程赠送"
+      "obtain_ja": "序章教程赠送",
+      "description_en": "SR Chaos DPS Awakener (standard).",
+      "obtain_en": "Standard/Event Summon"
     },
     {
       "id": "sr_aojier",
@@ -1988,7 +1994,9 @@
       "obtain": "序章教程赠送",
       "description": "初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域防御型，提供嘲讽/点名能力。SSR同名角色奥吉尔为独立角色。",
       "description_ja": "SR混沌防御型覚醒体（恒常）。",
-      "obtain_ja": "序章教程赠送"
+      "obtain_ja": "序章教程赠送",
+      "description_en": "SR Chaos Defense Awakener (standard).",
+      "obtain_en": "Standard/Event Summon"
     }
   ],
   "notable_groups": [

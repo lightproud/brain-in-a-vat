@@ -19,7 +19,7 @@ portrait: /portraits/clementine.png
 
 ## Introduction
 
-SSR Ultra Support Awakener (limited). Introduced in v2.1.
+SSR Chaos Support Awakener (limited). Chaos support with unique team synergy.
 
 ## Skills
 

@@ -19,7 +19,7 @@ portrait: /portraits/liz.png
 
 ## Introduction
 
-SSR Ultra DPS Awakener (standard).
+SSR Caro DPS Awakener (limited). Poison-based DPS with counter mechanics. Excels in sustained fights with her damage-over-time playstyle.
 
 ## Skills
 

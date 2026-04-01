@@ -19,7 +19,7 @@ portrait: /portraits/hameln.png
 
 ## Introduction
 
-SSR Chaos Support Awakener (standard). Counter-attack team specialist.
+SSR Chaos DPS Awakener (standard). Unlimited Crit DMG scaling; excels in prolonged battles of 8+ turns. Available from standard pool.
 
 ## Skills
 

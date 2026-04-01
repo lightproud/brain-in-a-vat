@@ -19,7 +19,7 @@ portrait: /portraits/karen.png
 
 ## Introduction
 
-SSR Chaos Support Awakener (standard). Introduced in v1.5.
+SSR Chaos Support Awakener (standard). Provides Fury generation and team buffs. Available from standard pool.
 
 ## Skills
 

@@ -19,7 +19,7 @@ portrait: /portraits/liz.png
 
 ## 紹介
 
-SSR超次元攻撃型覚醒体（恒常）。
+SSR超次元攻撃型覚醒体（恒常）。毒系ダメージ。
 
 ## スキル
 

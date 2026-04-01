@@ -19,7 +19,7 @@ portrait: /portraits/daffodil.png
 
 ## 紹介
 
-SSR超次元攻撃型覚醒体（限定）。
+SSR超次元攻撃型覚醒体（限定）。T0評価。
 
 ## スキル
 

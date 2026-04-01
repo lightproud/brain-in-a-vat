@@ -19,7 +19,7 @@ portrait: /portraits/tincture.png
 
 ## 紹介
 
-SSR超次元支援型覚醒体（恒常）。
+SSR超次元支援型覚醒体（恒常）。恒常プールで入手可能。
 
 ## スキル
 

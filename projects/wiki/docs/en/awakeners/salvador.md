@@ -19,7 +19,7 @@ portrait: /portraits/salvador.png
 
 ## Introduction
 
-SSR Caro Defense Awakener (standard). Counter-attack team specialist.
+SSR Caro Healer Awakener (standard). Primary healer for Caro teams with Embryo card healing mechanics. Available from standard pool.
 
 ## Skills
 

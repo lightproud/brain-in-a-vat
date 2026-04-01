@@ -19,7 +19,7 @@ portrait: /portraits/thais.png
 
 ## Introduction
 
-SSR Caro Support Awakener (limited).
+SSR Caro Support Awakener (limited). Caro support focused on the Flesh system mechanics.
 
 ## Skills
 

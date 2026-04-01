@@ -19,7 +19,7 @@ portrait: /portraits/lily.png
 
 ## Introduction
 
-SSR Chaos Defense Awakener (standard). Introduced in v1.1. Signature wheel: 跨越疼痛(Grace Through Pain).
+SSR Caro Support Awakener (limited). Caro team support with healing synergy.
 
 ## Skills
 

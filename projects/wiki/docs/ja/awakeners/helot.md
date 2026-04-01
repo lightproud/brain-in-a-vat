@@ -19,7 +19,7 @@ portrait: /portraits/helot.png
 
 ## 紹介
 
-SSR血肉攻撃型覚醒体（限定）。血の鎖シリーズ。
+SSR血肉攻撃型覚醒体（限定）。
 
 ## スキル
 

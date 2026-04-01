@@ -19,7 +19,7 @@ portrait: /portraits/shan.png
 
 ## 紹介
 
-SSR深海副攻撃型覚醒体（恒常）。
+SSR深海副攻撃型覚醒体（恒常）。恒常プールで入手可能。
 
 ## スキル
 

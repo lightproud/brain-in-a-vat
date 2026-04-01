@@ -19,7 +19,7 @@ portrait: /portraits/hameln.png
 
 ## 紹介
 
-SSR混沌支援型覚醒体（恒常）。
+SSR混沌支援型覚醒体（恒常）。恒常プールで入手可能。
 
 ## スキル
 

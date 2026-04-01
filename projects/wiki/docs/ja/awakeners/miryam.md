@@ -19,7 +19,7 @@ portrait: /portraits/miryam.png
 
 ## 紹介
 
-SSR深海支援型覚醒体（限定）。
+SSR深海支援型覚醒体（限定）。触腕シナジー。
 
 ## スキル
 

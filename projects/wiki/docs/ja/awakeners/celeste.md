@@ -19,7 +19,7 @@ portrait: /portraits/celeste.png
 
 ## 紹介
 
-SSR深海支援型覚醒体（恒常）。
+SSR深海支援型覚醒体（恒常）。T1評価。触腕シナジー。
 
 ## スキル
 

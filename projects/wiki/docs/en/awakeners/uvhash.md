@@ -19,7 +19,7 @@ portrait: /portraits/uvhash.png
 
 ## Introduction
 
-SSR Caro DPS Awakener (standard).
+SSR Caro DPS Awakener (standard). Devour-based DPS who consumes Embryo cards for massive damage. Core carry for Caro compositions.
 
 ## Skills
 

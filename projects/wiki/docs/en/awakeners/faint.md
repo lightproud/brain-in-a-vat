@@ -19,7 +19,7 @@ portrait: /portraits/faint.png
 
 ## Introduction
 
-SSR Caro Sub-DPS Awakener (standard).
+SSR Caro Defense Awakener (standard). Triggers team-wide healing and shield enhancement for 2 turns after activating Death Resistance. Caro frontline option.
 
 ## Skills
 

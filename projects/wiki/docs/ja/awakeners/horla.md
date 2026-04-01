@@ -19,7 +19,7 @@ portrait: /portraits/horla.png
 
 ## 紹介
 
-SSR超次元支援型覚醒体（恒常）。
+SSR超次元支援型覚醒体（恒常）。追加ターンメカニズム。
 
 ## スキル
 

@@ -19,7 +19,7 @@ portrait: /portraits/shan.png
 
 ## Introduction
 
-SSR Aequor Sub-DPS Awakener (standard).
+SSR Aequor Defense Awakener (standard). Primary defensive option for Aequor teams with shield-based playstyle. Available from standard pool.
 
 ## Skills
 

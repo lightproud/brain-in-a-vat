@@ -19,7 +19,7 @@ portrait: /portraits/leigh.png
 
 ## Introduction
 
-SSR Caro Chorus Awakener (standard). Chorus-type character that creates synergy effects with main DPS.
+SSR Chaos Support Awakener (standard). Chaos support with defensive utility.
 
 ## Skills
 

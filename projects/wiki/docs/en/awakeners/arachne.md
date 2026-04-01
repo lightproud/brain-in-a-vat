@@ -19,7 +19,7 @@ portrait: /portraits/arachne.png
 
 ## Introduction
 
-SSR Ultra DPS Awakener (limited). Introduced in v2.5.
+SSR Ultra Support Awakener (limited). Spider-themed support for Ultra compositions.
 
 ## Skills
 

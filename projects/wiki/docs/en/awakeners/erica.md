@@ -19,7 +19,7 @@ portrait: /portraits/erica.png
 
 ## Introduction
 
-SSR Ultra Defense Awakener (standard). Member of the Deep Dive Trio.
+SSR Chaos Sub-DPS Awakener (standard). Flexible sub-carry for Chaos teams.
 
 ## Skills
 

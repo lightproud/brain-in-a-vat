@@ -19,7 +19,7 @@ portrait: /portraits/salvador.png
 
 ## 紹介
 
-SSR血肉防御型覚醒体（恒常）。
+SSR血肉防御型覚醒体（恒常）。胚胎カードメカニズム。恒常プールで入手可能。
 
 ## スキル
 

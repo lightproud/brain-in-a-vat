@@ -19,7 +19,7 @@ portrait: /portraits/divine-king-tulu.png
 
 ## 紹介
 
-SSR深海攻撃型覚醒体（限定）。
+SSR深海攻撃型覚醒体（限定）。神王バリアント。
 
 ## スキル
 

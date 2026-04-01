@@ -19,7 +19,7 @@ portrait: /portraits/ramona.png
 
 ## Introduction
 
-SSR Chaos Support Awakener (standard). Member of the Royal Four.
+SSR Aequor Support Awakener (standard). Versatile support with card recycling and AP generation abilities. Available from standard pool.
 
 ## Skills
 

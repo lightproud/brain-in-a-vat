@@ -19,7 +19,7 @@ portrait: /portraits/nodera.png
 
 ## 紹介
 
-SSR混沌攻撃型覚醒体（恒常）。
+SSR混沌攻撃型覚醒体（恒常）。恒常プールで入手可能。
 
 ## スキル
 

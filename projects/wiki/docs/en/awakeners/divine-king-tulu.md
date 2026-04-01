@@ -19,7 +19,7 @@ portrait: /portraits/divine-king-tulu.png
 
 ## Introduction
 
-SSR Aequor DPS Awakener (limited).
+SSR Aequor DPS Awakener (limited). Divine King variant of Tulu with further enhanced combat capabilities. Top-tier Aequor main carry choice.
 
 ## Skills
 

@@ -19,7 +19,7 @@ portrait: /portraits/murphy.png
 
 ## Introduction
 
-SSR Aequor Defense Awakener (standard).
+SSR Caro DPS Awakener (limited). Special Ink Blade mechanic for unique card manipulation. Caro DPS with distinctive playstyle.
 
 ## Skills
 

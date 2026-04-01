@@ -19,7 +19,7 @@ portrait: /portraits/mouchette.png
 
 ## Introduction
 
-SSR Chaos DPS Awakener (limited). Introduced in v2.3.
+SSR Ultra Defense Awakener (limited). Ultra frontline with defensive capabilities.
 
 ## Skills
 

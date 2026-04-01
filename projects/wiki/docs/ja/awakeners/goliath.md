@@ -19,7 +19,7 @@ portrait: /portraits/goliath.png
 
 ## 紹介
 
-SSR深海防御型覚醒体（恒常）。
+SSR深海防御型覚醒体（恒常）。触腕シナジー。
 
 ## スキル
 

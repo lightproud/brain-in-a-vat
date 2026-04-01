@@ -19,7 +19,7 @@ portrait: /portraits/horla.png
 
 ## Introduction
 
-SSR Ultra Support Awakener (standard). Introduced in v1.5.
+SSR Ultra DPS Awakener (limited). Core Ultra carry who utilizes extra turns from card plays. High burst damage potential.
 
 ## Skills
 

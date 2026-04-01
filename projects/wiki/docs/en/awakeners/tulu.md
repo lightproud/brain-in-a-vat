@@ -19,7 +19,7 @@ portrait: /portraits/tulu.png
 
 ## Introduction
 
-SSR Aequor DPS Awakener (limited).
+SSR Aequor DPS Awakener (limited). T0-tier Aequor carry and core of the Deep Sea system. Character prototype is Cthulhu. Deals massive damage through tentacles and piercing attacks; the absolute core of the Aequor archetype.
 
 ## Skills
 

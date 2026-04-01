@@ -19,7 +19,7 @@ portrait: /portraits/alice.png
 
 ## Introduction
 
-SSR Caro Sub-DPS Awakener (standard).
+SSR Ultra DPS Awakener (limited). Ultra DPS with dimensional mechanics.
 
 ## Skills
 

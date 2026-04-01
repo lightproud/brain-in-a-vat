@@ -19,7 +19,7 @@ portrait: /portraits/pandya.png
 
 ## Introduction
 
-SSR Chaos Sub-DPS Awakener (standard).
+SSR Chaos Sub-DPS Awakener (standard). Excels at sub-DPS alongside Chaos main carries, serving as a flexible off-carry slot in Chaos teams.
 
 ## Skills
 

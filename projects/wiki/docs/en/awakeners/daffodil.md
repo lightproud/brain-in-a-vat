@@ -19,7 +19,7 @@ portrait: /portraits/daffodil.png
 
 ## Introduction
 
-SSR Ultra DPS Awakener (limited). Introduced in v1.1.
+SSR Caro DPS Awakener (limited). T0-tier Caro carry who permanently stacks Crit DMG after kills, up to 5 stacks. Core damage dealer for Caro teams.
 
 ## Skills
 

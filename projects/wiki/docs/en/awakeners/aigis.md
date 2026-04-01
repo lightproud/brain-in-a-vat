@@ -19,7 +19,7 @@ portrait: /portraits/aigis.png
 
 ## Introduction
 
-SSR Caro Support Awakener (standard). Member of the Deep Dive Trio. Signature wheel: 冬夜忆(Poetic Bygone Days)：防止石化溶解无debuff卡手；加速杂兵/精英战。免费可获取命轮。.
+SSR Chaos Defense Awakener (standard). Anti-Petrification and Dissolution specialist; accelerates mob and elite encounters.
 
 ## Skills
 

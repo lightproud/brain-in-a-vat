@@ -19,7 +19,7 @@ portrait: /portraits/ramona-timeworn.png
 
 ## Introduction
 
-SSR Chaos DPS Awakener (limited).
+SSR Chaos DPS Awakener (limited). Timeworn variant of Ramona centered on Negentropy and card manipulation. Can recall large amounts of Strike cards to synergize with team burst. Community nickname: "Ring Ramona".
 
 ## Skills
 

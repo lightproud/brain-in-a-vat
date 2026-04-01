@@ -19,7 +19,7 @@ portrait: /portraits/casiah.png
 
 ## Introduction
 
-SSR Ultra Sub-DPS Awakener (standard).
+SSR Ultra Support Awakener (limited). Ultra team support with unique utility.
 
 ## Skills
 

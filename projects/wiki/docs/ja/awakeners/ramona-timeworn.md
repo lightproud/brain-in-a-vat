@@ -19,7 +19,7 @@ portrait: /portraits/ramona-timeworn.png
 
 ## 紹介
 
-SSR混沌攻撃型覚醒体（限定）。環行シリーズ。
+SSR混沌攻撃型覚醒体（限定）。環行バリアント。
 
 ## スキル
 
