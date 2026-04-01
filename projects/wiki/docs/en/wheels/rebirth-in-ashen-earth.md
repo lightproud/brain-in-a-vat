@@ -13,4 +13,4 @@ description: "重生于湮土(Rebirth in Ashen Earth) - Morimens Wiki"
 
 ## Effect
 
-纪念版SSR命轮。
+Commemorative edition SSR wheel.

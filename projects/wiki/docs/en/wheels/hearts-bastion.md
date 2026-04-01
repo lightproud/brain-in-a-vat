@@ -13,4 +13,4 @@ description: "心之壁垒(Heart's Bastion) - Morimens Wiki"
 
 ## Effect
 
-适合高防角色如法洛思或珊。
+Suited for high-DEF characters like Pharos or Shan.

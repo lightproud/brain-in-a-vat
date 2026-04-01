@@ -13,4 +13,4 @@ description: "宠爱(Favor) - Morimens Wiki"
 
 ## Effect
 
-狂气获取相关。
+Fury gain related.

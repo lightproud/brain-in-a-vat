@@ -11,8 +11,8 @@ description: "溯洄时计(Retrograde Timepiece) - Morimens Wiki"
 | Rarity | <span class="rarity-ssr">SSR</span> |
 | Category | SSR Standard |
 | Character | 拉蒙娜(Ramona) |
-| Main Stat | 银钥充能 21.6 |
+| Main Stat | Silver Key Charge 21.6 |
 
 ## Effect
 
-使用佩戴者指令卡后，30-60%概率从弃牌堆返回手牌。
+After using the wearer's command card, 30-60% chance to return it from the discard pile to hand.

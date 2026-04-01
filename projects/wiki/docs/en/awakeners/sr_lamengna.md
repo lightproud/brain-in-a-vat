@@ -29,7 +29,7 @@ Data pending
 
 ### Signature Wheel: Retrograde Timepiece
 
-使用佩戴者指令卡后，30-60%概率从弃牌堆返回手牌。
+After using the wearer's command card, 30-60% chance to return it from the discard pile to hand.
 
 ### Signature Wheel: Reunion Moment
 

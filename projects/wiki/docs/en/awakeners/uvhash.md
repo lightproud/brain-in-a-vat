@@ -40,7 +40,7 @@ SSR Caro DPS Awakener (standard).
 
 ### Signature Wheel: Caro Feast
 
-提供暴伤；通过超限和吞噬获得力量。
+Provides Crit DMG; gain Power through Over-Exalt and Devour.
 
 
 

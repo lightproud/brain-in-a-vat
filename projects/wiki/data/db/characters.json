@@ -103,7 +103,9 @@
         ]
       },
       "description_en": "SSR Chaos Defense Awakener (standard). Member of the Royal Four. Core of the Silver Key Resonance system.",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR混沌防御型覚醒体（恒常）。ロイヤルフォーのメンバー。銀鍵共鳴システムの中核。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "doll",
@@ -134,7 +136,9 @@
         "lore_note": "玩偶与塔薇儿是最早被设计的角色。"
       },
       "description_en": "SSR Chaos DPS Awakener (standard). Member of the Royal Four.",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR混沌攻撃型覚醒体（恒常）。ロイヤルフォーのメンバー。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "ramona-timeworn",
@@ -174,7 +178,9 @@
         "design_note": "制作人最喜欢的角色。"
       },
       "description_en": "SSR Chaos DPS Awakener (limited).",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR混沌攻撃型覚醒体（限定）。環行シリーズ。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "ogier",
@@ -196,7 +202,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Chaos Support Awakener (standard). Member of the Royal Four.",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR混沌支援型覚醒体（恒常）。ロイヤルフォーのメンバー。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "lotan",
@@ -219,7 +227,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Chaos Defense Awakener (standard). Member of the Royal Four. Core of the Silver Key Resonance system.",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR混沌防御型覚醒体（恒常）。ロイヤルフォーのメンバー。銀鍵共鳴システムの中核。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "ramona",
@@ -271,7 +281,9 @@
         "role_in_team": "弃牌找回、降费辅助，配合莉兹等主C使用"
       },
       "description_en": "SSR Chaos Support Awakener (standard). Member of the Royal Four.",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR混沌支援型覚醒体（恒常）。ロイヤルフォーのメンバー。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "pandya",
@@ -293,7 +305,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Chaos Sub-DPS Awakener (standard).",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR混沌副攻撃型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "nodera",
@@ -317,7 +331,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Chaos DPS Awakener (standard).",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR混沌攻撃型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "galen",
@@ -343,7 +359,9 @@
         }
       },
       "description_en": "SSR Chaos Sub-DPS Awakener (standard). Counter-attack team specialist.",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR混沌副攻撃型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "nymphia",
@@ -365,7 +383,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Chaos Support Awakener (standard).",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR混沌支援型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "lily",
@@ -389,7 +409,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Chaos Defense Awakener (standard). Introduced in v1.1. Signature wheel: 跨越疼痛(Grace Through Pain).",
-      "obtain_en": "Event Summon (Unstained Bloom)"
+      "obtain_en": "Event Summon (Unstained Bloom)",
+      "description_ja": "SSR混沌防御型覚醒体（恒常）。",
+      "obtain_ja": "活动唤醒「花不染尘」"
     },
     {
       "id": "danmo",
@@ -412,7 +434,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Chaos DPS Awakener (limited).",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR混沌攻撃型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "miryam",
@@ -452,7 +476,9 @@
         "_data_source": "角色描述和v1.4更新记录，具体数值待从公开wiki补充"
       },
       "description_en": "SSR Aequor Support Awakener (limited). Introduced in v1.4.",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR深海支援型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "tulu",
@@ -528,7 +554,9 @@
         ]
       },
       "description_en": "SSR Aequor DPS Awakener (limited).",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR深海攻撃型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "divine-king-tulu",
@@ -554,7 +582,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Aequor DPS Awakener (limited).",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR深海攻撃型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "celeste",
@@ -579,7 +609,9 @@
         }
       },
       "description_en": "SSR Aequor Support Awakener (standard).",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR深海支援型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "goliath",
@@ -604,7 +636,9 @@
         }
       },
       "description_en": "SSR Aequor Defense Awakener (standard).",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR深海防御型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "shan",
@@ -641,7 +675,9 @@
         "_data_source": "命轮效果描述推导，具体卡牌效果待从公开wiki补充"
       },
       "description_en": "SSR Aequor Sub-DPS Awakener (standard).",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR深海副攻撃型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "aurita",
@@ -665,7 +701,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Aequor DPS Awakener (standard). Member of the Deep Dive Trio.",
-      "obtain_en": "Free (Clear Chaos Realm Rift I)"
+      "obtain_en": "Free (Clear Chaos Realm Rift I)",
+      "description_ja": "SSR深海攻撃型覚醒体（恒常）。",
+      "obtain_ja": "免费获取(通关混沌界域裂隙I)"
     },
     {
       "id": "caecus",
@@ -687,7 +725,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Aequor Sub-DPS Awakener (standard). Counter-attack team specialist.",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR深海副攻撃型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "faros",
@@ -709,7 +749,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Aequor Support Awakener (standard).",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR深海支援型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "uvhash",
@@ -784,7 +826,9 @@
         }
       },
       "description_en": "SSR Caro DPS Awakener (standard).",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR血肉攻撃型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "rhea",
@@ -810,7 +854,9 @@
         "role_in_team": "与尤乌哈希配合，提供胚胎融合和治疗支持"
       },
       "description_en": "SSR Caro Support Awakener (standard).",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR血肉支援型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "sorel",
@@ -835,7 +881,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Caro DPS Awakener (limited).",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR血肉攻撃型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "thais",
@@ -860,7 +908,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Caro Support Awakener (limited).",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR血肉支援型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "alice",
@@ -882,7 +932,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Caro Sub-DPS Awakener (standard).",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR血肉副攻撃型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "faint",
@@ -905,7 +957,9 @@
         "_data_source": "命轮效果描述，具体技能数据待从公开wiki补充"
       },
       "description_en": "SSR Caro Sub-DPS Awakener (standard).",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR血肉副攻撃型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "agrippa",
@@ -927,7 +981,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Caro Defense Awakener (standard).",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR血肉防御型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "shilo",
@@ -949,7 +1005,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Caro DPS Awakener (standard).",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR血肉攻撃型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "erica",
@@ -979,7 +1037,9 @@
         "role_in_team": "在超维队伍中负责提供爆发回合的易伤和力量加成"
       },
       "description_en": "SSR Ultra Defense Awakener (standard). Member of the Deep Dive Trio.",
-      "obtain_en": "Free (Clear Caro Swamp Rift I)"
+      "obtain_en": "Free (Clear Caro Swamp Rift I)",
+      "description_ja": "SSR超次元防御型覚醒体（恒常）。",
+      "obtain_ja": "免费获取(通关血肉沼泽裂隙I)"
     },
     {
       "id": "liz",
@@ -1049,7 +1109,9 @@
         "gameplay_notes": "核心思路：叠绿炎→升级绿炎→狂气爆发一次性打出。注意：觉醒后容易满手绿炎无法抽牌，需要弃牌能力队友配合。升级后绿炎为多段伤害，遇反击特性敌人时狂气爆发可能被反伤致死。"
       },
       "description_en": "SSR Ultra DPS Awakener (standard).",
-      "obtain_en": "Event Summon"
+      "obtain_en": "Event Summon",
+      "description_ja": "SSR超次元攻撃型覚醒体（恒常）。",
+      "obtain_ja": "活动唤醒"
     },
     {
       "id": "daffodil",
@@ -1078,7 +1140,9 @@
         "role_in_team": "超维主C，配合卡茜亚可实现现版本越级最强输出组合"
       },
       "description_en": "SSR Ultra DPS Awakener (limited). Introduced in v1.1.",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR超次元攻撃型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "winkle",
@@ -1100,7 +1164,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Ultra Support Awakener (standard).",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR超次元支援型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "casiah",
@@ -1129,7 +1195,9 @@
         "_data_source": "从达芙黛尔技能描述推导，具体数值待从公开wiki补充"
       },
       "description_en": "SSR Ultra Sub-DPS Awakener (standard).",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR超次元副攻撃型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "jenkins",
@@ -1151,7 +1219,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Ultra Sub-DPS Awakener (standard).",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR超次元副攻撃型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "tincture",
@@ -1173,7 +1243,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Ultra Support Awakener (standard).",
-      "obtain_en": "Standard/Event Summon"
+      "obtain_en": "Standard/Event Summon",
+      "description_ja": "SSR超次元支援型覚醒体（恒常）。",
+      "obtain_ja": "恒常/イベント召喚"
     },
     {
       "id": "horla",
@@ -1196,7 +1268,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Ultra Support Awakener (standard). Introduced in v1.5.",
-      "obtain_en": "Event Summon"
+      "obtain_en": "Event Summon",
+      "description_ja": "SSR超次元支援型覚醒体（恒常）。",
+      "obtain_ja": "活动唤醒"
     },
     {
       "id": "karen",
@@ -1219,7 +1293,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Chaos Support Awakener (standard). Introduced in v1.5.",
-      "obtain_en": "Event Summon"
+      "obtain_en": "Event Summon",
+      "description_ja": "SSR混沌支援型覚醒体（恒常）。",
+      "obtain_ja": "活动唤醒"
     },
     {
       "id": "hameln",
@@ -1241,7 +1317,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Chaos Support Awakener (standard). Counter-attack team specialist.",
-      "obtain_en": "Summon"
+      "obtain_en": "Summon",
+      "description_ja": "SSR混沌支援型覚醒体（恒常）。",
+      "obtain_ja": "唤醒"
     },
     {
       "id": "murphy",
@@ -1268,7 +1346,9 @@
         "_data_source": "角色描述推导，具体技能数据待从公开wiki补充"
       },
       "description_en": "SSR Aequor Defense Awakener (standard).",
-      "obtain_en": "Summon"
+      "obtain_en": "Summon",
+      "description_ja": "SSR深海防御型覚醒体（恒常）。",
+      "obtain_ja": "唤醒"
     },
     {
       "id": "salvador",
@@ -1293,7 +1373,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Caro Defense Awakener (standard). Counter-attack team specialist.",
-      "obtain_en": "Summon"
+      "obtain_en": "Summon",
+      "description_ja": "SSR血肉防御型覚醒体（恒常）。",
+      "obtain_ja": "唤醒"
     },
     {
       "id": "tawil",
@@ -1349,7 +1431,9 @@
         "lore_note": "塔薇儿与玩偶是最早被设计的角色。"
       },
       "description_en": "SSR Chaos Support Awakener (standard).",
-      "obtain_en": "Summon"
+      "obtain_en": "Summon",
+      "description_ja": "SSR混沌支援型覚醒体（恒常）。",
+      "obtain_ja": "唤醒"
     },
     {
       "id": "wanda",
@@ -1374,7 +1458,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Ultra Defense Awakener (standard). Counter-attack team specialist.",
-      "obtain_en": "Summon"
+      "obtain_en": "Summon",
+      "description_ja": "SSR超次元防御型覚醒体（恒常）。",
+      "obtain_ja": "唤醒"
     },
     {
       "id": "aigis",
@@ -1427,7 +1513,9 @@
         "_data_source": "角色描述和命轮效果推导，具体数值待从公开wiki补充"
       },
       "description_en": "SSR Caro Support Awakener (standard). Member of the Deep Dive Trio. Signature wheel: 冬夜忆(Poetic Bygone Days)：防止石化溶解无debuff卡手；加速杂兵/精英战。免费可获取命轮。.",
-      "obtain_en": "Summon"
+      "obtain_en": "Summon",
+      "description_ja": "SSR血肉支援型覚醒体（恒常）。",
+      "obtain_ja": "唤醒"
     },
     {
       "id": "doll-inferno",
@@ -1462,7 +1550,9 @@
         "lore_note": "创世纪角色之一。原为第三篇章核心人物，有独立个人剧情线（初稿已完成），因第一篇章压缩未能释出。"
       },
       "description_en": "SSR Chaos Support Awakener (limited). Introduced in v2.0.",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR混沌支援型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "24",
@@ -1487,7 +1577,9 @@
         "lore_note": "真正的例外设计——将四个角色定位压缩到一个单位中。商业上不划算，但为了「人格分裂」叙事而做出的选择。战斗设计师为理想「燃烧了一次」。"
       },
       "description_en": "SSR Chaos DPS Awakener (limited). Introduced in v1.5.",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR混沌攻撃型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "clementine",
@@ -1511,7 +1603,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Ultra Support Awakener (limited). Introduced in v2.1.",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR超次元支援型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "corposant",
@@ -1535,7 +1629,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Aequor Defense Awakener (limited). Introduced in v2.1.",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR深海防御型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "kathigu-ra",
@@ -1559,7 +1655,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Chaos DPS Awakener (limited). Introduced in v2.2.",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR混沌攻撃型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "murphy-fauxborn",
@@ -1586,7 +1684,9 @@
         "lore_note": "创世纪角色之一。原版墨菲的故事已经完整，扩展空间有限。解决方案：描绘为隐藏纯真内心的神母假象。近期最难写的角色。"
       },
       "description_en": "SSR Aequor Chorus Awakener (limited). Chorus-type character that creates synergy effects with main DPS. Introduced in v2.4.",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR深海合唱型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "mouchette",
@@ -1612,7 +1712,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Chaos DPS Awakener (limited). Introduced in v2.3.",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR混沌攻撃型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "xu",
@@ -1638,7 +1740,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Caro Chorus Awakener (limited). Chorus-type character that creates synergy effects with main DPS. Introduced in v2.4.",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR血肉合唱型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "castor",
@@ -1663,7 +1767,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Ultra Defense Awakener (limited). Introduced in v2.2.",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR超次元防御型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "pollux",
@@ -1688,7 +1794,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Ultra DPS Awakener (limited). Introduced in v2.3.",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR超次元攻撃型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "helot",
@@ -1722,7 +1830,9 @@
         "_data_source": "从技能描述和队伍攻略推导，具体数值待从公开wiki补充"
       },
       "description_en": "SSR Caro DPS Awakener (limited). Introduced in v1.6.",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR血肉攻撃型覚醒体（限定）。血の鎖シリーズ。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "leigh",
@@ -1747,7 +1857,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Caro Chorus Awakener (standard). Chorus-type character that creates synergy effects with main DPS.",
-      "obtain_en": "Standard Summon"
+      "obtain_en": "Standard Summon",
+      "description_ja": "SSR血肉合唱型覚醒体（恒常）。",
+      "obtain_ja": "常驻唤醒"
     },
     {
       "id": "doresain",
@@ -1771,7 +1883,9 @@
         "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Caro DPS Awakener (limited).",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR血肉攻撃型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "pickman",
@@ -1796,7 +1910,9 @@
         "_data_source": "命轮数据已知，具体卡牌技能数据待从公开wiki补充"
       },
       "description_en": "SSR Aequor DPS Awakener (limited). Signature wheel: 写实主义悖谬(Paradoxical Realism)：狂气回充7.2；狂气和力量获取+6~12%；超限后提升最终伤害/护盾/治疗。.",
-      "obtain_en": "Limited Event Summon"
+      "obtain_en": "Limited Event Summon",
+      "description_ja": "SSR深海攻撃型覚醒体（限定）。",
+      "obtain_ja": "限定イベント召喚"
     },
     {
       "id": "arachne",
@@ -1820,7 +1936,9 @@
         "_data_source": "v2.5预告角色，具体技能数据待从公开wiki补充"
       },
       "description_en": "SSR Ultra DPS Awakener (limited). Introduced in v2.5.",
-      "obtain_en": "Limited Event Summon (v2.5 Preview)"
+      "obtain_en": "Limited Event Summon (v2.5 Preview)",
+      "description_ja": "SSR超次元攻撃型覚醒体（限定）。",
+      "obtain_ja": "限定活动唤醒(v2.5预告)"
     }
   ],
   "sr_characters": [
@@ -1832,7 +1950,9 @@
       "realm": "chaos",
       "role": "support",
       "obtain": "序章教程赠送",
-      "description": "初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域辅助型，提供净化效果。SSR同名角色朵尔及变体熔毁·朵尔为独立角色。"
+      "description": "初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域辅助型，提供净化效果。SSR同名角色朵尔及变体熔毁·朵尔为独立角色。",
+      "description_ja": "SR混沌支援型覚醒体（恒常）。",
+      "obtain_ja": "序章教程赠送"
     },
     {
       "id": "sr_lamengna",
@@ -1842,7 +1962,9 @@
       "realm": "chaos",
       "role": "support",
       "obtain": "序章教程赠送",
-      "description": "初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域辅助型，提供印卡/复制能力。SSR同名角色拉蒙娜及变体环行·拉蒙娜为独立角色。"
+      "description": "初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域辅助型，提供印卡/复制能力。SSR同名角色拉蒙娜及变体环行·拉蒙娜为独立角色。",
+      "description_ja": "SR混沌支援型覚醒体（恒常）。",
+      "obtain_ja": "序章教程赠送"
     },
     {
       "id": "sr_luotan",
@@ -1852,7 +1974,9 @@
       "realm": "chaos",
       "role": "dps",
       "obtain": "序章教程赠送",
-      "description": "初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域伤害型。SSR同名角色萝坦为独立角色。"
+      "description": "初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域伤害型。SSR同名角色萝坦为独立角色。",
+      "description_ja": "SR混沌攻撃型覚醒体（恒常）。",
+      "obtain_ja": "序章教程赠送"
     },
     {
       "id": "sr_aojier",
@@ -1862,7 +1986,9 @@
       "realm": "chaos",
       "role": "defense",
       "obtain": "序章教程赠送",
-      "description": "初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域防御型，提供嘲讽/点名能力。SSR同名角色奥吉尔为独立角色。"
+      "description": "初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域防御型，提供嘲讽/点名能力。SSR同名角色奥吉尔为独立角色。",
+      "description_ja": "SR混沌防御型覚醒体（恒常）。",
+      "obtain_ja": "序章教程赠送"
     }
   ],
   "notable_groups": [

@@ -36,7 +36,7 @@ SSR Chaos DPS Awakener (limited).
 
 ### Signature Wheel: Drowning in Crimson
 
-血肉系命轮。
+Caro (Flesh) series wheel.
 
 
 

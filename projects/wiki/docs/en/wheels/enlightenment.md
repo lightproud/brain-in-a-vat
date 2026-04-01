@@ -13,4 +13,4 @@ description: "明悟(Enlightenment) - Morimens Wiki"
 
 ## Effect
 
-搭配：精通+银钥。
+Synergy: Mastery + Silver Key.

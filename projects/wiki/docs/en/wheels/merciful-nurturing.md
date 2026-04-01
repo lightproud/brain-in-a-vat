@@ -14,4 +14,4 @@ description: "慈悲的哺育(Merciful Nurturing) - Morimens Wiki"
 
 ## Effect
 
-血肉系命轮。
+Caro (Flesh) series wheel.

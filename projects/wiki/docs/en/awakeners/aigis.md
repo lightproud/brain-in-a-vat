@@ -37,7 +37,7 @@ SSR Caro Support Awakener (standard). Member of the Deep Dive Trio. Signature wh
 
 ### Signature Wheel: Poetic Bygone Days
 
-防止石化溶解无debuff卡手；加速杂兵/精英战。免费可获取命轮。
+Prevents Petrification/Dissolution debuff clogging; accelerates mob/elite battles. Free-to-obtain wheel.
 
 
 

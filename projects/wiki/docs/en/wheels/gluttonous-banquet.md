@@ -11,8 +11,8 @@ description: "饕餮盛宴(Gluttonous Banquet) - Morimens Wiki"
 | Rarity | <span class="rarity-ssr">SSR</span> |
 | Category | SSR Standard |
 | Character | 雷娅(Rhea) |
-| Main Stat | 界域精通 |
+| Main Stat | Realm Mastery |
 
 ## Effect
 
-增加超限治疗；受伤时获得力量和护盾。
+Increases Over-Exalt healing; gain Power and Shield when taking damage.

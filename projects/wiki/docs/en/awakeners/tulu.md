@@ -40,7 +40,7 @@ SSR Aequor DPS Awakener (limited).
 
 ### Signature Wheel: In the Storm
 
-v1.4增强：打击时对全体敌人施加10%毒素(1次/回合)。
+v1.4 enhanced: On Strike, inflict 10% Toxin on all enemies (once per turn).
 
 ### Signature Wheel: Cutting and Harm
 

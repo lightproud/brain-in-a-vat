@@ -11,7 +11,7 @@ description: "写实主义悖谬(Paradoxical Realism) - 忘却前夜命轮详情
 | レアリティ | <span class="rarity-ssr">SSR</span> |
 | カテゴリ | SSR限定・星辰線 |
 | 対応キャラ | 皮克曼(Pickman) |
-| メインステータス | 狂气回充 7.2 |
+| メインステータス | 狂気チャージ 7.2 |
 
 ## 効果
 

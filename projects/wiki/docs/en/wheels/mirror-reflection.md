@@ -10,7 +10,7 @@ description: "镜中人(Mirror Reflection) - Morimens Wiki"
 |------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
 | Category | SSR Standard |
-| Main Stat | 黑印掉落 10.8% |
+| Main Stat | Dark Seal Drop 10.8% |
 
 ## Effect
 

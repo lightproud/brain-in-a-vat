@@ -13,4 +13,4 @@ description: "专注精神(Focused Mind) - Morimens Wiki"
 
 ## Effect
 
-搭配：银钥+狂气。
+Synergy: Silver Key + Fury.

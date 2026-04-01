@@ -69,13 +69,15 @@
         "name": "畸体回噬",
         "name_en": "Aberrant Devour",
         "character": "墨菲(Murphy)",
-        "effect": "深海系命轮。"
+        "effect": "深海系命轮。",
+        "effect_en": "Deep Sea series wheel."
       },
       {
         "name": "慈悲的哺育",
         "name_en": "Merciful Nurturing",
         "character": "塔薇(Thais)",
-        "effect": "血肉系命轮。"
+        "effect": "血肉系命轮。",
+        "effect_en": "Caro (Flesh) series wheel."
       },
       {
         "name": "虔诚的伟力",
@@ -96,7 +98,7 @@
         "name_en": "Drowning in Crimson",
         "character": "淡墨(Danmo)",
         "effect": "血肉系命轮。",
-        "effect_en": "",
+        "effect_en": "Caro (Flesh) series wheel.",
         "_wiki_source": "https://forget-last-night-morimens.fandom.com",
         "_wiki_page": "Drowning in Crimson"
       },
@@ -104,7 +106,8 @@
         "name": "隐世的转轮",
         "name_en": "Wheel Unseen",
         "character": "萝坦(Lotan)",
-        "effect": "从钥令触发和伤害次数中获得增益。"
+        "effect": "从钥令触发和伤害次数中获得增益。",
+        "effect_en": "Gains buffs from Key Order triggers and hit count."
       }
     ],
     "ssr_limited_stellar": [
@@ -129,7 +132,8 @@
         "name_en": "Paradoxical Realism",
         "character": "皮克曼(Pickman)",
         "main_stat": "狂气回充 7.2",
-        "effect": "狂气和力量获取+6-12%；超限后提升最终伤害/护盾/治疗。"
+        "effect": "狂气和力量获取+6-12%；超限后提升最终伤害/护盾/治疗。",
+        "effect_en": "Fury and Power gain +6-12%; after Over-Exalt, increases final damage/shield/healing."
       },
       {
         "name": "扭曲的骑士诗",
@@ -187,13 +191,15 @@
         "name_en": "Hymn of the Sovereign",
         "character": "希莱斯特(Celeste)",
         "main_stat": "狂气回充 7.2",
-        "effect": "队伍唯一：战斗开始时获得16狂气。其他唤醒体使用超限时获得3狂气。深海队：超限获得2-5%攻击力的触手伤害。"
+        "effect": "队伍唯一：战斗开始时获得16狂气。其他唤醒体使用超限时获得3狂气。深海队：超限获得2-5%攻击力的触手伤害。",
+        "effect_en": "Team unique: Gain 16 Fury at battle start. Other Awakeners gain 3 Fury when using Over-Exalt. Aequor team: Over-Exalt deals 2-5% ATK tentacle damage."
       },
       {
         "name": "于暴雨之中",
         "name_en": "In the Storm",
         "character": "图鲁(Tulu)",
-        "effect": "v1.4增强：打击时对全体敌人施加10%毒素(1次/回合)。"
+        "effect": "v1.4增强：打击时对全体敌人施加10%毒素(1次/回合)。",
+        "effect_en": "v1.4 enhanced: On Strike, inflict 10% Toxin on all enemies (once per turn)."
       },
       {
         "name": "珊瑚女之死",
@@ -209,7 +215,8 @@
         "name_en": "Retrograde Timepiece",
         "character": "拉蒙娜(Ramona)",
         "main_stat": "银钥充能 21.6",
-        "effect": "使用佩戴者指令卡后，30-60%概率从弃牌堆返回手牌。"
+        "effect": "使用佩戴者指令卡后，30-60%概率从弃牌堆返回手牌。",
+        "effect_en": "After using the wearer's command card, 30-60% chance to return it from the discard pile to hand."
       },
       {
         "name": "好运时间",
@@ -247,21 +254,24 @@
         "name_en": "Caro Feast",
         "character": "尤乌哈希(Uvhash)",
         "main_stat": "暴击伤害",
-        "effect": "提供暴伤；通过超限和吞噬获得力量。"
+        "effect": "提供暴伤；通过超限和吞噬获得力量。",
+        "effect_en": "Provides Crit DMG; gain Power through Over-Exalt and Devour."
       },
       {
         "name": "饕餮盛宴",
         "name_en": "Gluttonous Banquet",
         "character": "雷娅(Rhea)",
         "main_stat": "界域精通",
-        "effect": "增加超限治疗；受伤时获得力量和护盾。"
+        "effect": "增加超限治疗；受伤时获得力量和护盾。",
+        "effect_en": "Increases Over-Exalt healing; gain Power and Shield when taking damage."
       },
       {
         "name": "冬夜忆",
         "name_en": "Poetic Bygone Days",
         "character": "艾继丝(Aigis)",
         "main_stat": "银钥充能",
-        "effect": "防止石化溶解无debuff卡手；加速杂兵/精英战。免费可获取命轮。"
+        "effect": "防止石化溶解无debuff卡手；加速杂兵/精英战。免费可获取命轮。",
+        "effect_en": "Prevents Petrification/Dissolution debuff clogging; accelerates mob/elite battles. Free-to-obtain wheel."
       },
       {
         "name": "吞噬摇篮曲",
@@ -276,13 +286,15 @@
         "name": "宠爱",
         "name_en": "Favor",
         "character": null,
-        "effect": "狂气获取相关。"
+        "effect": "狂气获取相关。",
+        "effect_en": "Fury gain related."
       },
       {
         "name": "呢喃",
         "name_en": "Whisper",
         "character": null,
-        "effect": "狂气获取相关。"
+        "effect": "狂气获取相关。",
+        "effect_en": "Fury gain related."
       },
       {
         "name": "镜中人",
@@ -298,7 +310,8 @@
         "name": "极夜与破晓",
         "name_en": "Polar Night and Dawn",
         "character": null,
-        "effect": "活动赠送SSR命轮。"
+        "effect": "活动赠送SSR命轮。",
+        "effect_en": "Event reward SSR wheel."
       },
       {
         "name": "无声欢宴",
@@ -317,7 +330,8 @@
         "name": "重生于湮土",
         "name_en": "Rebirth in Ashen Earth",
         "character": null,
-        "effect": "纪念版SSR命轮。"
+        "effect": "纪念版SSR命轮。",
+        "effect_en": "Commemorative edition SSR wheel."
       }
     ],
     "sr_wheels": [
@@ -360,7 +374,8 @@
       {
         "name": "惩戒",
         "name_en": "Punishment",
-        "effect": "Boss前保留50黑印=+250%死亡抵抗。评价最高的R命轮。"
+        "effect": "Boss前保留50黑印=+250%死亡抵抗。评价最高的R命轮。",
+        "effect_en": "Retain 50 Dark Seals before Boss = +250% Death Resistance. Highest rated R wheel."
       },
       {
         "name": "涌现",
@@ -375,7 +390,8 @@
       {
         "name": "谵妄",
         "name_en": "Delirium",
-        "effect": "通过觉醒减少黑印。推荐R命轮。"
+        "effect": "通过觉醒减少黑印。推荐R命轮。",
+        "effect_en": "Reduce Dark Seals through Awakening. Recommended R wheel."
       },
       {
         "name": "暴食",
@@ -396,17 +412,20 @@
       {
         "name": "明悟",
         "name_en": "Enlightenment",
-        "effect": "搭配：精通+银钥。"
+        "effect": "搭配：精通+银钥。",
+        "effect_en": "Synergy: Mastery + Silver Key."
       },
       {
         "name": "专注精神",
         "name_en": "Focused Mind",
-        "effect": "搭配：银钥+狂气。"
+        "effect": "搭配：银钥+狂气。",
+        "effect_en": "Synergy: Silver Key + Fury."
       },
       {
         "name": "心之壁垒",
         "name_en": "Heart's Bastion",
-        "effect": "适合高防角色如法洛思或珊。"
+        "effect": "适合高防角色如法洛思或珊。",
+        "effect_en": "Suited for high-DEF characters like Pharos or Shan."
       }
     ],
     "notes": [

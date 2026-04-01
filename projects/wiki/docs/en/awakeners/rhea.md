@@ -39,7 +39,7 @@ SSR Caro Support Awakener (standard).
 
 ### Signature Wheel: Gluttonous Banquet
 
-增加超限治疗；受伤时获得力量和护盾。
+Increases Over-Exalt healing; gain Power and Shield when taking damage.
 
 
 

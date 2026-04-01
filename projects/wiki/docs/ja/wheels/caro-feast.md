@@ -11,7 +11,7 @@ description: "血肉狂宴(Caro Feast) - 忘却前夜命轮详情"
 | レアリティ | <span class="rarity-ssr">SSR</span> |
 | カテゴリ | SSR常設 |
 | 対応キャラ | 尤乌哈希(Uvhash) |
-| メインステータス | 暴击伤害 |
+| メインステータス | 会心ダメージ |
 
 ## 効果
 

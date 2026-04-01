@@ -13,4 +13,4 @@ description: "呢喃(Whisper) - Morimens Wiki"
 
 ## Effect
 
-狂气获取相关。
+Fury gain related.

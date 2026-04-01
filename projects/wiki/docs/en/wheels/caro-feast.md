@@ -11,8 +11,8 @@ description: "血肉狂宴(Caro Feast) - Morimens Wiki"
 | Rarity | <span class="rarity-ssr">SSR</span> |
 | Category | SSR Standard |
 | Character | 尤乌哈希(Uvhash) |
-| Main Stat | 暴击伤害 |
+| Main Stat | Crit DMG |
 
 ## Effect
 
-提供暴伤；通过超限和吞噬获得力量。
+Provides Crit DMG; gain Power through Over-Exalt and Devour.

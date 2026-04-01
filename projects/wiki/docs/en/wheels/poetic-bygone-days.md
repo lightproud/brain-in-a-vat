@@ -11,8 +11,8 @@ description: "冬夜忆(Poetic Bygone Days) - Morimens Wiki"
 | Rarity | <span class="rarity-ssr">SSR</span> |
 | Category | SSR Standard |
 | Character | 艾继丝(Aigis) |
-| Main Stat | 银钥充能 |
+| Main Stat | Silver Key Charge |
 
 ## Effect
 
-防止石化溶解无debuff卡手；加速杂兵/精英战。免费可获取命轮。
+Prevents Petrification/Dissolution debuff clogging; accelerates mob/elite battles. Free-to-obtain wheel.

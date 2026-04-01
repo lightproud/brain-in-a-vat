@@ -13,4 +13,4 @@ description: "极夜与破晓(Polar Night and Dawn) - Morimens Wiki"
 
 ## Effect
 
-活动赠送SSR命轮。
+Event reward SSR wheel.

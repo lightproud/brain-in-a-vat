@@ -13,4 +13,4 @@ description: "谵妄(Delirium) - Morimens Wiki"
 
 ## Effect
 
-通过觉醒减少黑印。推荐R命轮。
+Reduce Dark Seals through Awakening. Recommended R wheel.

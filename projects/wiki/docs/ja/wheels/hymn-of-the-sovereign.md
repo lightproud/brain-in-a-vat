@@ -11,7 +11,7 @@ description: "神王的颂歌(Hymn of the Sovereign) - 忘却前夜命轮详情"
 | レアリティ | <span class="rarity-ssr">SSR</span> |
 | カテゴリ | SSR常設 |
 | 対応キャラ | 希莱斯特(Celeste) |
-| メインステータス | 狂气回充 7.2 |
+| メインステータス | 狂気チャージ 7.2 |
 
 ## 効果
 

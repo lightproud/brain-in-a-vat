@@ -36,7 +36,7 @@ SSR Chaos Defense Awakener (standard). Member of the Royal Four. Core of the Sil
 
 ### Signature Wheel: Wheel Unseen
 
-从钥令触发和伤害次数中获得增益。
+Gains buffs from Key Order triggers and hit count.
 
 
 

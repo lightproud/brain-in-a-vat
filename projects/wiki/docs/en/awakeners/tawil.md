@@ -47,7 +47,7 @@ Data pending
 
 ### Signature Wheel: Merciful Nurturing
 
-血肉系命轮。
+Caro (Flesh) series wheel.
 
 
 

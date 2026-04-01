@@ -376,6 +376,8 @@ def generate_character_page(char: dict, wheel_index: dict[str, list[dict]], lang
     is_limited = char.get("is_limited", False)
     if lang == "en":
         obtain = char.get("obtain_en", char.get("obtain", L["pending"]))
+    elif lang == "ja":
+        obtain = char.get("obtain_ja", char.get("obtain", L["pending"]))
     else:
         obtain = char.get("obtain", L["pending"])
     if lang == "en":
@@ -579,7 +581,18 @@ def generate_wheel_pages(equip_data: dict[str, Any], langs: list[str], dry_run: 
 
                 if main_stat:
                     stat_label = "主属性" if lang == "zh" else "Main Stat" if lang == "en" else "メインステータス"
-                    lines.append(f"| {stat_label} | {main_stat} |")
+                    stat_val = main_stat
+                    if lang in ("en", "ja"):
+                        stat_translations = {
+                            "暴击伤害": "Crit DMG" if lang == "en" else "会心ダメージ",
+                            "狂气回充 7.2": "Fury Recharge 7.2" if lang == "en" else "狂気チャージ 7.2",
+                            "界域精通": "Realm Mastery" if lang == "en" else "界域精通",
+                            "银钥充能": "Silver Key Charge" if lang == "en" else "銀鍵チャージ",
+                            "银钥充能 21.6": "Silver Key Charge 21.6" if lang == "en" else "銀鍵チャージ 21.6",
+                            "黑印掉落 10.8%": "Dark Seal Drop 10.8%" if lang == "en" else "黒印ドロップ 10.8%",
+                        }
+                        stat_val = stat_translations.get(main_stat, main_stat)
+                    lines.append(f"| {stat_label} | {stat_val} |")
 
                 lines.append("")
 

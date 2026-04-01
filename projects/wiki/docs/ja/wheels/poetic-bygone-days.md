@@ -11,7 +11,7 @@ description: "冬夜忆(Poetic Bygone Days) - 忘却前夜命轮详情"
 | レアリティ | <span class="rarity-ssr">SSR</span> |
 | カテゴリ | SSR常設 |
 | 対応キャラ | 艾继丝(Aigis) |
-| メインステータス | 银钥充能 |
+| メインステータス | 銀鍵チャージ |
 
 ## 効果
 

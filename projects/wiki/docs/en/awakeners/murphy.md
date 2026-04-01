@@ -37,7 +37,7 @@ SSR Aequor Defense Awakener (standard).
 
 ### Signature Wheel: Aberrant Devour
 
-深海系命轮。
+Deep Sea series wheel.
 
 
 

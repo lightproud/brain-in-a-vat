@@ -14,4 +14,4 @@ description: "隐世的转轮(Wheel Unseen) - Morimens Wiki"
 
 ## Effect
 
-从钥令触发和伤害次数中获得增益。
+Gains buffs from Key Order triggers and hit count.

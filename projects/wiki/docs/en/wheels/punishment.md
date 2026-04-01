@@ -13,4 +13,4 @@ description: "惩戒(Punishment) - Morimens Wiki"
 
 ## Effect
 
-Boss前保留50黑印=+250%死亡抵抗。评价最高的R命轮。
+Retain 50 Dark Seals before Boss = +250% Death Resistance. Highest rated R wheel.

@@ -14,4 +14,4 @@ description: "畸体回噬(Aberrant Devour) - Morimens Wiki"
 
 ## Effect
 
-深海系命轮。
+Deep Sea series wheel.

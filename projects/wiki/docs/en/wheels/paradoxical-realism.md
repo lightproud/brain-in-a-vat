@@ -11,8 +11,8 @@ description: "写实主义悖谬(Paradoxical Realism) - Morimens Wiki"
 | Rarity | <span class="rarity-ssr">SSR</span> |
 | Category | SSR Limited (Stellar) |
 | Character | 皮克曼(Pickman) |
-| Main Stat | 狂气回充 7.2 |
+| Main Stat | Fury Recharge 7.2 |
 
 ## Effect
 
-狂气和力量获取+6-12%；超限后提升最终伤害/护盾/治疗。
+Fury and Power gain +6-12%; after Over-Exalt, increases final damage/shield/healing.

@@ -10,7 +10,7 @@ description: "镜中人(Mirror Reflection) - 忘却前夜命轮详情"
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
 | カテゴリ | SSR常設 |
-| メインステータス | 黑印掉落 10.8% |
+| メインステータス | 黒印ドロップ 10.8% |
 
 ## 効果
 
