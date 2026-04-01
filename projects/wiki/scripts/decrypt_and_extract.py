@@ -70,24 +70,28 @@ def try_brute_force(metadata_path: Path, sample_ab: Path) -> bytes | None:
             return None
 
     # Parse key_sig and data_sig from error message
+    import ast
     import re
-    key_sig_match = re.search(r"key_sig\s*=\s*b'([^']*)'", error_msg)
-    data_sig_match = re.search(r"data_sig\s*=\s*b'([^']*)'", error_msg)
+    key_sig_match = re.search(r"key_sig\s*=\s*(b'[^']*'|b\"[^\"]*\")", error_msg)
+    data_sig_match = re.search(r"data_sig\s*=\s*(b'[^']*'|b\"[^\"]*\")", error_msg)
 
     if not key_sig_match or not data_sig_match:
         print(f"  Could not parse signatures from error message")
-        print(f"  Error: {error_msg[:300]}")
+        print(f"  Error: {error_msg[:500]}")
         return None
 
-    # Decode the signatures (handle escaped bytes)
-    key_sig_str = key_sig_match.group(1)
-    data_sig_str = data_sig_match.group(1)
+    # Use ast.literal_eval to properly decode byte strings with \x escapes
+    try:
+        key_sig = ast.literal_eval(key_sig_match.group(1))
+        data_sig = ast.literal_eval(data_sig_match.group(1))
+    except Exception as e:
+        print(f"  Failed to parse signatures: {e}")
+        print(f"  key_sig raw: {key_sig_match.group(1)}")
+        print(f"  data_sig raw: {data_sig_match.group(1)}")
+        return None
 
-    key_sig = key_sig_str.encode("utf-8")
-    data_sig = data_sig_str.encode("latin-1")
-
-    print(f"  key_sig = {key_sig}")
-    print(f"  data_sig = {data_sig}")
+    print(f"  key_sig = {key_sig} ({len(key_sig)} bytes)")
+    print(f"  data_sig = {data_sig} ({len(data_sig)} bytes)")
     print(f"  metadata = {metadata_path}")
     print()
     print("Brute-forcing encryption key... (this may take a while)")
@@ -96,14 +100,58 @@ def try_brute_force(metadata_path: Path, sample_ab: Path) -> bytes | None:
     try:
         key = brute_force_key(str(metadata_path), key_sig, data_sig)
         if key:
-            print(f"\n  KEY FOUND: {key}")
+            print(f"\n  KEY FOUND (via metadata): {key}")
             return key
         else:
-            print("\n  Brute-force failed — key not found in metadata.")
-            return None
+            print("\n  Key not found in global-metadata.dat")
     except Exception as e:
-        print(f"\n  Brute-force error: {e}")
-        return None
+        print(f"\n  Brute-force error (metadata): {e}")
+
+    # Fallback: try GameAssembly.dll (IL2CPP compiled code often contains the key)
+    game_assembly = metadata_path.parent.parent.parent / "GameAssembly.dll"
+    if not game_assembly.exists():
+        # Try parent directories
+        for parent in metadata_path.parents:
+            candidate = parent / "GameAssembly.dll"
+            if candidate.exists():
+                game_assembly = candidate
+                break
+
+    if game_assembly.exists():
+        print(f"\n  Trying GameAssembly.dll ({game_assembly.stat().st_size / 1024 / 1024:.1f} MB)...")
+        try:
+            key = brute_force_key(str(game_assembly), key_sig, data_sig)
+            if key:
+                print(f"\n  KEY FOUND (via GameAssembly.dll): {key}")
+                return key
+            else:
+                print("  Key not found in GameAssembly.dll")
+        except Exception as e:
+            print(f"  Brute-force error (GameAssembly): {e}")
+    else:
+        print(f"\n  GameAssembly.dll not found")
+
+    # Fallback 2: try UnityPlayer.dll
+    for dll_name in ["UnityPlayer.dll", "baselib.dll"]:
+        dll_path = metadata_path.parent.parent.parent / dll_name
+        if not dll_path.exists():
+            for parent in metadata_path.parents:
+                candidate = parent / dll_name
+                if candidate.exists():
+                    dll_path = candidate
+                    break
+        if dll_path.exists():
+            print(f"  Trying {dll_name} ({dll_path.stat().st_size / 1024 / 1024:.1f} MB)...")
+            try:
+                key = brute_force_key(str(dll_path), key_sig, data_sig)
+                if key:
+                    print(f"\n  KEY FOUND (via {dll_name}): {key}")
+                    return key
+            except Exception as e:
+                print(f"  Error: {e}")
+
+    print("\n  All brute-force attempts failed.")
+    return None
 
 
 def extract_with_key(
