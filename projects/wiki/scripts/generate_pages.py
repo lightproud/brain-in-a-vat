@@ -431,6 +431,19 @@ def generate_character_page(char: dict, wheel_index: dict[str, list[dict]], lang
     if skills:
         body.extend([f"## {L['skills']}", ""])
         body.append(render_skills_table(skills, lang))
+
+        # Lore/design notes from interview data
+        lore_note = skills.get("lore_note", "")
+        design_note = skills.get("design_note", "")
+        if lore_note or design_note:
+            trivia_label = "幕后花絮" if lang == "zh" else "Behind the Scenes" if lang == "en" else "裏話"
+            body.append(f"::: info {trivia_label}")
+            if lore_note:
+                body.append(lore_note)
+            if design_note:
+                body.append(design_note)
+            body.append(":::")
+            body.append("")
     else:
         body.extend([f"## {L['skills']}", "", L["pending"], ""])
 

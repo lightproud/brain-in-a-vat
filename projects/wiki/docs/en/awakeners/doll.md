@@ -33,6 +33,10 @@ portrait: /portraits/doll.png
 
 
 
+::: info Behind the Scenes
+玩偶与塔薇儿是最早被设计的角色。
+:::
+
 ## Recommended Equipment
 
 Data pending

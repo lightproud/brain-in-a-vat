@@ -33,6 +33,10 @@ portrait: /portraits/doll.png
 
 
 
+::: info 幕后花絮
+玩偶与塔薇儿是最早被设计的角色。
+:::
+
 ## 推荐装备
 
 数据待补充

@@ -35,6 +35,10 @@ portrait: /portraits/tawil.png
 
 
 
+::: info Behind the Scenes
+塔薇儿与玩偶是最早被设计的角色。
+:::
+
 ## Recommended Equipment
 
 ### Recommended Wheel: Grace Through Pain

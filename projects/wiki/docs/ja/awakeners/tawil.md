@@ -35,6 +35,10 @@ portrait: /portraits/tawil.png
 
 
 
+::: info 裏話
+塔薇儿与玩偶是最早被设计的角色。
+:::
+
 ## 推奨装備
 
 ### 推奨命輪: 跨越疼痛（Grace Through Pain）

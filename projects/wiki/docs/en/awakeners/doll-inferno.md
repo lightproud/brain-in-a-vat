@@ -34,6 +34,10 @@ portrait: /portraits/doll-inferno.png
 
 
 
+::: info Behind the Scenes
+创世纪角色之一。原为第三篇章核心人物，有独立个人剧情线（初稿已完成），因第一篇章压缩未能释出。
+:::
+
 ## Recommended Equipment
 
 Data pending

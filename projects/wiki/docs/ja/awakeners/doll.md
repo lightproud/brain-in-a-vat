@@ -33,6 +33,10 @@ portrait: /portraits/doll.png
 
 
 
+::: info 裏話
+玩偶与塔薇儿是最早被设计的角色。
+:::
+
 ## 推奨装備
 
 データ準備中
