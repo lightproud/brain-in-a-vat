@@ -1,6 +1,6 @@
 # 项目状态一览
 
-> 最后更新：2026-03-30 by Code-wiki
+> 最后更新：2026-04-01 by Code-主控台
 
 ## 子项目状态
 
@@ -112,6 +112,11 @@
 |------|------|------|
 | GitHub PAT (Issues) | 已配置 | Fine-grained, brain-in-a-vat only |
 | Claude GitHub App | 已安装 | 权限已更新 |
-| .github/workflows/claude.yml | 已部署 | 含 id-token:write |
-| ANTHROPIC_API_KEY Secret | 已配置 | 余额为零，待充值 |
-| Actions 自动化 | 触发链通，执行失败 | 原因：API 无余额。充值后即可激活 |
+| .github/workflows/claude.yml | 已部署 | 含合并步骤（冲突预检+自动合并main+分支清理+失败通知） |
+| ANTHROPIC_API_KEY Secret | 已配置 | 已充值，正常运行 |
+| Actions 自动化 | 正常运行 | Issue 驱动自动执行 + 自动合并 main + 分支清理 |
+| Dependabot | 已启用 | npm + pip + github-actions 三生态扫描 |
+| Discord Bot | 正常运行 | 每 3 小时归档，增量+历史双轨 |
+| 社区新闻采集 | 正常运行 | 每小时 cron（Steam+Bilibili），Discord 每 3 小时 |
+| 日报生成 | 正常运行 | generate_daily.py，随采集触发 |
+| 分支状态 | 干净 | 仅 main + gh-pages，Ruleset 禁删+禁 force push |

@@ -2,9 +2,15 @@ name: Discord Archive
 
 on:
   schedule:
-    # Run every hour
-    - cron: '0 * * * *'
+    # Incremental: every 3 hours
+    - cron: '0 */3 * * *'
+    # Monthly archive: 1st of each month at 02:00 UTC
+    - cron: '0 2 1 * *'
   workflow_dispatch:
+
+concurrency:
+  group: discord-archive
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -12,6 +18,7 @@ permissions:
 jobs:
   archive:
     runs-on: ubuntu-latest
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v6
 
@@ -26,6 +33,7 @@ jobs:
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         run: python projects/news/scripts/discord_archiver.py
+        timeout-minutes: 290
 
       - name: Commit and push if changed
         run: |
