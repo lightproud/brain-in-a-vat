@@ -589,6 +589,115 @@ def generate_wheel_pages(equip_data: dict[str, Any], langs: list[str], dry_run: 
     return generated
 
 
+def generate_wheel_list_page(equip_data: dict[str, Any], langs: list[str], dry_run: bool) -> int:
+    """Generate/update the wheel list page from equipment.json."""
+    wod = equip_data.get("wheels_of_destiny", {})
+    generated = 0
+
+    SECTION_NAMES = {
+        "zh": {
+            "ssr_limited_oblivion": "SSR 命轮 — 限定忘却篇",
+            "ssr_limited_stellar": "SSR 命轮 — 限定星辰篇",
+            "ssr_standard": "SSR 命轮 — 常驻",
+            "sr_wheels": "SR 命轮",
+            "r_wheels": "R 命轮",
+        },
+        "en": {
+            "ssr_limited_oblivion": "SSR Wheels — Oblivion Limited",
+            "ssr_limited_stellar": "SSR Wheels — Stellar Limited",
+            "ssr_standard": "SSR Wheels — Standard",
+            "sr_wheels": "SR Wheels",
+            "r_wheels": "R Wheels",
+        },
+        "ja": {
+            "ssr_limited_oblivion": "SSR 運命の輪 — 忘却限定",
+            "ssr_limited_stellar": "SSR 運命の輪 — 星辰限定",
+            "ssr_standard": "SSR 運命の輪 — 常設",
+            "sr_wheels": "SR 運命の輪",
+            "r_wheels": "R 運命の輪",
+        },
+    }
+
+    INTRO = {
+        "zh": "# 命轮列表\n\n命轮 (Wheels of Destiny) 是通过抽卡获取的装备道具，类似专属武器，提供属性和被动效果。\n\n::: tip 装备规则\n同一队伍中不可装备相同命轮。命轮+12后可额外装备第二个SSR命轮。命轮以3叠(3个重复合并)性能评估。v2.0后R命轮完全重做，拥有改变探索规则的效果。\n:::\n",
+        "en": "# Wheels of Destiny\n\nWheels of Destiny are equipment items obtained through gacha, similar to signature weapons. They provide stat bonuses and passive effects.\n\n::: tip Equipment Rules\nNo duplicate wheels in the same team. After +12, a second SSR wheel can be equipped. Wheels are evaluated at 3-stack (3 duplicates merged). R wheels were fully reworked in v2.0.\n:::\n",
+        "ja": "# 運命の輪一覧\n\n運命の輪は、ガチャで入手する装備アイテムです。専属武器に似ており、ステータスとパッシブ効果を提供します。\n",
+    }
+
+    for lang in langs:
+        lines = [INTRO.get(lang, INTRO["zh"]), ""]
+
+        for cat_key in ["ssr_limited_oblivion", "ssr_limited_stellar", "ssr_standard", "sr_wheels", "r_wheels"]:
+            wheel_list = wod.get(cat_key)
+            if not isinstance(wheel_list, list) or not wheel_list:
+                continue
+
+            section_name = SECTION_NAMES.get(lang, SECTION_NAMES["zh"]).get(cat_key, cat_key)
+            lines.append(f"## {section_name}")
+            lines.append("")
+
+            header_name = "命轮名称" if lang == "zh" else "Wheel" if lang == "en" else "名前"
+            header_char = "对应唤醒体" if lang == "zh" else "Character" if lang == "en" else "キャラ"
+            header_eff = "效果" if lang == "zh" else "Effect" if lang == "en" else "効果"
+            lines.append(f"| {header_name} | {header_char} | {header_eff} |")
+            lines.append("|----------|-----------|------|")
+
+            for w in wheel_list:
+                if not isinstance(w, dict):
+                    continue
+                name = w.get("name", "")
+                name_en = w.get("name_en", "")
+                slug = slugify(name_en) if name_en else ""
+                char = w.get("character", "")
+                rec = w.get("recommended", [])
+                effect = w.get("effect", "")
+                effect_en = w.get("effect_en", "")
+                main_stat = w.get("main_stat", "")
+
+                # Display name with link
+                if lang == "en":
+                    display = f"[{name_en}](/{lang}/wheels/{slug})" if slug else name_en
+                else:
+                    display = f"[{name} ({name_en})](/{lang}/wheels/{slug})" if slug else f"{name} ({name_en})"
+
+                # Character column
+                if char:
+                    char_display = char
+                elif rec:
+                    char_display = f"推荐：{', '.join(rec)}" if lang == "zh" else f"Rec: {', '.join(rec)}" if lang == "en" else f"推奨: {', '.join(rec)}"
+                else:
+                    char_display = "—"
+
+                # Effect column (brief)
+                if lang == "en" and effect_en:
+                    eff_display = effect_en.split("\n")[0][:80]
+                elif effect:
+                    eff_display = effect.split("\n")[0][:80]
+                elif main_stat:
+                    eff_display = main_stat
+                else:
+                    eff_display = "—"
+
+                # Escape pipe chars
+                eff_display = eff_display.replace("|", "\\|")
+                char_display = char_display.replace("|", "\\|")
+
+                lines.append(f"| {display} | {char_display} | {eff_display} |")
+
+            lines.append("")
+
+        content = "\n".join(lines)
+        out_path = DOCS_DIR / lang / "wheels" / "list.md"
+        if dry_run:
+            print(f"  [DRY-RUN] {out_path.relative_to(PROJECT_ROOT)}")
+        else:
+            out_path.parent.mkdir(parents=True, exist_ok=True)
+            out_path.write_text(content, encoding="utf-8")
+        generated += 1
+
+    return generated
+
+
 def update_list_page(characters: list[dict], lang: str, dry_run: bool) -> str | None:
     """Append <CharacterGrid /> component to list page if not already present."""
     list_path = DOCS_DIR / lang / "awakeners" / "list.md"
@@ -658,8 +767,9 @@ def main() -> None:
         if result:
             updated_lists.append(result)
 
-    # Generate wheel pages
+    # Generate wheel pages and list
     wheel_count = generate_wheel_pages(equip_data, langs, args.dry_run)
+    wheel_list_count = generate_wheel_list_page(equip_data, langs, args.dry_run)
 
     # Summary
     print()
