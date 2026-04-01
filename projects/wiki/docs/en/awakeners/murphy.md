@@ -28,6 +28,7 @@ portrait: /portraits/murphy.png
 | **Exalt**: Exalt | — | Data pending |
 | **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
 | *Command Cards* | — | Data pending |
+| **献祭(Sacrifice)** | — | 墨菲的专属被动机制。通过献祭自身生命为队伍提供防护，技能组强势补强深海界域弱点。 |
 | *Enlighten* | — | Data pending |
 
 

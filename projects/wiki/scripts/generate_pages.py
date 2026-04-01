@@ -282,6 +282,13 @@ def render_skills_table(skills: dict, lang: str) -> str:
     else:
         lines.append(f"| *{L['command_cards']}* | — | {pending} |")
 
+    # ── Special Mechanic (optional) ──
+    spec = skills.get("special_mechanic")
+    if spec and isinstance(spec, dict):
+        sp_name = _name(spec) or "Special"
+        sp_desc = _esc(spec.get("description", spec.get("effect", "")))
+        lines.append(f"| **{sp_name}** | — | {sp_desc} |")
+
     # ── Talent (optional) ──
     talent = skills.get("talent")
     if talent:
