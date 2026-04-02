@@ -21,6 +21,8 @@ portrait: /portraits/wanda.png
 
 SSR Ultra Defense Awakener (standard). Shield-counter specialist; deals damage through reflected damage and shield-slam mechanics. Forms the Shield Counter duo core with Salvador. Featured in: Ultra Poison Team (Beginner Recommended).
 
+**Team Role**: 超维界域防御型唤醒体，社区昵称「SM」。盾反队成员，靠反伤和砸盾输出，与萨尔瓦多组成盾反队双核。签名命轮：女王的戒律(Queen's Edict)。
+
 ## Skills
 
 | Card | Cost | Effect |

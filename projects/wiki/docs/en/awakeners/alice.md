@@ -21,6 +21,8 @@ portrait: /portraits/alice.png
 
 SSR Caro Sub-DPS Awakener (standard). Provides supplementary damage alongside Caro main carries in Devour/Embryo compositions. Available from standard pool.
 
+**Team Role**: 血肉界域T1副输出型唤醒体。配合血肉主C进行副输出，在吞噬/胚胎体系中提供额外伤害。
+
 ## Skills
 
 | Card | Cost | Effect |

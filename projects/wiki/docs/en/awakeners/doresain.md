@@ -21,6 +21,8 @@ portrait: /portraits/doresain.png
 
 SSR Caro DPS Awakener (limited).
 
+**Team Role**: 血肉界域限定输出型唤醒体，星辰篇推出。名字来源于克苏鲁神话中的食尸鬼之王。拥有独特吞噬增伤机制，血肉队新一代输出选择。
+
 ## Skills
 
 | Card | Cost | Effect |

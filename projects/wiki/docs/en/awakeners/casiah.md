@@ -21,6 +21,8 @@ portrait: /portraits/casiah.png
 
 SSR Ultra Support Awakener (limited). Ultra team support with unique utility.
 
+**Team Role**: 超维界域T1副输出型唤醒体。与达芙黛尔组合：用「隔空取物」从超维空间再打一次「断颈一击」，实现现版本越级最强输出组合。
+
 ## Skills
 
 | Card | Cost | Effect |

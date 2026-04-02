@@ -21,6 +21,8 @@ portrait: /portraits/murphy.png
 
 深海界域防御型唤醒体。技能组强势补强深海界域弱点，拥有专属「献祭」被动机制。深海玩家必抽角色，大幅提升深海队生存能力。常见配队：Tentacle Mixed-Damage Team、#24 Deep Sea Variant。
 
+**队伍定位**: 深海界域防御型唤醒体，深海玩家必抽。拥有专属「献祭」被动机制，大幅提升深海队生存能力。签名命轮：隐秘的诞生(Shrouded Birth)。
+
 ## 技能
 
 | 卡名 | 费用 | 效果 |

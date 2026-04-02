@@ -21,6 +21,8 @@ portrait: /portraits/thais.png
 
 SSR Caro Support Awakener (limited). Caro support focused on the Flesh system mechanics.
 
+**Team Role**: 血肉界域SSR限定辅助角色，社区昵称「羊妈」。为血肉队提供增益和恢复，顶级血肉辅助。签名命轮：慈悲的哺育(Merciful Nurturing)。
+
 ## Skills
 
 | Card | Cost | Effect |

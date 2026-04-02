@@ -21,6 +21,8 @@ portrait: /portraits/aurita.png
 
 深海界域输出型唤醒体，深潜三杰成员之一。通关混沌界域裂隙I免费获取。爆发+循环卡牌打法，被称为「深海万能锤」，新手友好的免费SSR。常见配队：Tentacle Mixed-Damage Team、Deep Sea Double-Carry。核心联携：触手叠加。
 
+**队伍定位**: 深海界域免费SSR(通关混沌裂隙I获取)，「深潜三杰」成员。爆发+循环卡牌打法，「深海万能锤」，新手友好。
+
 ## 技能
 
 | 卡名 | 费用 | 效果 |

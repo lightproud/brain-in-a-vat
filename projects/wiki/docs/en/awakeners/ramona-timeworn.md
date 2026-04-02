@@ -21,6 +21,8 @@ portrait: /portraits/ramona-timeworn.png
 
 SSR Chaos DPS Awakener (limited). Timeworn variant of Ramona centered on Negentropy and card manipulation. Can recall large amounts of Strike cards to synergize with team burst. Community nickname: "Ring Ramona".
 
+**Team Role**: 大招召回打击卡，配合希洛破链一击爆发。环娜的大招为复制，独立于牌库之外。仅3费降费。
+
 ## Skills
 
 | Card | Cost | Effect |

@@ -21,6 +21,8 @@ portrait: /portraits/sorel.png
 
 SSR Caro DPS Awakener (limited). Versatile Caro carry with multiple build paths. Limited banner character.
 
+**Team Role**: 血肉界域T0限定输出角色，「红女王」。穿着红色玫瑰裙的沙龙主人，附带回血技能，攻守兼备。签名命轮：以蔷薇之名(By Rose Alone)。
+
 ## Skills
 
 | Card | Cost | Effect |

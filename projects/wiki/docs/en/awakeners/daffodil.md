@@ -21,6 +21,8 @@ portrait: /portraits/daffodil.png
 
 SSR Ultra DPS Awakener (limited). T0-tier Ultra carry, known as "Lady Daffodil". Reworked in v1.1 with one of the most versatile Exalt abilities in the game. Top-tier limited carry for Ultra teams.
 
+**Team Role**: 超维主C，配合卡茜亚可实现现版本越级最强输出组合
+
 ## Skills
 
 | Card | Cost | Effect |

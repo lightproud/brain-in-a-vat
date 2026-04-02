@@ -21,6 +21,8 @@ portrait: /portraits/corposant.png
 
 SSR Aequor Defense Awakener (limited). Introduced in v2.1.
 
+**Team Role**: 深海界域限定防御型角色，v2.1推出。名字含义为「圣艾尔摩之火」。拥有独特护盾和减伤机制。
+
 ## Skills
 
 | Card | Cost | Effect |

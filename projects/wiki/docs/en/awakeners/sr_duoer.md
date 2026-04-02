@@ -21,6 +21,8 @@ portrait: /portraits/sr_duoer.png
 
 SR Chaos Support Awakener (standard).
 
+**Team Role**: 回血回盾回狂气，提供2回合虚弱增加队伍生存能力
+
 ## Skills
 
 Data pending

@@ -21,6 +21,8 @@ portrait: /portraits/winkle.png
 
 SSR Ultra Support Awakener (standard). Featured in: Ultra Double-C Double-Shield.
 
+**Team Role**: 超维界域T1辅助型唤醒体。为超维队提供稳定辅助增益。
+
 ## Skills
 
 | Card | Cost | Effect |

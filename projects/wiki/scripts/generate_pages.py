@@ -436,6 +436,12 @@ def generate_character_page(char: dict, wheel_index: dict[str, list[dict]], lang
     # Intro
     body.extend([f"## {L['intro']}", "", description, ""])
 
+    # Team role info
+    role_in_team = char.get("role_in_team", "")
+    if role_in_team:
+        role_label = "队伍定位" if lang == "zh" else "Team Role" if lang == "en" else "チーム役割"
+        body.extend([f"**{role_label}**: {role_in_team}", ""])
+
     # Skills section
     skills = char.get("skills")
     if skills:

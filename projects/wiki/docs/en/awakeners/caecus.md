@@ -21,6 +21,8 @@ portrait: /portraits/caecus.png
 
 SSR Aequor Sub-DPS Awakener (standard). Counter-attack team specialist. Key synergy: 反击缩放.
 
+**Team Role**: 深海界域T2副输出型唤醒体。反击队体系核心成员，可配合反击机制使用。凯刻斯反击队：凯刻斯+萨尔瓦多+旺达+哈姆林。
+
 ## Skills
 
 | Card | Cost | Effect |

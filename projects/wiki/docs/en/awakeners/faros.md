@@ -21,6 +21,8 @@ portrait: /portraits/faros.png
 
 SSR Aequor Support Awakener (standard).
 
+**Team Role**: 深海界域T3辅助型唤醒体。提供基础辅助效果，在深海队中作为过渡辅助使用。高防御角色，适合搭配心之壁垒命轮。
+
 ## Skills
 
 | Card | Cost | Effect |

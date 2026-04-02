@@ -21,6 +21,8 @@ portrait: /portraits/murphy.png
 
 SSR Aequor Defense Awakener (limited). Strong kit that shores up Aequor's defensive weakness. Has unique "Sacrifice" passive mechanic. Must-pull for Aequor players, greatly improves Aequor team survivability.
 
+**Team Role**: 深海界域防御型唤醒体，深海玩家必抽。拥有专属「献祭」被动机制，大幅提升深海队生存能力。签名命轮：隐秘的诞生(Shrouded Birth)。
+
 ## Skills
 
 | Card | Cost | Effect |

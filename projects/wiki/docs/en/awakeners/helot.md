@@ -21,6 +21,8 @@ portrait: /portraits/helot.png
 
 SSR Caro DPS Awakener (limited). Introduced in v1.6.
 
+**Team Role**: 血肉界域限定输出角色，希洛的血链变体形态。「血希」队伍核心，破链一击爆发伤害极高。推荐配队：血链·希洛+环行·拉蒙娜+辅助。
+
 ## Skills
 
 | Card | Cost | Effect |

@@ -21,6 +21,8 @@ portrait: /portraits/divine-king-tulu.png
 
 SSR Aequor DPS Awakener (limited). Divine King variant of Tulu with further enhanced combat capabilities. Top-tier Aequor main carry choice.
 
+**Team Role**: 图鲁的神王变体形态，深海界域顶级限定主C。深海队的顶级主C选择，触腕体系进化版。
+
 ## Skills
 
 | Card | Cost | Effect |

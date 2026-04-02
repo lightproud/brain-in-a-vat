@@ -21,6 +21,8 @@ portrait: /portraits/erica.png
 
 SSR Ultra Defense Awakener (standard). T0-tier Ultra defender, Deep Dive Trio member. Free from clearing Caro Swamp Rift I. Provides Power buff and Vulnerability effects; key character for Ultra burst turns. Must-build for new players. Featured in: Ultra Poison Team (Beginner Recommended), Ultra Starter Team, Ultra Double-C Double-Shield.
 
+**Team Role**: 在超维队伍中负责提供爆发回合的易伤和力量加成
+
 ## Skills
 
 | Card | Cost | Effect |

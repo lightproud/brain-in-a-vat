@@ -21,6 +21,8 @@ portrait: /portraits/jenkins.png
 
 SSR Ultra Sub-DPS Awakener (standard).
 
+**Team Role**: 超维界域T1副输出型唤醒体。超维体系灵活副C，为主C提供额外输出补充。
+
 ## Skills
 
 | Card | Cost | Effect |

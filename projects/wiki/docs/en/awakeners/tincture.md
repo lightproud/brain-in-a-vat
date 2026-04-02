@@ -21,6 +21,8 @@ portrait: /portraits/tincture.png
 
 SSR Ultra Support Awakener (standard). Support for Ultra teams. Available from standard pool.
 
+**Team Role**: 超维界域T2辅助型唤醒体。提供基础辅助效果，过渡辅助位选择。
+
 ## Skills
 
 | Card | Cost | Effect |

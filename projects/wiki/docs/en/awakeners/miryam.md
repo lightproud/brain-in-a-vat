@@ -21,6 +21,8 @@ portrait: /portraits/miryam.png
 
 SSR Aequor Support Awakener (limited). Powerful tentacle support. v1.4 enhanced: "Supreme Life Sacrifice" adjusted to penetration damage; Rouse and Talent strengthened. Essential support for Aequor teams. Key synergy: 触手叠加.
 
+**Team Role**: 深海界域限定辅助，强力触手辅助。深海队必备辅助位，v1.4版本大幅增强。
+
 ## Skills
 
 | Card | Cost | Effect |

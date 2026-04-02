@@ -21,6 +21,8 @@ portrait: /portraits/sr_lamengna.png
 
 SR混沌支援型覚醒体（恒常）。
 
+**チーム役割**: 弃牌找回、降费辅助，配合莉兹等主C使用
+
 ## スキル
 
 データ準備中

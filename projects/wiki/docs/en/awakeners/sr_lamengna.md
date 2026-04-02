@@ -21,6 +21,8 @@ portrait: /portraits/sr_lamengna.png
 
 SR Chaos Support Awakener (standard).
 
+**Team Role**: 弃牌找回、降费辅助，配合莉兹等主C使用
+
 ## Skills
 
 Data pending
