@@ -105,7 +105,8 @@
       "description_en": "SSR Chaos Defense Awakener (standard). Member of the Royal Four. Core of the Silver Key Resonance system.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR混沌防御型覚醒体（恒常）。ロイヤルフォーのメンバー。銀鍵共鳴システムの中核。",
-      "obtain_ja": "恒常/イベント召喚"
+      "obtain_ja": "恒常/イベント召喚",
+      "dev_notes": "个人剧情初稿已完成，因品质把控与排期暂未发布。"
     },
     {
       "id": "doll",
@@ -138,7 +139,8 @@
       "description_en": "SSR Chaos DPS Awakener (standard). Member of the Royal Four. Featured in: Ultra Starter Team.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR混沌攻撃型覚醒体（恒常）。ロイヤルフォーのメンバー。",
-      "obtain_ja": "恒常/イベント召喚"
+      "obtain_ja": "恒常/イベント召喚",
+      "dev_notes": "项目最早创作的角色之一（与塔薇同期，立项初期设计）。立绘为风格统一做过一次调整优化。"
     },
     {
       "id": "ramona-timeworn",
@@ -181,7 +183,8 @@
       "obtain_en": "Limited Event Summon",
       "description_ja": "SSR混沌攻撃型覚醒体（限定）。環行バリアント。",
       "obtain_ja": "限定イベント召喚",
-      "role_in_team": "大招召回打击卡，配合希洛破链一击爆发。环娜的大招为复制，独立于牌库之外。仅3费降费。"
+      "role_in_team": "大招召回打击卡，配合希洛破链一击爆发。环娜的大招为复制，独立于牌库之外。仅3费降费。",
+      "dev_notes": "技能由制作人Light亲手设计。核心意图：从过去经历中获得力量（复制上回合最后打出的卡牌）。V1.1 PV结尾台词：'无论失败多少次，我终将拯救你。'制作人个人最特别的角色。与熔毁朵尔、血链希洛、诞妄墨菲同期构思。"
     },
     {
       "id": "ogier",
@@ -230,7 +233,8 @@
       "description_en": "SSR Chaos Defense Awakener (standard). Member of the Royal Four. Core of the Silver Key Resonance system.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR混沌防御型覚醒体（恒常）。ロイヤルフォーのメンバー。銀鍵共鳴システムの中核。",
-      "obtain_ja": "恒常/イベント召喚"
+      "obtain_ja": "恒常/イベント召喚",
+      "dev_notes": "第一个打击流角色。不是因为游戏需要打击流派才设计，而是因为萝坦的能力与人设适合用打击的手感与循环去表达——体现'玩法与叙事统一'的设计理念。"
     },
     {
       "id": "ramona",
@@ -310,7 +314,8 @@
       "description_ja": "SSR混沌副攻撃型覚醒体（恒常）。",
       "obtain_ja": "恒常/イベント召喚",
       "role_in_team": "混沌界域T2副输出型唤醒体。配合混沌主C进行副输出。",
-      "_data_source": "待从公开wiki补充具体技能数据"
+      "_data_source": "待从公开wiki补充具体技能数据",
+      "dev_notes": "个人剧情初稿已完成，因品质把控与排期暂未发布。Bilibili社区有'法罗斯潘迪亚毒反队'等衍生玩法讨论。"
     },
     {
       "id": "nodera",
@@ -420,7 +425,8 @@
       "description_ja": "SSR混沌防御型覚醒体（恒常）。",
       "obtain_ja": "活动唤醒「花不染尘」",
       "role_in_team": "混沌界域防御型唤醒体。防御能力出色，为混沌队提供稳定护盾。v1.1版本推出，后加入常驻池。",
-      "_data_source": "待从公开wiki补充具体技能数据"
+      "_data_source": "待从公开wiki补充具体技能数据",
+      "dev_notes": "因与希洛的能力来源设定而具备打击能力。'忍耐'机制对应其忍耐痛苦的经历。角色流派和玩法感受在敌人版本及相位对弈中形成呼应。"
     },
     {
       "id": "danmo",
@@ -599,7 +605,8 @@
       "description_ja": "SSR深海攻撃型覚醒体（限定）。神王バリアント。",
       "obtain_ja": "限定イベント召喚",
       "role_in_team": "图鲁的神王变体形态，深海界域顶级限定主C。深海队的顶级主C选择，触腕体系进化版。",
-      "_data_source": "待从公开wiki补充具体技能数据"
+      "_data_source": "待从公开wiki补充具体技能数据",
+      "dev_notes": "已公开但尚未实装的本源角色。另有一位已完成美术设定的超维界域本源角色尚未公开。"
     },
     {
       "id": "celeste",
@@ -1486,7 +1493,8 @@
       "description_en": "SSR Chaos Support Awakener (standard).",
       "obtain_en": "Summon",
       "description_ja": "SSR混沌支援型覚醒体（恒常）。",
-      "obtain_ja": "唤醒"
+      "obtain_ja": "唤醒",
+      "dev_notes": "项目最早创作的角色之一（与朵尔同期，立项初期设计）。个人剧情初稿已完成，因品质把控与排期暂未发布。"
     },
     {
       "id": "wanda",
@@ -1609,7 +1617,8 @@
       "description_en": "SSR Chaos Support Awakener (limited). Introduced in v2.0.",
       "obtain_en": "Limited Event Summon",
       "description_ja": "SSR混沌支援型覚醒体（限定）。",
-      "obtain_ja": "限定イベント召喚"
+      "obtain_ja": "限定イベント召喚",
+      "dev_notes": "原为第三部核心角色，因第一部加速收束被提前引入。有独立个人故事初稿已完成但未发布，玩家目前只能通过闪回和碎片叙事拼凑。与环行拉蒙娜、血链希洛、诞妄墨菲同期构思。"
     },
     {
       "id": "24",
@@ -1636,7 +1645,8 @@
       "description_en": "SSR Chaos DPS Awakener (limited). Introduced in v1.5. Featured in: #24 Flesh Variant, #24 Chaos National Team, #24 Deep Sea Variant. Key synergy: 24万能适配.",
       "obtain_en": "Limited Event Summon",
       "description_ja": "SSR混沌攻撃型覚醒体（限定）。",
-      "obtain_ja": "限定イベント召喚"
+      "obtain_ja": "限定イベント召喚",
+      "dev_notes": "设计意图：服务'人格分裂'叙事。双形态切换、四界域适配、特遣纪录'分裂然后找回'的共鸣机制，全部为叙事服务。相当于把四个角色生态位压进一个角色，挤占未来设计空间且商业上不划算，但战斗设计师仍选择这样做——'即使前面做了很多现实层面的妥协，也总得有一些时刻，为理想燃烧一次。'目前不计划再做同类多界域唤醒体。"
     },
     {
       "id": "clementine",
@@ -1751,7 +1761,8 @@
       "description_ja": "SSR深海合唱型覚醒体（限定）。",
       "obtain_ja": "限定イベント召喚",
       "role_in_team": "深海界域限定合唱型角色，墨菲的诞妄变体。v2.4二周年推出，卡池「尊崇之诞」。作为合唱型角色与深海主C产生联携效果。",
-      "_data_source": "待从公开wiki补充具体技能数据"
+      "_data_source": "待从公开wiki补充具体技能数据",
+      "dev_notes": "近期写作上最棘手的角色之一。原版墨菲故事已完整，拓展空间有限。需要保持强烈识别特征且不损伤原版魅力。最终方案：性格层次更复杂，以神母自居、高傲冷漠的外表是自我保护伪装，内心仍如最初般澄澈。属于利莫里亚阵营（但墨菲不属于），阵营加成设计对应她们各自对利莫里亚的态度差异。"
     },
     {
       "id": "mouchette",
@@ -1907,7 +1918,8 @@
       "description_ja": "SSR血肉攻撃型覚醒体（限定）。",
       "obtain_ja": "限定イベント召喚",
       "role_in_team": "血肉界域限定输出角色，希洛的血链变体形态。「血希」队伍核心，破链一击爆发伤害极高。推荐配队：血链·希洛+环行·拉蒙娜+辅助。",
-      "_data_source": "从技能描述和队伍攻略推导，具体数值待从公开wiki补充"
+      "_data_source": "从技能描述和队伍攻略推导，具体数值待从公开wiki补充",
+      "dev_notes": "与萝坦有'宿命感'，成为游戏中第二个打击流角色。原定在第一部承担更重要戏份（赫伯特也是）。与环行拉蒙娜、熔毁朵尔、诞妄墨菲同期构思。"
     },
     {
       "id": "leigh",
