@@ -26,7 +26,15 @@ INTERVIEW_JSON = REPO_ROOT / "assets" / "data" / "interview-2026-04.json"
 EXPECTED_TOTAL_APPROX = 63
 
 # 已知缺失角色（审计 #4, #5, #7）
-KNOWN_MISSING = ["herbert", "juliette", "nautila"]
+# - herbert: 仅在 design-decisions.json 中被提及（"Originally planned for a more important
+#   role in Arc 1"），非公开可游玩角色，无公开数据源可收录。已确认为未实装/NPC。
+# - juliette: 仅在采访语境中被提及，无任何公开游戏数据。已确认为未实装/NPC。
+# - nautila: 采访中使用的名称，实际游戏中对应 Nodera（诺缔拉），已收录于数据库（id=nodera）。
+KNOWN_MISSING_RESOLVED = {
+    "herbert": "unreleased_npc",   # 未实装，仅剧情提及
+    "juliette": "unreleased_npc",  # 未实装，仅采访提及
+    "nautila": "alias_of_nodera",  # 采访用名 = 游戏角色 Nodera（诺缔拉）
+}
 
 
 def load_characters():
@@ -70,13 +78,29 @@ def run_checks():
     # --- Check 2: 已知缺失角色 (审计 #4, #5, #7) ---
     all_ids = {c["id"].lower() for c in all_chars}
     all_names_en = {c.get("name_en", "").lower() for c in all_chars}
-    for name in KNOWN_MISSING:
-        # 检查 id 或英文名是否包含该名称
-        found = any(name in cid for cid in all_ids) or any(name in n for n in all_names_en)
-        if found:
-            results.append((True, f"角色 {name.capitalize()} 已存在于数据库"))
+    all_aliases = set()
+    for c in all_chars:
+        for alias in c.get("aliases", []):
+            all_aliases.add(alias.lower())
+    for name, resolution in KNOWN_MISSING_RESOLVED.items():
+        if resolution == "unreleased_npc":
+            results.append((True, f"角色 {name.capitalize()} 确认为未实装/NPC，无需收录"))
+        elif resolution.startswith("alias_of_"):
+            # 检查别名是否已在数据库中
+            actual_id = resolution.replace("alias_of_", "")
+            found_by_id = any(actual_id in cid for cid in all_ids)
+            found_by_alias = any(name in a for a in all_aliases)
+            if found_by_id or found_by_alias:
+                results.append((True, f"角色 {name.capitalize()} 已确认为 {actual_id} 的别名，数据库中已收录"))
+            else:
+                results.append((False, f"角色 {name.capitalize()}（别名 → {actual_id}）未在数据库中找到"))
         else:
-            results.append((False, f"角色 {name.capitalize()} 仍缺失"))
+            # 默认检查：id 或英文名包含该名称
+            found = any(name in cid for cid in all_ids) or any(name in n for n in all_names_en)
+            if found:
+                results.append((True, f"角色 {name.capitalize()} 已存在于数据库"))
+            else:
+                results.append((False, f"角色 {name.capitalize()} 仍缺失"))
 
     # --- Check 3: Helot 名称应包含 "Catena" 后缀 (审计 #1) ---
     helot = find_char(all_chars, "helot")
