@@ -19,7 +19,7 @@ portrait: /portraits/goliath.png
 
 ## Introduction
 
-SSR Aequor Defense Awakener (standard). Provides stable frontline protection and tentacle synergy for Aequor teams. Has Spirit Sculpt talent that further boosts tentacle damage.
+SSR Aequor Defense Awakener (standard). Provides stable frontline protection and tentacle synergy for Aequor teams. Has Spirit Sculpt talent that further boosts tentacle damage. Featured in: Caecus Counter Team, Shark-Caecus Team.
 
 ## Skills
 

@@ -19,7 +19,7 @@ portrait: /portraits/winkle.png
 
 ## Introduction
 
-SSR Ultra Support Awakener (standard).
+SSR Ultra Support Awakener (standard). Featured in: Ultra Double-C Double-Shield.
 
 ## Skills
 

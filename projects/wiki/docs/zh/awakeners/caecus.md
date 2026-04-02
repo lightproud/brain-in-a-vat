@@ -19,7 +19,7 @@ portrait: /portraits/caecus.png
 
 ## 简介
 
-深海界域T2副输出型唤醒体。深海体系中的灵活副C，可配合反击队体系使用。常驻池可获取。
+深海界域T2副输出型唤醒体。深海体系中的灵活副C，可配合反击队体系使用。常驻池可获取。常见配队：Tentacle Mixed-Damage Team、Caecus Counter Team、Shark-Caecus Team。核心联携：反击缩放。
 
 ## 技能
 

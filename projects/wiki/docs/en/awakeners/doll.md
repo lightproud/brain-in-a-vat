@@ -19,7 +19,7 @@ portrait: /portraits/doll.png
 
 ## Introduction
 
-SSR Chaos DPS Awakener (standard). Member of the Royal Four.
+SSR Chaos DPS Awakener (standard). Member of the Royal Four. Featured in: Ultra Starter Team.
 
 ## Skills
 

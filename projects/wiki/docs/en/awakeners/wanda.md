@@ -19,7 +19,7 @@ portrait: /portraits/wanda.png
 
 ## Introduction
 
-SSR Ultra Defense Awakener (standard). Shield-counter specialist; deals damage through reflected damage and shield-slam mechanics. Forms the Shield Counter duo core with Salvador.
+SSR Ultra Defense Awakener (standard). Shield-counter specialist; deals damage through reflected damage and shield-slam mechanics. Forms the Shield Counter duo core with Salvador. Featured in: Ultra Poison Team (Beginner Recommended).
 
 ## Skills
 

@@ -19,7 +19,7 @@ portrait: /portraits/ramona.png
 
 ## Introduction
 
-SSR Chaos Support Awakener (standard). Versatile support with card recycling and AP generation abilities. Available from standard pool.
+SSR Chaos Support Awakener (standard). Versatile support with card recycling and AP generation abilities. Available from standard pool. Featured in: Caecus Counter Team, #24 Chaos National Team.
 
 ## Skills
 

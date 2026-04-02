@@ -120,7 +120,7 @@
       "tags": [
         "主C"
       ],
-      "description": "混沌界域T0输出型唤醒体，御四家之一。拥有「终章形态」变身机制：使用终章后全技能改变效果，牺牲治疗换取自伤增强毒伤，化身玻璃大炮。与SR版朵尔为不同角色。",
+      "description": "混沌界域T0输出型唤醒体，御四家之一。拥有「终章形态」变身机制：使用终章后全技能改变效果，牺牲治疗换取自伤增强毒伤，化身玻璃大炮。与SR版朵尔为不同角色。常见配队：Ultra Starter Team。",
       "portrait_url": "assets/images/portraits/doll.png",
       "skills": {
         "special_mechanic": {
@@ -135,7 +135,7 @@
         "_data_source": "角色描述推导，具体数值待从公开wiki补充",
         "lore_note": "玩偶与塔薇儿是最早被设计的角色。"
       },
-      "description_en": "SSR Chaos DPS Awakener (standard). Member of the Royal Four.",
+      "description_en": "SSR Chaos DPS Awakener (standard). Member of the Royal Four. Featured in: Ultra Starter Team.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR混沌攻撃型覚醒体（恒常）。ロイヤルフォーのメンバー。",
       "obtain_ja": "恒常/イベント召喚"
@@ -195,13 +195,13 @@
       "tags": [
         "辅助"
       ],
-      "description": "混沌界域T1辅助型唤醒体，御四家成员之一。提供队伍增益和敌方减益，是混沌队稳定的后排辅助。与SR版奥吉尔为不同角色，SR版提供嘲讽/点名能力。",
+      "description": "混沌界域T1辅助型唤醒体，御四家成员之一。提供队伍增益和敌方减益，是混沌队稳定的后排辅助。与SR版奥吉尔为不同角色，SR版提供嘲讽/点名能力。常见配队：Ultra Starter Team、#24 Chaos National Team。",
       "portrait_url": "assets/images/portraits/ogier.png",
       "skills": {
         "role_in_team": "混沌界域T1辅助型唤醒体，御四家成员。提供队伍增益和敌方减益效果，是混沌队稳定的后排辅助。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Chaos Support Awakener (standard). Member of the Royal Four.",
+      "description_en": "SSR Chaos Support Awakener (standard). Member of the Royal Four. Featured in: Ultra Starter Team, #24 Chaos National Team.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR混沌支援型覚醒体（恒常）。ロイヤルフォーのメンバー。",
       "obtain_ja": "恒常/イベント召喚"
@@ -245,7 +245,7 @@
         "辅助",
         "御四家"
       ],
-      "description": "混沌界域T1辅助型唤醒体，御四家成员之一。可从弃牌堆找回指令卡并最多减4费，卡牌循环能力优秀。社区讨论度高，与SR版拉蒙娜为不同角色。",
+      "description": "混沌界域T1辅助型唤醒体，御四家成员之一。可从弃牌堆找回指令卡并最多减4费，卡牌循环能力优秀。社区讨论度高，与SR版拉蒙娜为不同角色。常见配队：Caecus Counter Team、#24 Chaos National Team。",
       "portrait_url": "assets/images/portraits/ramona.png",
       "skills": {
         "command_cards": [
@@ -280,7 +280,7 @@
         },
         "role_in_team": "弃牌找回、降费辅助，配合莉兹等主C使用"
       },
-      "description_en": "SSR Chaos Support Awakener (standard). Versatile support with card recycling and AP generation abilities. Available from standard pool.",
+      "description_en": "SSR Chaos Support Awakener (standard). Versatile support with card recycling and AP generation abilities. Available from standard pool. Featured in: Caecus Counter Team, #24 Chaos National Team.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR混沌支援型覚醒体（恒常）。恒常プールで入手可能。",
       "obtain_ja": "恒常/イベント召喚"
@@ -324,13 +324,13 @@
       "tags": [
         "输出"
       ],
-      "description": "混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。角色设计灵感来自鹦鹉螺，战斗风格以循环打击为主。常驻池可获取的混沌输出角色。",
+      "description": "混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。角色设计灵感来自鹦鹉螺，战斗风格以循环打击为主。常驻池可获取的混沌输出角色。常见配队：Ultra Poison Team (Beginner Recommended)。核心联携：反击缩放、护盾打击。",
       "portrait_url": null,
       "skills": {
         "role_in_team": "混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。以循环打击为核心战斗风格。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Chaos DPS Awakener (standard). Design inspired by the nautilus; combat style revolves around cyclical strikes. Standard pool DPS option for Chaos teams.",
+      "description_en": "SSR Chaos DPS Awakener (standard). Design inspired by the nautilus; combat style revolves around cyclical strikes. Standard pool DPS option for Chaos teams. Key synergy: 反击缩放, 护盾打击.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR混沌攻撃型覚醒体（恒常）。恒常プールで入手可能。",
       "obtain_ja": "恒常/イベント召喚"
@@ -376,13 +376,13 @@
       "tags": [
         "辅助"
       ],
-      "description": "混沌界域T3辅助型唤醒体。提供队伍增益效果，在混沌辅助位中属于入门级选择。常驻池可获取。",
+      "description": "混沌界域T3辅助型唤醒体。提供队伍增益效果，在混沌辅助位中属于入门级选择。常驻池可获取。常见配队：Ultra Poison Team (Beginner Recommended)。核心联携：毒素锁定。",
       "portrait_url": null,
       "skills": {
         "role_in_team": "混沌界域T3辅助型唤醒体。提供基础增益效果。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Chaos Support Awakener (standard). Provides team buffs and serves as an entry-level Chaos support option. Available from standard pool.",
+      "description_en": "SSR Chaos Support Awakener (standard). Provides team buffs and serves as an entry-level Chaos support option. Available from standard pool. Featured in: Ultra Poison Team (Beginner Recommended). Key synergy: 毒素锁定.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR混沌支援型覚醒体（恒常）。恒常プールで入手可能。",
       "obtain_ja": "恒常/イベント召喚"
@@ -401,7 +401,7 @@
         "防御",
         "v1.1新角色"
       ],
-      "description": "混沌界域防御型唤醒体，v1.1下半版本通过「花不染尘」活动推出。主线重要角色，与守密人关系密切。防御能力出色，为混沌队提供稳定护盾。",
+      "description": "混沌界域防御型唤醒体，v1.1下半版本通过「花不染尘」活动推出。主线重要角色，与守密人关系密切。防御能力出色，为混沌队提供稳定护盾。常见配队：#24 Chaos National Team。",
       "portrait_url": "assets/images/portraits/lily.png",
       "skills": {
         "signature_wheel": "跨越疼痛(Grace Through Pain)",
@@ -457,7 +457,7 @@
         "v1.4加强",
         "深海辅助"
       ],
-      "description": "深海界域限定辅助型唤醒体，强力触手辅助。社区昵称「米粒」。v1.4版本获得增强：技能「至高生命献祭」调整为穿透伤害，灵之觉醒与天赋增强。深海队必备辅助。",
+      "description": "深海界域限定辅助型唤醒体，强力触手辅助。社区昵称「米粒」。v1.4版本获得增强：技能「至高生命献祭」调整为穿透伤害，灵之觉醒与天赋增强。深海队必备辅助。常见配队：Tentacle Mixed-Damage Team。核心联携：触手叠加。",
       "portrait_url": "assets/images/portraits/miryam.png",
       "skills": {
         "command_cards": [
@@ -475,7 +475,7 @@
         "role_in_team": "深海界域限定辅助，强力触手辅助。深海队必备辅助位，v1.4版本大幅增强。",
         "_data_source": "角色描述和v1.4更新记录，具体数值待从公开wiki补充"
       },
-      "description_en": "SSR Aequor Support Awakener (limited). Powerful tentacle support. v1.4 enhanced: \"Supreme Life Sacrifice\" adjusted to penetration damage; Rouse and Talent strengthened. Essential support for Aequor teams.",
+      "description_en": "SSR Aequor Support Awakener (limited). Powerful tentacle support. v1.4 enhanced: \"Supreme Life Sacrifice\" adjusted to penetration damage; Rouse and Talent strengthened. Essential support for Aequor teams. Key synergy: 触手叠加.",
       "obtain_en": "Limited Event Summon",
       "description_ja": "SSR深海支援型覚醒体（限定）。触腕シナジー。",
       "obtain_ja": "限定イベント召喚"
@@ -498,7 +498,7 @@
         "深海核心",
         "限定"
       ],
-      "description": "深海界域T0级输出角色，深海队核心主C。角色原型为克苏鲁，正太外形，被称为「幼主」「沉睡之主」。通过触腕和穿刺伤害造成极高输出，深海体系的绝对核心。",
+      "description": "深海界域T0级输出角色，深海队核心主C。角色原型为克苏鲁，正太外形，被称为「幼主」「沉睡之主」。通过触腕和穿刺伤害造成极高输出，深海体系的绝对核心。常见配队：Deep Sea Double-Carry、#24 Deep Sea Variant。核心联携：触手叠加。",
       "portrait_url": "assets/images/portraits/tulu.png",
       "skills": {
         "command_cards": [
@@ -553,7 +553,7 @@
           }
         ]
       },
-      "description_en": "SSR Aequor DPS Awakener (limited). T0-tier Aequor carry and core of the Deep Sea system. Character prototype is Cthulhu. Deals massive damage through tentacles and piercing attacks; the absolute core of the Aequor archetype.",
+      "description_en": "SSR Aequor DPS Awakener (limited). T0-tier Aequor carry and core of the Deep Sea system. Character prototype is Cthulhu. Deals massive damage through tentacles and piercing attacks; the absolute core of the Aequor archetype. Featured in: Deep Sea Double-Carry, #24 Deep Sea Variant. Key synergy: 触手叠加.",
       "obtain_en": "Limited Event Summon",
       "description_ja": "SSR深海攻撃型覚醒体（限定）。T0評価。触腕シナジー。クトゥルフがモチーフ。",
       "obtain_ja": "限定イベント召喚"
@@ -599,7 +599,7 @@
       "tags": [
         "辅助"
       ],
-      "description": "深海界域T1辅助型唤醒体，适配性极强，同时在混沌队中也有T1表现。高贵的复活奶——0费卡可奶可加算力，高费卡和觉醒技可提供触手。深海队核心辅助。",
+      "description": "深海界域T1辅助型唤醒体，适配性极强，同时在混沌队中也有T1表现。高贵的复活奶——0费卡可奶可加算力，高费卡和觉醒技可提供触手。深海队核心辅助。常见配队：Deep Sea Double-Carry、Shark-Caecus Team。",
       "portrait_url": "assets/images/portraits/celeste.png",
       "skills": {
         "talent": {
@@ -608,7 +608,7 @@
           "effect": "希莱斯特造成的触腕伤害提高20%~50%。每回合打出首张指令卡后，额外触发4次天赋「远航号角」。"
         }
       },
-      "description_en": "SSR Aequor Support Awakener (standard). Extremely versatile support with T1 performance in both Aequor and Chaos teams. Free card heals and grants AP; high-cost card and Rouse provide tentacles. Core Aequor support.",
+      "description_en": "SSR Aequor Support Awakener (standard). Extremely versatile support with T1 performance in both Aequor and Chaos teams. Free card heals and grants AP; high-cost card and Rouse provide tentacles. Core Aequor support. Featured in: Deep Sea Double-Carry, Shark-Caecus Team.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR深海支援型覚醒体（恒常）。T1評価。触腕シナジー。",
       "obtain_ja": "恒常/イベント召喚"
@@ -626,7 +626,7 @@
       "tags": [
         "防御"
       ],
-      "description": "深海界域T1防御型唤醒体。为深海队提供稳定的前排防护和触手联动能力。拥有灵塑适性天赋，触腕伤害额外提升。常驻池可获取。",
+      "description": "深海界域T1防御型唤醒体。为深海队提供稳定的前排防护和触手联动能力。拥有灵塑适性天赋，触腕伤害额外提升。常驻池可获取。常见配队：Caecus Counter Team、Shark-Caecus Team。",
       "portrait_url": "assets/images/portraits/goliath.png",
       "skills": {
         "talent": {
@@ -635,7 +635,7 @@
           "effect": "戈利亚造成的基础伤害提高20%~50%，「巨刃之威」使最终伤害临时提高5~10%。队伍中1/2/3名其他利莫里亚唤醒体时，所有唤醒体力量提高6/15/30%。"
         }
       },
-      "description_en": "SSR Aequor Defense Awakener (standard). Provides stable frontline protection and tentacle synergy for Aequor teams. Has Spirit Sculpt talent that further boosts tentacle damage.",
+      "description_en": "SSR Aequor Defense Awakener (standard). Provides stable frontline protection and tentacle synergy for Aequor teams. Has Spirit Sculpt talent that further boosts tentacle damage. Featured in: Caecus Counter Team, Shark-Caecus Team.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR深海防御型覚醒体（恒常）。触腕シナジー。",
       "obtain_ja": "恒常/イベント召喚"
@@ -653,7 +653,7 @@
       "tags": [
         "副输出"
       ],
-      "description": "深海界域T1副输出型唤醒体。深海触手体系中的副C位置，配合图鲁等主C进行触腕联动输出。常驻池可获取。",
+      "description": "深海界域T1副输出型唤醒体。深海触手体系中的副C位置，配合图鲁等主C进行触腕联动输出。常驻池可获取。常见配队：Deep Sea Double-Carry、Shark-Caecus Team、#24 Deep Sea Variant。核心联携：护盾打击。",
       "portrait_url": null,
       "skills": {
         "command_cards": [
@@ -674,7 +674,7 @@
         "role_in_team": "深海界域T1副输出型唤醒体。深海触手体系中的副C，配合图鲁进行触腕联动输出。",
         "_data_source": "命轮效果描述推导，具体卡牌效果待从公开wiki补充"
       },
-      "description_en": "SSR Aequor Defense Awakener (standard). Primary defensive option for Aequor teams with shield-based playstyle. Available from standard pool.",
+      "description_en": "SSR Aequor Defense Awakener (standard). Primary defensive option for Aequor teams with shield-based playstyle. Available from standard pool. Featured in: Deep Sea Double-Carry, Shark-Caecus Team, #24 Deep Sea Variant. Key synergy: 护盾打击.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR深海副攻撃型覚醒体（恒常）。恒常プールで入手可能。",
       "obtain_ja": "恒常/イベント召喚"
@@ -694,13 +694,13 @@
         "深潜三杰",
         "免费SSR"
       ],
-      "description": "深海界域输出型唤醒体，深潜三杰成员之一。通关混沌界域裂隙I免费获取。爆发+循环卡牌打法，被称为「深海万能锤」，新手友好的免费SSR。",
+      "description": "深海界域输出型唤醒体，深潜三杰成员之一。通关混沌界域裂隙I免费获取。爆发+循环卡牌打法，被称为「深海万能锤」，新手友好的免费SSR。常见配队：Tentacle Mixed-Damage Team、Deep Sea Double-Carry。核心联携：触手叠加。",
       "portrait_url": "assets/images/portraits/aurita.png",
       "skills": {
         "role_in_team": "深海界域免费SSR(通关混沌裂隙I获取)，「深潜三杰」成员。爆发+循环卡牌打法，「深海万能锤」，新手友好。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Aequor DPS Awakener (standard). Deep Dive Trio member. Free from clearing Chaos Rift I. Burst + card cycling playstyle, known as the \"Aequor Universal Hammer\". Beginner-friendly free SSR.",
+      "description_en": "SSR Aequor DPS Awakener (standard). Deep Dive Trio member. Free from clearing Chaos Rift I. Burst + card cycling playstyle, known as the \"Aequor Universal Hammer\". Beginner-friendly free SSR. Featured in: Tentacle Mixed-Damage Team, Deep Sea Double-Carry. Key synergy: 触手叠加.",
       "obtain_en": "Free (Clear Chaos Realm Rift I)",
       "description_ja": "SSR深海攻撃型覚醒体（恒常）。",
       "obtain_ja": "免费获取(通关混沌界域裂隙I)"
@@ -718,13 +718,13 @@
       "tags": [
         "副输出"
       ],
-      "description": "深海界域T2副输出型唤醒体。深海体系中的灵活副C，可配合反击队体系使用。常驻池可获取。",
+      "description": "深海界域T2副输出型唤醒体。深海体系中的灵活副C，可配合反击队体系使用。常驻池可获取。常见配队：Tentacle Mixed-Damage Team、Caecus Counter Team、Shark-Caecus Team。核心联携：反击缩放。",
       "portrait_url": "assets/images/portraits/caecus.png",
       "skills": {
         "role_in_team": "深海界域T2副输出型唤醒体。反击队体系核心成员，可配合反击机制使用。凯刻斯反击队：凯刻斯+萨尔瓦多+旺达+哈姆林。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Aequor Sub-DPS Awakener (standard). Counter-attack team specialist.",
+      "description_en": "SSR Aequor Sub-DPS Awakener (standard). Counter-attack team specialist. Key synergy: 反击缩放.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR深海副攻撃型覚醒体（恒常）。",
       "obtain_ja": "恒常/イベント召喚"
@@ -769,7 +769,7 @@
         "主C",
         "血肉核心"
       ],
-      "description": "血肉界域T0输出型唤醒体，血肉队核心主C之一。通过自残降血触发吞噬机制，反复释放狂气爆发造成递增伤害。体质属性极高，越战越强的暴走型角色。",
+      "description": "血肉界域T0输出型唤醒体，血肉队核心主C之一。通过自残降血触发吞噬机制，反复释放狂气爆发造成递增伤害。体质属性极高，越战越强的暴走型角色。常见配队：Uuhashi Standard Flesh。",
       "portrait_url": "assets/images/portraits/uvhash.png",
       "skills": {
         "command_cards": [
@@ -825,7 +825,7 @@
           "covenant_substats": "4号位：狂气充能；5号位：暴击率；6号位：体质"
         }
       },
-      "description_en": "SSR Caro DPS Awakener (standard). Devour-based DPS who consumes Embryo cards for massive damage. Core carry for Caro compositions.",
+      "description_en": "SSR Caro DPS Awakener (standard). Devour-based DPS who consumes Embryo cards for massive damage. Core carry for Caro compositions. Featured in: Uuhashi Standard Flesh.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR血肉攻撃型覚醒体（恒常）。胚胎カードメカニズム。捕食メカニズム。",
       "obtain_ja": "恒常/イベント召喚"
@@ -843,7 +843,7 @@
       "tags": [
         "辅助"
       ],
-      "description": "血肉界域T0辅助型唤醒体，血肉队核心辅助。兼具回血和上盾功能，核心玩法为「养胎流」——通过孕育胚胎积累增益后一次释放爆发。血肉队必备。",
+      "description": "血肉界域T0辅助型唤醒体，血肉队核心辅助。兼具回血和上盾功能，核心玩法为「养胎流」——通过孕育胚胎积累增益后一次释放爆发。血肉队必备。常见配队：Uuhashi Standard Flesh、Father (Salvador) Comp。核心联携：胚胎引擎、神父血池循环。",
       "portrait_url": null,
       "skills": {
         "command_cards_note": "0费技能可提供70点胚胎融合(界域精通足够时)。死亡抵抗和苦痛与欢愉确保高盾量。",
@@ -853,7 +853,7 @@
         },
         "role_in_team": "与尤乌哈希配合，提供胚胎融合和治疗支持"
       },
-      "description_en": "SSR Caro Healer Awakener (standard). Provides healing through Over-Exalt and gains Power and Shield when taking damage. Supports Caro team sustain.",
+      "description_en": "SSR Caro Healer Awakener (standard). Provides healing through Over-Exalt and gains Power and Shield when taking damage. Supports Caro team sustain. Key synergy: 胚胎引擎, 神父血池循环.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR血肉支援型覚醒体（恒常）。",
       "obtain_ja": "恒常/イベント召喚"
@@ -949,14 +949,14 @@
       "tags": [
         "副输出"
       ],
-      "description": "血肉界域T2副输出型唤醒体。血肉体系中的灵活副C位置，可配合尤乌哈希等主C使用。常驻池可获取。",
+      "description": "血肉界域T2副输出型唤醒体。血肉体系中的灵活副C位置，可配合尤乌哈希等主C使用。常驻池可获取。常见配队：Uuhashi Standard Flesh。",
       "portrait_url": "assets/images/portraits/faint.png",
       "skills": {
         "signature_wheel_effect": "吞噬摇篮曲(Devouring Lullaby)：触发死亡抵抗后，全队治疗和护盾增强2回合。",
         "role_in_team": "血肉界域T2副输出型唤醒体。血肉体系灵活副C，签名命轮触发死亡抵抗后为队伍提供治疗和护盾增益。",
         "_data_source": "命轮效果描述，具体技能数据待从公开wiki补充"
       },
-      "description_en": "SSR Caro Defense Awakener (standard). Triggers team-wide healing and shield enhancement for 2 turns after activating Death Resistance. Caro frontline option.",
+      "description_en": "SSR Caro Defense Awakener (standard). Triggers team-wide healing and shield enhancement for 2 turns after activating Death Resistance. Caro frontline option. Featured in: Uuhashi Standard Flesh.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR血肉副攻撃型覚醒体（恒常）。",
       "obtain_ja": "恒常/イベント召喚"
@@ -1025,7 +1025,7 @@
         "深潜三杰",
         "免费SSR"
       ],
-      "description": "超维界域T0防御型唤醒体，超维队核心成员，深潜三杰之一。通关血肉沼泽裂隙I免费获取。提供力量加成和易伤效果，是超维队爆发回合的关键角色。新手必练。",
+      "description": "超维界域T0防御型唤醒体，超维队核心成员，深潜三杰之一。通关血肉沼泽裂隙I免费获取。提供力量加成和易伤效果，是超维队爆发回合的关键角色。新手必练。常见配队：Ultra Poison Team (Beginner Recommended)、Ultra Starter Team、Ultra Double-C Double-Shield。",
       "portrait_url": "assets/images/portraits/erica.png",
       "skills": {
         "exalt": {
@@ -1036,7 +1036,7 @@
         "command_cards_note": "「功能过载」(Functional Overload)可同时叠加大量护盾和伤害，但消耗全部算力。3启后更为强力。",
         "role_in_team": "在超维队伍中负责提供爆发回合的易伤和力量加成"
       },
-      "description_en": "SSR Ultra Defense Awakener (standard). T0-tier Ultra defender, Deep Dive Trio member. Free from clearing Caro Swamp Rift I. Provides Power buff and Vulnerability effects; key character for Ultra burst turns. Must-build for new players.",
+      "description_en": "SSR Ultra Defense Awakener (standard). T0-tier Ultra defender, Deep Dive Trio member. Free from clearing Caro Swamp Rift I. Provides Power buff and Vulnerability effects; key character for Ultra burst turns. Must-build for new players. Featured in: Ultra Poison Team (Beginner Recommended), Ultra Starter Team, Ultra Double-C Double-Shield.",
       "obtain_en": "Free (Clear Caro Swamp Rift I)",
       "description_ja": "SSR超次元防御型覚醒体（恒常）。",
       "obtain_ja": "免费获取(通关血肉沼泽裂隙I)"
@@ -1057,7 +1057,7 @@
       "tags": [
         "主C"
       ],
-      "description": "超维界域T0输出型唤醒体，社区别称「青炎舞者」「青炎」。以毒伤+穿刺为核心的爆发型主C，超维队的主要输出选择。青色火焰为其标志性视觉元素。",
+      "description": "超维界域T0输出型唤醒体，社区别称「青炎舞者」「青炎」。以毒伤+穿刺为核心的爆发型主C，超维队的主要输出选择。青色火焰为其标志性视觉元素。常见配队：Ultra Starter Team、Ultra Double-C Double-Shield。",
       "portrait_url": "assets/images/portraits/liz.png",
       "skills": {
         "command_cards": [
@@ -1157,13 +1157,13 @@
       "tags": [
         "辅助"
       ],
-      "description": "超维界域T1辅助型唤醒体。为超维队提供稳定的辅助增益，是超维队的常驻辅助选择。常驻池可获取。",
+      "description": "超维界域T1辅助型唤醒体。为超维队提供稳定的辅助增益，是超维队的常驻辅助选择。常驻池可获取。常见配队：Ultra Double-C Double-Shield。",
       "portrait_url": "assets/images/portraits/winkle.png",
       "skills": {
         "role_in_team": "超维界域T1辅助型唤醒体。为超维队提供稳定辅助增益。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Ultra Support Awakener (standard).",
+      "description_en": "SSR Ultra Support Awakener (standard). Featured in: Ultra Double-C Double-Shield.",
       "obtain_en": "Standard/Event Summon",
       "description_ja": "SSR超次元支援型覚醒体（恒常）。",
       "obtain_ja": "恒常/イベント召喚"
@@ -1310,13 +1310,13 @@
       "tags": [
         "混沌辅助"
       ],
-      "description": "混沌界域辅助型唤醒体。爆发伤害和银钥充能能力强力，常用于凯刻斯反击队。自选池中与塔薇、莉莉、莱克、24同列于混沌界域。",
+      "description": "混沌界域辅助型唤醒体。爆发伤害和银钥充能能力强力，常用于凯刻斯反击队。自选池中与塔薇、莉莉、莱克、24同列于混沌界域。常见配队：Caecus Counter Team。",
       "portrait_url": "assets/images/portraits/hameln.png",
       "skills": {
         "role_in_team": "混沌界域辅助型唤醒体。爆发伤害和银钥充能能力强力，常用于凯刻斯反击队。签名命轮：永恒安魂曲(Eternal Requiem)。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Chaos DPS Awakener (standard). Unlimited Crit DMG scaling; excels in prolonged battles of 8+ turns. Available from standard pool.",
+      "description_en": "SSR Chaos DPS Awakener (standard). Unlimited Crit DMG scaling; excels in prolonged battles of 8+ turns. Available from standard pool. Featured in: Caecus Counter Team.",
       "obtain_en": "Summon",
       "description_ja": "SSR混沌支援型覚醒体（恒常）。恒常プールで入手可能。",
       "obtain_ja": "唤醒"
@@ -1335,7 +1335,7 @@
         "深海防御",
         "深海必抽"
       ],
-      "description": "深海界域防御型唤醒体。技能组强势补强深海界域弱点，拥有专属「献祭」被动机制。深海玩家必抽角色，大幅提升深海队生存能力。",
+      "description": "深海界域防御型唤醒体。技能组强势补强深海界域弱点，拥有专属「献祭」被动机制。深海玩家必抽角色，大幅提升深海队生存能力。常见配队：Tentacle Mixed-Damage Team、#24 Deep Sea Variant。",
       "portrait_url": "assets/images/portraits/murphy.png",
       "skills": {
         "special_mechanic": {
@@ -1366,13 +1366,13 @@
         "血肉防御",
         "盾反队"
       ],
-      "description": "血肉界域防御型唤醒体，社区昵称「神父」。盾反队核心成员，专属命轮「神言石板」。以盾反打法为特色，靠反伤和护盾进行输出。",
+      "description": "血肉界域防御型唤醒体，社区昵称「神父」。盾反队核心成员，专属命轮「神言石板」。以盾反打法为特色，靠反伤和护盾进行输出。常见配队：Father (Salvador) Comp、#24 Flesh Variant。核心联携：神父血池循环。",
       "portrait_url": "assets/images/portraits/salvador.png",
       "skills": {
         "role_in_team": "血肉界域防御型唤醒体，社区昵称「神父」。盾反队核心成员，靠反伤和护盾进行输出。签名命轮：神言石板(Tablet of Scriptures)。推荐配队：萨尔瓦多+旺达+凯刻斯+哈姆林。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Caro Healer Awakener (standard). Primary healer for Caro teams with Embryo card healing mechanics. Available from standard pool.",
+      "description_en": "SSR Caro Healer Awakener (standard). Primary healer for Caro teams with Embryo card healing mechanics. Available from standard pool. Featured in: Father (Salvador) Comp, #24 Flesh Variant. Key synergy: 神父血池循环.",
       "obtain_en": "Summon",
       "description_ja": "SSR血肉防御型覚醒体（恒常）。胚胎カードメカニズム。恒常プールで入手可能。",
       "obtain_ja": "唤醒"
@@ -1451,13 +1451,13 @@
         "超维防御",
         "盾反队"
       ],
-      "description": "超维界域防御型唤醒体，社区昵称「SM」。盾反队成员，靠反伤和砸盾输出，生存能力拉满。与萨尔瓦多组成盾反队双核。",
+      "description": "超维界域防御型唤醒体，社区昵称「SM」。盾反队成员，靠反伤和砸盾输出，生存能力拉满。与萨尔瓦多组成盾反队双核。常见配队：Ultra Poison Team (Beginner Recommended)。",
       "portrait_url": "assets/images/portraits/wanda.png",
       "skills": {
         "role_in_team": "超维界域防御型唤醒体，社区昵称「SM」。盾反队成员，靠反伤和砸盾输出，与萨尔瓦多组成盾反队双核。签名命轮：女王的戒律(Queen's Edict)。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Ultra Defense Awakener (standard). Shield-counter specialist; deals damage through reflected damage and shield-slam mechanics. Forms the Shield Counter duo core with Salvador.",
+      "description_en": "SSR Ultra Defense Awakener (standard). Shield-counter specialist; deals damage through reflected damage and shield-slam mechanics. Forms the Shield Counter duo core with Salvador. Featured in: Ultra Poison Team (Beginner Recommended).",
       "obtain_en": "Summon",
       "description_ja": "SSR超次元防御型覚醒体（恒常）。",
       "obtain_ja": "唤醒"
@@ -1477,7 +1477,7 @@
         "血肉辅助",
         "免费SSR"
       ],
-      "description": "血肉界域辅助型唤醒体，深潜三杰成员之一。通关第一章免费获取。提供群体易伤、AOE输出和石化效果，攻击面板突出。常规配队：艾继丝+雷亚+拉蒙娜+血肉C。",
+      "description": "血肉界域辅助型唤醒体，深潜三杰成员之一。通关第一章免费获取。提供群体易伤、AOE输出和石化效果，攻击面板突出。常规配队：艾继丝+雷亚+拉蒙娜+血肉C。常见配队：Uuhashi Standard Flesh、Father (Salvador) Comp、#24 Flesh Variant。核心联携：胚胎引擎。",
       "portrait_url": "assets/images/portraits/aigis.png",
       "skills": {
         "command_cards": [
@@ -1512,7 +1512,7 @@
         "role_in_team": "血肉界域辅助型唤醒体，深潜三杰成员，通关第一章免费获取。攻击面板突出，提供群体易伤、AOE输出和石化效果。常规配队：艾继丝+雷亚+拉蒙娜+血肉C。",
         "_data_source": "角色描述和命轮效果推导，具体数值待从公开wiki补充"
       },
-      "description_en": "SSR Caro Support Awakener (standard). Member of the Deep Dive Trio. Free from clearing Chapter 1. Provides group Vulnerability, AoE damage, and Petrification effects.",
+      "description_en": "SSR Caro Support Awakener (standard). Member of the Deep Dive Trio. Free from clearing Chapter 1. Provides group Vulnerability, AoE damage, and Petrification effects. Featured in: Uuhashi Standard Flesh, Father (Salvador) Comp, #24 Flesh Variant. Key synergy: 胚胎引擎.",
       "obtain_en": "Summon",
       "description_ja": "SSR血肉支援型覚醒体（恒常）。",
       "obtain_ja": "唤醒"
@@ -1569,14 +1569,14 @@
         "限定",
         "最强通用角色"
       ],
-      "description": "混沌界域限定输出角色，v1.5推出，被社区认为是最强通用角色。以狂气爆发为主要输出手段，可在混沌队(拉蒙娜+朵尔+奥吉尔+24)或跨界域队伍中使用。泛用性极强。",
+      "description": "混沌界域限定输出角色，v1.5推出，被社区认为是最强通用角色。以狂气爆发为主要输出手段，可在混沌队(拉蒙娜+朵尔+奥吉尔+24)或跨界域队伍中使用。泛用性极强。常见配队：#24 Flesh Variant、#24 Chaos National Team、#24 Deep Sea Variant。核心联携：24万能适配。",
       "portrait_url": null,
       "first_banner_version": "1.5",
       "skills": {
         "role_in_team": "与尤乌哈希、希洛、索蕾尔等搭配使用。在深海毒队中也可作为成员(24+弥利亚姆+拉蒙娜+珈伦)。",
         "lore_note": "真正的例外设计——将四个角色定位压缩到一个单位中。商业上不划算，但为了「人格分裂」叙事而做出的选择。战斗设计师为理想「燃烧了一次」。"
       },
-      "description_en": "SSR Chaos DPS Awakener (limited). Introduced in v1.5.",
+      "description_en": "SSR Chaos DPS Awakener (limited). Introduced in v1.5. Featured in: #24 Flesh Variant, #24 Chaos National Team, #24 Deep Sea Variant. Key synergy: 24万能适配.",
       "obtain_en": "Limited Event Summon",
       "description_ja": "SSR混沌攻撃型覚醒体（限定）。",
       "obtain_ja": "限定イベント召喚"

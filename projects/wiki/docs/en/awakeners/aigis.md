@@ -19,7 +19,7 @@ portrait: /portraits/aigis.png
 
 ## Introduction
 
-SSR Caro Support Awakener (standard). Member of the Deep Dive Trio. Free from clearing Chapter 1. Provides group Vulnerability, AoE damage, and Petrification effects.
+SSR Caro Support Awakener (standard). Member of the Deep Dive Trio. Free from clearing Chapter 1. Provides group Vulnerability, AoE damage, and Petrification effects. Featured in: Uuhashi Standard Flesh, Father (Salvador) Comp, #24 Flesh Variant. Key synergy: 胚胎引擎.
 
 ## Skills
 

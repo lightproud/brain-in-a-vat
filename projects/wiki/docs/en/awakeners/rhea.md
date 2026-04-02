@@ -19,7 +19,7 @@ portrait: /portraits/rhea.png
 
 ## Introduction
 
-SSR Caro Healer Awakener (standard). Provides healing through Over-Exalt and gains Power and Shield when taking damage. Supports Caro team sustain.
+SSR Caro Healer Awakener (standard). Provides healing through Over-Exalt and gains Power and Shield when taking damage. Supports Caro team sustain. Key synergy: 胚胎引擎, 神父血池循环.
 
 ## Skills
 

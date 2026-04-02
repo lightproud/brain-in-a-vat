@@ -19,7 +19,7 @@ portrait: /portraits/nymphia.png
 
 ## 简介
 
-混沌界域T3辅助型唤醒体。提供队伍增益效果，在混沌辅助位中属于入门级选择。常驻池可获取。
+混沌界域T3辅助型唤醒体。提供队伍增益效果，在混沌辅助位中属于入门级选择。常驻池可获取。常见配队：Ultra Poison Team (Beginner Recommended)。核心联携：毒素锁定。
 
 ## 技能
 

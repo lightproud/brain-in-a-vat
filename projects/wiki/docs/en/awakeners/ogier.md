@@ -19,7 +19,7 @@ portrait: /portraits/ogier.png
 
 ## Introduction
 
-SSR Chaos Support Awakener (standard). Member of the Royal Four.
+SSR Chaos Support Awakener (standard). Member of the Royal Four. Featured in: Ultra Starter Team, #24 Chaos National Team.
 
 ## Skills
 

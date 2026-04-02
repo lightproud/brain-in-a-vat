@@ -19,7 +19,7 @@ portrait: /portraits/aurita.png
 
 ## Introduction
 
-SSR Aequor DPS Awakener (standard). Deep Dive Trio member. Free from clearing Chaos Rift I. Burst + card cycling playstyle, known as the "Aequor Universal Hammer". Beginner-friendly free SSR.
+SSR Aequor DPS Awakener (standard). Deep Dive Trio member. Free from clearing Chaos Rift I. Burst + card cycling playstyle, known as the "Aequor Universal Hammer". Beginner-friendly free SSR. Featured in: Tentacle Mixed-Damage Team, Deep Sea Double-Carry. Key synergy: 触手叠加.
 
 ## Skills
 

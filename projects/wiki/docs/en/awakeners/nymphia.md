@@ -19,7 +19,7 @@ portrait: /portraits/nymphia.png
 
 ## Introduction
 
-SSR Chaos Support Awakener (standard). Provides team buffs and serves as an entry-level Chaos support option. Available from standard pool.
+SSR Chaos Support Awakener (standard). Provides team buffs and serves as an entry-level Chaos support option. Available from standard pool. Featured in: Ultra Poison Team (Beginner Recommended). Key synergy: 毒素锁定.
 
 ## Skills
 

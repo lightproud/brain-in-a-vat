@@ -19,7 +19,7 @@ portrait: /portraits/salvador.png
 
 ## Introduction
 
-SSR Caro Healer Awakener (standard). Primary healer for Caro teams with Embryo card healing mechanics. Available from standard pool.
+SSR Caro Healer Awakener (standard). Primary healer for Caro teams with Embryo card healing mechanics. Available from standard pool. Featured in: Father (Salvador) Comp, #24 Flesh Variant. Key synergy: 神父血池循环.
 
 ## Skills
 

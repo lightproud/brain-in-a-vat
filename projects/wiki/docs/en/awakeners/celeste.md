@@ -19,7 +19,7 @@ portrait: /portraits/celeste.png
 
 ## Introduction
 
-SSR Aequor Support Awakener (standard). Extremely versatile support with T1 performance in both Aequor and Chaos teams. Free card heals and grants AP; high-cost card and Rouse provide tentacles. Core Aequor support.
+SSR Aequor Support Awakener (standard). Extremely versatile support with T1 performance in both Aequor and Chaos teams. Free card heals and grants AP; high-cost card and Rouse provide tentacles. Core Aequor support. Featured in: Deep Sea Double-Carry, Shark-Caecus Team.
 
 ## Skills
 

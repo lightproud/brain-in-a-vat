@@ -19,7 +19,7 @@ portrait: /portraits/caecus.png
 
 ## Introduction
 
-SSR Aequor Sub-DPS Awakener (standard). Counter-attack team specialist.
+SSR Aequor Sub-DPS Awakener (standard). Counter-attack team specialist. Key synergy: 反击缩放.
 
 ## Skills
 
