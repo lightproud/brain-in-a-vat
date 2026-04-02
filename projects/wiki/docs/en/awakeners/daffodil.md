@@ -25,14 +25,12 @@ SSR Ultra DPS Awakener (limited). T0-tier Ultra carry, known as "Lady Daffodil".
 
 | Card | Cost | Effect |
 |------|------|------|
-| **Exalt**: 狂气爆发 | — | 生成免费洞察力(Insight)，可用于恢复算力和额外抽牌。特定条件下创建千幻镜(Thousand Mirage)的定制复制。 |
+| **Exalt**: Exalt | — | Data pending |
 | **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
+| Awaker | — | , staying hidden by various means.
+* Lady Daffodil has mastered the ability to move freely through dimensions. Because of that, the committee's attempts to capture her always failed. |
 | *Enlighten* | — | Data pending |
 
-::: tip
-核心技能为「断颈一击」，可配合卡茜亚的隔空取物从超维空间拉出再打一次。需要前期养成才能发挥全部实力。
-:::
 
 
 ## Recommended Equipment
