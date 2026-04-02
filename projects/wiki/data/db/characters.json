@@ -320,10 +320,10 @@
     {
       "id": "nodera",
       "name": "诺缔拉",
-      "name_en": "Nodera",
+      "name_en": "Nautila",
       "rarity": "SSR",
       "realm": "chaos",
-      "role": "attack",
+      "role": "defense",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [
@@ -332,19 +332,21 @@
         "诺缇菈"
       ],
       "tags": [
-        "输出"
+        "防御",
+        "护盾",
+        "反击"
       ],
-      "description": "混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。角色设计灵感来自鹦鹉螺，战斗风格以循环打击为主。常驻池可获取的混沌输出角色。常见配队：Ultra Poison Team (Beginner Recommended)。核心联携：反击缩放、护盾打击。",
+      "description": "混沌界域防御型唤醒体，社区别称「鹦鹉螺」。全游戏最高基础防御，擅长护盾与反击。常驻池可获取的核心防御角色，可适配任意界域队伍。常见配队：Ultra Poison Team (Beginner Recommended)。核心联携：反击缩放、护盾打击。",
       "portrait_url": null,
       "skills": {
-        "role_in_team": "混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。以循环打击为核心战斗风格。",
+        "role_in_team": "混沌界域核心防御型唤醒体。全游戏最高基础防御，护盾+反击专精。混沌灵活性使其可加入任意界域队伍担任生存位。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Chaos DPS Awakener (standard). Design inspired by the nautilus; combat style revolves around cyclical strikes. Standard pool DPS option for Chaos teams. Key synergy: 反击缩放, 护盾打击.",
+      "description_en": "SSR Chaos Defense Awakener (standard). Highest base defense in the game. Shield and counter-attack specialist. Chaos flexibility allows her to slot into any realm team as the survival anchor. Key synergy: Counter Scaling, Shield Strike.",
       "obtain_en": "Standard/Event Summon",
-      "description_ja": "SSR混沌攻撃型覚醒体（恒常）。恒常プールで入手可能。",
+      "description_ja": "SSR混沌防御型覚醒体（恒常）。ゲーム最高の基礎防御。シールドと反撃の専門家。恒常プールで入手可能。",
       "obtain_ja": "恒常/イベント召喚",
-      "role_in_team": "混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。以循环打击为核心战斗风格。",
+      "role_in_team": "混沌界域核心防御型唤醒体。全游戏最高基础防御，护盾+反击专精。混沌灵活性使其可加入任意界域队伍担任生存位。",
       "_data_source": "待从公开wiki补充具体技能数据"
     },
     {
