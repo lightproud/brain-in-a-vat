@@ -21,18 +21,11 @@ portrait: /portraits/shilo.png
 
 SSR Caro DPS Awakener (standard).
 
-**Team Role**: 血肉界域T3输出型唤醒体。血肉队初期主C选择，有限定变体「血链·希洛」。
-
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 血肉界域T3输出型唤醒体。血肉队初期主C选择，有限定变体「血链·希洛」。
 
-
+Data pending
 
 ## Recommended Equipment
 

@@ -21,18 +21,11 @@ portrait: /portraits/danmo.png
 
 SSR Chaos DPS Awakener (limited). Extremely high damage at full investment; often the first choice for friend support. Representative of the Silver Key burst playstyle — one burst rotation can one-shot most bosses.
 
-**Team Role**: 混沌界域限定输出角色，满配后伤害极高，以银钥爆发为核心。一轮爆发可秒杀大多数Boss，常作为助战首选。
-
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 混沌界域限定输出角色，满配后伤害极高，以银钥爆发为核心。一轮爆发可秒杀大多数Boss，常作为助战首选。
 
-
+Data pending
 
 ## Recommended Equipment
 

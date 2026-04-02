@@ -21,8 +21,6 @@ portrait: /portraits/shan.png
 
 SSR Aequor Defense Awakener (standard). Primary defensive option for Aequor teams with shield-based playstyle. Available from standard pool. Featured in: Deep Sea Double-Carry, Shark-Caecus Team, #24 Deep Sea Variant. Key synergy: 护盾打击.
 
-**Team Role**: 深海界域T1副输出型唤醒体。深海触手体系中的副C，配合图鲁进行触腕联动输出。
-
 ## Skills
 
 | Card | Cost | Effect |

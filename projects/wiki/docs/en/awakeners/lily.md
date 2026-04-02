@@ -21,18 +21,11 @@ portrait: /portraits/lily.png
 
 SSR Chaos Defense Awakener (limited). Released in v1.1 via the "Flower Unstained" event. Important story character with ties to the Keeper. Excellent defensive capabilities for Chaos teams.
 
-**Team Role**: 混沌界域防御型唤醒体。防御能力出色，为混沌队提供稳定护盾。v1.1版本推出，后加入常驻池。
-
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 混沌界域防御型唤醒体。防御能力出色，为混沌队提供稳定护盾。v1.1版本推出，后加入常驻池。
 
-
+Data pending
 
 ## Recommended Equipment
 

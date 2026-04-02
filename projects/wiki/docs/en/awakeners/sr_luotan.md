@@ -21,9 +21,9 @@ portrait: /portraits/sr_luotan.png
 
 SR Chaos DPS Awakener (standard).
 
-**Team Role**: 混沌界域T1防御型唤醒体，御四家成员。银钥共鸣体系防御核心，死亡抵抗机制出色。侧重团队护盾和反伤。
-
 ## Skills
+
+**Role Summary**: 混沌界域T1防御型唤醒体，御四家成员。银钥共鸣体系防御核心，死亡抵抗机制出色。侧重团队护盾和反伤。
 
 Data pending
 

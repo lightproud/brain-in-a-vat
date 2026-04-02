@@ -21,18 +21,11 @@ portrait: /portraits/arachne.png
 
 SSR Ultra Support Awakener (limited). Spider-themed support for Ultra compositions.
 
-**Team Role**: 超维界域限定唤醒体，v2.5版本预告角色。名字来源于希腊神话中的织女阿拉克涅。超维队未来主力角色之一。
-
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 超维界域限定唤醒体，v2.5版本预告角色。名字来源于希腊神话中的织女阿拉克涅。超维队未来主力角色之一。
 
-
+Data pending
 
 ## Recommended Equipment
 

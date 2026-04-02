@@ -436,15 +436,17 @@ def generate_character_page(char: dict, wheel_index: dict[str, list[dict]], lang
     # Intro
     body.extend([f"## {L['intro']}", "", description, ""])
 
-    # Team role info
-    role_in_team = char.get("role_in_team", "")
-    if role_in_team:
-        role_label = "队伍定位" if lang == "zh" else "Team Role" if lang == "en" else "チーム役割"
-        body.extend([f"**{role_label}**: {role_in_team}", ""])
-
     # Skills section
     skills = char.get("skills")
-    if skills:
+    # Check if skills has real data (command_cards, exalt, or rouse with actual content)
+    has_real_skills = (
+        isinstance(skills, dict) and (
+            (isinstance(skills.get("command_cards"), list) and len(skills.get("command_cards", [])) > 0) or
+            (isinstance(skills.get("exalt"), dict) and skills["exalt"].get("effect")) or
+            (isinstance(skills.get("rouse"), dict) and skills["rouse"].get("effect"))
+        )
+    )
+    if has_real_skills:
         body.extend([f"## {L['skills']}", ""])
         body.append(render_skills_table(skills, lang))
 
@@ -461,7 +463,13 @@ def generate_character_page(char: dict, wheel_index: dict[str, list[dict]], lang
             body.append(":::")
             body.append("")
     else:
-        body.extend([f"## {L['skills']}", "", L["pending"], ""])
+        body.extend([f"## {L['skills']}", ""])
+        # Show role_in_team as interim info if available
+        rit = char.get("role_in_team", "")
+        if rit:
+            hint_label = "定位说明" if lang == "zh" else "Role Summary" if lang == "en" else "役割概要"
+            body.extend([f"**{hint_label}**: {rit}", ""])
+        body.extend([L["pending"], ""])
 
     # Equipment
     body.append(render_equipment(char, wheel_index, lang))

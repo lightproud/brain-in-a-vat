@@ -23,15 +23,7 @@ SSR Aequor Support Awakener (standard). Extremely versatile support with T1 perf
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| **Talent**: Soulforge Aptitude | — | 希莱斯特造成的触腕伤害提高20%~50%。每回合打出首张指令卡后，额外触发4次天赋「远航号角」。 |
-| *Enlighten* | — | Data pending |
-
-
+Data pending
 
 ## Recommended Equipment
 

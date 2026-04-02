@@ -21,18 +21,11 @@ portrait: /portraits/hameln.png
 
 SSR Chaos DPS Awakener (standard). Unlimited Crit DMG scaling; excels in prolonged battles of 8+ turns. Available from standard pool. Featured in: Caecus Counter Team.
 
-**Team Role**: 混沌界域辅助型唤醒体。爆发伤害和银钥充能能力强力，常用于凯刻斯反击队。签名命轮：永恒安魂曲(Eternal Requiem)。
-
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 混沌界域辅助型唤醒体。爆发伤害和银钥充能能力强力，常用于凯刻斯反击队。签名命轮：永恒安魂曲(Eternal Requiem)。
 
-
+Data pending
 
 ## Recommended Equipment
 

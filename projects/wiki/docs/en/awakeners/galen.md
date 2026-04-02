@@ -23,15 +23,7 @@ SSR Chaos Sub-DPS Awakener (standard). Counter-attack team specialist.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Over-Exalt**: 超限爆发 | — | 将「奇妙料理」洗入抽牌堆和弃牌堆各1张。 |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
-
-
+Data pending
 
 ## Recommended Equipment
 

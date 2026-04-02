@@ -21,18 +21,11 @@ portrait: /portraits/pandya.png
 
 SSR Chaos Sub-DPS Awakener (standard). Excels at sub-DPS alongside Chaos main carries, serving as a flexible off-carry slot in Chaos teams.
 
-**Team Role**: 混沌界域T2副输出型唤醒体。配合混沌主C进行副输出。
-
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 混沌界域T2副输出型唤醒体。配合混沌主C进行副输出。
 
-
+Data pending
 
 ## Recommended Equipment
 

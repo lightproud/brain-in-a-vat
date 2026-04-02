@@ -23,14 +23,7 @@ SSR Chaos Support Awakener (standard). Provides Fury generation and team buffs. 
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
-
-
+Data pending
 
 ## Recommended Equipment
 

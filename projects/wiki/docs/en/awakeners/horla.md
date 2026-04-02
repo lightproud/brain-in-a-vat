@@ -21,18 +21,11 @@ portrait: /portraits/horla.png
 
 SSR Ultra DPS Awakener (limited). Core Ultra carry who utilizes extra turns from card plays. High burst damage potential.
 
-**Team Role**: 超维界域v1.5新增辅助型唤醒体。超维开荒队核心辅助，大幅提升超维队整体强度。推荐配队：莉兹+奥尔拉+艾瑞卡+环娜。签名命轮：诗笺的句尾(The Last Verse)。
-
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 超维界域v1.5新增辅助型唤醒体。超维开荒队核心辅助，大幅提升超维队整体强度。推荐配队：莉兹+奥尔拉+艾瑞卡+环娜。签名命轮：诗笺的句尾(The Last Verse)。
 
-
+Data pending
 
 ## Recommended Equipment
 

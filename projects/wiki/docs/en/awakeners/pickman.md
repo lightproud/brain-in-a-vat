@@ -21,18 +21,11 @@ portrait: /portraits/pickman.png
 
 SSR Aequor DPS Awakener (limited). Fury and Power gain +6-12% with signature wheel. Over-Exalt enhances final damage, shield, and healing.
 
-**Team Role**: 深海界域限定输出型唤醒体，v2.3.2推出。名字来源于洛夫克拉夫特短篇《皮克曼的模特》。深海队新一代输出选择。
-
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 深海界域限定输出型唤醒体，v2.3.2推出。名字来源于洛夫克拉夫特短篇《皮克曼的模特》。深海队新一代输出选择。
 
-
+Data pending
 
 ## Recommended Equipment
 

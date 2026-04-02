@@ -21,18 +21,11 @@ portrait: /portraits/agrippa.png
 
 SSR Caro Defense Awakener (standard). Provides frontline protection for Caro teams. Available from standard pool.
 
-**Team Role**: 血肉界域T2防御型唤醒体。为血肉队提供前排防护。
-
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 血肉界域T2防御型唤醒体。为血肉队提供前排防护。
 
-
+Data pending
 
 ## Recommended Equipment
 

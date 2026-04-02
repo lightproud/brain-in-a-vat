@@ -21,18 +21,11 @@ portrait: /portraits/pollux.png
 
 SSR Ultra DPS Awakener (limited). Introduced in v2.3.
 
-**Team Role**: 超维界域限定输出角色，v2.3.4推出，卡池「神圣赦免」。超维队新一代主C选择。
-
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 超维界域限定输出角色，v2.3.4推出，卡池「神圣赦免」。超维队新一代主C选择。
 
-
+Data pending
 
 ## Recommended Equipment
 

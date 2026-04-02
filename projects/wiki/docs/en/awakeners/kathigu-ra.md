@@ -21,18 +21,11 @@ portrait: /portraits/kathigu-ra.png
 
 SSR Chaos DPS Awakener (limited). Introduced in v2.2.
 
-**Team Role**: 混沌界域限定输出角色，v2.2推出。星辰篇混沌主C选择，名字来源于克苏鲁神话体系。
-
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 混沌界域限定输出角色，v2.2推出。星辰篇混沌主C选择，名字来源于克苏鲁神话体系。
 
-
+Data pending
 
 ## Recommended Equipment
 

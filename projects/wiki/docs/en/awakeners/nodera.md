@@ -21,18 +21,11 @@ portrait: /portraits/nodera.png
 
 SSR Chaos DPS Awakener (standard). Design inspired by the nautilus; combat style revolves around cyclical strikes. Standard pool DPS option for Chaos teams. Key synergy: 反击缩放, 护盾打击.
 
-**Team Role**: 混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。以循环打击为核心战斗风格。
-
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。以循环打击为核心战斗风格。
 
-
+Data pending
 
 ## Recommended Equipment
 

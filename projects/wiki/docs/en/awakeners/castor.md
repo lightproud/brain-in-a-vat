@@ -21,18 +21,11 @@ portrait: /portraits/castor.png
 
 SSR Ultra Defense Awakener (limited). Introduced in v2.2.
 
-**Team Role**: 超维界域限定防御角色，v2.2.2推出。
-
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 超维界域限定防御角色，v2.2.2推出。
 
-
+Data pending
 
 ## Recommended Equipment
 

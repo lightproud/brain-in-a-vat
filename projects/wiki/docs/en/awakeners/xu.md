@@ -21,18 +21,11 @@ portrait: /portraits/xu.png
 
 SSR Caro Chorus Awakener (limited). Chorus-type character that creates synergy effects with main DPS. Introduced in v2.4.
 
-**Team Role**: 血肉界域限定合唱型角色，v2.4二周年版本推出，卡池「夜幕狂喜」。作为合唱型角色与血肉主C产生特殊联携效果。
-
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 血肉界域限定合唱型角色，v2.4二周年版本推出，卡池「夜幕狂喜」。作为合唱型角色与血肉主C产生特殊联携效果。
 
-
+Data pending
 
 ## Recommended Equipment
 

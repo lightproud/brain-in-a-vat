@@ -21,9 +21,9 @@ portrait: /portraits/sr_aojier.png
 
 SR Chaos Defense Awakener (standard).
 
-**Team Role**: 混沌界域T1辅助型唤醒体，御四家成员。提供队伍增益和敌方减益效果，是混沌队稳定的后排辅助。
-
 ## Skills
+
+**Role Summary**: 混沌界域T1辅助型唤醒体，御四家成员。提供队伍增益和敌方减益效果，是混沌队稳定的后排辅助。
 
 Data pending
 
