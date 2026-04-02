@@ -1,0 +1,240 @@
+{
+  "date": "2026-04-02",
+  "messages": 10279,
+  "unique_authors": 336,
+  "reactions_total": 1859,
+  "attachments": 537,
+  "channel_activity": {
+    "🔸綜合討論": 3048,
+    "🔸阵容构建": 118,
+    "🔸morimens-game-chat": 3052,
+    "🔸剧情交流": 16,
+    "🔸晒卡分享": 9,
+    "🔸交友频道": 10,
+    "🔸한국어-채팅방": 15,
+    "🔸deutscher-chatraum": 3,
+    "🔸chaîne-française": 6,
+    "🔸русский-канал": 63,
+    "🔸phòng-chat-tiếng-việt": 967,
+    "🔸canal-español": 391,
+    "🔸canal-português": 377,
+    "🔸ruang-obrolan-indonesia": 20,
+    "🔸ห้องสนทนาภาษาไทย": 32,
+    "🔸traphase": 6,
+    "🔸lore-chat": 141,
+    "🔸服务器公告┊server-announcement": 4,
+    "🔸礼包码┊gift-codes": 1,
+    "🔸team-building": 418,
+    "🔸general-chat": 158,
+    "🔸邀请码互助┊swap-invitation-codes": 16,
+    "🔸game-question": 1273,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸游戏问题": 1,
+    "🔸机器人命令┊bot-commands": 28,
+    "🔸erica-playground": 19,
+    "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 1,
+    "Slay the Spire Morimens Modding Log": 3,
+    "Helot name?": 1,
+    "\"Temporary Realm Mastery\" effect from Vortice's Wheel of Destiny is useless for her": 8,
+    "N的資訊安全課可以進郵件珍藏箱嗎？": 2,
+    "Allow us to lower the level of our characters during investigations... please let me explain": 2,
+    "Traphase bug: Duped Will Unyieldings (WoD)": 1,
+    "✅「已回答」我的戰鬥結果怪怪的": 4,
+    "✅「已回答」小煤球的頭貼可以保存起來嗎": 5,
+    "✅「已回答」問一下關於阿拉克涅的": 2,
+    "✅「已回答」過了這麼久，最終法則的消息呢？🧐": 2,
+    "想提點奇怪的建議": 1,
+    "Prismatic Lens Caps and Ultra Turn Interaction": 5,
+    "✅「Answered」Option to undo Rouse selection": 2,
+    "✅「已回答」优化手机端性能": 2,
+    "💭「Processing」Unable to complete daily quest after maintenance": 11,
+    "\"24\" lives matter": 2,
+    "守密人頭像": 5,
+    "bird bois art": 1,
+    "1 million chromaphages": 2,
+    "A Letter For You Keeper!": 1,
+    "Caecus!!": 1,
+    "Quick Liz": 1,
+    "Gdoll art": 1,
+    "some doodles": 3,
+    "continual arachneposting": 9,
+    "William posting": 3,
+    "New Account VIDEO Playthrough Guide": 1,
+    "BOSS COMPENDIUM": 1,
+    "【教L̸o̸a̸d̸i̸n̸g̸.̸.̸.̸系□□□□???0x000告】——[TeachingL̸o̸a̸d̸i̸n̸g̸.̸.̸.̸System□□□□???0x000Notice]": 1,
+    "291天的萌新想問": 1,
+    "1489106674915741698": 1
+  },
+  "hourly_activity": {
+    "0": 505,
+    "1": 499,
+    "2": 437,
+    "3": 376,
+    "4": 417,
+    "5": 489,
+    "6": 584,
+    "7": 446,
+    "8": 885,
+    "9": 407,
+    "10": 137,
+    "11": 124,
+    "12": 252,
+    "13": 610,
+    "14": 921,
+    "15": 558,
+    "16": 1215,
+    "17": 595,
+    "18": 436,
+    "19": 350,
+    "20": 36
+  },
+  "message_types": {
+    "0": 7560,
+    "19": 2706,
+    "20": 4,
+    "4": 8,
+    "21": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1489124481224933457",
+      "content": "**🎁 DC 38000守密人达成礼 / DC 38000 Keepers Achievement Gift**\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下",
+      "author": "morimensstaff06",
+      "reactions": 387,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1489093943462203473",
+      "content": "Hi Keepers, it's Goya ☺ Really grateful I get to say a proper goodbye to you all",
+      "author": "morimensstaff06",
+      "reactions": 326,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1489227906407334008",
+      "content": "",
+      "author": "shio2311",
+      "reactions": 23,
+      "channel": "1 million chromaphages"
+    },
+    {
+      "id": "1489244885025292328",
+      "content": "Hoy everyone, we wanted to share a very big project that was in development for ",
+      "author": "vxvendetta97",
+      "reactions": 10,
+      "channel": "BOSS COMPENDIUM"
+    },
+    {
+      "id": "1489053252061233172",
+      "content": "<:Ramona_love:1459077541829546007> - Ramona Fanart",
+      "author": "butterfly14",
+      "reactions": 9,
+      "channel": "A Letter For You Keeper!"
+    },
+    {
+      "id": "1489114603446075424",
+      "content": "Senior adopted an otter for a day <:thinking1:1356068128936820929>",
+      "author": "zzio_",
+      "reactions": 9,
+      "channel": "William posting"
+    },
+    {
+      "id": "1489178323492802702",
+      "content": "惊闻戈雅走了（呆）再见再见",
+      "author": "flarinsidia",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1489120232793706719",
+      "content": "",
+      "author": "akkom730",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1489125960455553085",
+      "content": "<:Helot_slack_off:1459092159465521184>",
+      "author": "duxadidus",
+      "reactions": 7,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1489251199315083516",
+      "content": "",
+      "author": "angbak",
+      "reactions": 6,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1489074894405632252",
+      "content": "why is it always mr beast",
+      "author": "monchi3524",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489097856894894081",
+      "content": "EZ <@157679037240573953> <@595414429957619725> <@113374123798859776> <@147141432",
+      "author": "angbak",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489065032875642890",
+      "content": "**她很担心你，所以她来了**",
+      "author": "akalanden",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1489060431883534397",
+      "content": "https://tenor.com/view/lick-suck-cat-kitty-holy-moly-gif-11889880218065052268",
+      "author": "hemancient",
+      "reactions": 6,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1489319059995627611",
+      "content": "Tengo las cosas claras.",
+      "author": "sayokolefay",
+      "reactions": 6,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1489208676941041675",
+      "content": "The problem was indeed caused by daylight saving time<:agree:1400771815076528258",
+      "author": "morimensstaff06",
+      "reactions": 6,
+      "channel": "💭「Processing」Unable to complete daily quest after maintenance"
+    },
+    {
+      "id": "1489181386563915886",
+      "content": "我疊了三層怨恨鎖鏈",
+      "author": "ahong0727",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1489183549859827844",
+      "content": "要留著",
+      "author": "ahong0727",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1489186741368918056",
+      "content": "𓁆𓁇𓁈𓁉𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏𓀐𓀑𓀒𓀓𓀔𓀕𓀖𓀗𓀘𓀙𓀚𓀛𓀜𓀝𓀞𓀟𓀠𓀡𓀢𓀣𓀤𓀥𓀦𓀧𓀨𓀩𓀪𓀫𓀬𓀻𓀼𓀽𓀾𓀿𓁀𓁁𓁂𓁃𓁄𓁅𓁆𓁇𓁈𓁉𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏",
+      "author": "hon_ey0",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1489186834025283666",
+      "content": "魂兮歸來碑文完整版",
+      "author": "hon_ey0",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    }
+  ]
+}
