@@ -1,39 +1,44 @@
 {
   "date": "2026-04-02",
-  "messages": 10279,
+  "messages": 16222,
   "unique_authors": 336,
-  "reactions_total": 1859,
-  "attachments": 537,
+  "reactions_total": 2730,
+  "attachments": 795,
   "channel_activity": {
-    "🔸綜合討論": 3048,
+    "🔸綜合討論": 3315,
+    "🔸morimens-game-chat": 8052,
+    "🔸晒卡分享": 10,
+    "🔸交友频道": 12,
+    "🔸русский-канал": 72,
+    "🔸phòng-chat-tiếng-việt": 971,
+    "🔸canal-español": 406,
+    "🔸canal-português": 491,
+    "🔸ruang-obrolan-indonesia": 21,
+    "🔸traphase": 11,
+    "🔸team-building": 488,
+    "🔸general-chat": 172,
+    "🔸邀请码互助┊swap-invitation-codes": 20,
+    "🔸game-question": 1695,
+    "🔸游戏问题": 2,
+    "🔸机器人命令┊bot-commands": 34,
+    "Slay the Spire Morimens Modding Log": 4,
+    "守密人頭像": 6,
+    "1 million chromaphages": 3,
+    "continual arachneposting": 11,
+    "William posting": 5,
+    "家人们，新人刚入坑该怎么配队哇QwQ": 1,
     "🔸阵容构建": 118,
-    "🔸morimens-game-chat": 3052,
     "🔸剧情交流": 16,
-    "🔸晒卡分享": 9,
-    "🔸交友频道": 10,
     "🔸한국어-채팅방": 15,
     "🔸deutscher-chatraum": 3,
     "🔸chaîne-française": 6,
-    "🔸русский-канал": 63,
-    "🔸phòng-chat-tiếng-việt": 967,
-    "🔸canal-español": 391,
-    "🔸canal-português": 377,
-    "🔸ruang-obrolan-indonesia": 20,
     "🔸ห้องสนทนาภาษาไทย": 32,
-    "🔸traphase": 6,
     "🔸lore-chat": 141,
     "🔸服务器公告┊server-announcement": 4,
     "🔸礼包码┊gift-codes": 1,
-    "🔸team-building": 418,
-    "🔸general-chat": 158,
-    "🔸邀请码互助┊swap-invitation-codes": 16,
-    "🔸game-question": 1273,
     "🔸忘却前夜┊morimens-tv": 1,
-    "🔸游戏问题": 1,
-    "🔸机器人命令┊bot-commands": 28,
     "🔸erica-playground": 19,
     "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 1,
-    "Slay the Spire Morimens Modding Log": 3,
     "Helot name?": 1,
     "\"Temporary Realm Mastery\" effect from Vortice's Wheel of Destiny is useless for her": 8,
     "N的資訊安全課可以進郵件珍藏箱嗎？": 2,
@@ -49,16 +54,12 @@
     "✅「已回答」优化手机端性能": 2,
     "💭「Processing」Unable to complete daily quest after maintenance": 11,
     "\"24\" lives matter": 2,
-    "守密人頭像": 5,
     "bird bois art": 1,
-    "1 million chromaphages": 2,
     "A Letter For You Keeper!": 1,
     "Caecus!!": 1,
     "Quick Liz": 1,
     "Gdoll art": 1,
     "some doodles": 3,
-    "continual arachneposting": 9,
-    "William posting": 3,
     "New Account VIDEO Playthrough Guide": 1,
     "BOSS COMPENDIUM": 1,
     "【教L̸o̸a̸d̸i̸n̸g̸.̸.̸.̸系□□□□???0x000告】——[TeachingL̸o̸a̸d̸i̸n̸g̸.̸.̸.̸System□□□□???0x000Notice]": 1,
@@ -66,6 +67,22 @@
     "1489106674915741698": 1
   },
   "hourly_activity": {
+    "20": 898,
+    "21": 860,
+    "22": 202,
+    "8": 949,
+    "9": 595,
+    "10": 216,
+    "11": 433,
+    "12": 869,
+    "13": 928,
+    "14": 1441,
+    "15": 877,
+    "16": 1710,
+    "17": 916,
+    "18": 876,
+    "19": 671,
+    "23": 28,
     "0": 505,
     "1": 499,
     "2": 437,
@@ -73,27 +90,12 @@
     "4": 417,
     "5": 489,
     "6": 584,
-    "7": 446,
-    "8": 885,
-    "9": 407,
-    "10": 137,
-    "11": 124,
-    "12": 252,
-    "13": 610,
-    "14": 921,
-    "15": 558,
-    "16": 1215,
-    "17": 595,
-    "18": 436,
-    "19": 350,
-    "20": 36
+    "7": 446
   },
   "message_types": {
-    "0": 7560,
-    "19": 2706,
-    "20": 4,
-    "4": 8,
-    "21": 1
+    "0": 3939,
+    "19": 2002,
+    "20": 2
   },
   "top_reacted_messages": [
     {
@@ -118,11 +120,39 @@
       "channel": "1 million chromaphages"
     },
     {
+      "id": "1489186467224883312",
+      "content": "I mean \nShe was\nBut ...\nPowercreep and Inflation you know ?\nKath is now 8 months",
+      "author": "legendaryredz",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489406816323637249",
+      "content": "Traditional William jumpscare because I'm not home and don't have access to my g",
+      "author": "zzio_",
+      "reactions": 11,
+      "channel": "William posting"
+    },
+    {
+      "id": "1489272637623504977",
+      "content": "Every stranger on the internet needs to see my kinks",
+      "author": "spooky_penguin_",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1489244885025292328",
       "content": "Hoy everyone, we wanted to share a very big project that was in development for ",
       "author": "vxvendetta97",
       "reactions": 10,
       "channel": "BOSS COMPENDIUM"
+    },
+    {
+      "id": "1489244410725269693",
+      "content": "the only fanfics i read are chinese webnovels with incorrect tagging that i clic",
+      "author": "arkaether",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1489053252061233172",
@@ -137,6 +167,20 @@
       "author": "zzio_",
       "reactions": 9,
       "channel": "William posting"
+    },
+    {
+      "id": "1489273061248336128",
+      "content": "Aura like... SOLO LEVELING????",
+      "author": "idotly",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489269047790010408",
+      "content": "",
+      "author": "frosthief",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1489178323492802702",
@@ -160,6 +204,20 @@
       "channel": "🔸canal-español"
     },
     {
+      "id": "1489233754080936036",
+      "content": "<:cough:1356082510928543834>",
+      "author": "sirtealot",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489304120421781536",
+      "content": "What if normal mode is too hard... <:agrippa_wronged:1468257746058088562>",
+      "author": "not_blueberry",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1489251199315083516",
       "content": "",
       "author": "angbak",
@@ -179,62 +237,6 @@
       "author": "angbak",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1489065032875642890",
-      "content": "**她很担心你，所以她来了**",
-      "author": "akalanden",
-      "reactions": 6,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1489060431883534397",
-      "content": "https://tenor.com/view/lick-suck-cat-kitty-holy-moly-gif-11889880218065052268",
-      "author": "hemancient",
-      "reactions": 6,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1489319059995627611",
-      "content": "Tengo las cosas claras.",
-      "author": "sayokolefay",
-      "reactions": 6,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1489208676941041675",
-      "content": "The problem was indeed caused by daylight saving time<:agree:1400771815076528258",
-      "author": "morimensstaff06",
-      "reactions": 6,
-      "channel": "💭「Processing」Unable to complete daily quest after maintenance"
-    },
-    {
-      "id": "1489181386563915886",
-      "content": "我疊了三層怨恨鎖鏈",
-      "author": "ahong0727",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1489183549859827844",
-      "content": "要留著",
-      "author": "ahong0727",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1489186741368918056",
-      "content": "𓁆𓁇𓁈𓁉𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏𓀐𓀑𓀒𓀓𓀔𓀕𓀖𓀗𓀘𓀙𓀚𓀛𓀜𓀝𓀞𓀟𓀠𓀡𓀢𓀣𓀤𓀥𓀦𓀧𓀨𓀩𓀪𓀫𓀬𓀻𓀼𓀽𓀾𓀿𓁀𓁁𓁂𓁃𓁄𓁅𓁆𓁇𓁈𓁉𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏",
-      "author": "hon_ey0",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1489186834025283666",
-      "content": "魂兮歸來碑文完整版",
-      "author": "hon_ey0",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
     }
   ]
 }

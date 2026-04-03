@@ -1,0 +1,235 @@
+{
+  "date": "2026-04-03",
+  "messages": 5580,
+  "unique_authors": 259,
+  "reactions_total": 446,
+  "attachments": 352,
+  "channel_activity": {
+    "🔸綜合討論": 530,
+    "🔸阵容构建": 78,
+    "🔸剧情交流": 6,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 2,
+    "🔸课间休息闲聊": 26,
+    "🔸交友频道": 4,
+    "🔸한국어-채팅방": 9,
+    "🔸deutscher-chatraum": 19,
+    "🔸русский-канал": 45,
+    "🔸phòng-chat-tiếng-việt": 1192,
+    "🔸canal-español": 186,
+    "🔸canal-português": 696,
+    "🔸ruang-obrolan-indonesia": 115,
+    "🔸ห้องสนทนาภาษาไทย": 63,
+    "🔸traphase": 3,
+    "🔸lore-chat": 31,
+    "🔸team-building": 247,
+    "🔸general-chat": 632,
+    "🔸邀请码互助┊swap-invitation-codes": 16,
+    "🔸game-question": 1489,
+    "🔸游戏问题": 10,
+    "🔸机器人命令┊bot-commands": 43,
+    "🔸erica-playground": 1,
+    "约稿分享": 6,
+    "基珀先生，請問我可以請您跳支舞嗎？|| W.I.P": 1,
+    "建个随笔楼": 2,
+    "Slay the Spire Morimens Modding Log": 9,
+    "Game is in Chinese despite choosing English language": 8,
+    "Kasich relic bug": 3,
+    "Get auto battle back! 恢复自动战斗": 4,
+    "💭「Processing」Helot name?": 2,
+    "\"Temporary Realm Mastery\" effect from Vortice's Wheel of Destiny is useless for her": 2,
+    "✅「已回答」N的資訊安全課可以進郵件珍藏箱嗎？": 4,
+    "💭「Processing」Traphase bug: Duped Will Unyieldings (WoD)": 2,
+    "Prismatic Lens Caps and Ultra Turn Interaction": 6,
+    "✅「Resolved」Unable to complete daily quest after maintenance": 5,
+    "💭「處理中」重鎖平白無故遭到削弱": 1,
+    "\"24\" lives matter": 3,
+    "V2.4.3.6 在线维护公告": 2,
+    "守密人頭像": 2,
+    "Friends forever <3": 1,
+    "Morimens Fanarts": 9,
+    "bird bois art": 2,
+    "1 million chromaphages": 1,
+    "May I have this dance, Mr. Keeper? || W.I.P": 1,
+    "morimens sybau 💔": 6,
+    "Tulu & co. 💚 [art thread]": 1,
+    "continual arachneposting": 1,
+    "William posting": 1,
+    "team building help for 8-13": 4,
+    "【教L̸o̸a̸d̸i̸n̸g̸.̸.̸.̸系□□□□???0x000告】——[TeachingL̸o̸a̸d̸i̸n̸g̸.̸.̸.̸System□□□□???0x000Notice]": 1,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 14,
+    "家人们，新人刚入坑该怎么配队哇QwQ": 6,
+    "team building for 8-13": 24,
+    "team building + pulls advice if you don't mind": 2
+  },
+  "hourly_activity": {
+    "0": 32,
+    "1": 98,
+    "2": 316,
+    "4": 138,
+    "5": 160,
+    "6": 449,
+    "7": 234,
+    "8": 341,
+    "9": 301,
+    "10": 436,
+    "11": 186,
+    "12": 194,
+    "13": 395,
+    "14": 549,
+    "15": 502,
+    "16": 666,
+    "17": 111,
+    "18": 170,
+    "19": 188,
+    "3": 114
+  },
+  "message_types": {
+    "0": 4325,
+    "19": 1247,
+    "20": 4,
+    "4": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1489626044645245040",
+      "content": "",
+      "author": "jmjmjm6667",
+      "reactions": 18,
+      "channel": "Morimens Fanarts"
+    },
+    {
+      "id": "1489690994567020757",
+      "content": "Perhaps a picture to commemorate Vortice and her Coalsies!\n\nUID: 101171815",
+      "author": "sofiaebby",
+      "reactions": 11,
+      "channel": "Friends forever <3"
+    },
+    {
+      "id": "1489627017061072899",
+      "content": "",
+      "author": "jmjmjm6667",
+      "reactions": 9,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1489566413185351722",
+      "content": "你們一邊閒聊，我一邊要離開此地了（去幹活",
+      "author": "morimensstaff06",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1489670342589943938",
+      "content": "",
+      "author": "ponponnyaru",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1489569424775188573",
+      "content": "The English language option doesn't work on my game. I've tried switching to oth",
+      "author": ".tsubasa.",
+      "reactions": 6,
+      "channel": "Game is in Chinese despite choosing English language"
+    },
+    {
+      "id": "1489629225328836729",
+      "content": "Drunk Leonora(heroine)",
+      "author": "jmjmjm6667",
+      "reactions": 6,
+      "channel": "Morimens Fanarts"
+    },
+    {
+      "id": "1489454624598528091",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1489565796471668837",
+      "content": "失去了一個被騙的機會<:Helot_slack_off:1459092159465521184>",
+      "author": "morimensstaff06",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1489635501144014899",
+      "content": "W1A4 <:Ogier_Cheerup:1468259351889318049>",
+      "author": "angbak",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1489485184167444553",
+      "content": "<:Helot_slack_off:1459092159465521184>",
+      "author": "rendezvoushr",
+      "reactions": 5,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1489651671817519155",
+      "content": "My first 350! Ik it doesnt sound impressive, but I'm very happy ahaha",
+      "author": "spruzzetto",
+      "reactions": 5,
+      "channel": "🔸game-question"
+    },
+    {
+      "id": "1489660484767580202",
+      "content": "ww地瓜你好冷\n\n自己加了個背景蒽<:Helot_slack_off:1459092159465521184><:kath_cool:1447714576413",
+      "author": "sui_714",
+      "reactions": 5,
+      "channel": "约稿分享"
+    },
+    {
+      "id": "1489541047548772422",
+      "content": "**V2.4.3.6 Online Maintenance Announcement**\n\nDear Keeper,\nThe Mythag Administra",
+      "author": "morimensstaff02",
+      "reactions": 5,
+      "channel": "V2.4.3.6 在线维护公告"
+    },
+    {
+      "id": "1489628709748080831",
+      "content": "Ramona",
+      "author": "jmjmjm6667",
+      "reactions": 5,
+      "channel": "Morimens Fanarts"
+    },
+    {
+      "id": "1489643739306528920",
+      "content": "",
+      "author": "glitzy_x",
+      "reactions": 5,
+      "channel": "morimens sybau 💔"
+    },
+    {
+      "id": "1489491575624175789",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1489547209190932531",
+      "content": "反正融灾400随便打了",
+      "author": "ponponnyaru",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1489709642270376156",
+      "content": "so this team is fine?",
+      "author": "guill0tne",
+      "reactions": 4,
+      "channel": "🔸game-question"
+    },
+    {
+      "id": "1489512220735049768",
+      "content": "你要巨刃還是煙斗",
+      "author": "heikwok",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    }
+  ]
+}
