@@ -105,6 +105,7 @@ KNOWN_SOURCES = [
     # 中文补充
     'gamekee',
     'huiji_wiki',
+    'weixin',
 ]
 
 

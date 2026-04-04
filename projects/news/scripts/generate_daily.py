@@ -80,6 +80,7 @@ PLATFORM_NAMES = {
     # 中文补充
     'gamekee': 'GameKee Wiki',
     'huiji_wiki': '灰机Wiki',
+    'weixin': '微信公众号',
 }
 
 CUTOFF_HOURS = 24

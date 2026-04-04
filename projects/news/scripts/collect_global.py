@@ -71,6 +71,7 @@ SOURCE_MAP = {
     'miraheze_wiki': 'miraheze_wiki',
     'gamekee': 'gamekee',
     'huiji_wiki': 'huiji_wiki',
+    'weixin': 'weixin',
 'discord': 'discord',
     'facebook': 'facebook',
     'telegram': 'telegram',
@@ -147,6 +148,7 @@ def run_zero_cost_collectors() -> list[dict]:
         ('Miraheze Wiki', c.fetch_miraheze_wiki),
         ('GameKee', c.fetch_gamekee),
         ('Huiji Wiki', c.fetch_huiji_wiki),
+        ('搜狗微信', c.fetch_weixin),
     ]
 
     # Also run API-key collectors if keys are available

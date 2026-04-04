@@ -63,7 +63,7 @@ PLATFORMS = [
     'gamerch', 'note_com', 'ruliweb',
     'vkplay', 'stopgame',
     'gacharevenue', 'miraheze_wiki',
-    'gamekee', 'huiji_wiki',
+    'gamekee', 'huiji_wiki', 'weixin',
 ]
 
 

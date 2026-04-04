@@ -1670,6 +1670,63 @@ def fetch_instagram():
     return items
 
 
+# ─── 微信公众号 (via 搜狗) ─────────────────────────────────
+
+def fetch_weixin():
+    """通过搜狗微信搜索抓取忘却前夜相关公众号文章。
+
+    搜狗是唯一公开索引微信公众号文章的搜索引擎。
+    """
+    items = []
+    for keyword in KEYWORDS["zh"]:
+        try:
+            resp = _get(
+                "https://weixin.sogou.com/weixin",
+                params={"type": 2, "query": keyword, "ie": "utf8", "s_from": "input", "page": 1},
+                headers={
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+                    "Referer": "https://weixin.sogou.com/",
+                },
+            )
+            html = resp.text
+            import re as _re
+
+            # Parse search results
+            for match in _re.finditer(
+                r'<h3>.*?<a[^>]*href="([^"]+)"[^>]*>(.+?)</a>.*?'
+                r'class="s-p"[^>]*>([^<]*)',
+                html, _re.DOTALL
+            ):
+                url, title_html, meta = match.groups()
+                # Clean HTML tags from title
+                title = _re.sub(r'<[^>]+>', '', title_html).strip()
+                if not title:
+                    continue
+
+                # Extract author from meta
+                author_match = _re.search(r'微信公众号\s*[:：]\s*([^\s<]+)', meta)
+                author = author_match.group(1) if author_match else ""
+
+                items.append(_make_item(
+                    title=f"[微信] {title}",
+                    summary="",
+                    source="weixin",
+                    platform_region="cn",
+                    time_str=datetime.now(timezone.utc).isoformat(),
+                    url=url,
+                    engagement=0,
+                    is_hot=False,
+                    author=author,
+                    lang="zh",
+                ))
+
+            logger.info(f'搜狗微信 "{keyword}": {len(items)} articles')
+        except Exception as e:
+            logger.warning(f'搜狗微信 "{keyword}" failed: {e}')
+
+    return items
+
+
 # ─── 日本語プラットフォーム ────────────────────────────────
 
 def fetch_gamerch():
