@@ -1,31 +1,43 @@
 {
   "date": "2026-04-04",
-  "messages": 2469,
+  "messages": 4484,
   "unique_authors": 192,
-  "reactions_total": 201,
-  "attachments": 135,
+  "reactions_total": 353,
+  "attachments": 224,
   "channel_activity": {
-    "🔸綜合討論": 571,
-    "🔸阵容构建": 2,
-    "🔸相位对弈": 3,
-    "🔸한국어-채팅방": 147,
-    "🔸deutscher-chatraum": 2,
-    "🔸русский-канал": 67,
-    "🔸phòng-chat-tiếng-việt": 477,
-    "🔸canal-español": 31,
-    "🔸canal-português": 28,
-    "🔸ruang-obrolan-indonesia": 57,
-    "🔸ห้องสนทนาภาษาไทย": 16,
-    "🔸traphase": 17,
-    "🔸lore-chat": 6,
-    "🔸team-building": 60,
-    "🔸general-chat": 387,
-    "🔸邀请码互助┊swap-invitation-codes": 10,
-    "🔸game-question": 493,
+    "🔸綜合討論": 701,
+    "🔸阵容构建": 34,
+    "🔸morimens-game-chat": 1110,
+    "🔸相位对弈": 5,
+    "🔸한국어-채팅방": 169,
+    "🔸deutscher-chatraum": 3,
+    "🔸русский-канал": 73,
+    "🔸phòng-chat-tiếng-việt": 483,
+    "🔸canal-español": 32,
+    "🔸canal-português": 42,
+    "🔸ruang-obrolan-indonesia": 68,
+    "🔸ห้องสนทนาภาษาไทย": 22,
+    "🔸traphase": 18,
+    "🔸lore-chat": 8,
+    "🔸team-building": 210,
+    "🔸general-chat": 687,
+    "🔸邀请码互助┊swap-invitation-codes": 11,
+    "🔸game-question": 680,
+    "🔸机器人命令┊bot-commands": 16,
+    "菜雞四小強玩家的抱怨之旅": 4,
+    "TV Error animation": 3,
+    "Get auto battle back! 恢复自动战斗": 2,
+    "\"24\" lives matter": 2,
+    "V2.4.3.7 在线维护公告": 7,
+    "English Language Setting Abnormality Issue Notice": 20,
+    "Leigh wip!!!!": 2,
+    "【English Translation】Opinions Collection": 1,
+    "這個該如何有效率地獲得": 2,
+    "回坑玩家要怎樣抽&養成？": 6,
+    "team building for 8-13": 2,
     "🔸忘却前夜┊morimens-tv": 1,
     "🔸游戏问题": 2,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
-    "🔸机器人命令┊bot-commands": 9,
     "喚醒體資訊 : 呂佐夫": 1,
     "oc（oc）": 1,
     "建个随笔楼": 3,
@@ -33,36 +45,35 @@
     "韩语字幕显示不全/下方显示缺失": 1,
     "I can't enter the game": 3,
     "Inactive code on Ads": 1,
-    "TV Error animation": 1,
     "I need help everything in the game is in another language even tho I have it on English": 4,
     "Game is in Chinese despite choosing English language": 4,
-    "V2.4.3.7 在线维护公告": 3,
-    "English Language Setting Abnormality Issue Notice": 16,
     "William says lock in": 2,
     "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 4,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 8,
-    "回坑玩家要怎樣抽&養成？": 5,
     "新手都抽什么好？": 21,
     "1489823522107818045": 1
   },
   "hourly_activity": {
-    "0": 89,
-    "1": 394,
-    "2": 332,
-    "3": 192,
-    "4": 150,
-    "5": 209,
+    "10": 147,
+    "11": 225,
+    "12": 259,
+    "13": 344,
+    "0": 388,
+    "1": 566,
+    "2": 520,
+    "3": 259,
+    "4": 376,
+    "5": 367,
+    "14": 56,
     "6": 399,
     "7": 171,
     "8": 155,
-    "9": 252,
-    "10": 126
+    "9": 252
   },
   "message_types": {
-    "0": 1939,
-    "19": 528,
-    "20": 1,
-    "21": 1
+    "0": 1540,
+    "19": 474,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -101,6 +112,13 @@
       "channel": "🔸canal-español"
     },
     {
+      "id": "1489787019495211071",
+      "content": "One down",
+      "author": "umagan_",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1489928496410136688",
       "content": "||在 再不分||",
       "author": "0.0._.0_0.",
@@ -127,6 +145,41 @@
       "author": "angbak",
       "reactions": 4,
       "channel": "Inactive code on Ads"
+    },
+    {
+      "id": "1489974783495110829",
+      "content": "把莱克活动命轮带上 再赌赌随机数",
+      "author": "galagalaguo",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1489798186708107274",
+      "content": "My dumbass would accidently get banned",
+      "author": "guava3442",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489824116470186084",
+      "content": "",
+      "author": "arisuu0604",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489829279641632778",
+      "content": "<:please:1356053110375714817> but think about Arachne",
+      "author": "fishhazardthewizard",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489855070873980969",
+      "content": "then again i missed a 98% crit exalt on vortice yesterday",
+      "author": "arkaether",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1489923578651738142",
@@ -157,51 +210,9 @@
       "channel": "喚醒體資訊 : 呂佐夫"
     },
     {
-      "id": "1489802947536748634",
-      "content": "",
-      "author": "ponponnyaru",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1489835842473037909",
-      "content": "<@1362878105101926755> \nhttps://youtu.be/NH12Q7i_Aa0?si=TiCaOL3eKh_3tgvK",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1489847722281402410",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1489870997912813648",
-      "content": "24這堆舊角 新人基本補不了\n真的抽新輪椅比較好",
-      "author": "fool6692",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1489873116258766900",
-      "content": "所以24不出小丑皮真是可惜",
-      "author": "heikwok",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1489876749570543696",
-      "content": "心臟稍微不好的感覺",
-      "author": "andy1123",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1489923263634083870",
-      "content": "其实也还好  就双倍的全拉了",
-      "author": "calvin_hz",
+      "id": "1489979534252966038",
+      "content": "~~南通前夜含金量還在上升~~",
+      "author": "yy42974466",
       "reactions": 2,
       "channel": "🔸綜合討論"
     }

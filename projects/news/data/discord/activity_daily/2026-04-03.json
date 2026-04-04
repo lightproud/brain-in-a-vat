@@ -1,12 +1,12 @@
 {
   "date": "2026-04-03",
-  "messages": 10360,
+  "messages": 14250,
   "unique_authors": 259,
-  "reactions_total": 996,
-  "attachments": 575,
+  "reactions_total": 1647,
+  "attachments": 748,
   "channel_activity": {
+    "🔸morimens-game-chat": 8147,
     "🔸綜合討論": 534,
-    "🔸morimens-game-chat": 4257,
     "🔸deutscher-chatraum": 23,
     "🔸русский-канал": 77,
     "🔸canal-español": 210,
@@ -70,8 +70,18 @@
     "team building + pulls advice if you don't mind": 2
   },
   "hourly_activity": {
-    "22": 143,
-    "23": 115,
+    "12": 649,
+    "13": 815,
+    "14": 939,
+    "15": 748,
+    "16": 951,
+    "17": 393,
+    "18": 786,
+    "19": 439,
+    "20": 264,
+    "21": 761,
+    "22": 453,
+    "23": 192,
     "0": 386,
     "1": 299,
     "2": 508,
@@ -83,23 +93,12 @@
     "8": 616,
     "9": 742,
     "10": 765,
-    "11": 605,
-    "12": 396,
-    "20": 62,
-    "21": 200,
-    "19": 191,
-    "13": 395,
-    "14": 549,
-    "15": 502,
-    "16": 666,
-    "17": 111,
-    "18": 170
+    "11": 605
   },
   "message_types": {
-    "19": 1546,
-    "0": 3232,
-    "46": 1,
-    "4": 1
+    "19": 1439,
+    "0": 2450,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -122,6 +121,41 @@
       "author": "jmjmjm6667",
       "reactions": 9,
       "channel": "🔸general-chat"
+    },
+    {
+      "id": "1489756319723421727",
+      "content": "but the extra three bucks is a scam",
+      "author": "arkaether",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489634306719612938",
+      "content": "Dunno what their marketing was or where it was\n\nbut its working? 😄",
+      "author": "dyssayah",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489628272579842219",
+      "content": "please excuse bagels he has a condition",
+      "author": "megidola.",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489691452341489928",
+      "content": "type shit",
+      "author": "blecnes.",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489756812415602779",
+      "content": "Type shit",
+      "author": "snorlax01",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1489566413185351722",
@@ -152,6 +186,34 @@
       "channel": "Morimens Fanarts"
     },
     {
+      "id": "1489647263218139259",
+      "content": "I think for now, I am going to go around doing side missions with my Pure Cores ",
+      "author": "ahmedamr30",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489647974358454353",
+      "content": "It is done <:Helot_slack_off:1459092159465521184>",
+      "author": "ahmedamr30",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489683134831267921",
+      "content": "We did it boys we pulled the waifu",
+      "author": "galacticgpt",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489697058968441013",
+      "content": "I like Clem in my parts I mean what!",
+      "author": "idotly",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1489553983679762593",
       "content": "what if i bring over a girl and she sees the corpopillow",
       "author": "princess.goth",
@@ -178,69 +240,6 @@
       "author": "water_heart",
       "reactions": 5,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1489565796471668837",
-      "content": "失去了一個被騙的機會<:Helot_slack_off:1459092159465521184>",
-      "author": "morimensstaff06",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1489635501144014899",
-      "content": "W1A4 <:Ogier_Cheerup:1468259351889318049>",
-      "author": "angbak",
-      "reactions": 5,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1489485184167444553",
-      "content": "<:Helot_slack_off:1459092159465521184>",
-      "author": "rendezvoushr",
-      "reactions": 5,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1489651671817519155",
-      "content": "My first 350! Ik it doesnt sound impressive, but I'm very happy ahaha",
-      "author": "spruzzetto",
-      "reactions": 5,
-      "channel": "🔸game-question"
-    },
-    {
-      "id": "1489660484767580202",
-      "content": "ww地瓜你好冷\n\n自己加了個背景蒽<:Helot_slack_off:1459092159465521184><:kath_cool:1447714576413",
-      "author": "sui_714",
-      "reactions": 5,
-      "channel": "约稿分享"
-    },
-    {
-      "id": "1489541047548772422",
-      "content": "**V2.4.3.6 Online Maintenance Announcement**\n\nDear Keeper,\nThe Mythag Administra",
-      "author": "morimensstaff02",
-      "reactions": 5,
-      "channel": "V2.4.3.6 在线维护公告"
-    },
-    {
-      "id": "1489628709748080831",
-      "content": "Ramona",
-      "author": "jmjmjm6667",
-      "reactions": 5,
-      "channel": "Morimens Fanarts"
-    },
-    {
-      "id": "1489643739306528920",
-      "content": "",
-      "author": "glitzy_x",
-      "reactions": 5,
-      "channel": "morimens sybau 💔"
-    },
-    {
-      "id": "1489439859843272805",
-      "content": "<:GDoll_Inferno_serenity:1468257540809822302>",
-      "author": "arkaether",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
