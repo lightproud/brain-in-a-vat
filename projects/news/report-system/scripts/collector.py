@@ -807,10 +807,10 @@ def fetch_appstore_reviews():
 
 def fetch_qq():
     """从 QQ 频道/群组获取忘却前夜相关讨论。"""
-    qq_guild_id = os.environ.get("QQ_GUILD_ID", "")
+    qq_guild_id = os.environ.get("QQ_GUILD_ID", "Morimens0617")
     qq_bot_token = os.environ.get("QQ_BOT_TOKEN", "")
-    if not qq_guild_id or not qq_bot_token:
-        logger.info("QQ: QQ_GUILD_ID or QQ_BOT_TOKEN not set, skipping")
+    if not qq_bot_token:
+        logger.info("QQ: QQ_BOT_TOKEN not set, skipping")
         return []
 
     items = []
