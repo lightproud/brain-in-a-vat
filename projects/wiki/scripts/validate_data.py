@@ -125,7 +125,10 @@ def validate_cross_references(loaded: dict[str, object]) -> list[str]:
         char_id = char.get("id", "unknown")
 
         realm = char.get("realm")
-        if realm not in valid_realm_ids:
+        # Allow realm: "all" for multi-realm characters that have a "realms" array
+        if realm == "all" and isinstance(char.get("realms"), list):
+            pass  # valid multi-realm character
+        elif realm not in valid_realm_ids:
             errors.append(
                 f"  FAIL  characters.json: character '{char_id}' has unknown realm '{realm}' "
                 f"(valid: {sorted(valid_realm_ids)})"
@@ -157,6 +160,63 @@ def validate_cross_references(loaded: dict[str, object]) -> list[str]:
     return errors
 
 
+def report_completeness(loaded: dict[str, object]) -> None:
+    """Print a data completeness report (informational, does not fail validation)."""
+    chars_data = loaded.get("characters.json")
+    if not chars_data:
+        print("  SKIP  Completeness report (characters.json not loaded)")
+        return
+
+    skill_fields = [
+        "command_cards", "rouse", "exalt", "overexalt",
+        "enlighten", "talent", "role_in_team",
+    ]
+
+    all_chars = chars_data.get("characters", [])
+    sr_chars = chars_data.get("sr_characters", [])
+    total = len(all_chars) + len(sr_chars)
+
+    # Skills completeness for SSR characters
+    skill_counts = {f: 0 for f in skill_fields}
+    has_any_skill = 0
+    has_core_skills = 0  # rouse + exalt
+    missing_portrait = 0
+
+    for char in all_chars:
+        skills = char.get("skills", {})
+        has_any = False
+        for field in skill_fields:
+            if skills.get(field):
+                skill_counts[field] += 1
+                has_any = True
+        if has_any:
+            has_any_skill += 1
+        if skills.get("rouse") and skills.get("exalt"):
+            has_core_skills += 1
+        if not char.get("portrait_url"):
+            missing_portrait += 1
+
+    ssr_count = len(all_chars)
+    print(f"  Characters: {total} total ({ssr_count} SSR, {len(sr_chars)} SR)")
+    print(f"  Portraits:  {ssr_count - missing_portrait}/{ssr_count} SSR have portrait_url")
+    print()
+    print(f"  Skills completeness (SSR):")
+    print(f"    Any skill data:    {has_any_skill}/{ssr_count} ({100*has_any_skill//ssr_count}%)")
+    print(f"    Core (rouse+exalt): {has_core_skills}/{ssr_count} ({100*has_core_skills//ssr_count}%)")
+    for field in skill_fields:
+        count = skill_counts[field]
+        pct = 100 * count // ssr_count if ssr_count else 0
+        bar = "#" * (pct // 5) + "." * (20 - pct // 5)
+        print(f"    {field:20s} {count:3d}/{ssr_count} ({pct:3d}%) [{bar}]")
+
+    if missing_portrait:
+        print()
+        print(f"  Characters missing portrait_url ({missing_portrait}):")
+        for char in all_chars:
+            if not char.get("portrait_url"):
+                print(f"    - {char.get('id', '?')} ({char.get('name_en', '?')})")
+
+
 def main() -> int:
     print("=" * 60)
     print("Morimens Wiki Data Validation")
@@ -166,21 +226,26 @@ def main() -> int:
     all_errors: list[str] = []
 
     # 1. JSON syntax validation
-    print("[1/3] JSON syntax check")
+    print("[1/4] JSON syntax check")
     syntax_errors, loaded = validate_json_syntax(DB_DIR)
     all_errors.extend(syntax_errors)
     print()
 
     # 2. Schema validation
-    print("[2/3] Schema validation")
+    print("[2/4] Schema validation")
     schema_errors = validate_schemas(loaded)
     all_errors.extend(schema_errors)
     print()
 
     # 3. Cross-reference validation
-    print("[3/3] Cross-reference checks")
+    print("[3/4] Cross-reference checks")
     xref_errors = validate_cross_references(loaded)
     all_errors.extend(xref_errors)
+    print()
+
+    # 4. Completeness report (informational)
+    print("[4/4] Data completeness report")
+    report_completeness(loaded)
     print()
 
     # Summary

@@ -7,6 +7,7 @@ on:
     branches: [main]
     paths:
       - 'projects/wiki/scripts/fetch_*.py'
+      - 'projects/wiki/scripts/character_mapping.py'
       - '.github/workflows/fetch-wiki-data.yml'
   workflow_dispatch:
     inputs:
@@ -34,60 +35,93 @@ jobs:
           python-version: '3.11'
 
       - name: Fetch portraits
+        id: fetch_portraits
         if: >-
           github.event_name != 'workflow_dispatch' ||
           contains(github.event.inputs.tasks, 'portraits') ||
           contains(github.event.inputs.tasks, 'all')
-        run: python3 scripts/fetch_portraits.py
+        run: python3 scripts/fetch_portraits.py 2>&1 | tee /tmp/fetch_portraits.log; exit ${PIPESTATUS[0]}
         continue-on-error: true
 
       - name: Fetch skills
+        id: fetch_skills
         if: >-
           github.event_name != 'workflow_dispatch' ||
           contains(github.event.inputs.tasks, 'skills') ||
           contains(github.event.inputs.tasks, 'all')
-        run: python3 scripts/fetch_skills.py
+        run: python3 scripts/fetch_skills.py 2>&1 | tee /tmp/fetch_skills.log; exit ${PIPESTATUS[0]}
         continue-on-error: true
 
       - name: Fetch cards
+        id: fetch_cards
         if: >-
           github.event_name != 'workflow_dispatch' ||
           contains(github.event.inputs.tasks, 'cards') ||
           contains(github.event.inputs.tasks, 'all')
-        run: python3 scripts/fetch_cards.py
+        run: python3 scripts/fetch_cards.py 2>&1 | tee /tmp/fetch_cards.log; exit ${PIPESTATUS[0]}
         continue-on-error: true
 
       - name: Fetch stats
+        id: fetch_stats
         if: >-
           github.event_name != 'workflow_dispatch' ||
           contains(github.event.inputs.tasks, 'stats') ||
           contains(github.event.inputs.tasks, 'all')
-        run: python3 scripts/fetch_stats.py
+        run: python3 scripts/fetch_stats.py 2>&1 | tee /tmp/fetch_stats.log; exit ${PIPESTATUS[0]}
         continue-on-error: true
 
       - name: Fetch stages
+        id: fetch_stages
         if: >-
           github.event_name != 'workflow_dispatch' ||
           contains(github.event.inputs.tasks, 'stages') ||
           contains(github.event.inputs.tasks, 'all')
-        run: python3 scripts/fetch_stages.py
+        run: python3 scripts/fetch_stages.py 2>&1 | tee /tmp/fetch_stages.log; exit ${PIPESTATUS[0]}
         continue-on-error: true
 
       - name: Fetch wheels
+        id: fetch_wheels
         if: >-
           github.event_name != 'workflow_dispatch' ||
           contains(github.event.inputs.tasks, 'wheels') ||
           contains(github.event.inputs.tasks, 'all')
-        run: python3 scripts/fetch_wheels.py
+        run: python3 scripts/fetch_wheels.py 2>&1 | tee /tmp/fetch_wheels.log; exit ${PIPESTATUS[0]}
         continue-on-error: true
 
       - name: Fetch lore
+        id: fetch_lore
         if: >-
           github.event_name != 'workflow_dispatch' ||
           contains(github.event.inputs.tasks, 'lore') ||
           contains(github.event.inputs.tasks, 'all')
-        run: python3 scripts/fetch_lore.py
+        run: python3 scripts/fetch_lore.py 2>&1 | tee /tmp/fetch_lore.log; exit ${PIPESTATUS[0]}
         continue-on-error: true
+
+      - name: Summarize fetch results
+        run: |
+          echo "=== Fetch Results Summary ==="
+          failed=0
+          for task in portraits skills cards stats stages wheels lore; do
+            step_var="fetch_${task}"
+            log="/tmp/fetch_${task}.log"
+            if [ -f "$log" ]; then
+              errors=$(grep -ci '\(error\|exception\|traceback\|failed\)' "$log" 2>/dev/null || echo 0)
+              lines=$(wc -l < "$log")
+              echo "${task}: log=${lines} lines, error_mentions=${errors}"
+              if [ "$errors" -gt 0 ]; then
+                echo "  Last error lines:"
+                grep -i '\(error\|exception\|traceback\|failed\)' "$log" | tail -3 | sed 's/^/    /'
+                failed=$((failed + 1))
+              fi
+            else
+              echo "${task}: skipped (no log)"
+            fi
+          done
+          echo ""
+          echo "Tasks with errors: ${failed}/7"
+          if [ "$failed" -gt 3 ]; then
+            echo "::warning::More than half of fetch tasks had errors (${failed}/7). Review logs above."
+          fi
 
       - name: Regenerate character pages from updated data
         run: python3 scripts/generate_pages.py
@@ -96,24 +130,28 @@ jobs:
       - name: Guard against corrupted data
         run: |
           cd $GITHUB_WORKSPACE
-          echo "=== Checking core JSON files for corruption ==="
-          for f in characters.json skills.json equipment.json realms.json combat.json; do
-            filepath="projects/wiki/data/db/$f"
+          echo "=== Checking all JSON files for corruption ==="
+          reverted=0
+          for filepath in projects/wiki/data/db/*.json; do
             if [ ! -f "$filepath" ]; then
-              echo "SKIP: $filepath not found"
               continue
             fi
+            fname=$(basename "$filepath")
             size=$(wc -c < "$filepath")
             if [ "$size" -lt 100 ]; then
               echo "REVERT: $filepath appears corrupted ($size bytes), restoring from HEAD"
-              git checkout HEAD -- "$filepath"
+              git checkout HEAD -- "$filepath" 2>/dev/null || echo "  (no previous version)"
+              reverted=$((reverted + 1))
             elif ! python3 -m json.tool "$filepath" > /dev/null 2>&1; then
               echo "REVERT: $filepath is invalid JSON, restoring from HEAD"
-              git checkout HEAD -- "$filepath"
+              git checkout HEAD -- "$filepath" 2>/dev/null || echo "  (no previous version)"
+              reverted=$((reverted + 1))
             else
-              echo "OK: $filepath ($size bytes)"
+              echo "OK: $fname ($size bytes)"
             fi
           done
+          echo ""
+          echo "Files reverted: ${reverted}"
 
       - name: Check for changes
         id: changes

@@ -27,19 +27,8 @@ FANDOM_WIKIS = [
     "https://morimens.fandom.com",
 ]
 
-# Character ID -> Fandom voice/quote page title
-VOICE_PAGE_MAP = {
-    "tulu": "Tulu/Voice",
-    "doll": "Doll/Voice",
-    "ramona": "Ramona/Voice",
-    "alva": "Alva/Voice",
-    "lily": "Lily/Voice",
-    "24": "24_(character)/Voice",
-    "miryam": "Miryam/Voice",
-    "tawil": "Tawil/Voice",
-    "celeste": "Celeste/Voice",
-    "liz": "Liz/Voice",
-}
+# Character ID -> Fandom voice/quote page title (shared module)
+from character_mapping import VOICE_PAGE_MAP
 
 TRIGGER_MAP = {
     "login": ["login", "登录", "ログイン"],
