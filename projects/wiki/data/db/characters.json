@@ -150,9 +150,7 @@
       "realm": "chaos",
       "role": "attack",
       "is_limited": true,
-      "obtain": "特殊获取",
-      "acquisition": "special",
-      "acquisition_note": "special acquisition method (非标准卡池获取)",
+      "obtain": "限定活动唤醒",
       "aliases": [
         "环拉"
       ],
@@ -182,9 +180,9 @@
         "design_note": "制作人最喜欢的角色。"
       },
       "description_en": "SSR Chaos DPS Awakener (limited). Timeworn variant of Ramona centered on Negentropy and card manipulation. Can recall large amounts of Strike cards to synergize with team burst. Community nickname: \"Ring Ramona\".",
-      "obtain_en": "Special Acquisition",
+      "obtain_en": "Limited Event Summon",
       "description_ja": "SSR混沌攻撃型覚醒体（限定）。環行バリアント。",
-      "obtain_ja": "特殊獲得方法",
+      "obtain_ja": "限定イベント召喚",
       "role_in_team": "大招召回打击卡，配合希洛破链一击爆发。环娜的大招为复制，独立于牌库之外。仅3费降费。",
       "dev_notes": "技能由制作人Light亲手设计。核心意图：从过去经历中获得力量（复制上回合最后打出的卡牌）。V1.1 PV结尾台词：'无论失败多少次，我终将拯救你。'制作人个人最特别的角色。与熔毁朵尔、血链希洛、诞妄墨菲同期构思。"
     },
@@ -322,29 +320,33 @@
     {
       "id": "nodera",
       "name": "诺缔拉",
-      "name_en": "Nodera",
+      "name_en": "Nautila",
       "rarity": "SSR",
       "realm": "chaos",
-      "role": "attack",
+      "role": "defense",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [
-        "鹦鹉螺"
+        "鹦鹉螺",
+        "Nautila",
+        "诺缇菈"
       ],
       "tags": [
-        "输出"
+        "防御",
+        "护盾",
+        "反击"
       ],
-      "description": "混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。角色设计灵感来自鹦鹉螺，战斗风格以循环打击为主。常驻池可获取的混沌输出角色。常见配队：Ultra Poison Team (Beginner Recommended)。核心联携：反击缩放、护盾打击。",
+      "description": "混沌界域防御型唤醒体，社区别称「鹦鹉螺」。全游戏最高基础防御，擅长护盾与反击。常驻池可获取的核心防御角色，可适配任意界域队伍。常见配队：Ultra Poison Team (Beginner Recommended)。核心联携：反击缩放、护盾打击。",
       "portrait_url": null,
       "skills": {
-        "role_in_team": "混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。以循环打击为核心战斗风格。",
+        "role_in_team": "混沌界域核心防御型唤醒体。全游戏最高基础防御，护盾+反击专精。混沌灵活性使其可加入任意界域队伍担任生存位。",
         "_data_source": "待从公开wiki补充具体技能数据"
       },
-      "description_en": "SSR Chaos DPS Awakener (standard). Design inspired by the nautilus; combat style revolves around cyclical strikes. Standard pool DPS option for Chaos teams. Key synergy: 反击缩放, 护盾打击.",
+      "description_en": "SSR Chaos Defense Awakener (standard). Highest base defense in the game. Shield and counter-attack specialist. Chaos flexibility allows her to slot into any realm team as the survival anchor. Key synergy: Counter Scaling, Shield Strike.",
       "obtain_en": "Standard/Event Summon",
-      "description_ja": "SSR混沌攻撃型覚醒体（恒常）。恒常プールで入手可能。",
+      "description_ja": "SSR混沌防御型覚醒体（恒常）。ゲーム最高の基礎防御。シールドと反撃の専門家。恒常プールで入手可能。",
       "obtain_ja": "恒常/イベント召喚",
-      "role_in_team": "混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。以循环打击为核心战斗风格。",
+      "role_in_team": "混沌界域核心防御型唤醒体。全游戏最高基础防御，护盾+反击专精。混沌灵活性使其可加入任意界域队伍担任生存位。",
       "_data_source": "待从公开wiki补充具体技能数据"
     },
     {
@@ -1177,12 +1179,11 @@
       "description": "超维界域T0限定输出角色，别称「水仙夫人」。v1.1版本进行过重做，拥有全游戏最多功能的狂气爆发之一。超维队的顶级限定主C选择。",
       "portrait_url": "assets/images/portraits/daffodil.png",
       "skills": {
-        "command_cards": [
-          {
-            "name": "Awaker",
-            "effect": ", staying hidden by various means.\n* Lady Daffodil has mastered the ability to move freely through dimensions. Because of that, the committee's attempts to capture her always failed."
-          }
-        ],
+        "exalt": {
+          "name": "狂气爆发",
+          "effect": "生成免费洞察力(Insight)，可用于恢复算力和额外抽牌。特定条件下创建千幻镜(Thousand Mirage)的定制复制。"
+        },
+        "command_cards_note": "核心技能为「断颈一击」，可配合卡茜亚的隔空取物从超维空间拉出再打一次。需要前期养成才能发挥全部实力。",
         "role_in_team": "超维主C，配合卡茜亚可实现现版本越级最强输出组合"
       },
       "description_en": "SSR Ultra DPS Awakener (limited). T0-tier Ultra carry, known as \"Lady Daffodil\". Reworked in v1.1 with one of the most versatile Exalt abilities in the game. Top-tier limited carry for Ultra teams.",
@@ -1628,9 +1629,7 @@
       "name": "24",
       "name_en": "24",
       "rarity": "SSR",
-      "realm": "all",
-      "realms": ["chaos", "aequor", "caro", "ultra"],
-      "realm_note": "four-realm adaptation (四领域适性) — works across all four realms",
+      "realm": "chaos",
       "role": "attack",
       "is_limited": true,
       "obtain": "限定活动唤醒",
@@ -1640,7 +1639,7 @@
         "限定",
         "最强通用角色"
       ],
-      "description": "混沌界域限定输出角色，v1.5推出，被社区认为是最强通用角色。以狂气爆发为主要输出手段，可在混沌队(拉蒙娜+朵尔+奥吉尔+24)或跨界域队伍中使用。泛用性极强。常见配队：#24 Flesh Variant、#24 Chaos National Team、#24 Deep Sea Variant。核心联携：24万能适配。",
+      "description": "混沌界域限定输出角色，v1.5推出，被社区认为是最强通用角色。四领域适性（可适配全部四个界域）。以狂气爆发为主要输出手段，可在混沌队(拉蒙娜+朵尔+奥吉尔+24)或跨界域队伍中使用。泛用性极强。常见配队：#24 Flesh Variant、#24 Chaos National Team、#24 Deep Sea Variant。核心联携：24万能适配。",
       "portrait_url": null,
       "first_banner_version": "1.5",
       "skills": {
@@ -1789,13 +1788,8 @@
       "portrait_url": "assets/images/portraits/mouchette.png",
       "first_banner_version": "2.3",
       "skills": {
-        "command_cards": [
-          {
-            "name": "Defense",
-            "effect": "-\n|Mist Realm Vestige\n|"
-          }
-        ],
-        "role_in_team": "混沌界域限定输出角色，v2.3推出。打击型DPS，以物理打击伤害为核心输出方式。名字来源于法语「小苍蝇」。"
+        "role_in_team": "混沌界域限定输出角色，v2.3推出。打击型DPS，以物理打击伤害为核心输出方式。名字来源于法语「小苍蝇」。",
+        "_data_source": "待从公开wiki补充具体技能数据"
       },
       "description_en": "SSR Chaos Defense Awakener (limited). Chaos frontline with defensive capabilities.",
       "obtain_en": "Limited Event Summon",
@@ -1895,7 +1889,7 @@
     {
       "id": "helot",
       "name": "血链·希洛",
-      "name_en": "Helot: Catena",
+      "name_en": "Helot Catena",
       "rarity": "SSR",
       "realm": "caro",
       "role": "attack",
