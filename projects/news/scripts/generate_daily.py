@@ -66,6 +66,20 @@ PLATFORM_NAMES = {
     'qq': 'QQ频道',
     'qooapp': 'QooApp',
     'epic': 'Epic Games Store',
+    # 日語
+    'gamerch': 'Gamerch Wiki',
+    'note_com': 'Note.com',
+    # 韓国語追加
+    'ruliweb': 'Ruliweb',
+    # ロシア語
+    'vkplay': 'VK Play',
+    'stopgame': 'StopGame.ru',
+    # Global English
+    'gacharevenue': 'GACHAREVENUE',
+    'miraheze_wiki': 'Miraheze Wiki',
+    # 中文补充
+    'gamekee': 'GameKee Wiki',
+    'huiji_wiki': '灰机Wiki',
 }
 
 CUTOFF_HOURS = 24

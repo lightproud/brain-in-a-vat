@@ -91,6 +91,20 @@ KNOWN_SOURCES = [
     'instagram',
     'qooapp',
     'epic',
+    # 日语扩展
+    'gamerch',
+    'note_com',
+    # 韩语扩展
+    'ruliweb',
+    # 俄语平台
+    'vkplay',
+    'stopgame',
+    # 全球英语
+    'gacharevenue',
+    'miraheze_wiki',
+    # 中文补充
+    'gamekee',
+    'huiji_wiki',
 ]
 
 
