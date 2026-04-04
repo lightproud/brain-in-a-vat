@@ -776,7 +776,7 @@ def fetch_appstore_reviews():
     """从 App Store / Google Play 获取近期评论趋势。"""
     items = []
     # Apple App Store RSS
-    appstore_id = os.environ.get("APPSTORE_APP_ID", "")
+    appstore_id = os.environ.get("APPSTORE_APP_ID", "6447354150")
     if appstore_id:
         for country in ["cn", "us", "jp", "kr"]:
             try:
@@ -1054,10 +1054,7 @@ def fetch_fivech():
 
 def fetch_google_play():
     """从 Google Play Store 获取忘却前夜评论。"""
-    gp_package = os.environ.get("GOOGLE_PLAY_PACKAGE", "")
-    if not gp_package:
-        logger.info("Google Play: GOOGLE_PLAY_PACKAGE not set, skipping")
-        return []
+    gp_package = os.environ.get("GOOGLE_PLAY_PACKAGE", "com.qookkagames.z1.gp.hk")
 
     items = []
     # Google Play 没有官方评论 API，使用第三方数据解析

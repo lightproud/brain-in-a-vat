@@ -45,8 +45,6 @@ jobs:
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           TELEGRAM_CHANNELS: ${{ secrets.TELEGRAM_CHANNELS }}
           DC_GALLERY_ID: ${{ secrets.DC_GALLERY_ID }}
-          APPSTORE_APP_ID: ${{ secrets.APPSTORE_APP_ID }}
-          GOOGLE_PLAY_PACKAGE: ${{ secrets.GOOGLE_PLAY_PACKAGE }}
         run: python projects/news/scripts/collect_global.py
 
       - name: Split output by platform
