@@ -1,12 +1,12 @@
 {
   "date": "2026-04-02",
-  "messages": 16222,
+  "messages": 16965,
   "unique_authors": 336,
-  "reactions_total": 2730,
-  "attachments": 795,
+  "reactions_total": 2805,
+  "attachments": 825,
   "channel_activity": {
+    "🔸morimens-game-chat": 8795,
     "🔸綜合討論": 3315,
-    "🔸morimens-game-chat": 8052,
     "🔸晒卡分享": 10,
     "🔸交友频道": 12,
     "🔸русский-канал": 72,
@@ -67,9 +67,10 @@
     "1489106674915741698": 1
   },
   "hourly_activity": {
+    "22": 608,
+    "23": 365,
     "20": 898,
     "21": 860,
-    "22": 202,
     "8": 949,
     "9": 595,
     "10": 216,
@@ -82,7 +83,6 @@
     "17": 916,
     "18": 876,
     "19": 671,
-    "23": 28,
     "0": 505,
     "1": 499,
     "2": 437,
@@ -93,9 +93,8 @@
     "7": 446
   },
   "message_types": {
-    "0": 3939,
-    "19": 2002,
-    "20": 2
+    "0": 534,
+    "19": 209
   },
   "top_reacted_messages": [
     {
@@ -146,6 +145,13 @@
       "author": "vxvendetta97",
       "reactions": 10,
       "channel": "BOSS COMPENDIUM"
+    },
+    {
+      "id": "1489395935959322665",
+      "content": "我爱你们❤️ ❤️",
+      "author": "amen5470",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1489244410725269693",
@@ -228,13 +234,6 @@
       "id": "1489074894405632252",
       "content": "why is it always mr beast",
       "author": "monchi3524",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1489097856894894081",
-      "content": "EZ <@157679037240573953> <@595414429957619725> <@113374123798859776> <@147141432",
-      "author": "angbak",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
     }
