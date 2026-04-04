@@ -45,7 +45,7 @@ jobs:
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           TELEGRAM_CHANNELS: ${{ secrets.TELEGRAM_CHANNELS }}
           DC_GALLERY_ID: ${{ secrets.DC_GALLERY_ID }}
-          QQ_BOT_TOKEN: ${{ secrets.QQ_BOT_TOKEN }}
+          QQ_CHANNEL: ${{ secrets.QQ_CHANNEL }}
         run: python projects/news/scripts/collect_global.py
 
       - name: Split output by platform
