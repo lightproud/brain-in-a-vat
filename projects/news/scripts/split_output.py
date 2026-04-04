@@ -89,6 +89,8 @@ KNOWN_SOURCES = [
     'telegram',
     'twitch',
     'instagram',
+    'qooapp',
+    'epic',
 ]
 
 

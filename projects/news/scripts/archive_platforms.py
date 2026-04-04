@@ -59,6 +59,7 @@ PLATFORMS = [
     'appstore', 'google_play', 'tiktok',
     'pixiv', 'lofter', 'xianyu', 'taobao',
     'qq', 'facebook', 'telegram', 'twitch', 'instagram',
+    'qooapp', 'epic',
 ]
 
 

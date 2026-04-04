@@ -64,6 +64,8 @@ PLATFORM_NAMES = {
     'xianyu': '闲鱼',
     'taobao': '淘宝',
     'qq': 'QQ频道',
+    'qooapp': 'QooApp',
+    'epic': 'Epic Games Store',
 }
 
 CUTOFF_HOURS = 24

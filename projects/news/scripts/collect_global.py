@@ -60,6 +60,8 @@ SOURCE_MAP = {
     'lofter': 'lofter',
     'xianyu': 'xianyu',
     'taobao': 'taobao',
+    'qooapp': 'qooapp',
+    'epic': 'epic',
     'discord': 'discord',
     'facebook': 'facebook',
     'telegram': 'telegram',
@@ -125,6 +127,8 @@ def run_zero_cost_collectors() -> list[dict]:
         ('Lofter', c.fetch_lofter),
         ('Xianyu', c.fetch_xianyu),
         ('Taobao Merch', c.fetch_taobao_merch),
+        ('QooApp', c.fetch_qooapp),
+        ('Epic Store', c.fetch_epic_store),
     ]
 
     # Also run API-key collectors if keys are available

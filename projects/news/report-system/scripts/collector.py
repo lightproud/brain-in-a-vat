@@ -1091,6 +1091,196 @@ def fetch_google_play():
     return items
 
 
+def fetch_qooapp():
+    """从 QooApp 获取忘却前夜评论和评分。"""
+    # QooApp App IDs: 23472 (HK/MO/SG/MY), 23471 (Taiwan), 138538 (Global)
+    qooapp_ids = [
+        ("23472", "hk", "zh"),
+        ("23471", "tw", "zh"),
+        ("138538", "global", "en"),
+    ]
+    items = []
+
+    for app_id, region, lang in qooapp_ids:
+        try:
+            resp = _get(
+                f"https://m-apps.qoo-app.com/en-US/app/{app_id}",
+                headers={"User-Agent": "Mozilla/5.0"},
+            )
+            html = resp.text
+
+            import re as _re
+
+            # Extract review entries from QooApp HTML
+            for match in _re.finditer(
+                r'class="comment-content"[^>]*>.*?'
+                r'class="[^"]*star[^"]*"[^>]*data-score="(\d)".*?'
+                r'class="comment-text"[^>]*>([^<]+)</.*?'
+                r'class="comment-date"[^>]*>([^<]+)',
+                html, _re.DOTALL
+            ):
+                score, text, date_str = match.groups()
+                rating = int(score)
+                text = text.strip()
+                if not text:
+                    continue
+
+                sentiment = '好评' if rating >= 4 else ('中评' if rating == 3 else '差评')
+                items.append(_make_item(
+                    title=f"[QooApp {sentiment}] {text[:40]}",
+                    summary=text[:300],
+                    source="qooapp",
+                    platform_region=region,
+                    time_str=date_str.strip(),
+                    url=f"https://m-apps.qoo-app.com/en-US/app/{app_id}",
+                    engagement=rating,
+                    is_hot=False,
+                    author="",
+                    lang=lang,
+                ))
+
+            # Also try the review API endpoint
+            try:
+                review_resp = _get(
+                    f"https://m-apps.qoo-app.com/en/app-review-detail/{app_id}",
+                    headers={"User-Agent": "Mozilla/5.0"},
+                )
+                review_html = review_resp.text
+                for match in _re.finditer(
+                    r'class="review-item"[^>]*>.*?'
+                    r'class="[^"]*score[^"]*"[^>]*>(\d).*?'
+                    r'class="[^"]*review-text[^"]*"[^>]*>([^<]+).*?'
+                    r'class="[^"]*time[^"]*"[^>]*>([^<]+)',
+                    review_html, _re.DOTALL
+                ):
+                    score, text, date_str = match.groups()
+                    rating = int(score)
+                    text = text.strip()
+                    if not text:
+                        continue
+                    sentiment = '好评' if rating >= 4 else ('中评' if rating == 3 else '差评')
+                    items.append(_make_item(
+                        title=f"[QooApp {sentiment}] {text[:40]}",
+                        summary=text[:300],
+                        source="qooapp",
+                        platform_region=region,
+                        time_str=date_str.strip(),
+                        url=f"https://m-apps.qoo-app.com/en/app-review-detail/{app_id}",
+                        engagement=rating,
+                        is_hot=False,
+                        author="",
+                        lang=lang,
+                    ))
+            except Exception:
+                pass
+
+            logger.info(f'QooApp ({region}): {len(items)} reviews')
+        except Exception as e:
+            logger.warning(f'QooApp ({region}) failed: {e}')
+
+    return items
+
+
+def fetch_epic_store():
+    """从 Epic Games Store 获取忘却前夜页面评分和评论。"""
+    slug = "morimens-61a2b4"
+    items = []
+
+    try:
+        # Epic GraphQL API for product info
+        resp = _get(
+            "https://store.epicgames.com/graphql",
+            params={
+                "operationName": "getCatalogOffer",
+                "variables": json.dumps({"locale": "en-US", "slug": slug}),
+                "extensions": json.dumps({"persistedQuery": {"version": 1}}),
+            },
+            headers={
+                "User-Agent": "Mozilla/5.0",
+                "Referer": f"https://store.epicgames.com/en-US/p/{slug}",
+            },
+        )
+        if resp.status_code == 200:
+            try:
+                data = resp.json()
+                product = data.get("data", {}).get("Catalog", {}).get("catalogOffer", {})
+                if product:
+                    title = product.get("title", "Morimens")
+                    desc = product.get("description", "")
+                    items.append(_make_item(
+                        title=f"[Epic Store] {title}",
+                        summary=desc[:300],
+                        source="epic",
+                        platform_region="global",
+                        time_str=product.get("effectiveDate", datetime.now(timezone.utc).isoformat()),
+                        url=f"https://store.epicgames.com/en-US/p/{slug}",
+                        engagement=0,
+                        is_hot=False,
+                        author="Epic Games Store",
+                        lang="en",
+                    ))
+            except (ValueError, KeyError):
+                pass
+    except Exception as e:
+        logger.warning(f"Epic GraphQL failed: {e}")
+
+    # Fallback: scrape the store page HTML for reviews/ratings
+    try:
+        resp = _get(
+            f"https://store.epicgames.com/en-US/p/{slug}",
+            headers={"User-Agent": "Mozilla/5.0"},
+        )
+        html = resp.text
+        import re as _re
+
+        # Look for user ratings/reviews in the page
+        rating_match = _re.search(r'"averageRating"\s*:\s*([\d.]+)', html)
+        count_match = _re.search(r'"ratingCount"\s*:\s*(\d+)', html)
+
+        if rating_match:
+            avg_rating = float(rating_match.group(1))
+            rating_count = int(count_match.group(1)) if count_match else 0
+            items.append(_make_item(
+                title=f"[Epic评分] Morimens ★{avg_rating:.1f} ({rating_count}条评价)",
+                summary=f"Epic Games Store 平均评分 {avg_rating:.1f}/5，共 {rating_count} 条评价",
+                source="epic",
+                platform_region="global",
+                time_str=datetime.now(timezone.utc).isoformat(),
+                url=f"https://store.epicgames.com/en-US/p/{slug}",
+                engagement=rating_count,
+                is_hot=rating_count > 100,
+                author="Epic Games Store",
+                lang="en",
+            ))
+
+        # Extract individual review snippets if visible
+        for match in _re.finditer(
+            r'"reviewText"\s*:\s*"([^"]{10,300})".*?"rating"\s*:\s*(\d)',
+            html, _re.DOTALL
+        ):
+            text, score = match.groups()
+            rating = int(score)
+            sentiment = '好评' if rating >= 4 else '差评'
+            items.append(_make_item(
+                title=f"[Epic {sentiment}] {text[:40]}",
+                summary=text[:300],
+                source="epic",
+                platform_region="global",
+                time_str=datetime.now(timezone.utc).isoformat(),
+                url=f"https://store.epicgames.com/en-US/p/{slug}",
+                engagement=rating,
+                is_hot=False,
+                author="",
+                lang="en",
+            ))
+
+        logger.info(f"Epic Store: {len(items)} items")
+    except Exception as e:
+        logger.warning(f"Epic Store scrape failed: {e}")
+
+    return items
+
+
 def fetch_tiktok():
     """从 TikTok (国际版) 搜索忘却前夜相关视频。"""
     items = []
