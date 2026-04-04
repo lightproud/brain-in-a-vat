@@ -1,42 +1,44 @@
 {
   "date": "2026-04-04",
-  "messages": 12893,
+  "messages": 14034,
   "unique_authors": 192,
-  "reactions_total": 1392,
-  "attachments": 528,
+  "reactions_total": 1489,
+  "attachments": 590,
   "channel_activity": {
-    "🔸綜合討論": 1461,
-    "🔸morimens-game-chat": 8037,
+    "🔸綜合討論": 1467,
+    "🔸morimens-game-chat": 8912,
+    "🔸русский-канал": 126,
+    "🔸canal-español": 95,
+    "🔸canal-português": 143,
+    "🔸traphase": 20,
+    "🔸lore-chat": 28,
+    "🔸team-building": 287,
+    "🔸general-chat": 847,
+    "🔸邀请码互助┊swap-invitation-codes": 17,
+    "🔸game-question": 1024,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 2,
+    "🔸机器人命令┊bot-commands": 23,
+    "Inactive code on Ads": 2,
+    "TV Error animation": 5,
+    "Team Building and Progression advice.": 2,
     "🔸剧情交流": 1,
     "🔸交友频道": 1,
     "🔸한국어-채팅방": 172,
-    "🔸русский-канал": 90,
     "🔸phòng-chat-tiếng-việt": 517,
-    "🔸canal-español": 90,
-    "🔸canal-português": 114,
     "🔸ruang-obrolan-indonesia": 128,
     "🔸ห้องสนทนาภาษาไทย": 29,
-    "🔸lore-chat": 24,
-    "🔸team-building": 279,
-    "🔸general-chat": 834,
-    "🔸邀请码互助┊swap-invitation-codes": 16,
-    "🔸game-question": 868,
-    "🔸机器人命令┊bot-commands": 22,
     "【代发】uw生日快乐！": 6,
     "建个随笔楼": 6,
     "媽媽孩子抱着我不肯放手": 7,
     "William says lock in": 3,
     "morimens sybau 💔": 2,
     "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 6,
-    "Team Building and Progression advice.": 1,
     "🔸阵容构建": 38,
     "🔸相位对弈": 6,
     "🔸deutscher-chatraum": 5,
     "【生贺】🥳🥳🥳": 11,
     "這個該如何有效率地獲得": 3,
-    "🔸traphase": 18,
     "菜雞四小強玩家的抱怨之旅": 4,
-    "TV Error animation": 3,
     "Get auto battle back! 恢复自动战斗": 2,
     "\"24\" lives matter": 2,
     "V2.4.3.7 在线维护公告": 7,
@@ -47,12 +49,10 @@
     "team building for 8-13": 2,
     "🔸忘却前夜┊morimens-tv": 1,
     "🔸游戏问题": 2,
-    "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
     "喚醒體資訊 : 呂佐夫": 1,
     "oc（oc）": 1,
     "韩语字幕显示不全/下方显示缺失": 1,
     "I can't enter the game": 3,
-    "Inactive code on Ads": 1,
     "I need help everything in the game is in another language even tho I have it on English": 4,
     "Game is in Chinese despite choosing English language": 4,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 8,
@@ -60,10 +60,12 @@
     "1489823522107818045": 1
   },
   "hourly_activity": {
+    "19": 481,
+    "20": 586,
+    "21": 455,
     "16": 826,
     "17": 425,
     "18": 685,
-    "19": 381,
     "15": 1044,
     "14": 743,
     "5": 730,
@@ -82,8 +84,8 @@
     "4": 376
   },
   "message_types": {
-    "0": 1867,
-    "19": 773
+    "0": 734,
+    "19": 407
   },
   "top_reacted_messages": [
     {
@@ -213,18 +215,18 @@
       "channel": "🔸canal-español"
     },
     {
-      "id": "1490040813047119983",
-      "content": "<:ouch:1356053095691452457>",
-      "author": "sweet_25367",
+      "id": "1490094945644707871",
+      "content": "i hate that this doesn't kill",
+      "author": "arkaether",
       "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1490045416475983974",
-      "content": "内鬼消息，明早发停服公告",
-      "author": "ponponnyaru",
+      "id": "1490102568679116900",
+      "content": "fuck ur -75% clem",
+      "author": "arkaether",
       "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }
