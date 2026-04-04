@@ -1,28 +1,31 @@
 {
   "date": "2026-04-04",
-  "messages": 4484,
+  "messages": 10253,
   "unique_authors": 192,
-  "reactions_total": 353,
-  "attachments": 224,
+  "reactions_total": 1118,
+  "attachments": 425,
   "channel_activity": {
-    "🔸綜合討論": 701,
-    "🔸阵容构建": 34,
-    "🔸morimens-game-chat": 1110,
-    "🔸相位对弈": 5,
+    "🔸綜合討論": 1159,
+    "🔸阵容构建": 38,
+    "🔸morimens-game-chat": 6110,
+    "🔸相位对弈": 6,
+    "🔸deutscher-chatraum": 5,
+    "🔸phòng-chat-tiếng-việt": 495,
+    "🔸canal-español": 51,
+    "🔸canal-português": 72,
+    "🔸ruang-obrolan-indonesia": 124,
+    "🔸lore-chat": 18,
+    "🔸team-building": 219,
+    "🔸general-chat": 768,
+    "🔸邀请码互助┊swap-invitation-codes": 13,
+    "🔸game-question": 751,
+    "【生贺】🥳🥳🥳": 11,
+    "建个随笔楼": 5,
+    "這個該如何有效率地獲得": 3,
     "🔸한국어-채팅방": 169,
-    "🔸deutscher-chatraum": 3,
     "🔸русский-канал": 73,
-    "🔸phòng-chat-tiếng-việt": 483,
-    "🔸canal-español": 32,
-    "🔸canal-português": 42,
-    "🔸ruang-obrolan-indonesia": 68,
     "🔸ห้องสนทนาภาษาไทย": 22,
     "🔸traphase": 18,
-    "🔸lore-chat": 8,
-    "🔸team-building": 210,
-    "🔸general-chat": 687,
-    "🔸邀请码互助┊swap-invitation-codes": 11,
-    "🔸game-question": 680,
     "🔸机器人命令┊bot-commands": 16,
     "菜雞四小強玩家的抱怨之旅": 4,
     "TV Error animation": 3,
@@ -32,7 +35,6 @@
     "English Language Setting Abnormality Issue Notice": 20,
     "Leigh wip!!!!": 2,
     "【English Translation】Opinions Collection": 1,
-    "這個該如何有效率地獲得": 2,
     "回坑玩家要怎樣抽&養成？": 6,
     "team building for 8-13": 2,
     "🔸忘却前夜┊morimens-tv": 1,
@@ -40,7 +42,6 @@
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
     "喚醒體資訊 : 呂佐夫": 1,
     "oc（oc）": 1,
-    "建个随笔楼": 3,
     "媽媽孩子抱着我不肯放手": 3,
     "韩语字幕显示不全/下方显示缺失": 1,
     "I can't enter the game": 3,
@@ -54,28 +55,36 @@
     "1489823522107818045": 1
   },
   "hourly_activity": {
-    "10": 147,
-    "11": 225,
-    "12": 259,
-    "13": 344,
+    "14": 743,
+    "15": 711,
+    "16": 10,
+    "5": 730,
+    "6": 1119,
+    "7": 849,
+    "8": 745,
+    "9": 550,
+    "10": 584,
+    "11": 916,
+    "12": 715,
+    "13": 472,
     "0": 388,
     "1": 566,
     "2": 520,
     "3": 259,
-    "4": 376,
-    "5": 367,
-    "14": 56,
-    "6": 399,
-    "7": 171,
-    "8": 155,
-    "9": 252
+    "4": 376
   },
   "message_types": {
-    "0": 1540,
-    "19": 474,
-    "20": 1
+    "19": 2032,
+    "0": 3737
   },
   "top_reacted_messages": [
+    {
+      "id": "1489997091471233085",
+      "content": "「……守密人怎么会喜欢吃这种东西？」\n无cp倾向，祝尤乌生日快乐🎉🎉",
+      "author": "resazur1n",
+      "reactions": 13,
+      "channel": "【生贺】🥳🥳🥳"
+    },
     {
       "id": "1489857696281788476",
       "content": "Keeper\n  Due to some technical anomalies, Keepers who installed the client after",
@@ -89,6 +98,69 @@
       "author": "sunstopshining",
       "reactions": 8,
       "channel": "William says lock in"
+    },
+    {
+      "id": "1489909313433501846",
+      "content": "nah im just a bbit jumpy atm cos i had to resolve a similar convo that turned ag",
+      "author": "nikolazuli",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489878230650589276",
+      "content": "<@702167871144591461>",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489880907249750178",
+      "content": "",
+      "author": "arkaether",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490005681133322411",
+      "content": "靠杯 說到穿越 我同事長的超像無職轉生主角轉生前",
+      "author": "theal8893",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1489872140365991986",
+      "content": "",
+      "author": "mira.ly_chan",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489874299568259102",
+      "content": "this is <@88644018673582080>",
+      "author": "arisuu0604",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489885922827833435",
+      "content": "🫡",
+      "author": "fishhazardthewizard",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489945194320232579",
+      "content": "Get 4 friends instead so your friend can go 0 12",
+      "author": "2ndselna",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1489997253836804258",
+      "content": "fighting N with hugs and kisses",
+      "author": "blecnes.",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1489880611601649674",
@@ -112,109 +184,39 @@
       "channel": "🔸canal-español"
     },
     {
-      "id": "1489787019495211071",
-      "content": "One down",
-      "author": "umagan_",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1489928496410136688",
-      "content": "||在 再不分||",
-      "author": "0.0._.0_0.",
+      "id": "1490008250538659861",
+      "content": "我超濕",
+      "author": "xingxiu_0209",
       "reactions": 4,
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1489878379615490179",
-      "content": "已严肃被一脚踹死",
-      "author": "be_queitplease",
+      "id": "1489907320749162607",
+      "content": "For the newbies out there, don't forget to redeem codes for freebies ( The timer",
+      "author": "moyashi0672",
       "reactions": 4,
-      "channel": "🔸阵容构建"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1489938990596358164",
-      "content": "thats sweet thank you, its only my first video but ill be looking to make more :",
-      "author": "princess.goth",
+      "id": "1489918314670198824",
+      "content": "a third lesbian has hit Morichat",
+      "author": "jyeusu",
       "reactions": 4,
-      "channel": "🔸team-building"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1489822297664655370",
-      "content": "YouSavedMorimens is no longer active but it's on ads (source reddit)",
-      "author": "angbak",
+      "id": "1489938185575464983",
+      "content": "You send this genshin gif again and ill ayakonoji you i swear",
+      "author": "tnimreppep",
       "reactions": 4,
-      "channel": "Inactive code on Ads"
-    },
-    {
-      "id": "1489974783495110829",
-      "content": "把莱克活动命轮带上 再赌赌随机数",
-      "author": "galagalaguo",
-      "reactions": 3,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1489798186708107274",
-      "content": "My dumbass would accidently get banned",
-      "author": "guava3442",
-      "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1489824116470186084",
-      "content": "",
-      "author": "arisuu0604",
-      "reactions": 3,
+      "id": "1489939318448455910",
+      "content": "This is such a roundabout way of Ellie saying she wants Cheri bathwater",
+      "author": "jyeusu",
+      "reactions": 4,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1489829279641632778",
-      "content": "<:please:1356053110375714817> but think about Arachne",
-      "author": "fishhazardthewizard",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1489855070873980969",
-      "content": "then again i missed a 98% crit exalt on vortice yesterday",
-      "author": "arkaether",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1489923578651738142",
-      "content": "課長就先抽地瓜詩人\n打融災蠻強\n新角出來後也能用\n很難被淘汰",
-      "author": "fool6692",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1489925434492850271",
-      "content": "<:Tawil_loneliness:1460158738110349372>",
-      "author": "sweet_25367",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1489926250372923463",
-      "content": "之前有佬說80才萌新 前陣子終於80了 笑死",
-      "author": "theal8893",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1489930531444363335",
-      "content": "呂佐夫《黑潮：深海覺醒》 \n\n界域：深海\n\n等級60 \n\n體質：160 \n\n攻擊力：115 \n\n防禦力：145 \n\n\n主屬性(3啟至 +12)：暴擊傷害+28.",
-      "author": "corposant_1003",
-      "reactions": 3,
-      "channel": "喚醒體資訊 : 呂佐夫"
-    },
-    {
-      "id": "1489979534252966038",
-      "content": "~~南通前夜含金量還在上升~~",
-      "author": "yy42974466",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
     }
   ]
 }
