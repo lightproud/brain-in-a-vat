@@ -48,9 +48,16 @@ def _refresh_cutoff():
 # 多语言搜索关键词
 KEYWORDS = {
     "zh": ["忘却前夜", "忘卻前夜"],
-    "en": ["Morimens"],
+    "en": ["Morimens", "morimens"],
     "ja": ["忘却前夜", "モリメンス"],
     "ko": ["망각전야", "모리멘스", "Morimens"],
+    "vi": ["Morimens"],
+    "th": ["Morimens"],
+    "es": ["Morimens"],
+    "pt": ["Morimens"],
+    "ru": ["Morimens"],
+    "de": ["Morimens"],
+    "fr": ["Morimens"],
 }
 ALL_KEYWORDS = [kw for group in KEYWORDS.values() for kw in group]
 
@@ -576,44 +583,99 @@ def fetch_naver_cafe():
 
 
 def fetch_dcinside():
-    """从 DCInside 搜索韩国忘却前夜 Gallery。"""
-    dc_gallery_id = os.environ.get("DC_GALLERY_ID", "")
-    if not dc_gallery_id:
-        logger.info("DCInside: DC_GALLERY_ID not set, skipping")
-        return []
-
+    """从 DCInside 搜索韩国忘却前夜 Gallery（미니 갤러리）。"""
+    dc_gallery_id = os.environ.get("DC_GALLERY_ID", "morimens")
     items = []
+
     try:
-        data = _get(
-            f"https://gall.dcinside.com/board/lists/?id={dc_gallery_id}&page=1",
-            headers={"Referer": "https://gall.dcinside.com"},
+        resp = _get(
+            f"https://gall.dcinside.com/mgallery/board/lists/",
+            params={"id": dc_gallery_id, "page": 1},
+            headers={
+                "Referer": "https://gall.dcinside.com",
+                "User-Agent": "Mozilla/5.0",
+            },
         )
-        # DCInside 返回 HTML，需要简单解析
-        # 实际使用时建议用 BeautifulSoup
-        logger.info(f"DCInside: attempted gallery {dc_gallery_id}")
+        html = resp.text
+
+        # Parse article list from HTML
+        import re as _re
+        for match in _re.finditer(
+            r'data-no="(\d+)".*?'
+            r'class="gall_tit[^"]*"[^>]*>.*?<a[^>]*>([^<]+)</a>.*?'
+            r'class="gall_date"[^>]*title="([^"]*)"',
+            html, _re.DOTALL
+        ):
+            article_no, title, date_str = match.groups()
+            title = title.strip()
+            if not title or title in ('공지', '설문'):
+                continue
+            items.append(_make_item(
+                title=title,
+                summary="",
+                source="dcinside",
+                platform_region="kr",
+                time_str=date_str.strip(),
+                url=f"https://gall.dcinside.com/mgallery/board/view/?id={dc_gallery_id}&no={article_no}",
+                engagement=0,
+                is_hot=False,
+                author="",
+                lang="ko",
+            ))
+
+        logger.info(f'DCInside "{dc_gallery_id}": {len(items)} articles')
     except Exception as e:
-        logger.warning(f"DCInside failed: {e}")
+        logger.warning(f'DCInside "{dc_gallery_id}" failed: {e}')
 
     return items
 
 
 def fetch_arca_live():
-    """从 Arca.live 搜索韩国忘却前夜频道。"""
-    arca_channel = os.environ.get("ARCA_CHANNEL", "")
-    if not arca_channel:
-        logger.info("Arca.live: ARCA_CHANNEL not set, skipping")
-        return []
-
+    """从 Arca.live 抓取韩国忘却前夜频道 (forgettingeve)。"""
+    arca_channel = os.environ.get("ARCA_CHANNEL", "forgettingeve")
     items = []
-    try:
-        data = _get(
-            f"https://arca.live/b/{arca_channel}",
-            params={"mode": "best", "p": 1},
-        )
-        # Arca.live 返回 HTML
-        logger.info(f"Arca.live: attempted channel {arca_channel}")
-    except Exception as e:
-        logger.warning(f"Arca.live failed: {e}")
+
+    for mode in ("best", ""):  # best=인기, ""=최신
+        try:
+            params = {"p": 1}
+            if mode:
+                params["mode"] = mode
+            resp = _get(
+                f"https://arca.live/b/{arca_channel}",
+                params=params,
+                headers={"User-Agent": "Mozilla/5.0"},
+            )
+            html = resp.text
+
+            # Parse article list from HTML using regex (avoids BeautifulSoup dependency)
+            import re as _re
+            # Match article rows: data-url="/b/forgettingeve/12345"
+            for match in _re.finditer(
+                r'data-url="(/b/[^"]+/(\d+))"[^>]*>.*?'
+                r'class="title"[^>]*>([^<]+)</a>.*?'
+                r'class="col-time"[^>]*>([^<]+)',
+                html, _re.DOTALL
+            ):
+                path, article_id, title, time_text = match.groups()
+                title = title.strip()
+                if not title:
+                    continue
+                items.append(_make_item(
+                    title=title,
+                    summary="",
+                    source="arca_live",
+                    platform_region="kr",
+                    time_str=time_text.strip(),
+                    url=f"https://arca.live{path}",
+                    engagement=0,
+                    is_hot=(mode == "best"),
+                    author="",
+                    lang="ko",
+                ))
+
+            logger.info(f'Arca.live "{arca_channel}" mode={mode or "latest"}: {len(items)} items')
+        except Exception as e:
+            logger.warning(f'Arca.live "{arca_channel}" mode={mode or "latest"} failed: {e}')
 
     return items
 

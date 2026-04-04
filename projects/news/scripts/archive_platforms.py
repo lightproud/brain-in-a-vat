@@ -51,7 +51,15 @@ OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'
 ARCHIVE_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'platforms'
 
 # Discord has its own archiver — skip it here
-PLATFORMS = ['steam', 'bilibili', 'official', 'reddit', 'twitter', 'youtube', 'nga', 'taptap']
+PLATFORMS = [
+    'steam', 'bilibili', 'official', 'reddit', 'twitter', 'youtube', 'nga', 'taptap',
+    # Phase 1 扩展
+    'weibo', 'xiaohongshu', 'douyin', 'tieba', 'zhihu', 'bahamut',
+    'naver_cafe', 'dcinside', 'arca_live', 'fivech',
+    'appstore', 'google_play', 'tiktok',
+    'pixiv', 'lofter', 'xianyu', 'taobao',
+    'qq', 'facebook', 'telegram', 'twitch', 'instagram',
+]
 
 
 def item_key(item: dict) -> str:
