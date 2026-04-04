@@ -42,6 +42,7 @@ SOURCE_MAP = {
     'nga': 'nga',
     'taptap': 'taptap',
     'steam': 'steam_review',
+    'steam_discussion': 'steam_discussion',
     'weibo': 'weibo',
     'xiaohongshu': 'xiaohongshu',
     'douyin': 'douyin',

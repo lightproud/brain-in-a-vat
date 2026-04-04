@@ -65,6 +65,7 @@ KNOWN_SOURCES = [
     'reddit',
     'nga',
     'official',
+    'steam_discussion',
     # Phase 1: 全球扩展平台
     'weibo',
     'xiaohongshu',

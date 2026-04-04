@@ -1,47 +1,14 @@
 {
-  "updated_at": "2026-04-04T16:22:22.644055+00:00",
-  "summary": "忘却前夜×沙耶之歌 联动正式预告；【忘却前夜×沙耶之歌】入坑杂谈 & 入坑攻略；Discord 社区日报 (2026-04-04)；【忘却前夜】角色攻略之血链·希洛；Steam 整体评价：特别好评 (88%, 1231条评论)。",
-  "sources_run": 0,
+  "updated_at": "2026-04-04T16:37:06.427005+00:00",
+  "summary": "今日热门话题：Discord 社区日报 (2026-04-04)。",
   "news": [
     {
-      "title": "忘却前夜×沙耶之歌 联动正式预告",
-      "summary": "克苏鲁题材Roguelite卡牌游戏《忘却前夜》公布与虚渊玄名作《沙耶之歌》的联动预告。两部以「疯狂」与「爱」为基调的作品将在同一世界相遇。",
-      "source": "official",
-      "time": "2026-03-20T00:00:00+00:00",
-      "url": "https://news.17173.com/content/03202026/154110450.shtml",
-      "engagement": 3832,
-      "is_hot": true,
-      "author": "官方",
-      "tags": [
-        "official",
-        "collaboration",
-        "saya-no-uta",
-        "沙耶之歌"
-      ]
-    },
-    {
-      "title": "【忘却前夜×沙耶之歌】入坑杂谈 & 入坑攻略",
-      "summary": "B站UP主萨摩_不耶发布的沙耶之歌联动入坑攻略视频，热度3832。",
-      "source": "bilibili",
-      "time": "2026-04-03T03:29:59+00:00",
-      "url": "https://www.bilibili.com/video/av116338651562024",
-      "engagement": 3832,
-      "is_hot": true,
-      "author": "萨摩_不耶",
-      "tags": [
-        "手机游戏",
-        "攻略",
-        "沙耶之歌",
-        "联动"
-      ]
-    },
-    {
       "title": "Discord 社区日报 (2026-04-04)",
-      "summary": "今日 2,469 条消息，192 位活跃用户，201 次反应。热门频道：🔸綜合討論(571)、🔸game-question(493)、🔸phòng-chat-tiếng-việt(477)、🔸general-chat(387)、🔸한국어-채팅방(147)",
+      "summary": "今日 4,484 条消息，192 位活跃用户，353 次反应。热门频道：🔸morimens-game-chat(1110)、🔸綜合討論(701)、🔸general-chat(687)、🔸game-question(680)、🔸phòng-chat-tiếng-việt(483)",
       "source": "discord",
-      "time": "2026-04-04T14:05:20.324258+00:00",
+      "time": "2026-04-04T16:37:06.426579+00:00",
       "url": "",
-      "engagement": 2469,
+      "engagement": 4484,
       "is_hot": true,
       "author": "Discord Archiver",
       "tags": [
@@ -50,171 +17,24 @@
       ]
     },
     {
-      "title": "【忘却前夜】角色攻略之血链·希洛",
-      "summary": "B站UP主萨摩_不耶发布的血链·希洛角色攻略视频。",
-      "source": "bilibili",
-      "time": "2026-04-03T05:27:49+00:00",
-      "url": "https://www.bilibili.com/video/av116339104547427",
-      "engagement": 2389,
-      "is_hot": true,
-      "author": "萨摩_不耶",
-      "tags": [
-        "手机游戏",
-        "攻略",
-        "血链希洛"
-      ]
-    },
-    {
-      "title": "Steam 整体评价：特别好评 (88%, 1231条评论)",
-      "summary": "Steam整体好评率88%（1231条评论），近30日好评率81%（154条评论）。近期差评主要集中在英语语言设置无效问题。",
-      "source": "official",
-      "time": "2026-04-04T22:00:00+00:00",
-      "url": "https://store.steampowered.com/app/3052450/Morimens/",
-      "engagement": 1231,
-      "is_hot": true,
-      "author": "Steam",
-      "tags": [
-        "steam",
-        "review-summary"
-      ],
-      "language": "all",
-      "metadata": {
-        "overall_positive_rate": 88,
-        "overall_review_count": 1231,
-        "recent_positive_rate": 81,
-        "recent_review_count": 154,
-        "overall_verdict": "Very Positive",
-        "recent_verdict": "Very Positive"
-      }
-    },
-    {
-      "title": "无专造两回合双超限莫斯，环法莱莫有多阴?",
-      "summary": "",
-      "source": "bilibili",
-      "time": "2026-04-03T03:56:07+00:00",
-      "url": "https://www.bilibili.com/video/av116338735453574",
-      "engagement": 684,
-      "is_hot": true,
-      "author": "路过的耄耋",
-      "tags": [
-        "手机游戏"
-      ]
-    },
-    {
-      "title": "［相位］我说哀兵必胜，你👂🐉🐴？",
-      "summary": "",
-      "source": "bilibili",
-      "time": "2026-04-03T08:39:51+00:00",
-      "url": "https://www.bilibili.com/video/av116339859522218",
-      "engagement": 662,
-      "is_hot": true,
-      "author": "莱星Ligh",
-      "tags": [
-        "日常"
-      ]
-    },
-    {
-      "title": "三启塔罗向众神求助，回应她的只有死扛",
-      "summary": "萌新依旧打的稀烂",
-      "source": "bilibili",
-      "time": "2026-04-04T04:25:09+00:00",
-      "url": "https://www.bilibili.com/video/av116344523659872",
-      "engagement": 389,
-      "is_hot": false,
-      "author": "雨鸦永远喜欢mili",
-      "tags": [
-        "日常"
-      ]
-    },
-    {
-      "title": "“杀死我们，拯救我们”《忘却前夜》第八章-终末交响曲（boss阶段）",
-      "summary": "",
-      "source": "bilibili",
-      "time": "2026-04-03T08:39:01+00:00",
-      "url": "https://www.bilibili.com/video/av116339842751189",
-      "engagement": 317,
-      "is_hot": false,
-      "author": "薇儿小灰",
-      "tags": [
-        "单机游戏"
-      ]
-    },
-    {
-      "title": "血希2-5王关4t",
-      "summary": "",
-      "source": "bilibili",
-      "time": "2026-04-03T18:05:26+00:00",
-      "url": "https://www.bilibili.com/video/av116342090892378",
-      "engagement": 229,
-      "is_hot": false,
-      "author": "寂榕",
-      "tags": [
-        "手机游戏"
-      ]
-    },
-    {
-      "title": "船长蛋筒图鲁",
-      "summary": "豪赌四张四费就触发一张，小红温，可恶的1/4概率\n船长打深海怪是这样的",
-      "source": "bilibili",
-      "time": "2026-04-04T02:12:53+00:00",
-      "url": "https://www.bilibili.com/video/av116344003632022",
-      "engagement": 151,
-      "is_hot": false,
-      "author": "唬隌洳鄞",
-      "tags": [
-        "手机游戏"
-      ]
-    },
-    {
-      "title": "第四届塔薇杯-第十日录播",
-      "summary": "第十日直播录播，预组比赛",
-      "source": "bilibili",
-      "time": "2026-04-03T14:53:27+00:00",
-      "url": "https://www.bilibili.com/video/av116341302368408",
-      "engagement": 75,
-      "is_hot": false,
-      "author": "God7777",
-      "tags": [
-        "手机游戏",
-        "赛事",
-        "塔薇杯"
-      ]
-    },
-    {
-      "title": "第四届塔薇杯-第十一日录播",
-      "summary": "第十一日直播录播，预组比赛",
-      "source": "bilibili",
-      "time": "2026-04-04T12:38:13+00:00",
-      "url": "https://www.bilibili.com/video/av116346452973317",
-      "engagement": 14,
-      "is_hot": false,
-      "author": "God7777",
-      "tags": [
-        "手机游戏",
-        "赛事",
-        "塔薇杯"
-      ]
-    },
-    {
-      "title": "Discord官方通知：英语语言设置异常",
-      "summary": "官方发布通知，确认部分更新后安装客户端的守望者遇到英语语言设置失效问题，正在修复中。",
+      "title": "[DC热门] morimensstaff02@English Language Setting Abnormality Issue Notice: Keeper\n  Due to some technical anomalies, Keepers who instal",
+      "summary": "Keeper\n  Due to some technical anomalies, Keepers who installed the client after",
       "source": "discord",
-      "time": "2026-04-04T14:05:20.324273+00:00",
+      "time": "2026-04-04T16:37:06.426606+00:00",
       "url": "",
       "engagement": 10,
-      "is_hot": true,
+      "is_hot": false,
       "author": "morimensstaff02",
       "tags": [
         "discord",
-        "official-notice",
-        "bug"
+        "hot-message"
       ]
     },
     {
       "title": "[DC热门] sunstopshining@William says lock in:",
       "summary": "",
       "source": "discord",
-      "time": "2026-04-04T14:05:20.324277+00:00",
+      "time": "2026-04-04T16:37:06.426610+00:00",
       "url": "",
       "engagement": 8,
       "is_hot": false,
@@ -225,32 +45,10 @@
       ]
     },
     {
-      "title": "社区争议：D-Tide自动播放功能被移除",
-      "summary": "3月31日更新移除了D-Tide（每周获取角色突破材料的重要模式）的自动播放功能，低难度也需手动操作。部分玩家表示不满，认为作为氪金游戏不应增加日常负担。",
-      "source": "official",
-      "time": "2026-03-31T00:00:00+00:00",
-      "url": "https://steamcommunity.com/app/3052450",
-      "engagement": 5,
-      "is_hot": true,
-      "author": "Community",
-      "tags": [
-        "controversy",
-        "d-tide",
-        "autoplay",
-        "qol"
-      ],
-      "language": "english",
-      "metadata": {
-        "voted_up": false,
-        "sentiment": "negative",
-        "topic": "game-design"
-      }
-    },
-    {
       "title": "[DC热门] water_heart@🔸綜合討論:",
       "summary": "",
       "source": "discord",
-      "time": "2026-04-04T14:05:20.324280+00:00",
+      "time": "2026-04-04T16:37:06.426631+00:00",
       "url": "",
       "engagement": 5,
       "is_hot": false,
@@ -264,7 +62,7 @@
       "title": "[DC热门] calvin_hz@🔸綜合討論: 玩了 大概12天",
       "summary": "玩了 大概12天",
       "source": "discord",
-      "time": "2026-04-04T14:05:20.324282+00:00",
+      "time": "2026-04-04T16:37:06.426637+00:00",
       "url": "",
       "engagement": 5,
       "is_hot": false,
@@ -275,10 +73,10 @@
       ]
     },
     {
-      "title": "[DC热门] salami_87@🔸canal-español:",
-      "summary": "",
+      "title": "[DC热门] salami_87@🔸canal-español: https://tenor.com/view/cat-cat-meme-my-honest-reaction-gif-7",
+      "summary": "https://tenor.com/view/cat-cat-meme-my-honest-reaction-gif-7785551396336017754",
       "source": "discord",
-      "time": "2026-04-04T14:05:20.324285+00:00",
+      "time": "2026-04-04T16:37:06.426641+00:00",
       "url": "",
       "engagement": 5,
       "is_hot": false,
@@ -287,134 +85,6 @@
         "discord",
         "hot-message"
       ]
-    },
-    {
-      "title": "V2.4.3.5 旺达免费皮肤「与甘松和没药同在（With Spikenard And Myrrh）」活动",
-      "summary": "4月6日9:00至4月20日9:00(UTC+8)，完成活动任务可获得10枚纯核+旺达新皮肤(1★)「与甘松和没药同在」。活动结束后可在「服饰定制」商店以680银色素体购买。",
-      "source": "official",
-      "time": "2026-04-04T00:00:00+00:00",
-      "url": "https://x.com/MorimensOfcl/status/2037084295412801582",
-      "engagement": 0,
-      "is_hot": true,
-      "author": "MorimensOfcl",
-      "tags": [
-        "official",
-        "event",
-        "skin",
-        "wanda",
-        "v2.4.3.5"
-      ]
-    },
-    {
-      "title": "V2.4.3 Vortice（漩涡）唤醒活动即将结束",
-      "summary": "Aequor界域突击型唤醒体Vortice角色活动将于4月6日9:00(UTC+8)结束。CV: 松本奈美。同期旺达/萨尔瓦多/凯蒂古拉唤醒活动持续至4月20日。",
-      "source": "official",
-      "time": "2026-03-09T00:00:00+00:00",
-      "url": "https://x.com/MorimensOfcl/status/2029547380107075707",
-      "engagement": 0,
-      "is_hot": true,
-      "author": "MorimensOfcl",
-      "tags": [
-        "official",
-        "event",
-        "vortice",
-        "awakener",
-        "v2.4.3"
-      ]
-    },
-    {
-      "title": "新兑换码 TEAHFONZM5 — 300银色素体",
-      "summary": "在密使邀请/绑定邀请页面输入兑换码TEAHFONZM5可获得300银色素体。",
-      "source": "official",
-      "time": "2026-04-01T00:00:00+00:00",
-      "url": "https://www.destructoid.com/morimens-codes/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "Destructoid",
-      "tags": [
-        "code",
-        "redemption"
-      ]
-    },
-    {
-      "title": "[负面] The English language setting did nothing for me, t...",
-      "summary": "The English language setting did nothing for me, the game language continued to be Chinese even after re-logging in. If the English would work, I would be happy to give the game another shot.",
-      "source": "steam_review",
-      "time": "2026-04-03T17:46:37+00:00",
-      "url": "https://steamcommunity.com/profiles/76561198117780296/recommended/3052450",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "76561198117780296",
-      "tags": [
-        "english"
-      ],
-      "language": "english",
-      "metadata": {
-        "voted_up": false,
-        "playtime_forever": 29,
-        "votes_up": 0,
-        "timestamp_created": 1775238397
-      }
-    },
-    {
-      "title": "[正面] Buen juego por turnos, y eso que no me gustan tant...",
-      "summary": "Buen juego por turnos, y eso que no me gustan tanto el genero. También añado que, su tono oscuro y la historia estilo lovercraftiana es lo que más atrapa",
-      "source": "steam_review",
-      "time": "2026-04-03T14:23:43+00:00",
-      "url": "https://steamcommunity.com/profiles/76561199089856615/recommended/3052450",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "76561199089856615",
-      "tags": [
-        "spanish"
-      ],
-      "language": "spanish",
-      "metadata": {
-        "voted_up": true,
-        "playtime_forever": 6044,
-        "votes_up": 0,
-        "timestamp_created": 1775226223
-      }
-    },
-    {
-      "title": "[正面] G",
-      "summary": "G",
-      "source": "steam_review",
-      "time": "2026-04-03T03:28:55+00:00",
-      "url": "https://steamcommunity.com/profiles/76561199548441986/recommended/3052450",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "76561199548441986",
-      "tags": [
-        "latam"
-      ],
-      "language": "latam",
-      "metadata": {
-        "voted_up": true,
-        "playtime_forever": 2863,
-        "votes_up": 0,
-        "timestamp_created": 1775186935
-      }
-    },
-    {
-      "title": "[正面] Mira que yo odio los gachas con toda mi alma, pero...",
-      "summary": "Mira que yo odio los gachas con toda mi alma, pero este juego a sido la excepción, la jugabilidad e historia están increíbles y esta gratis coño, dale una oportunidad.",
-      "source": "steam_review",
-      "time": "2026-04-02T16:30:43+00:00",
-      "url": "https://steamcommunity.com/profiles/76561198965207281/recommended/3052450",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "76561198965207281",
-      "tags": [
-        "spanish"
-      ],
-      "language": "spanish",
-      "metadata": {
-        "voted_up": true,
-        "playtime_forever": 1410,
-        "votes_up": 0,
-        "timestamp_created": 1775147443
-      }
     }
   ]
 }

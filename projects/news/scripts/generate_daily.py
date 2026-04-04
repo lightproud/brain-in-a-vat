@@ -35,6 +35,7 @@ PLATFORM_NAMES = {
     'youtube': 'YouTube',
     'reddit': 'Reddit',
     'official': 'Official',
+    'steam_discussion': 'Steam 论坛',
     # 中文扩展
     'weibo': '微博',
     'xiaohongshu': '小红书',

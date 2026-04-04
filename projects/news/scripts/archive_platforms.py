@@ -52,7 +52,7 @@ ARCHIVE_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'platforms'
 
 # Discord has its own archiver — skip it here
 PLATFORMS = [
-    'steam', 'bilibili', 'official', 'reddit', 'twitter', 'youtube', 'nga', 'taptap',
+    'steam', 'steam_discussion', 'bilibili', 'official', 'reddit', 'twitter', 'youtube', 'nga', 'taptap',
     # Phase 1 扩展
     'weibo', 'xiaohongshu', 'douyin', 'tieba', 'zhihu', 'bahamut',
     'naver_cafe', 'dcinside', 'arca_live', 'fivech',
