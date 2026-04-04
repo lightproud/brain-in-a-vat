@@ -17,6 +17,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 defaults:
   run:
@@ -34,6 +35,7 @@ jobs:
           python-version: '3.11'
 
       - name: Fetch portraits
+        id: portraits
         if: >-
           github.event_name != 'workflow_dispatch' ||
           contains(github.event.inputs.tasks, 'portraits') ||
@@ -42,6 +44,7 @@ jobs:
         continue-on-error: true
 
       - name: Fetch skills
+        id: skills
         if: >-
           github.event_name != 'workflow_dispatch' ||
           contains(github.event.inputs.tasks, 'skills') ||
@@ -50,6 +53,7 @@ jobs:
         continue-on-error: true
 
       - name: Fetch cards
+        id: cards
         if: >-
           github.event_name != 'workflow_dispatch' ||
           contains(github.event.inputs.tasks, 'cards') ||
@@ -58,6 +62,7 @@ jobs:
         continue-on-error: true
 
       - name: Fetch stats
+        id: stats
         if: >-
           github.event_name != 'workflow_dispatch' ||
           contains(github.event.inputs.tasks, 'stats') ||
@@ -66,6 +71,7 @@ jobs:
         continue-on-error: true
 
       - name: Fetch stages
+        id: stages
         if: >-
           github.event_name != 'workflow_dispatch' ||
           contains(github.event.inputs.tasks, 'stages') ||
@@ -74,6 +80,7 @@ jobs:
         continue-on-error: true
 
       - name: Fetch wheels
+        id: wheels
         if: >-
           github.event_name != 'workflow_dispatch' ||
           contains(github.event.inputs.tasks, 'wheels') ||
@@ -82,6 +89,7 @@ jobs:
         continue-on-error: true
 
       - name: Fetch lore
+        id: lore
         if: >-
           github.event_name != 'workflow_dispatch' ||
           contains(github.event.inputs.tasks, 'lore') ||
@@ -90,6 +98,7 @@ jobs:
         continue-on-error: true
 
       - name: Regenerate character pages from updated data
+        id: generate
         run: python3 scripts/generate_pages.py
         continue-on-error: true
 
@@ -130,3 +139,38 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git commit -m "chore(wiki): auto-update wiki data [skip ci]"
           git push
+
+      - name: Alert on failures
+        if: always()
+        run: |
+          cd $GITHUB_WORKSPACE
+          FAILURES=""
+          [ "${{ steps.portraits.outcome }}" = "failure" ] && FAILURES="$FAILURES\n- **portraits**: fetch_portraits.py failed"
+          [ "${{ steps.skills.outcome }}" = "failure" ] && FAILURES="$FAILURES\n- **skills**: fetch_skills.py failed"
+          [ "${{ steps.cards.outcome }}" = "failure" ] && FAILURES="$FAILURES\n- **cards**: fetch_cards.py failed"
+          [ "${{ steps.stats.outcome }}" = "failure" ] && FAILURES="$FAILURES\n- **stats**: fetch_stats.py failed"
+          [ "${{ steps.stages.outcome }}" = "failure" ] && FAILURES="$FAILURES\n- **stages**: fetch_stages.py failed"
+          [ "${{ steps.wheels.outcome }}" = "failure" ] && FAILURES="$FAILURES\n- **wheels**: fetch_wheels.py failed"
+          [ "${{ steps.lore.outcome }}" = "failure" ] && FAILURES="$FAILURES\n- **lore**: fetch_lore.py failed"
+          [ "${{ steps.generate.outcome }}" = "failure" ] && FAILURES="$FAILURES\n- **generate**: generate_pages.py failed"
+
+          if [ -n "$FAILURES" ]; then
+            echo "::error::Some fetch steps failed:$FAILURES"
+            # Create a GitHub Issue to alert
+            TITLE="[Code-wiki] fetch-wiki-data workflow 部分步骤失败 ($(date -u +%Y-%m-%d))"
+            BODY="## fetch-wiki-data workflow 失败告警\n\n以下步骤执行失败：\n$FAILURES\n\n**Workflow run**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\n\n请检查日志并修复问题。"
+            # Check for existing open issue with same title prefix to avoid duplicates
+            SEARCH_PREFIX="[Code-wiki] fetch-wiki-data workflow 部分步骤失败"
+            EXISTING=$(gh issue list --state open --search "$SEARCH_PREFIX" --limit 1 --json number --jq '.[0].number // empty' 2>/dev/null || echo "")
+            if [ -n "$EXISTING" ]; then
+              gh issue comment "$EXISTING" --body "$(echo -e "$BODY")"
+              echo "Updated existing issue #$EXISTING"
+            else
+              echo -e "$BODY" | gh issue create --title "$TITLE" --body-file -
+              echo "Created new failure alert issue"
+            fi
+          else
+            echo "All fetch steps succeeded!"
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}

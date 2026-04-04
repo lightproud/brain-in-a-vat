@@ -279,6 +279,16 @@ const orderedSkillCards = computed(() => {
   return { skill, basic }
 })
 
+// Check if character has any actual renderable skill data
+const hasActualSkills = computed(() => {
+  const s = character.value?.skills
+  if (!s) return false
+  return !!(
+    s.exalt || s.overexalt || s.rouse || s.talent ||
+    s.command_cards?.length || s.enlighten?.length
+  )
+})
+
 // Voice line triggers
 const voiceTriggers = [
   { id: 'login', zh: '登录', en: 'Login', ja: 'ログイン' },
@@ -382,7 +392,7 @@ function switchTab(id: string) {
 
     <!-- ========== SKILLS TAB ========== -->
     <div class="cs-panel" v-show="activeTab === 'skills'">
-      <template v-if="character.skills">
+      <template v-if="hasActualSkills">
         <!-- Exalt -->
         <div class="cs-skill-card cs-skill-featured" v-if="character.skills.exalt">
           <div class="cs-skill-header">

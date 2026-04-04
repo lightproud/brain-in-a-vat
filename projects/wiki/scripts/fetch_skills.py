@@ -92,6 +92,11 @@ PAGE_MAP = {
     "doresain": "Doresain",
     "pickman": "Pickman",
     "arachne": "Arachne",
+    # SR characters
+    "sr_duoer": "Doll",
+    "sr_lamengna": "Ramona",
+    "sr_luotan": "Lotan",
+    "sr_aojier": "Ogier",
 }
 
 # Bilibili Wiki (Chinese) page title mapping
@@ -117,6 +122,8 @@ BILI_PAGE_MAP = {
     "mouchette": "穆雪特", "xu": "勖", "castor": "卡斯托尔",
     "pollux": "波吕克斯", "helot": "希洛特", "leigh": "莱克",
     "doresain": "多瑞塞", "pickman": "皮克曼", "arachne": "阿拉克涅",
+    # SR characters
+    "sr_duoer": "朵尔", "sr_lamengna": "拉蒙娜", "sr_luotan": "萝坦", "sr_aojier": "奥吉尔",
 }
 
 # ── API helpers ─────────────────────────────────────────────────────────────
@@ -680,9 +687,10 @@ def main():
     with open(CHARACTERS_JSON) as f:
         data = json.load(f)
 
-    # Find characters needing skill data
+    # Find characters needing skill data (SSR + SR)
     targets = []
-    for char in data["characters"]:
+    all_chars = data.get("characters", []) + data.get("sr_characters", [])
+    for char in all_chars:
         char_id = char["id"]
         if force or needs_skill_update(char):
             if char_id in PAGE_MAP:
