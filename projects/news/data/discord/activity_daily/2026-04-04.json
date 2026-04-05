@@ -1,34 +1,44 @@
 {
   "date": "2026-04-04",
-  "messages": 10253,
+  "messages": 14034,
   "unique_authors": 192,
-  "reactions_total": 1118,
-  "attachments": 425,
+  "reactions_total": 1489,
+  "attachments": 590,
   "channel_activity": {
-    "🔸綜合討論": 1159,
+    "🔸綜合討論": 1467,
+    "🔸morimens-game-chat": 8912,
+    "🔸русский-канал": 126,
+    "🔸canal-español": 95,
+    "🔸canal-português": 143,
+    "🔸traphase": 20,
+    "🔸lore-chat": 28,
+    "🔸team-building": 287,
+    "🔸general-chat": 847,
+    "🔸邀请码互助┊swap-invitation-codes": 17,
+    "🔸game-question": 1024,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 2,
+    "🔸机器人命令┊bot-commands": 23,
+    "Inactive code on Ads": 2,
+    "TV Error animation": 5,
+    "Team Building and Progression advice.": 2,
+    "🔸剧情交流": 1,
+    "🔸交友频道": 1,
+    "🔸한국어-채팅방": 172,
+    "🔸phòng-chat-tiếng-việt": 517,
+    "🔸ruang-obrolan-indonesia": 128,
+    "🔸ห้องสนทนาภาษาไทย": 29,
+    "【代发】uw生日快乐！": 6,
+    "建个随笔楼": 6,
+    "媽媽孩子抱着我不肯放手": 7,
+    "William says lock in": 3,
+    "morimens sybau 💔": 2,
+    "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 6,
     "🔸阵容构建": 38,
-    "🔸morimens-game-chat": 6110,
     "🔸相位对弈": 6,
     "🔸deutscher-chatraum": 5,
-    "🔸phòng-chat-tiếng-việt": 495,
-    "🔸canal-español": 51,
-    "🔸canal-português": 72,
-    "🔸ruang-obrolan-indonesia": 124,
-    "🔸lore-chat": 18,
-    "🔸team-building": 219,
-    "🔸general-chat": 768,
-    "🔸邀请码互助┊swap-invitation-codes": 13,
-    "🔸game-question": 751,
     "【生贺】🥳🥳🥳": 11,
-    "建个随笔楼": 5,
     "這個該如何有效率地獲得": 3,
-    "🔸한국어-채팅방": 169,
-    "🔸русский-канал": 73,
-    "🔸ห้องสนทนาภาษาไทย": 22,
-    "🔸traphase": 18,
-    "🔸机器人命令┊bot-commands": 16,
     "菜雞四小強玩家的抱怨之旅": 4,
-    "TV Error animation": 3,
     "Get auto battle back! 恢复自动战斗": 2,
     "\"24\" lives matter": 2,
     "V2.4.3.7 在线维护公告": 7,
@@ -39,25 +49,25 @@
     "team building for 8-13": 2,
     "🔸忘却前夜┊morimens-tv": 1,
     "🔸游戏问题": 2,
-    "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
     "喚醒體資訊 : 呂佐夫": 1,
     "oc（oc）": 1,
-    "媽媽孩子抱着我不肯放手": 3,
     "韩语字幕显示不全/下方显示缺失": 1,
     "I can't enter the game": 3,
-    "Inactive code on Ads": 1,
     "I need help everything in the game is in another language even tho I have it on English": 4,
     "Game is in Chinese despite choosing English language": 4,
-    "William says lock in": 2,
-    "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 4,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 8,
     "新手都抽什么好？": 21,
     "1489823522107818045": 1
   },
   "hourly_activity": {
+    "19": 481,
+    "20": 586,
+    "21": 455,
+    "16": 826,
+    "17": 425,
+    "18": 685,
+    "15": 1044,
     "14": 743,
-    "15": 711,
-    "16": 10,
     "5": 730,
     "6": 1119,
     "7": 849,
@@ -74,8 +84,8 @@
     "4": 376
   },
   "message_types": {
-    "19": 2032,
-    "0": 3737
+    "0": 734,
+    "19": 407
   },
   "top_reacted_messages": [
     {
@@ -107,6 +117,13 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1490018540315480125",
+      "content": "",
+      "author": "chinkeeyong",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1489878230650589276",
       "content": "<@702167871144591461>",
       "author": "arisuu0604",
@@ -118,6 +135,20 @@
       "content": "",
       "author": "arkaether",
       "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490013725120270447",
+      "content": "Btw my choice for selector banner is Thais,Murphy,ghelot,and horla.is that any g",
+      "author": "sr_sector7",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490063178585870577",
+      "content": "I’m gonna have to retake the test lowkey since I’m being informed by friends I w",
+      "author": "djawaits",
+      "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -184,37 +215,16 @@
       "channel": "🔸canal-español"
     },
     {
-      "id": "1490008250538659861",
-      "content": "我超濕",
-      "author": "xingxiu_0209",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1489907320749162607",
-      "content": "For the newbies out there, don't forget to redeem codes for freebies ( The timer",
-      "author": "moyashi0672",
+      "id": "1490094945644707871",
+      "content": "i hate that this doesn't kill",
+      "author": "arkaether",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1489918314670198824",
-      "content": "a third lesbian has hit Morichat",
-      "author": "jyeusu",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1489938185575464983",
-      "content": "You send this genshin gif again and ill ayakonoji you i swear",
-      "author": "tnimreppep",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1489939318448455910",
-      "content": "This is such a roundabout way of Ellie saying she wants Cheri bathwater",
-      "author": "jyeusu",
+      "id": "1490102568679116900",
+      "content": "fuck ur -75% clem",
+      "author": "arkaether",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }
