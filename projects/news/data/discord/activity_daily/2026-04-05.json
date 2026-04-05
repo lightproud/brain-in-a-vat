@@ -1,34 +1,40 @@
 {
   "date": "2026-04-05",
-  "messages": 5018,
+  "messages": 10071,
   "unique_authors": 212,
-  "reactions_total": 597,
-  "attachments": 258,
+  "reactions_total": 937,
+  "attachments": 440,
   "channel_activity": {
-    "🔸綜合討論": 533,
-    "🔸morimens-game-chat": 2772,
+    "🔸綜合討論": 1122,
+    "🔸阵容构建": 2,
+    "🔸morimens-game-chat": 4043,
+    "🔸晒卡分享": 2,
+    "🔸日本語チャンネル": 1,
+    "🔸русский-канал": 434,
+    "🔸phòng-chat-tiếng-việt": 1476,
+    "🔸canal-español": 49,
+    "🔸canal-português": 1721,
+    "🔸ruang-obrolan-indonesia": 136,
+    "🔸traphase": 15,
+    "🔸lore-chat": 109,
+    "🔸team-building": 208,
+    "🔸general-chat": 54,
+    "🔸邀请码互助┊swap-invitation-codes": 20,
+    "🔸game-question": 544,
+    "🔸游戏问题": 3,
+    "🔸机器人命令┊bot-commands": 29,
+    "今夜不做，更待何時 || 第二篇 第三章": 5,
+    "媽媽孩子抱着我不肯放手": 2,
+    "Bands Art thread (I should’ve made one first before doing all my stuff)": 7,
+    "Team Building for D-Tide !": 8,
     "🔸한국어-채팅방": 16,
-    "🔸русский-канал": 8,
-    "🔸phòng-chat-tiếng-việt": 461,
-    "🔸canal-português": 359,
-    "🔸ruang-obrolan-indonesia": 92,
     "🔸ห้องสนทนาภาษาไทย": 6,
-    "🔸traphase": 13,
-    "🔸team-building": 164,
-    "🔸general-chat": 40,
-    "🔸game-question": 301,
-    "🔸机器人命令┊bot-commands": 24,
     "菜雞四小強玩家的抱怨之旅": 11,
     "Tonight or Never || Arc 2 Chapter 3": 2,
     "【English Translation】Opinions Collection": 1,
-    "🔸阵容构建": 1,
     "🔸相位对弈": 9,
     "🔸课间休息闲聊": 2,
     "🔸chaîne-française": 4,
-    "🔸canal-español": 46,
-    "🔸lore-chat": 105,
-    "🔸邀请码互助┊swap-invitation-codes": 15,
-    "今夜不做，更待何時 || 第二篇 第三章": 3,
     "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 2,
     "Inactive code on Ads": 2,
     "\"24\" lives matter": 2,
@@ -38,8 +44,13 @@
     "Team Building and Progression advice.": 14
   },
   "hourly_activity": {
+    "11": 788,
+    "12": 802,
+    "13": 1245,
+    "15": 1144,
+    "16": 46,
+    "14": 1748,
     "10": 421,
-    "11": 720,
     "0": 110,
     "1": 383,
     "2": 618,
@@ -52,8 +63,9 @@
     "9": 305
   },
   "message_types": {
-    "0": 791,
-    "19": 276
+    "0": 3593,
+    "19": 1459,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -63,6 +75,14 @@
       "author": "that_one_chippy",
       "reactions": 8,
       "channel": "Tonight or Never || Arc 2 Chapter 3"
+    },
+    {
+      "id": "1490323779979841567",
+      "channel_id": "1170692781216378960",
+      "content": "YEAHHH",
+      "author": "arandomflamev2",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1490249658193285200",
@@ -97,6 +117,14 @@
       "channel": "🔸相位对弈"
     },
     {
+      "id": "1490373324608372746",
+      "channel_id": "1170692781216378960",
+      "content": "i think 2 weeks is fine tbh...",
+      "author": "arandomflamev2",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1490166296325652592",
       "channel_id": "1131839817982947429",
       "content": "我的黑X怎么跳出5771了<:Brown_think:1459080117308620996>",
@@ -111,6 +139,46 @@
       "author": "water_heart",
       "reactions": 5,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1490322452775964773",
+      "channel_id": "1170692781216378960",
+      "content": "https://fixupx.com/magenta_pengin4/status/2040461768926101678",
+      "author": "46982105",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490325401686245557",
+      "channel_id": "1170692781216378960",
+      "content": "blec will not like the fact this is what made me clear",
+      "author": "megidola.",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490338717502799952",
+      "channel_id": "1170692781216378960",
+      "content": "i bought mythag and regret",
+      "author": "monchi3524",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490354234464534712",
+      "channel_id": "1400749543288475770",
+      "content": "https://tenor.com/view/nilou-genshin-genshin-impact-nilou-eating-paimon-nilou-ea",
+      "author": "snorlax01",
+      "reactions": 4,
+      "channel": "🔸team-building"
+    },
+    {
+      "id": "1490372950061486270",
+      "channel_id": "1400749543288475770",
+      "content": "Nice and grats 🔥",
+      "author": "angbak",
+      "reactions": 4,
+      "channel": "🔸team-building"
     },
     {
       "id": "1490285707871260783",
@@ -159,62 +227,6 @@
       "author": "fishhazardthewizard",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490208318227087440",
-      "channel_id": "1326453763355185215",
-      "content": "me when I watch people complain about dtide while I larp as morimens player",
-      "author": "jyeusu",
-      "reactions": 4,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1490210598489821206",
-      "channel_id": "1433513650299076780",
-      "content": "It's SO touchy and sensitive, I can't really get the card to just stay in plane ",
-      "author": "slimjim2018",
-      "reactions": 4,
-      "channel": "🔸game-question"
-    },
-    {
-      "id": "1490280006830526564",
-      "channel_id": "1490280006830526564",
-      "content": "我做到了……！我準時完成了這幅畫！<:flop1:1356083604236800030> 這是我第一次參加遊戲內的競賽，如果我做錯了什麼，請指教 <:cry3",
-      "author": "that_one_chippy",
-      "reactions": 4,
-      "channel": "今夜不做，更待何時 || 第二篇 第三章"
-    },
-    {
-      "id": "1490317343350456410",
-      "channel_id": "1131839817982947429",
-      "content": "~~校貓:我們不會讓聯動影響或是遮住本篇的發展性~~",
-      "author": "foxcatfurry",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1490296684884791387",
-      "channel_id": "1170692781216378960",
-      "content": "again how can someone torture themselves like this\n~~not that i myself didnt spe",
-      "author": "melwyn7591",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490311363917119680",
-      "channel_id": "1170692781216378960",
-      "content": "I already paid my amphoreus tax by pulling e0 fat fuck",
-      "author": "jyeusu",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490273908191002675",
-      "channel_id": "1131839817982947429",
-      "content": "怎麼每次我寫這種東西大家就像是被閉麥了",
-      "author": "eddy10051115",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
     }
   ]
 }
