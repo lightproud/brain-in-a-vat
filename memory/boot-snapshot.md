@@ -1,6 +1,6 @@
 # 银芯启动快照 / BIAV-SC Boot Snapshot
 
-> Auto-generated: 2026-04-05 12:08 UTC
+> Auto-generated: 2026-04-05 12:19 UTC
 > 新会话读完此文件即可就绪，无需逐个加载 memory 文件。
 > 完整定义见 `BIAV-SC.md`，本文件是压缩启动包。
 
@@ -56,7 +56,7 @@ Latest dream: 2026-04-05
 | 模块 | 状态 |
 |------|------|
 | TF-IDF 搜索 | `scripts/memory_search.py` — 344 块, 2000 词 |
-| 知识图谱 | `scripts/knowledge_graph.py` — 219 节点 481 边 |
+| 知识图谱 | `scripts/knowledge_graph.py` — 219 节点 485 边 |
 | MemRL-lite | `scripts/memrl.py` — EMA 效用评分 |
 | Sleep-Time Compute | `scripts/dream.py` — 预计算缓存 |
 | 哨兵层 | `scripts/dream.py` — 异常检测（零成本） |
