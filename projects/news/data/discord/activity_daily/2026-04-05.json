@@ -1,41 +1,45 @@
 {
   "date": "2026-04-05",
-  "messages": 3951,
+  "messages": 5018,
   "unique_authors": 212,
-  "reactions_total": 480,
-  "attachments": 208,
+  "reactions_total": 597,
+  "attachments": 258,
   "channel_activity": {
-    "🔸綜合討論": 248,
+    "🔸綜合討論": 533,
+    "🔸morimens-game-chat": 2772,
+    "🔸한국어-채팅방": 16,
+    "🔸русский-канал": 8,
+    "🔸phòng-chat-tiếng-việt": 461,
+    "🔸canal-português": 359,
+    "🔸ruang-obrolan-indonesia": 92,
+    "🔸ห้องสนทนาภาษาไทย": 6,
+    "🔸traphase": 13,
+    "🔸team-building": 164,
+    "🔸general-chat": 40,
+    "🔸game-question": 301,
+    "🔸机器人命令┊bot-commands": 24,
+    "菜雞四小強玩家的抱怨之旅": 11,
+    "Tonight or Never || Arc 2 Chapter 3": 2,
+    "【English Translation】Opinions Collection": 1,
     "🔸阵容构建": 1,
-    "🔸morimens-game-chat": 2214,
     "🔸相位对弈": 9,
     "🔸课间休息闲聊": 2,
-    "🔸한국어-채팅방": 13,
     "🔸chaîne-française": 4,
-    "🔸русский-канал": 6,
-    "🔸phòng-chat-tiếng-việt": 400,
     "🔸canal-español": 46,
-    "🔸canal-português": 355,
-    "🔸ruang-obrolan-indonesia": 78,
-    "🔸ห้องสนทนาภาษาไทย": 5,
-    "🔸traphase": 12,
     "🔸lore-chat": 105,
-    "🔸team-building": 155,
-    "🔸general-chat": 15,
     "🔸邀请码互助┊swap-invitation-codes": 15,
-    "🔸game-question": 213,
-    "🔸机器人命令┊bot-commands": 21,
     "今夜不做，更待何時 || 第二篇 第三章": 3,
     "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 2,
     "Inactive code on Ads": 2,
     "\"24\" lives matter": 2,
-    "Tonight or Never || Arc 2 Chapter 3": 1,
     "The Arc 1 GDoll Incident Compilation": 1,
     "新人刚入坑怎么配队": 3,
     "想求個組隊建議": 6,
     "Team Building and Progression advice.": 14
   },
   "hourly_activity": {
+    "10": 421,
+    "11": 720,
     "0": 110,
     "1": 383,
     "2": 618,
@@ -45,13 +49,11 @@
     "6": 338,
     "7": 379,
     "8": 378,
-    "9": 305,
-    "10": 74
+    "9": 305
   },
   "message_types": {
-    "0": 2866,
-    "19": 1083,
-    "20": 2
+    "0": 791,
+    "19": 276
   },
   "top_reacted_messages": [
     {
@@ -183,36 +185,36 @@
       "channel": "今夜不做，更待何時 || 第二篇 第三章"
     },
     {
+      "id": "1490317343350456410",
+      "channel_id": "1131839817982947429",
+      "content": "~~校貓:我們不會讓聯動影響或是遮住本篇的發展性~~",
+      "author": "foxcatfurry",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1490296684884791387",
+      "channel_id": "1170692781216378960",
+      "content": "again how can someone torture themselves like this\n~~not that i myself didnt spe",
+      "author": "melwyn7591",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490311363917119680",
+      "channel_id": "1170692781216378960",
+      "content": "I already paid my amphoreus tax by pulling e0 fat fuck",
+      "author": "jyeusu",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1490273908191002675",
       "channel_id": "1131839817982947429",
       "content": "怎麼每次我寫這種東西大家就像是被閉麥了",
       "author": "eddy10051115",
       "reactions": 3,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1490152624643768411",
-      "channel_id": "1170692781216378960",
-      "content": "pull after light announces EOS",
-      "author": "khykken",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490165941378482198",
-      "channel_id": "1170692781216378960",
-      "content": "but yea i think im the most consistent and longest whale by duration in the en s",
-      "author": "monchi3524",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490176376396058765",
-      "channel_id": "1170692781216378960",
-      "content": "yes wait until right before arachne comes out. \n\nMaybe like 3 days. \n\nIt's nice ",
-      "author": "climbkaly",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
