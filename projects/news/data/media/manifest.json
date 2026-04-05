@@ -20,6 +20,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-05T12:48:39.894391+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/0adf3eb48a62e7dd7249b089c12b0353057b7349.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-05T15:00:03.265539+00:00"
     }
   },
   "archived": []
