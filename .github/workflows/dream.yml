@@ -68,6 +68,19 @@ jobs:
             echo "phase1_issues=0" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Run code health checks
+        id: code-health
+        run: |
+          OUTPUT=$(python scripts/code_health.py --report 2>&1)
+          echo "$OUTPUT"
+          REPORT=$(echo "$OUTPUT" | grep "^::health::" | sed 's/^::health:://')
+          if [ -n "$REPORT" ]; then
+            FAILED=$(echo "$REPORT" | python3 -c "import sys,json; print(json.load(sys.stdin).get('failed',0))")
+            echo "code_health_failed=$FAILED" >> "$GITHUB_OUTPUT"
+          else
+            echo "code_health_failed=0" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Check data collection health
         id: data-check
         run: |
@@ -188,6 +201,7 @@ jobs:
       - name: Report anomalies
         if: >-
           steps.dream-phase1.outputs.phase1_issues > 0 ||
+          steps.code-health.outputs.code_health_failed > 0 ||
           steps.data-check.outputs.has_issues == 'true' ||
           steps.workflow-check.outputs.has_failures == 'true' ||
           steps.path-check.outputs.has_broken == 'true' ||
@@ -199,11 +213,13 @@ jobs:
             const repo = context.repo.repo;
             let body = '## 🌙 Shallow Sleep Report\n\n';
             const p1Issues = '${{ steps.dream-phase1.outputs.phase1_issues }}';
+            const codeHealthFailed = '${{ steps.code-health.outputs.code_health_failed }}';
             const dataIssues = `${{ steps.data-check.outputs.issues }}`;
             const wfFailures = `${{ steps.workflow-check.outputs.failures }}`;
             const broken = `${{ steps.path-check.outputs.broken }}`;
             const stale = `${{ steps.memory-check.outputs.stale }}`;
             if (p1Issues && p1Issues !== '0') body += `### dream.py Phase 1\n- ${p1Issues} structural issues detected (see dream journal)\n\n`;
+            if (codeHealthFailed && codeHealthFailed !== '0') body += `### Code Health\n- ${codeHealthFailed} code health checks failed (run \`python scripts/code_health.py\` for details)\n\n`;
             if (dataIssues) body += '### Data Collection\n' + dataIssues + '\n';
             if (wfFailures) body += '### Workflow Health\n' + wfFailures + '\n';
             if (broken) body += '### Broken References\n' + broken + '\n';
