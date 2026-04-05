@@ -71,15 +71,27 @@ jobs:
       - name: Run code health checks
         id: code-health
         run: |
-          OUTPUT=$(python scripts/code_health.py --report 2>&1)
+          OUTPUT=$(python scripts/code_health.py --fix --report 2>&1)
           echo "$OUTPUT"
           REPORT=$(echo "$OUTPUT" | grep "^::health::" | sed 's/^::health:://')
           if [ -n "$REPORT" ]; then
             FAILED=$(echo "$REPORT" | python3 -c "import sys,json; print(json.load(sys.stdin).get('failed',0))")
+            FIXES=$(echo "$REPORT" | python3 -c "import sys,json; print(json.load(sys.stdin).get('fixes_applied',0))")
             echo "code_health_failed=$FAILED" >> "$GITHUB_OUTPUT"
+            echo "code_health_fixes=$FIXES" >> "$GITHUB_OUTPUT"
           else
             echo "code_health_failed=0" >> "$GITHUB_OUTPUT"
+            echo "code_health_fixes=0" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Commit auto-fixes
+        if: steps.code-health.outputs.code_health_fixes > 0
+        run: |
+          git config user.name "BIAV Dreaming Agent"
+          git config user.email "biav-bot@users.noreply.github.com"
+          git add assets/data/ memory/
+          git diff --cached --quiet || git commit -m "🩺 auto-fix: code_health rebuilt $(date -u +%Y-%m-%d)"
+          git push
 
       - name: Check data collection health
         id: data-check

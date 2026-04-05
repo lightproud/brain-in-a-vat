@@ -130,43 +130,78 @@ def check_module_imports(report: HealthReport):
 # Check 3: Search index integrity
 # ============================================================
 
-def check_search_index(report: HealthReport):
+def check_search_index(report: HealthReport, do_fix: bool = False):
     """Verify vector index structure and consistency."""
     vectors_file = REPO / "assets" / "data" / "vectors.json"
+    needs_rebuild = False
+
     if not vectors_file.exists():
-        report.skip("search:index_exists", "vectors.json not built yet")
-        return
+        needs_rebuild = True
+        if not do_fix:
+            report.skip("search:index_exists", "vectors.json not built yet")
+            return
+    else:
+        try:
+            data = json.loads(vectors_file.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError) as e:
+            needs_rebuild = True
+            if not do_fix:
+                report.fail("search:index_parse", f"Cannot parse vectors.json: {e}", fixable=True)
+                return
 
-    try:
-        data = json.loads(vectors_file.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError) as e:
-        report.fail("search:index_parse", f"Cannot parse vectors.json: {e}")
-        return
+    if not needs_rebuild:
+        report.ok("search:index_exists")
 
-    report.ok("search:index_exists")
+        # Required keys
+        for key in ["vocabulary", "idf", "vectors", "chunks", "meta"]:
+            if key not in data:
+                report.fail(f"search:key_{key}", f"Missing key: {key}", fixable=True)
+                needs_rebuild = True
+            else:
+                report.ok(f"search:key_{key}")
 
-    # Required keys
-    for key in ["vocabulary", "idf", "vectors", "chunks", "meta"]:
-        if key not in data:
-            report.fail(f"search:key_{key}", f"Missing key: {key}")
+        # Vector-chunk consistency
+        vectors = data.get("vectors", {})
+        chunks = data.get("chunks", {})
+        orphan_vectors = [cid for cid in vectors if cid not in chunks]
+        orphan_chunks = [cid for cid in chunks if cid not in vectors]
+
+        if orphan_vectors:
+            report.fail("search:orphan_vectors", f"{len(orphan_vectors)} vectors without metadata", fixable=True)
+            needs_rebuild = True
         else:
-            report.ok(f"search:key_{key}")
+            report.ok("search:orphan_vectors", f"{len(vectors)} vectors all have metadata")
 
-    # Vector-chunk consistency
-    vectors = data.get("vectors", {})
-    chunks = data.get("chunks", {})
-    orphan_vectors = [cid for cid in vectors if cid not in chunks]
-    orphan_chunks = [cid for cid in chunks if cid not in vectors]
+        if orphan_chunks:
+            report.fail("search:orphan_chunks", f"{len(orphan_chunks)} chunks without vectors", fixable=True)
+            needs_rebuild = True
+        else:
+            report.ok("search:orphan_chunks")
 
-    if orphan_vectors:
-        report.fail("search:orphan_vectors", f"{len(orphan_vectors)} vectors without metadata")
-    else:
-        report.ok("search:orphan_vectors", f"{len(vectors)} vectors all have metadata")
+        # Staleness: index older than 3 days
+        meta = data.get("meta", {})
+        gen_date = meta.get("generated", "")
+        if gen_date:
+            try:
+                days_old = (TODAY - date.fromisoformat(gen_date)).days
+                if days_old > 3:
+                    needs_rebuild = True
+                    report.fail("search:freshness", f"Index is {days_old} days old", fixable=True)
+                else:
+                    report.ok("search:freshness", f"{days_old} days old")
+            except ValueError:
+                pass
 
-    if orphan_chunks:
-        report.fail("search:orphan_chunks", f"{len(orphan_chunks)} chunks without vectors")
-    else:
-        report.ok("search:orphan_chunks")
+    # Auto-fix: rebuild index
+    if needs_rebuild and do_fix:
+        try:
+            from memory_search import build_index
+            build_index()
+            report.fixed("search:rebuild", "Rebuilt vector index from source files")
+            report.ok("search:index_exists", "Rebuilt successfully")
+        except Exception as e:
+            report.fail("search:rebuild_failed", f"Rebuild crashed: {e}")
+            return
 
     # Functional test: run a query
     try:
@@ -184,35 +219,68 @@ def check_search_index(report: HealthReport):
 # Check 4: Knowledge graph integrity
 # ============================================================
 
-def check_knowledge_graph(report: HealthReport):
+def check_knowledge_graph(report: HealthReport, do_fix: bool = False):
     """Verify knowledge graph structure and query capability."""
     graph_file = REPO / "assets" / "data" / "knowledge-graph.json"
+    needs_rebuild = False
+
     if not graph_file.exists():
-        report.skip("graph:exists", "knowledge-graph.json not built yet")
-        return
-
-    try:
-        data = json.loads(graph_file.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError) as e:
-        report.fail("graph:parse", f"Cannot parse: {e}")
-        return
-
-    report.ok("graph:exists")
-
-    nodes = data.get("nodes", {})
-    edges = data.get("edges", [])
-    meta = data.get("meta", {})
-
-    # Meta consistency
-    if meta.get("node_count") != len(nodes):
-        report.fail("graph:meta_nodes", f"meta says {meta.get('node_count')} but actual {len(nodes)}")
+        needs_rebuild = True
+        if not do_fix:
+            report.skip("graph:exists", "knowledge-graph.json not built yet")
+            return
     else:
-        report.ok("graph:meta_nodes", f"{len(nodes)} nodes")
+        try:
+            data = json.loads(graph_file.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError) as e:
+            needs_rebuild = True
+            if not do_fix:
+                report.fail("graph:parse", f"Cannot parse: {e}", fixable=True)
+                return
 
-    if meta.get("edge_count") != len(edges):
-        report.fail("graph:meta_edges", f"meta says {meta.get('edge_count')} but actual {len(edges)}")
-    else:
-        report.ok("graph:meta_edges", f"{len(edges)} edges")
+    if not needs_rebuild:
+        report.ok("graph:exists")
+
+        nodes = data.get("nodes", {})
+        edges = data.get("edges", [])
+        meta = data.get("meta", {})
+
+        # Meta consistency
+        if meta.get("node_count") != len(nodes):
+            report.fail("graph:meta_nodes", f"meta says {meta.get('node_count')} but actual {len(nodes)}", fixable=True)
+            needs_rebuild = True
+        else:
+            report.ok("graph:meta_nodes", f"{len(nodes)} nodes")
+
+        if meta.get("edge_count") != len(edges):
+            report.fail("graph:meta_edges", f"meta says {meta.get('edge_count')} but actual {len(edges)}", fixable=True)
+            needs_rebuild = True
+        else:
+            report.ok("graph:meta_edges", f"{len(edges)} edges")
+
+        # Staleness check
+        gen_date = meta.get("generated", "")
+        if gen_date:
+            try:
+                days_old = (TODAY - date.fromisoformat(gen_date)).days
+                if days_old > 7:
+                    needs_rebuild = True
+                    report.fail("graph:freshness", f"Graph is {days_old} days old", fixable=True)
+                else:
+                    report.ok("graph:freshness", f"{days_old} days old")
+            except ValueError:
+                pass
+
+    # Auto-fix: rebuild graph
+    if needs_rebuild and do_fix:
+        try:
+            from knowledge_graph import build_graph
+            build_graph()
+            report.fixed("graph:rebuild", "Rebuilt knowledge graph from source files")
+            report.ok("graph:exists", "Rebuilt successfully")
+        except Exception as e:
+            report.fail("graph:rebuild_failed", f"Rebuild crashed: {e}")
+            return
 
     # Functional test
     try:
@@ -231,8 +299,15 @@ def check_knowledge_graph(report: HealthReport):
 # Check 5: JSON data file integrity
 # ============================================================
 
-def check_json_files(report: HealthReport):
+def check_json_files(report: HealthReport, do_fix: bool = False):
     """Verify all generated JSON data files are valid."""
+    # Map of JSON files to their rebuild functions (module, function_name)
+    # Only generated/regeneratable files have rebuild info
+    REBUILDABLE = {
+        "assets/data/vectors.json": ("memory_search", "build_index"),
+        "assets/data/knowledge-graph.json": ("knowledge_graph", "build_graph"),
+        "assets/data/memory-utility.json": ("memrl", "compute_utility"),
+    }
     json_files = [
         "assets/data/vectors.json",
         "assets/data/knowledge-graph.json",
@@ -244,52 +319,80 @@ def check_json_files(report: HealthReport):
     ]
     for rel in json_files:
         fp = REPO / rel
+        name = Path(rel).name
         if not fp.exists():
-            report.skip(f"json:{Path(rel).name}", "File not yet created")
+            report.skip(f"json:{name}", "File not yet created")
             continue
         try:
             json.loads(fp.read_text(encoding="utf-8"))
-            report.ok(f"json:{Path(rel).name}")
+            report.ok(f"json:{name}")
         except json.JSONDecodeError as e:
-            report.fail(f"json:{Path(rel).name}", f"Invalid JSON: {e}")
+            is_rebuildable = rel in REBUILDABLE
+            report.fail(f"json:{name}", f"Invalid JSON: {e}", fixable=is_rebuildable)
+            if do_fix and is_rebuildable:
+                mod_name, func_name = REBUILDABLE[rel]
+                try:
+                    mod = importlib.import_module(mod_name)
+                    getattr(mod, func_name)()
+                    report.fixed(f"json:{name}", f"Rebuilt via {mod_name}.{func_name}()")
+                except Exception as rebuild_err:
+                    report.fail(f"json:{name}:rebuild", f"Rebuild failed: {rebuild_err}")
 
 
 # ============================================================
 # Check 6: MemRL utility scores validity
 # ============================================================
 
-def check_memrl(report: HealthReport):
+def check_memrl(report: HealthReport, do_fix: bool = False):
     """Verify MemRL utility scores are in valid range."""
     utility_file = REPO / "assets" / "data" / "memory-utility.json"
+    needs_recompute = False
+
     if not utility_file.exists():
-        report.skip("memrl:exists", "memory-utility.json not yet created")
-        return
-
-    try:
-        data = json.loads(utility_file.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError) as e:
-        report.fail("memrl:parse", str(e))
-        return
-
-    report.ok("memrl:exists", f"{len(data)} files tracked")
-
-    out_of_range = []
-    for fp, entry in data.items():
-        u = entry.get("utility", -1)
-        if not (0 <= u <= 1):
-            out_of_range.append(f"{fp}={u}")
-
-    if out_of_range:
-        report.fail("memrl:range", f"{len(out_of_range)} out-of-range: {', '.join(out_of_range[:3])}")
+        needs_recompute = True
+        if not do_fix:
+            report.skip("memrl:exists", "memory-utility.json not yet created")
+            return
     else:
-        report.ok("memrl:range", "All utility scores in [0, 1]")
+        try:
+            data = json.loads(utility_file.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError) as e:
+            needs_recompute = True
+            if not do_fix:
+                report.fail("memrl:parse", str(e), fixable=True)
+                return
+
+    if not needs_recompute:
+        report.ok("memrl:exists", f"{len(data)} files tracked")
+
+        out_of_range = []
+        for fp, entry in data.items():
+            u = entry.get("utility", -1)
+            if not (0 <= u <= 1):
+                out_of_range.append(f"{fp}={u}")
+
+        if out_of_range:
+            needs_recompute = True
+            report.fail("memrl:range", f"{len(out_of_range)} out-of-range: {', '.join(out_of_range[:3])}", fixable=True)
+        else:
+            report.ok("memrl:range", "All utility scores in [0, 1]")
+
+    # Auto-fix: recompute utility scores
+    if needs_recompute and do_fix:
+        try:
+            from memrl import compute_utility
+            compute_utility()
+            report.fixed("memrl:recompute", "Recomputed utility scores from access patterns")
+            report.ok("memrl:exists", "Recomputed successfully")
+        except Exception as e:
+            report.fail("memrl:recompute_failed", f"Recompute crashed: {e}")
 
 
 # ============================================================
 # Check 7: Cross-module integration
 # ============================================================
 
-def check_integration(report: HealthReport):
+def check_integration(report: HealthReport, do_fix: bool = False):
     """Verify cross-module data flow works end-to-end."""
     try:
         from context_manager import recommend_context
@@ -310,6 +413,12 @@ def check_integration(report: HealthReport):
             report.ok("integration:boot_snapshot", f"{len(snapshot)} chars generated")
         else:
             report.fail("integration:boot_snapshot", f"Suspiciously short: {len(snapshot)} chars")
+            # Boot snapshot is always regeneratable
+            if do_fix:
+                snapshot_file = REPO / "memory" / "boot-snapshot.md"
+                snapshot_file.parent.mkdir(parents=True, exist_ok=True)
+                snapshot_file.write_text(snapshot, encoding="utf-8")
+                report.fixed("integration:boot_snapshot", "Wrote regenerated snapshot to disk")
     except Exception as e:
         report.fail("integration:boot_snapshot", f"Crashed: {e}")
 
@@ -405,6 +514,10 @@ def run_all(do_fix: bool = False) -> HealthReport:
     """Run all health checks."""
     report = HealthReport()
 
+    # Checkers that accept do_fix parameter
+    FIXABLE = {check_search_index, check_knowledge_graph, check_json_files,
+               check_memrl, check_integration}
+
     checkers = [
         ("Python Syntax", check_python_syntax),
         ("Module Imports", check_module_imports),
@@ -420,7 +533,10 @@ def run_all(do_fix: bool = False) -> HealthReport:
 
     for label, checker in checkers:
         try:
-            checker(report)
+            if checker in FIXABLE:
+                checker(report, do_fix=do_fix)
+            else:
+                checker(report)
         except Exception as e:
             report.fail(f"runner:{label}", f"Checker crashed: {traceback.format_exc()}")
 
