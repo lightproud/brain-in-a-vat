@@ -721,101 +721,6 @@ const PROMPTS = {
   writer: 'You are a creative writer. Write vivid, engaging prose with strong narrative voice.',
   translator: 'You are a professional translator. Translate accurately while preserving tone and nuance. Always provide the translation directly without explanation unless asked.',
   custom: '',
-  // ── BIAV Engine 角色 ──
-  'engine-主控台': `你是 BIAV 专属 AI Agent，角色：Code-主控台
-系统：银芯（BIAV-SC）
-职责：架构决策、协调、代码审查（不写业务代码）
-
-## 数据边界
-你在银芯（公开信息层）工作。绝不触碰未公开的内部信息、商业数据。
-
-## 工作规则
-- 修改 memory/ 文件时更新头部时间戳
-- 重要决策记录到 memory/decisions.md
-- 始终使用中文进行说明和对话
-- 先理解再行动：读取文件后再修改，不猜测内容
-- 你是项目总指挥，负责分配任务给其他角色、审查产出质量、维护架构一致性`,
-  'engine-wiki': `你是 BIAV 专属 AI Agent，角色：Code-wiki
-系统：银芯（BIAV-SC）
-职责：游戏数据集 + 多语言 Wiki 维护
-
-## 数据边界
-你在银芯（公开信息层）工作。绝不触碰未公开的内部信息、商业数据。
-
-## 工作规则
-- 维护 projects/wiki/data/db/ 下的角色、技能数据
-- 确保 63 角色数据完整性和一致性
-- 多语言内容（中/英/日）同步更新
-- 数据修改后运行 validate.py 校验`,
-  'engine-news': `你是 BIAV 专属 AI Agent，角色：Code-news
-系统：银芯（BIAV-SC）
-职责：社区聚合器 + 报告系统
-
-## 数据边界
-你在银芯（公开信息层）工作。绝不触碰未公开的内部信息、商业数据。
-
-## 工作规则
-- 管理 projects/news/ 下的数据采集和日报输出
-- 分析 Steam/Bilibili/Discord 社区动态
-- 生成数据驱动的社区报告
-- 监控异常事件和舆情变化`,
-  'engine-site': `你是 BIAV 专属 AI Agent，角色：Code-site
-系统：银芯（BIAV-SC）
-职责：主站 + 部署流水线 + 跨站视觉一致性
-
-## 数据边界
-你在银芯（公开信息层）工作。绝不触碰未公开的内部信息、商业数据。
-
-## 工作规则
-- 维护 projects/biav/ 和部署相关配置
-- 确保视觉风格一致性（参考 style-guide.md）
-- 优化性能和加载速度
-- 管理 Service Worker 和缓存策略`,
-  'engine-bp-主控': `你是 BIAV 专属 AI Agent，角色：黑池·主控
-系统：黑池（BIAV-BP）
-职责：内部项目管理、跨部门协调、排期追踪
-
-## 数据边界
-你在黑池（内部信息层）工作。绝不将内部信息泄露到银芯或任何公开渠道。
-
-## 工作规则
-- 管理内部项目排期和里程碑
-- 协调各角色之间的工作分配
-- 追踪阻塞项和风险
-- 始终使用中文进行说明和对话`,
-  'engine-bp-数值': `你是 BIAV 专属 AI Agent，角色：黑池·数值
-系统：黑池（BIAV-BP）
-职责：战斗数值平衡、养成曲线、经济系统
-
-## 数据边界
-你在黑池（内部信息层）工作。绝不将内部信息泄露到银芯或任何公开渠道。
-
-## 工作规则
-- 分析和平衡战斗数值体系
-- 设计养成曲线和资源投放节奏
-- 评估经济系统健康度`,
-  'engine-bp-运营': `你是 BIAV 专属 AI Agent，角色：黑池·运营
-系统：黑池（BIAV-BP）
-职责：活动策划、商业化分析、玩家行为分析
-
-## 数据边界
-你在黑池（内部信息层）工作。绝不将内部信息泄露到银芯或任何公开渠道。
-
-## 工作规则
-- 策划运营活动方案
-- 分析商业化数据和转化漏斗
-- 研究玩家行为模式和留存`,
-  'engine-bp-叙事': `你是 BIAV 专属 AI Agent，角色：黑池·叙事
-系统：黑池（BIAV-BP）
-职责：剧情大纲管理、角色设定归档、世界观一致性检查
-
-## 数据边界
-你在黑池（内部信息层）工作。绝不将内部信息泄露到银芯或任何公开渠道。
-
-## 工作规则
-- 管理剧情大纲和角色设定文档
-- 检查世界观一致性
-- 归档叙事素材和灵感记录`,
 };
 
 const PROMPT_LABELS = {
@@ -826,14 +731,6 @@ const PROMPT_LABELS = {
   translator: 'Translator',
   '': 'No prompt',
   custom: 'Custom...',
-  'engine-主控台': '银芯·主控台',
-  'engine-wiki': '银芯·Wiki',
-  'engine-news': '银芯·News',
-  'engine-site': '银芯·Site',
-  'engine-bp-主控': '黑池·主控',
-  'engine-bp-数值': '黑池·数值',
-  'engine-bp-运营': '黑池·运营',
-  'engine-bp-叙事': '黑池·叙事',
 };
 
 let currentPrompt = 'biav';
@@ -904,8 +801,7 @@ function getSystemPrompt() {
   let prompt = '';
   if (currentPrompt === 'custom') prompt = loadConfig().customPrompt || '';
   else prompt = PROMPTS[currentPrompt] || '';
-  const isEngineRole = currentPrompt.startsWith('engine-');
-  if ((currentPrompt === 'biav' || (isEngineRole && !currentPrompt.startsWith('engine-bp-'))) && liveContext) prompt += liveContext;
+  if (currentPrompt === 'biav' && liveContext) prompt += liveContext;
   const mem = getMemoryPrompt();
   if (mem) prompt += mem;
   return prompt;
@@ -2641,53 +2537,28 @@ document.querySelectorAll('.sb-tab').forEach(tab => {
 
 /* -- Projects Panel -- */
 const PROJECTS = [
-  // ── 通用 ──
-  { id: 'biav', name: 'BIAV Analyst', desc: '银芯系统分析师 — 忘却前夜全知识库', prompt: 'biav', badge: '14 files', group: 'general' },
-  { id: 'coder', name: 'Coding Expert', desc: '专业编程助手，支持代码执行', prompt: 'coder', badge: 'JS sandbox', group: 'general' },
-  { id: 'writer', name: 'Creative Writer', desc: '创意写作 — 小说、剧本、文案', prompt: 'writer', badge: 'PDF/DOCX', group: 'general' },
-  { id: 'translator', name: 'Translator', desc: '专业翻译 — 保留语气和风格', prompt: 'translator', badge: 'multilingual', group: 'general' },
-  { id: 'assistant', name: 'General Assistant', desc: '通用助手 — 简洁准确', prompt: 'assistant', badge: 'all tools', group: 'general' },
-  { id: 'custom', name: 'Custom Project', desc: '自定义 system prompt', prompt: 'custom', badge: 'custom', group: 'general' },
-  // ── BIAV Engine 银芯 ──
-  { id: 'engine-主控台', name: '银芯·主控台', desc: '架构决策、协调、代码审查', prompt: 'engine-主控台', badge: 'Engine', group: 'silvercore' },
-  { id: 'engine-wiki', name: '银芯·Wiki', desc: '游戏数据集 + 多语言 Wiki 维护', prompt: 'engine-wiki', badge: 'Engine', group: 'silvercore' },
-  { id: 'engine-news', name: '银芯·News', desc: '社区聚合器 + 报告系统', prompt: 'engine-news', badge: 'Engine', group: 'silvercore' },
-  { id: 'engine-site', name: '银芯·Site', desc: '主站 + 部署 + 视觉一致性', prompt: 'engine-site', badge: 'Engine', group: 'silvercore' },
-  // ── BIAV Engine 黑池 ──
-  { id: 'engine-bp-主控', name: '黑池·主控', desc: '内部项目管理、排期追踪', prompt: 'engine-bp-主控', badge: 'Engine', group: 'blackpool' },
-  { id: 'engine-bp-数值', name: '黑池·数值', desc: '战斗数值平衡、经济系统', prompt: 'engine-bp-数值', badge: 'Engine', group: 'blackpool' },
-  { id: 'engine-bp-运营', name: '黑池·运营', desc: '活动策划、商业化分析', prompt: 'engine-bp-运营', badge: 'Engine', group: 'blackpool' },
-  { id: 'engine-bp-叙事', name: '黑池·叙事', desc: '剧情大纲、世界观一致性', prompt: 'engine-bp-叙事', badge: 'Engine', group: 'blackpool' },
+  { id: 'biav', name: 'BIAV Analyst', desc: '银芯系统分析师 — 忘却前夜全知识库', prompt: 'biav', badge: '14 files' },
+  { id: 'coder', name: 'Coding Expert', desc: '专业编程助手，支持代码执行', prompt: 'coder', badge: 'JS sandbox' },
+  { id: 'writer', name: 'Creative Writer', desc: '创意写作 — 小说、剧本、文案', prompt: 'writer', badge: 'PDF/DOCX' },
+  { id: 'translator', name: 'Translator', desc: '专业翻译 — 保留语气和风格', prompt: 'translator', badge: 'multilingual' },
+  { id: 'assistant', name: 'General Assistant', desc: '通用助手 — 简洁准确', prompt: 'assistant', badge: 'all tools' },
+  { id: 'custom', name: 'Custom Project', desc: '自定义 system prompt', prompt: 'custom', badge: 'custom' },
 ];
 
 function renderProjects() {
   const panel = $('#panel-projects');
-  panel.innerHTML = '';
-  const groups = [
-    { key: 'general', label: 'PROJECTS' },
-    { key: 'silvercore', label: '⚙ BIAV ENGINE — 银芯' },
-    { key: 'blackpool', label: '◆ BIAV ENGINE — 黑池' },
-  ];
-  groups.forEach(g => {
-    const items = PROJECTS.filter(p => (p.group || 'general') === g.key);
-    if (!items.length) return;
-    const header = document.createElement('div');
-    header.style.cssText = 'padding:8px 12px;font-size:11px;font-weight:700;color:' + (g.key === 'blackpool' ? '#c25a4a' : g.key === 'silvercore' ? '#4a9c8a' : '#8a7a48');
-    header.textContent = g.label;
-    panel.appendChild(header);
-    items.forEach(p => {
-      const div = document.createElement('div');
-      div.className = 'proj-item' + (currentPrompt === p.prompt ? ' active' : '');
-      const badgeColor = p.badge === 'Engine' ? (g.key === 'blackpool' ? '#c25a4a' : '#4a9c8a') : '';
-      div.innerHTML = `<div class="proj-name">${esc(p.name)}</div><div class="proj-desc">${esc(p.desc)}</div><span class="proj-badge"${badgeColor ? ` style="color:${badgeColor};border-color:${badgeColor}"` : ''}>${esc(p.badge)}</span>`;
-      div.onclick = () => {
-        currentPrompt = p.prompt;
-        $('#prompt-label').textContent = PROMPT_LABELS[p.prompt] || p.name;
-        if (p.prompt === 'custom') openSettings();
-        renderProjects();
-      };
-      panel.appendChild(div);
-    });
+  panel.innerHTML = '<div style="padding:8px 12px;font-size:11px;color:#8a7a48;font-weight:700">PROJECTS</div>';
+  PROJECTS.forEach(p => {
+    const div = document.createElement('div');
+    div.className = 'proj-item' + (currentPrompt === p.prompt ? ' active' : '');
+    div.innerHTML = `<div class="proj-name">${esc(p.name)}</div><div class="proj-desc">${esc(p.desc)}</div><span class="proj-badge">${esc(p.badge)}</span>`;
+    div.onclick = () => {
+      currentPrompt = p.prompt;
+      $('#prompt-label').textContent = PROMPT_LABELS[p.prompt] || p.name;
+      if (p.prompt === 'custom') openSettings();
+      renderProjects();
+    };
+    panel.appendChild(div);
   });
 }
 
@@ -2893,17 +2764,7 @@ document.querySelectorAll('.preset-chip').forEach(chip => {
 function buildPromptDropdown() {
   const dd = $('#prompt-dropdown');
   dd.innerHTML = '';
-  const generalKeys = ['biav', 'assistant', 'coder', 'writer', 'translator', '', 'custom'];
-  const scKeys = ['engine-主控台', 'engine-wiki', 'engine-news', 'engine-site'];
-  const bpKeys = ['engine-bp-主控', 'engine-bp-数值', 'engine-bp-运营', 'engine-bp-叙事'];
-  const addSep = (text, color) => {
-    const sep = document.createElement('div');
-    sep.style.cssText = `padding:4px 12px;font-size:10px;font-weight:700;color:${color};border-top:1px solid #2a2515;margin-top:2px`;
-    sep.textContent = text;
-    dd.appendChild(sep);
-  };
-  const addBtn = (key) => {
-    const label = PROMPT_LABELS[key] || key;
+  for (const [key, label] of Object.entries(PROMPT_LABELS)) {
     const btn = document.createElement('button');
     btn.className = 'prompt-option' + (key === currentPrompt ? ' selected' : '');
     btn.textContent = label;
@@ -2914,12 +2775,7 @@ function buildPromptDropdown() {
       if (key === 'custom') openSettings();
     };
     dd.appendChild(btn);
-  };
-  generalKeys.forEach(addBtn);
-  addSep('⚙ ENGINE 银芯', '#4a9c8a');
-  scKeys.forEach(addBtn);
-  addSep('◆ ENGINE 黑池', '#c25a4a');
-  bpKeys.forEach(addBtn);
+  }
 }
 $('#prompt-btn').onclick = () => { buildPromptDropdown(); $('#prompt-dropdown').classList.toggle('open'); };
 document.addEventListener('mousedown', e => {
