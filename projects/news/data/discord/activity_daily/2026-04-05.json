@@ -1,0 +1,218 @@
+{
+  "date": "2026-04-05",
+  "messages": 3951,
+  "unique_authors": 212,
+  "reactions_total": 480,
+  "attachments": 208,
+  "channel_activity": {
+    "🔸綜合討論": 248,
+    "🔸阵容构建": 1,
+    "🔸morimens-game-chat": 2214,
+    "🔸相位对弈": 9,
+    "🔸课间休息闲聊": 2,
+    "🔸한국어-채팅방": 13,
+    "🔸chaîne-française": 4,
+    "🔸русский-канал": 6,
+    "🔸phòng-chat-tiếng-việt": 400,
+    "🔸canal-español": 46,
+    "🔸canal-português": 355,
+    "🔸ruang-obrolan-indonesia": 78,
+    "🔸ห้องสนทนาภาษาไทย": 5,
+    "🔸traphase": 12,
+    "🔸lore-chat": 105,
+    "🔸team-building": 155,
+    "🔸general-chat": 15,
+    "🔸邀请码互助┊swap-invitation-codes": 15,
+    "🔸game-question": 213,
+    "🔸机器人命令┊bot-commands": 21,
+    "今夜不做，更待何時 || 第二篇 第三章": 3,
+    "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 2,
+    "Inactive code on Ads": 2,
+    "\"24\" lives matter": 2,
+    "Tonight or Never || Arc 2 Chapter 3": 1,
+    "The Arc 1 GDoll Incident Compilation": 1,
+    "新人刚入坑怎么配队": 3,
+    "想求個組隊建議": 6,
+    "Team Building and Progression advice.": 14
+  },
+  "hourly_activity": {
+    "0": 110,
+    "1": 383,
+    "2": 618,
+    "3": 559,
+    "4": 377,
+    "5": 430,
+    "6": 338,
+    "7": 379,
+    "8": 378,
+    "9": 305,
+    "10": 74
+  },
+  "message_types": {
+    "0": 2866,
+    "19": 1083,
+    "20": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1490279130170921040",
+      "channel_id": "1490279130170921040",
+      "content": "I did it.. I finished it on time...!! This is the first time I had joined a cont",
+      "author": "that_one_chippy",
+      "reactions": 8,
+      "channel": "Tonight or Never || Arc 2 Chapter 3"
+    },
+    {
+      "id": "1490249658193285200",
+      "channel_id": "1131839817982947429",
+      "content": "我停服公告呢",
+      "author": "ponponnyaru",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1490289656804278433",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1490193555245760554",
+      "channel_id": "1170692781216378960",
+      "content": "Holy shit I did it with this asscheeks sf1 lvl 50 Erica bullshit crap comp \n\nFir",
+      "author": "l8989c",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490258630161989672",
+      "channel_id": "1180850818509971466",
+      "content": "",
+      "author": "planetes0415",
+      "reactions": 6,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1490166296325652592",
+      "channel_id": "1131839817982947429",
+      "content": "我的黑X怎么跳出5771了<:Brown_think:1459080117308620996>",
+      "author": "harowolf",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1490284798294491186",
+      "channel_id": "1131839817982947429",
+      "content": "哈姆林怎麼打醫生",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1490285707871260783",
+      "channel_id": "1131839817982947429",
+      "content": "樂音和胚胎通通被擠掉",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1490270319796293793",
+      "channel_id": "1131839874132090890",
+      "content": "帶帶萌新打融災<:takenotes:1357186646294138890>",
+      "author": "universe.dark",
+      "reactions": 4,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1490156411886501959",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "asterios20_09",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490179374975160391",
+      "channel_id": "1170692781216378960",
+      "content": "hey hey people! How is it going?",
+      "author": "iceweaver",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490242787646378074",
+      "channel_id": "1170692781216378960",
+      "content": "on exactly turn 200 he hits 1k counter",
+      "author": "fishhazardthewizard",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490248033374441553",
+      "channel_id": "1170692781216378960",
+      "content": "guys i think he might be healing",
+      "author": "fishhazardthewizard",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490208318227087440",
+      "channel_id": "1326453763355185215",
+      "content": "me when I watch people complain about dtide while I larp as morimens player",
+      "author": "jyeusu",
+      "reactions": 4,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1490210598489821206",
+      "channel_id": "1433513650299076780",
+      "content": "It's SO touchy and sensitive, I can't really get the card to just stay in plane ",
+      "author": "slimjim2018",
+      "reactions": 4,
+      "channel": "🔸game-question"
+    },
+    {
+      "id": "1490280006830526564",
+      "channel_id": "1490280006830526564",
+      "content": "我做到了……！我準時完成了這幅畫！<:flop1:1356083604236800030> 這是我第一次參加遊戲內的競賽，如果我做錯了什麼，請指教 <:cry3",
+      "author": "that_one_chippy",
+      "reactions": 4,
+      "channel": "今夜不做，更待何時 || 第二篇 第三章"
+    },
+    {
+      "id": "1490273908191002675",
+      "channel_id": "1131839817982947429",
+      "content": "怎麼每次我寫這種東西大家就像是被閉麥了",
+      "author": "eddy10051115",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1490152624643768411",
+      "channel_id": "1170692781216378960",
+      "content": "pull after light announces EOS",
+      "author": "khykken",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490165941378482198",
+      "channel_id": "1170692781216378960",
+      "content": "but yea i think im the most consistent and longest whale by duration in the en s",
+      "author": "monchi3524",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490176376396058765",
+      "channel_id": "1170692781216378960",
+      "content": "yes wait until right before arachne comes out. \n\nMaybe like 3 days. \n\nIt's nice ",
+      "author": "climbkaly",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    }
+  ]
+}
