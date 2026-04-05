@@ -1,0 +1,46 @@
+name: "🩺 Code Health"
+
+# 每次 push 到 main 时自动检测代码健康
+# 只跑 code_health.py（~30秒），不跑完整 dream 流程
+# 零成本：纯 Python，无 API 调用
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'assets/data/**'
+      - 'projects/biav/src/**'
+      - 'memory/**'
+  workflow_dispatch:
+
+concurrency:
+  group: code-health
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run code health checks
+        id: health
+        run: |
+          OUTPUT=$(python scripts/code_health.py --report 2>&1)
+          echo "$OUTPUT"
+          REPORT=$(echo "$OUTPUT" | grep "^::health::" | sed 's/^::health:://')
+          if [ -n "$REPORT" ]; then
+            FAILED=$(echo "$REPORT" | python3 -c "import sys,json; print(json.load(sys.stdin).get('failed',0))")
+            echo "failed=$FAILED" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Annotate if failures
+        if: steps.health.outputs.failed > 0
+        run: |
+          echo "::warning::Code health: ${{ steps.health.outputs.failed }} checks failed. Run 'python scripts/code_health.py' locally for details."
