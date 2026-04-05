@@ -5,7 +5,15 @@ import { v4 as uuid } from 'uuid'
 import type { ChatRequest } from '@/lib/types'
 
 export async function POST(req: NextRequest) {
-  const body: ChatRequest = await req.json()
+  let body: ChatRequest
+  try {
+    body = await req.json()
+  } catch {
+    return new Response(JSON.stringify({ error: 'Invalid request body' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    })
+  }
   const { provider, model } = body
   let { conversationId } = body
 
