@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0a1a"/>
+      <stop offset="100%" style="stop-color:#1a1030"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6d5dfc"/>
+      <stop offset="100%" style="stop-color:#c084fc"/>
+    </linearGradient>
+    <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6d5dfc;stop-opacity:0"/>
+      <stop offset="15%" style="stop-color:#6d5dfc;stop-opacity:1"/>
+      <stop offset="85%" style="stop-color:#c084fc;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#c084fc;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative grid pattern -->
+  <g opacity="0.04" stroke="#6d5dfc" stroke-width="1">
+    <line x1="0" y1="0" x2="0" y2="630"/>
+    <line x1="60" y1="0" x2="60" y2="630"/>
+    <line x1="120" y1="0" x2="120" y2="630"/>
+    <line x1="180" y1="0" x2="180" y2="630"/>
+    <line x1="240" y1="0" x2="240" y2="630"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="360" y1="0" x2="360" y2="630"/>
+    <line x1="420" y1="0" x2="420" y2="630"/>
+    <line x1="480" y1="0" x2="480" y2="630"/>
+    <line x1="540" y1="0" x2="540" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="660" y1="0" x2="660" y2="630"/>
+    <line x1="720" y1="0" x2="720" y2="630"/>
+    <line x1="780" y1="0" x2="780" y2="630"/>
+    <line x1="840" y1="0" x2="840" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="960" y1="0" x2="960" y2="630"/>
+    <line x1="1020" y1="0" x2="1020" y2="630"/>
+    <line x1="1080" y1="0" x2="1080" y2="630"/>
+    <line x1="1140" y1="0" x2="1140" y2="630"/>
+    <line x1="0" y1="0" x2="1200" y2="0"/>
+    <line x1="0" y1="60" x2="1200" y2="60"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="480" x2="1200" y2="480"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="0" y1="600" x2="1200" y2="600"/>
+  </g>
+
+  <!-- Decorative circles -->
+  <circle cx="1100" cy="100" r="200" fill="none" stroke="#6d5dfc" stroke-width="1" opacity="0.08"/>
+  <circle cx="1100" cy="100" r="150" fill="none" stroke="#c084fc" stroke-width="1" opacity="0.06"/>
+  <circle cx="100" cy="530" r="180" fill="none" stroke="#6d5dfc" stroke-width="1" opacity="0.06"/>
+
+  <!-- Logo area (scaled version of logo.svg) -->
+  <g transform="translate(70, 60) scale(0.7)" opacity="0.9" filter="url(#glow)">
+    <circle cx="64" cy="64" r="60" fill="url(#accent)" opacity="0.15"/>
+    <circle cx="64" cy="64" r="48" fill="none" stroke="url(#accent)" stroke-width="3"/>
+    <path d="M44 50 C44 40, 84 40, 84 50 L84 78 C84 88, 44 88, 44 78 Z" fill="none" stroke="url(#accent)" stroke-width="2.5"/>
+    <circle cx="54" cy="60" r="4" fill="#6d5dfc"/>
+    <circle cx="74" cy="60" r="4" fill="#c084fc"/>
+    <path d="M56 72 Q64 80 72 72" fill="none" stroke="url(#accent)" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Site name -->
+  <text x="165" y="105" font-family="'Segoe UI', 'Noto Sans SC', 'Noto Sans JP', Arial, sans-serif" font-size="28" font-weight="600" fill="#e8e0f0" opacity="0.9">Morimens Wiki</text>
+
+  <!-- Separator line -->
+  <rect x="60" y="180" width="1080" height="2" fill="url(#line-grad)" rx="1"/>
+
+  <!-- Section badge -->
+  <g transform="translate(60, 210)">
+    <rect width="278" height="36" rx="18" fill="#6d5dfc" opacity="0.25"/>
+    <text x="139" y="24" text-anchor="middle" font-family="'Segoe UI', 'Noto Sans SC', 'Noto Sans JP', Arial, sans-serif" font-size="16" font-weight="500" fill="#c084fc">Wheels of Destiny</text>
+  </g>
+
+  <!-- Page title -->
+  <text y="300" text-anchor="middle" font-family="'Segoe UI', 'Noto Sans SC', 'Noto Sans JP', Arial, sans-serif" font-size="56" font-weight="bold" fill="#e8e0f0" filter="url(#glow)">
+        <tspan x="600" dy="0">Whisper - Wheel of Destiny</tspan>
+  </text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="624" width="1200" height="6" fill="url(#accent)"/>
+
+  <!-- URL footer -->
+  <text x="60" y="605" font-family="'Segoe UI', monospace" font-size="16" fill="#e8e0f0" opacity="0.4">lightproud.github.io/brain-in-a-vat/wiki</text>
+
+  <!-- Game name -->
+  <text x="1140" y="605" text-anchor="end" font-family="'Segoe UI', 'Noto Sans SC', Arial, sans-serif" font-size="16" fill="#c084fc" opacity="0.5">MORIMENS</text>
+</svg>
