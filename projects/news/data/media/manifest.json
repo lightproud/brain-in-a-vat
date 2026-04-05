@@ -1,0 +1,26 @@
+{
+  "downloaded": {},
+  "failed": {
+    "//i2.hdslb.com/bfs/archive/268f1be92c938803cb1ef3f082809424875c2ba7.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-05T12:48:38.991862+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/ee6c535d4234c189f2b12913bb31bf289de7816a.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-05T12:48:39.292685+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/794a6a04bb32cda9936d11e353d9b103e72f6a6a.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-05T12:48:39.593496+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/4dbc57058fb1785f15fdcf0c2cc4893906ba9434.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-05T12:48:39.894391+00:00"
+    }
+  },
+  "archived": []
+}
