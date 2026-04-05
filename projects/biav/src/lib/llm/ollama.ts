@@ -29,9 +29,13 @@ export async function* streamOllama(
 
     for (const line of lines) {
       if (!line.trim()) continue
-      const json = JSON.parse(line)
-      if (json.message?.content) {
-        yield json.message.content
+      try {
+        const json = JSON.parse(line)
+        if (json.message?.content) {
+          yield json.message.content
+        }
+      } catch {
+        // skip malformed JSON lines from Ollama
       }
     }
   }

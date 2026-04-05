@@ -78,7 +78,7 @@ export function useChat() {
                 setMessages((prev) => {
                   const updated = [...prev]
                   const last = updated[updated.length - 1]
-                  if (last.role === 'assistant') {
+                  if (last && last.role === 'assistant') {
                     updated[updated.length - 1] = {
                       ...last,
                       content: last.content + data.content,
@@ -90,7 +90,7 @@ export function useChat() {
                 setMessages((prev) => {
                   const updated = [...prev]
                   const last = updated[updated.length - 1]
-                  if (last.role === 'assistant') {
+                  if (last && last.role === 'assistant') {
                     updated[updated.length - 1] = {
                       ...last,
                       content: `Error: ${data.error}`,
@@ -109,7 +109,7 @@ export function useChat() {
           setMessages((prev) => {
             const updated = [...prev]
             const last = updated[updated.length - 1]
-            if (last.role === 'assistant') {
+            if (last && last.role === 'assistant') {
               updated[updated.length - 1] = {
                 ...last,
                 content: `Connection error: ${err.message}`,

@@ -64,11 +64,15 @@ export default function Home() {
   }
 
   const handleDeleteConversation = async (id: string) => {
-    await fetch('/api/conversations', {
-      method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id }),
-    })
+    try {
+      await fetch('/api/conversations', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id }),
+      })
+    } catch {
+      // network error — continue with local cleanup
+    }
     if (conversationId === id) resetChat()
     refreshConversations()
   }
