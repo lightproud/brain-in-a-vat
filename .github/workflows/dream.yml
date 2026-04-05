@@ -1,6 +1,6 @@
 name: "🌙 Dreaming Agent"
 
-# 三层做梦系统：浅睡(3h) + 深睡(每天) + REM(每周)
+# 三层做梦系统：浅睡(1h, 有代码更新才跑) + 深睡(每天) + REM(每周)
 # 设计文档：memory/dreaming-agent-design.md
 #
 # 所有配置留在 git 仓库内，不依赖外部平台。
@@ -8,8 +8,8 @@ name: "🌙 Dreaming Agent"
 
 on:
   schedule:
-    # 浅睡：每 6 小时（零成本）
-    - cron: '0 */6 * * *'
+    # 浅睡：每小时（有代码更新才实际执行检查）
+    - cron: '0 * * * *'
     # 深睡：每天 19:00 UTC（北京时间凌晨 3 点）
     - cron: '0 19 * * *'
     # REM：每周一 01:00 UTC（北京时间周一上午 9 点）
@@ -49,12 +49,33 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Check for recent code changes
+        id: recent-changes
+        run: |
+          # Skip if no commits in the last 65 minutes (schedule cron runs hourly)
+          # workflow_dispatch always runs regardless
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          RECENT=$(git log --since="65 minutes ago" --oneline 2>/dev/null | head -5)
+          if [ -z "$RECENT" ]; then
+            echo "No code changes in the last hour — skipping checks"
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Recent commits found:"
+            echo "$RECENT"
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Set up Python
+        if: steps.recent-changes.outputs.has_changes == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Run dream.py Phase 1 (structural checks)
+        if: steps.recent-changes.outputs.has_changes == 'true'
         id: dream-phase1
         run: |
           OUTPUT=$(python scripts/dream.py --report 2>&1)
@@ -69,6 +90,7 @@ jobs:
           fi
 
       - name: Run code health checks
+        if: steps.recent-changes.outputs.has_changes == 'true'
         id: code-health
         run: |
           OUTPUT=$(python scripts/code_health.py --fix --report 2>&1)
@@ -85,7 +107,7 @@ jobs:
           fi
 
       - name: Commit auto-fixes
-        if: steps.code-health.outputs.code_health_fixes > 0
+        if: steps.recent-changes.outputs.has_changes == 'true' && steps.code-health.outputs.code_health_fixes > 0
         run: |
           git config user.name "BIAV Dreaming Agent"
           git config user.email "biav-bot@users.noreply.github.com"
@@ -94,6 +116,7 @@ jobs:
           git push
 
       - name: Check data collection health
+        if: steps.recent-changes.outputs.has_changes == 'true'
         id: data-check
         run: |
           ISSUES=""
@@ -121,6 +144,7 @@ jobs:
           fi
 
       - name: Check workflow health
+        if: steps.recent-changes.outputs.has_changes == 'true'
         id: workflow-check
         uses: actions/github-script@v8
         with:
@@ -156,6 +180,7 @@ jobs:
             core.setOutput('has_failures', failures.length > 0 ? 'true' : 'false');
 
       - name: Check path references
+        if: steps.recent-changes.outputs.has_changes == 'true'
         id: path-check
         run: |
           BROKEN=""
@@ -174,6 +199,7 @@ jobs:
           fi
 
       - name: Check memory freshness
+        if: steps.recent-changes.outputs.has_changes == 'true'
         id: memory-check
         run: |
           STALE=""
@@ -200,7 +226,7 @@ jobs:
           fi
 
       - name: Commit dream journal
-        if: always()
+        if: always() && steps.recent-changes.outputs.has_changes == 'true'
         run: |
           if [ -f "memory/dreams/$(date -u +%Y-%m-%d).json" ]; then
             git config user.name "dream-agent[bot]"
@@ -212,12 +238,14 @@ jobs:
 
       - name: Report anomalies
         if: >-
+          steps.recent-changes.outputs.has_changes == 'true' && (
           steps.dream-phase1.outputs.phase1_issues > 0 ||
           steps.code-health.outputs.code_health_failed > 0 ||
           steps.data-check.outputs.has_issues == 'true' ||
           steps.workflow-check.outputs.has_failures == 'true' ||
           steps.path-check.outputs.has_broken == 'true' ||
           steps.memory-check.outputs.has_stale == 'true'
+          )
         uses: actions/github-script@v8
         with:
           script: |
