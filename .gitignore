@@ -27,6 +27,9 @@ projects/news/data/discord/archives/
 assets/data/discord/
 morimens_extract.zip
 
+# BIAV Engine session logs (auto-generated)
+memory/sessions/
+
 # auto-generated indexes (rebuilt by dream.py / memory_search.py)
 assets/data/vectors.json
 assets/data/semantic-index.json
