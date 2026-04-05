@@ -1,6 +1,6 @@
 # 银芯启动快照 / BIAV-SC Boot Snapshot
 
-> Auto-generated: 2026-04-04 13:30 UTC
+> Auto-generated: 2026-04-05 12:08 UTC
 > 新会话读完此文件即可就绪，无需逐个加载 memory 文件。
 > 完整定义见 `BIAV-SC.md`，本文件是压缩启动包。
 
@@ -32,27 +32,31 @@ OK: wiki data
 
 ## 最新社区情报
 
-# 忘却前夜 社区日报 2026-04-04
-> 采集时间：2026-04-04 04:04 UTC+8
-1. [Bilibili] 【忘却前夜×沙耶之歌】入坑杂谈 &amp; 入坑攻略 — engagement: 3012
+# 忘却前夜 社区日报 2026-04-05
+> 采集时间：2026-04-05 16:07 UTC+8
+1. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
 | 平台 | 数据条数 |
 |------|----------|
-| Bilibili | 11 |
+| Bilibili | 8 |
 | Discord | 6 |
-| Steam | 1 |
-1. [DC热门] morimensstaff06@🔸礼包码┊gift-codes: **🎁 DC 38000守密人达成礼 / — engagement: 387
-1. [正面] G — engagement: 0
+| Steam | 2 |
+| Steam 论坛 | 0（沉默）|
+1. [DC热门] resazur1n@【生贺】🥳🥳🥳: 「……守密人怎么会喜欢吃这种东西？」
+1. [正面] Just sitting in my hideout menu hits me hard in th... — engagement: 0
+1. [Gamerch] 最強キャラ/Tier — engagement: 0
+1. [StopGame] Morimens — 3.9/10 (0 оценок) — engagement: 0
+1. [微信] 制作人长文复盘:数次濒临解散,二游《忘却前夜》如何艰难续命的? — engagement: 0
 
 ## 做梦系统
 
-Latest dream: 2026-04-04
+Latest dream: 2026-04-05
 
 ## 记忆系统 9 模块
 
 | 模块 | 状态 |
 |------|------|
-| TF-IDF 搜索 | `scripts/memory_search.py` — 780 行 |
-| 知识图谱 | `scripts/knowledge_graph.py` — 217 节点 443 边 |
+| TF-IDF 搜索 | `scripts/memory_search.py` — 344 块, 2000 词 |
+| 知识图谱 | `scripts/knowledge_graph.py` — 219 节点 481 边 |
 | MemRL-lite | `scripts/memrl.py` — EMA 效用评分 |
 | Sleep-Time Compute | `scripts/dream.py` — 预计算缓存 |
 | 哨兵层 | `scripts/dream.py` — 异常检测（零成本） |
@@ -80,7 +84,7 @@ Latest dream: 2026-04-04
 | 主站 | `projects/site/` | 维护模式 |
 | 新闻聚合 | `projects/news/` | 运行中 |
 | Wiki | `projects/wiki/` | 数据补全中 |
-| 碧瓦 AI Chat | `projects/biva/` | MVP 已部署 |
+| 碧瓦 AI Chat | `projects/biav/` | MVP 已部署 |
 | 衍生游戏 | `projects/game/` | 暂缓 |
 
 ## 按需加载索引

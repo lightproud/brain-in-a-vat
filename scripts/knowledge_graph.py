@@ -669,12 +669,14 @@ def main():
     do_build = "--build" in args
     do_stats = "--stats" in args
     depth = 1
+    depth_value_idx = -1
     if "--depth" in args:
         idx = args.index("--depth")
         if idx + 1 < len(args):
             depth = int(args[idx + 1])
+            depth_value_idx = idx + 1
 
-    query_args = [a for a in args if not a.startswith("--") and a not in [str(depth)]]
+    query_args = [a for i, a in enumerate(args) if not a.startswith("--") and i != depth_value_idx]
     query = " ".join(query_args) if query_args else None
 
     if do_build:

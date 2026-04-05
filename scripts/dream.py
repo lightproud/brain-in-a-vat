@@ -205,7 +205,7 @@ def sentinel_scan() -> list[dict]:
                 ratio = cur / bl
                 if ratio >= SENTINEL_THRESHOLDS["red"]:
                     alerts.append({
-                        "level": "yellow",
+                        "level": "red",
                         "source": src,
                         "metric": "daily_messages",
                         "message": f"Discord 消息量暴涨：{cur:,}（基线 {bl:,.0f}，{ratio:.1f}x）",
@@ -220,7 +220,7 @@ def sentinel_scan() -> list[dict]:
             ratio = cur_eng / bl_eng
             if ratio >= SENTINEL_THRESHOLDS["red"]:
                 alerts.append({
-                    "level": "yellow",
+                    "level": "red",
                     "source": src,
                     "metric": "total_engagement",
                     "message": f"{src} 互动量异常：{cur_eng:,}（基线 {bl_eng:,.0f}，{ratio:.1f}x）",

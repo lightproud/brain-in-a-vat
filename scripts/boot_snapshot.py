@@ -118,6 +118,33 @@ def get_workflow_health() -> str:
     return "\n".join(lines)
 
 
+def get_vector_stats() -> str:
+    """Get vector index stats dynamically."""
+    p = ROOT / "assets" / "data" / "vectors.json"
+    if not p.exists():
+        return "未构建"
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+        n_chunks = len(data.get("vectors", {}))
+        n_vocab = len(data.get("vocabulary", {}))
+        return f"{n_chunks} 块, {n_vocab} 词"
+    except Exception:
+        return "读取失败"
+
+
+def get_graph_stats() -> str:
+    """Get knowledge graph stats dynamically."""
+    p = ROOT / "assets" / "data" / "knowledge-graph.json"
+    if not p.exists():
+        return "未构建"
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+        meta = data.get("meta", {})
+        return f"{meta.get('node_count', '?')} 节点 {meta.get('edge_count', '?')} 边"
+    except Exception:
+        return "读取失败"
+
+
 def generate_snapshot() -> str:
     """Generate the full boot snapshot."""
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
@@ -162,8 +189,8 @@ def generate_snapshot() -> str:
 
 | 模块 | 状态 |
 |------|------|
-| TF-IDF 搜索 | `scripts/memory_search.py` — 780 行 |
-| 知识图谱 | `scripts/knowledge_graph.py` — 217 节点 443 边 |
+| TF-IDF 搜索 | `scripts/memory_search.py` — {get_vector_stats()} |
+| 知识图谱 | `scripts/knowledge_graph.py` — {get_graph_stats()} |
 | MemRL-lite | `scripts/memrl.py` — EMA 效用评分 |
 | Sleep-Time Compute | `scripts/dream.py` — 预计算缓存 |
 | 哨兵层 | `scripts/dream.py` — 异常检测（零成本） |
@@ -191,7 +218,7 @@ def generate_snapshot() -> str:
 | 主站 | `projects/site/` | 维护模式 |
 | 新闻聚合 | `projects/news/` | 运行中 |
 | Wiki | `projects/wiki/` | 数据补全中 |
-| 碧瓦 AI Chat | `projects/biva/` | MVP 已部署 |
+| 碧瓦 AI Chat | `projects/biav/` | MVP 已部署 |
 | 衍生游戏 | `projects/game/` | 暂缓 |
 
 ## 按需加载索引
