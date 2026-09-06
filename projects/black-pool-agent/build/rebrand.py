@@ -46,7 +46,7 @@ PATCH_INTRANET = SUB / "patches" / "black-pool-intranet.patch"
 BRAND = "Black Pool"
 BRAND_AGENT = "Black Pool Agent"
 BRAND_VERSION = "0.1.0"
-UPSTREAM_VERSION = "0.20.6"  # 上游引擎版本（About 出身行静态渲染；移 pin 同步，哨兵守卫）
+UPSTREAM_VERSION = "0.21.0"  # 上游引擎版本（About 出身行静态渲染；移 pin 同步，哨兵守卫）
 BRAND_AUMID = "com.biav.blackpool"
 
 
@@ -553,6 +553,23 @@ BRAND_POST_RULES = [
     (
         "  // typed query fails on the first match whose casing differs — 'Black Pool'\n",
         "  // typed query fails on the first match whose casing differs — 'Hermes'\n",
+    ),
+    # 2026-08-31 移 pin 新撞的同类自伤（data.identity 测试新增「重命名不能顶替内建
+    # @句柄」用例，2026-08 Discord 报告驱动）：夹具拿 'Hermes' 当**内建保留词探针**——
+    # 测的是 mentionNameForms 把它 slug 成 'hermes' 后命中 data.ts 第 984 行硬编码的
+    # `['all', 'everyone', 'user', 'default', 'hermes']` 保留表，与品牌显示名无关（该
+    # 保留表锚的是 botHandle('default') 恒返回的技术句柄 'hermes'，裸词规则从未也不该
+    # 碰这个全小写标识符）。裸词规则照样把大写 'Hermes' 当品牌词扫了，夹具输入变成
+    # 'Black Pool' 后 slug 成 'black-pool'/'blackpool'，两个都不在保留表里，断言必红。
+    # 源码里同一处的说明注释同样被扫、一并改回——三处处理口径与上面 find-in-page
+    # 案例一致（测试夹具 + 源码说明注释一并改回原样，而不是碰保留表本身）。
+    (
+        "    expect(mentionNameForms('Black Pool')).toEqual([])\n",
+        "    expect(mentionNameForms('Hermes')).toEqual([])\n",
+    ),
+    (
+        ' *  (researchbuddy). Reserved tokens are dropped so a bot renamed "Black Pool"\n',
+        ' *  (researchbuddy). Reserved tokens are dropped so a bot renamed "Hermes"\n',
     ),
 ]
 

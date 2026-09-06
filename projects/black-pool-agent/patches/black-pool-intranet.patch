@@ -85,10 +85,10 @@ index 9af08f6..45fa182 100644
      if route.billing_mode == "subscription_included":
          return PricingEntry(
 diff --git a/apps/desktop/electron/main.ts b/apps/desktop/electron/main.ts
-index 5d27a32..832d90f 100644
+index b3790f0..5973bb9 100644
 --- a/apps/desktop/electron/main.ts
 +++ b/apps/desktop/electron/main.ts
-@@ -6615,11 +6615,7 @@ function buildApplicationMenu() {
+@@ -6618,11 +6618,7 @@ function buildApplicationMenu() {
        ? [{ role: 'minimize' }, { role: 'zoom' }, { role: 'front' }]
        : [{ role: 'minimize' }, { role: 'close' }]
    })
@@ -102,7 +102,7 @@ index 5d27a32..832d90f 100644
    return Menu.buildFromTemplate(template)
  }
 diff --git a/apps/desktop/src/app/settings/about-settings.tsx b/apps/desktop/src/app/settings/about-settings.tsx
-index f547aaf..5c854c6 100644
+index cb8c205..629679c 100644
 --- a/apps/desktop/src/app/settings/about-settings.tsx
 +++ b/apps/desktop/src/app/settings/about-settings.tsx
 @@ -138,6 +138,8 @@ export function AboutSettings() {
@@ -621,10 +621,10 @@ index f6e977f..c9dbe8a 100644
      return
    }
 diff --git a/hermes_cli/update_cmd.py b/hermes_cli/update_cmd.py
-index 5d1c7ec..9ecace5 100644
+index 54f12c4..7a0c52c 100644
 --- a/hermes_cli/update_cmd.py
 +++ b/hermes_cli/update_cmd.py
-@@ -7489,6 +7489,11 @@ def _cmd_update_impl(args, gateway_mode: bool):
+@@ -8156,6 +8156,11 @@ def _cmd_update_impl(args, gateway_mode: bool):
  
      if not git_dir.exists():
          if sys.platform == "win32":
