@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-06",
+  "generated": "2026-09-07",
   "stats": {
-    "nodes": 376,
-    "edges": 425
+    "nodes": 377,
+    "edges": 427
   },
   "nodes": [
     {
@@ -3070,6 +3070,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "type": "documentation",
+      "title": "hermes-weekly-update-20260907",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "type": "documentation",
       "title": "kb-vector-remaining-handoff-20260705",
@@ -4597,6 +4608,12 @@
     },
     {
       "source": "/community/community-reddit.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-reddit.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
       "rel_type": "mention"
@@ -4645,8 +4662,20 @@
     },
     {
       "source": "/community/community-weibo.md",
+      "target": "/characters/95786.md",
+      "rel": "提及:杜勒赛因",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
       "target": "/characters/15564.md",
       "rel": "提及:戈利亚",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/15583.md",
+      "rel": "提及:奥尔拉",
       "rel_type": "mention"
     },
     {
@@ -4683,18 +4712,6 @@
       "source": "/community/community-weibo.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -6139,6 +6156,12 @@
     },
     {
       "source": "/sources/reddit.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/reddit.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
       "rel_type": "mention"
@@ -6193,8 +6216,20 @@
     },
     {
       "source": "/sources/weibo.md",
+      "target": "/characters/95786.md",
+      "rel": "提及:杜勒赛因",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
       "target": "/characters/15564.md",
       "rel": "提及:戈利亚",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/15583.md",
+      "rel": "提及:奥尔拉",
       "rel_type": "mention"
     },
     {
@@ -6231,18 +6266,6 @@
       "source": "/sources/weibo.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
