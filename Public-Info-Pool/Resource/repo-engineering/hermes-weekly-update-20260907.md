@@ -828,8 +828,11 @@
 自动直推 main（提交 `b4369209`）。
 
 **组装线**：私有版组装 run #28（<https://github.com/lightproud/biav-sc-code/actions/runs/34046015873>）
-已在移 pin 提交上触发，本会话稍后回查三件（run 结论 / Release 资产 `black-pool-win64.zip`
-更新时间 / 包内 `BUILD.md` 上游 pin 行），红则回来改写本节，不把红的 run 写成绿的。
+已回查确认三件全绿——① run 结论 `success`（两个 job：桌面回归网 + win64 装配均绿）；
+② Release 资产 `black-pool-win64.zip` 更新时间 `2026-09-06T16:55:47Z`，落在本次 run 窗口内
+（非上一版残留）；③ 包内 `BUILD.md` 的上游 pin 行读自本次装配所在 commit `b4369209` 的
+`UPSTREAM.md`，该提交已是 `v2026.8.31`（build 日志里 `hermes-agent==0.21.0` 依赖解析结果
+交叉印证引擎版本对得上）。zip 直链已可下载最新版。
 
 **gaps.md**：本次无需挂账的漏缝——两处接手均在“测试对齐规则重锚”范畴内解决，没有丢弃任何
 补丁或功能。
